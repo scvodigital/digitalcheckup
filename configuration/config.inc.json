@@ -13,7 +13,7 @@
     "menus": "{:./data/menus.json}",
     "checkup": "{:./data/checkup.json}",
     "areas": "{:./data/areas.json}",
-    "elasticsearchUrl": "{$../../elasticsearch-url.txt}",
+    "elasticsearchUrl": "{$./data/elasticsearch-url.txt}",
     "handlebars": {
       "partials": {
         "{$./partials/**/*.*}": "includeRelativePath=false&regexExpression=(-)&regexOptions=gi&regexReplace=_"
