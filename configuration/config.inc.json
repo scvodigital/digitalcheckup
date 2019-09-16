@@ -1,0 +1,32 @@
+{
+  "domains": [
+    "digitalcheckup.local",
+    "digitalcheckup.org"
+  ],
+  "routes": [
+    "{:./routes/*.json}"
+  ],
+  "metaData": {
+    "assetsVersion": "{:../package.json@version}",
+    "assetsBase": "https://storage.googleapis.com/scvo-assets/test/digitalcheckup/",
+    "title": "Digital Checkup",
+    "menus": "{:./data/menus.json}",
+    "checkup": "{:./data/checkup.json}",
+    "areas": "{:./data/areas.json}",
+    "elasticsearchUrl": "{$../../elasticsearch-url.txt}",
+    "handlebars": {
+      "partials": {
+        "{$./partials/**/*.*}": "includeRelativePath=false&regexExpression=(-)&regexOptions=gi&regexReplace=_"
+      },
+      "templates": {
+        "{$./templates/**/*.*}": ""
+      },
+      "layouts": {
+        "{$./layouts/**/*.*}": ""
+      },
+      "queries": {
+        "{$./queries/**/*.*}": ""
+      }
+    }
+  }
+}

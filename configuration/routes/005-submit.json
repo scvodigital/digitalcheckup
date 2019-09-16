@@ -1,0 +1,44 @@
+{
+  "name": "checkup_submit",
+  "pattern": "/checkup/submit",
+  "metaData": {
+    "title": "Digital Checkup"
+  },
+  "tasks": [
+    {
+      "name": "save_data",
+      "taskModule": "firebaseRtbSet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "pathTemplate": "/submissions/{{moment null \"X\"}}-{{hash @root.request.body.email}}/",
+        "setOrUpdate": "set",
+        "dataTemplate": ">context.metaData.handlebars.templates.checkup_firebase-data"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "body": ">context.metaData.handlebars.templates.checkup_submit",
+              "foot": ""
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
