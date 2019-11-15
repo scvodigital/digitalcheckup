@@ -18,9 +18,8 @@ $mdc-theme-secondary: $mdc-theme-blue;
 $mdc-theme-secondary-dark: darken($mdc-theme-secondary, 15%);
 $mdc-theme-secondary-light: lighten($mdc-theme-secondary, 15%);
 
-$mdc-theme-footer: #37474F; // Blue Gray 800
-$mdc-theme-footer-light: #E1E3E4;
-$mdc-theme-footer-dark: #263238; // Blue Gray 900
+$mdc-theme-footer: #385665;
+$mdc-theme-footer-light: #FEF9F9;
 
 $unit: 1rem;
 $header-height: 84px;
@@ -42,7 +41,7 @@ html, body {
   height: 100%;
 }
 body {
-  background-color: $mdc-theme-footer-dark;
+  background-color: $mdc-theme-footer-light;
   overflow: visible !important;
 }
 .mdc-top-app-bar {
@@ -570,40 +569,47 @@ h4,
 
 footer.mdc-layout__footer {
   border-top: none;
-  background-color: $mdc-theme-footer-light;
   box-shadow: none;
   h3 {
-    color: $mdc-theme-footer;
+    color: white;
     border-bottom: none;
+    text-transform: none;
   }
   a,
   a:hover,
   .about a,
   .about a:hover,
   .mdc-layout-grid p {
-    color: $mdc-theme-footer;
+    color: white;
   }
   .fa-ul {
     .fa-li {
       .fas, .fal, .far, .fab {
-        color: $mdc-theme-footer;
+        color: white;
       }
     }
   }
-  .brand-logo {
-    margin-left: $unit*1.5;
-    vertical-align: top;
-    display: inline-block;
-  }
-  .brand-logo:first-child {
-    margin-left: 0;
+  .footer-main {
+    margin-bottom: 0;
+    padding-bottom: $unit;
+    background-color: $mdc-theme-footer;
+    p,
+    a {
+      color: white;
+    }
   }
   .footer-copyright {
-    background-color: $mdc-theme-footer-dark;
+    background-color: $mdc-theme-footer-light;
     p,
     a,
     a:hover {
-      color: white;
+      color: $mdc-theme-footer;
+    }
+    p {
+      line-height: 1.4rem;
+    }
+    .brand-logo {
+      display: inline-block;
     }
   }
 }
