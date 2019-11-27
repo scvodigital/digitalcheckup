@@ -6,7 +6,8 @@
     "description_truncated",
     "publish_on",
     "author_name_full",
-    "slug"
+    "post_slug",
+    "wpid"
   ],
   "query": {
     "bool": {

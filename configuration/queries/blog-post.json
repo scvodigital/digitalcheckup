@@ -14,7 +14,7 @@
   ],
   "query": {
     "term": {
-      "slug": "{{@root.request.params.path}}"
+      "wpid": "{{@root.request.params.wpid}}"
     }
   }
 }

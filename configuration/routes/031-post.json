@@ -1,6 +1,7 @@
 {
   "name": "post",
-  "pattern": "/post/*path",
+  "debug": true,
+  "pattern": "/post/:wpid(/:junk)",
   "tasks": [
     {
       "name": "primaryResponse",
