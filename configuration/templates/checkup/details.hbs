@@ -80,7 +80,7 @@
                 <span class="mdc-select__dropdown-icon"></span>
                 <select class="mdc-select__native-control" id="area" name="area">
                   {{#each @root.context.metaData.areas ~}}
-                  <option value="{{@key}}">{{short}}</option>
+                  <option value="{{slug}}">{{short}}</option>
                   {{/each ~}}
                 </select>
                 <label class="mdc-floating-label mdc-select__label--float-above mdc-floating-label--float-above" for="area">
