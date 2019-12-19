@@ -4,7 +4,11 @@
   "metaData": {
     "hideSearch": true
   },
+  "metaData": {
+    "title": "500: Error"
+  },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "destination",
       "taskModule": "renderLayout",

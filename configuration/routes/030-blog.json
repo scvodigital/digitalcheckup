@@ -2,9 +2,10 @@
   "name": "blog",
   "pattern": "/blog",
   "metaData": {
-    "title": "Blog – Digital Checkup"
+    "title": "Blog"
   },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

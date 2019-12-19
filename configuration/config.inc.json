@@ -1,7 +1,9 @@
 {
   "domains": [
+    "digitalcheckup.org",
     "digitalcheckup.local",
-    "digitalcheckup.org"
+    "housing.digitalcheckup.org",
+    "digitalcheckup-housing.local"
   ],
   "routes": [
     "{:./routes/*.json}"
@@ -10,6 +12,8 @@
     "assetsVersion": "{:../package.json@version}",
     "assetsBase": "https://storage.googleapis.com/scvo-assets/test/digitalcheckup/",
     "title": "Digital Checkup",
+    "domain-map": "{:./data/domain-map.json}",
+    "site-configurations": "{:./data/site-configurations.json}",
     "menus": "{:./data/menus.json}",
     "checkup": "{:./data/checkup.json}",
     "areas": "{:./data/areas.json}",
@@ -27,6 +31,7 @@
       "queries": {
         "{$./queries/**/*.*}": ""
       }
-    }
+    },
+    "commonTasks": "{:./data/common-tasks.json}"
   }
 }

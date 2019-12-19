@@ -4,10 +4,8 @@
     "home": "/checkup",
     "section": "/checkup/:section"
   },
-  "metaData": {
-    "title": "Digital Checkup"
-  },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "destination",
       "taskModule": "renderLayout",

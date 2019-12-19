@@ -1,0 +1,18 @@
+{
+  "default": {
+    "name": "default",
+    "title": "Digital Checkup",
+    "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
+    "for_singular": "organisation",
+    "for_plural": "organisations",
+    "url": "https://digitalcheckup.org"
+  },
+  "housing": {
+    "name": "housing",
+    "title": "Digital Checkup for Housing Associations",
+    "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other housing associations",
+    "for_singular": "housing association",
+    "for_plural": "housing associations",
+    "url": "https://housing.digitalcheckup.org"
+  }
+}

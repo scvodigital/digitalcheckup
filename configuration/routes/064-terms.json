@@ -2,9 +2,10 @@
   "name": "terms",
   "pattern": "/terms",
   "metaData": {
-    "title": "Terms & conditions – Digital Checkup"
+    "title": "Terms & conditions"
   },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "destination",
       "taskModule": "renderLayout",

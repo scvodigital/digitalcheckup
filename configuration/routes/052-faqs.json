@@ -2,9 +2,10 @@
   "name": "faqs",
   "pattern": "/faqs",
   "metaData": {
-    "title": "FAQs – Digital Checkup"
+    "title": "FAQs"
   },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "destination",
       "taskModule": "renderLayout",

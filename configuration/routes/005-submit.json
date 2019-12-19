@@ -1,10 +1,8 @@
 {
   "name": "checkup_submit",
   "pattern": "/checkup/submit",
-  "metaData": {
-    "title": "Digital Checkup"
-  },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "save_data",
       "taskModule": "firebaseRtbSet",

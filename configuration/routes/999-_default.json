@@ -2,9 +2,10 @@
   "name": "_default",
   "pattern": "/*path",
   "metaData": {
-    "title": "404: Page not found – Digital Checkup"
+    "title": "404: Page not found"
   },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "destination",
       "taskModule": "renderLayout",

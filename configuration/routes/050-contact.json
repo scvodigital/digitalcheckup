@@ -2,9 +2,10 @@
   "name": "contact",
   "pattern": "/contact-us",
   "metaData": {
-    "title": "Contact us – Digital Checkup"
+    "title": "Contact us"
   },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "destination",
       "taskModule": "renderLayout",

@@ -1,0 +1,25 @@
+{
+  "currentSite": {
+    "name": "currentSite",
+    "taskModule": "render",
+    "renderer": "jsone",
+    "config": {
+      "template": {
+        "_let": {
+          "hostname": {
+            "_eval": "jsone.stringReplace(request.url.hostname, '.', '_')"
+          }
+        },
+        "in": {
+          "_let": {
+            "path": "${context.metaData['domain-map'][hostname]}"
+          },
+          "in": {
+            "_eval": "context.metaData['site-configurations'][path]"
+          }
+        }
+      },
+      "output": "data"
+    }
+  }
+}

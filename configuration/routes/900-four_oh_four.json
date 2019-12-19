@@ -5,7 +5,11 @@
   "metaData": {
     "hideSearch": true
   },
+  "metaData": {
+    "title": "404: Page not found"
+  },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "not_found",
       "taskModule": "elasticsearch",

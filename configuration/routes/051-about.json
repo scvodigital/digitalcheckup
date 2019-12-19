@@ -2,9 +2,10 @@
   "name": "about",
   "pattern": "/about",
   "metaData": {
-    "title": "About – Digital Checkup"
+    "title": "About"
   },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "destination",
       "taskModule": "renderLayout",

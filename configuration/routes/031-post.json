@@ -3,6 +3,7 @@
   "debug": true,
   "pattern": "/post/:wpid(/:junk)",
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

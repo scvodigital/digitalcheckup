@@ -2,9 +2,10 @@
   "name": "accessibility",
   "pattern": "/accessibility",
   "metaData": {
-    "title": "Accessibility – Digital Checkup"
+    "title": "Accessibility"
   },
   "tasks": [
+    "context.metaData.commonTasks.currentSite",
     {
       "name": "destination",
       "taskModule": "renderLayout",
