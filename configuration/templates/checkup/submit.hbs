@@ -23,8 +23,8 @@
   <div class="container-fluid">
     <div class="container-content">
       {{#with @root.data.response ~}}
-      {{#ifAll (compare @root.data.currentSite "default") (compare area "scotland") ~}}
-      <iframe src="https://www.surveygizmo.eu/s3/90133620/SCVO-Digital-Checkup?__no_style=true&s1={{urlencode score_leadership_culture_and_skills}}&s2={{urlencode score_tools_and_equipment}}&s3={{urlencode score_content_marketing_and_data}}&s4={{urlencode score_cyber_resilience}}&overall={{urlencode score_total}}&income_band={{urlencode income_band}}&topic={{urlencode topic}}&name={{urlencode body.name}}&email={{urlencode email}}&web_organisation={{urlencode web_organisation}}&area={{urlencode area}}&postcode={{urlencode postcode}}&next_project={{urlencode next_project}}&barriers={{urlencode barriers}}&support={{urlencode support}}" frameborder="0" width="700" height="10" style="overflow:hidden;visibility:hidden;"></iframe>
+      {{#ifAll (compare @root.data.currentSite.name "default") (compare area "scotland") ~}}
+      <iframe src="https://www.surveygizmo.eu/s3/90133620/SCVO-Digital-Checkup?__no_style=true&s1={{score_leadership_culture_and_skills}}&s2={{score_tools_and_equipment}}&s3={{score_content_marketing_and_data}}&s4={{score_cyber_resilience}}&overall={{score_total}}&income_band={{urlencode income_band}}&topic={{urlencode topic}}&name={{urlencode name}}&email={{urlencode email}}&web_organisation={{urlencode organisation}}&area={{urlencode area}}&postcode={{urlencode postcode}}&next_project={{urlencode next_project}}&barriers={{urlencode barriers}}&support={{urlencode support}}" frameborder="0" width="700" height="10" style="overflow:hidden;visibility:hidden;"></iframe>
       <script type="text/javascript">
         window.addEventListener("message", (event) => {
           if (event.data.hasOwnProperty('event')) {
