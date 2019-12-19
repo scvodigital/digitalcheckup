@@ -1,62 +1,54 @@
-{{#withExtend this
-    body=@root.request.body
-    s1=@root.request.body.section-1-score
-    s2=@root.request.body.section-2-score
-    s3=(add @root.request.body.section-3-score @root.request.body.section-4-score)
-    s4=@root.request.body.section-5-score
-    overall=(sumArray (split (concat @root.request.body.section-1-score "," @root.request.body.section-2-score "," @root.request.body.section-3-score "," @root.request.body.section-4-score "," @root.request.body.section-5-score) ","))}}
-  <div class="checkup-section b-padding-full" id="checkup-confirmation">
-    <div class="checkup-section-header b-padding-full v-margin-full">
-      <div class="container-fluid">
-        <div class="container-content">
-          {{> checkup_progress progress=99}}
-          <div class="mdc-layout-grid">
-            <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
-                <img src="{{~>asset_url url='images/icon-confirm@2x.png'~}}" title="Submitting" class="icon" />
-              </div>
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
-                <h1 class="mdc-typography--headline3">Please wait</h1>
-                <div class="mdc-typography--body1">
-                  Processing your answers...
-                  <span class="fas fa-fw fa-spinner fa-spin"></span>
-                </div>
+<div class="checkup-section b-padding-full" id="checkup-confirmation">
+  <div class="checkup-section-header b-padding-full v-margin-full">
+    <div class="container-fluid">
+      <div class="container-content">
+        {{> checkup_progress progress=99}}
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
+              <img src="{{~>asset_url url='images/icon-confirm@2x.png'~}}" title="Submitting" class="icon" />
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
+              <h1 class="mdc-typography--headline3">Please wait</h1>
+              <div class="mdc-typography--body1">
+                Processing your answers...
+                <span class="fas fa-fw fa-spinner fa-spin"></span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="container-content">
-        {{#compare @root.request.body.answers-area "scotland"}}
-          {{!-- <iframe src="https://www.surveygizmo.eu/s3/90133620/SCVO-Digital-Checkup?__no_style=true&s1={{s1}}&s2={{s2}}&s3={{s3}}&s4={{s4}}&overall={{overall}}&income_band={{body.answers-income_band}}&topic={{body.answers-topic}}&name={{urlencode body.name}}&email={{urlencode body.answers-email}}&web_organisation={{urlencode body.answers-web_organisation}}&area={{body.answers-area}}&postcode={{urlencode body.answers-postcode}}&next_project={{urlencode body.answers-next_project}}&barriers={{urlencode body.answers-barriers}}&support={{body.answers-support}}" frameborder="0" width="700" height="10" style="overflow:hidden;visibility:hidden;"></iframe> --}}
-          <script>
-            window.addEventListener("message", (event) => {
-              if (event.data.hasOwnProperty('event')) {
-                // console.log('Post Message Event', event.data);
-                switch (event.data.event) {
-                  case ('goToResults'):
-                    goToResults();
-                    break;
-                }
-              }
-            }, false);
-          </script>
-        {{else}}
-          <script>
-            window.setTimeout(function() {
-              goToResults();
-            }, 3000);
-          </script>
-        {{/compare}}
-      </div>
+  </div>
+  <div class="container-fluid">
+    <div class="container-content">
+      {{#with @root.data.response ~}}
+      {{#ifAll (compare @root.data.currentSite "default") (compare area "scotland") ~}}
+      <iframe src="https://www.surveygizmo.eu/s3/90133620/SCVO-Digital-Checkup?__no_style=true&s1={{urlencode score_leadership_culture_and_skills}}&s2={{urlencode score_tools_and_equipment}}&s3={{urlencode score_content_marketing_and_data}}&s4={{urlencode score_cyber_resilience}}&overall={{urlencode score_total}}&income_band={{urlencode income_band}}&topic={{urlencode topic}}&name={{urlencode body.name}}&email={{urlencode email}}&web_organisation={{urlencode web_organisation}}&area={{urlencode area}}&postcode={{urlencode postcode}}&next_project={{urlencode next_project}}&barriers={{urlencode barriers}}&support={{urlencode support}}" frameborder="0" width="700" height="10" style="overflow:hidden;visibility:hidden;"></iframe>
+      <script type="text/javascript">
+        window.addEventListener("message", (event) => {
+          if (event.data.hasOwnProperty('event')) {
+            switch (event.data.event) {
+              case ('goToResults'):
+                goToResults();
+                break;
+            }
+          }
+        }, false);
+      </script>
+      {{else}}
+      <script type="text/javascript">
+        window.setTimeout(function() {
+          goToResults();
+        }, 3000);
+      </script>
+      {{/ifAll ~}}
+      {{/with ~}}
     </div>
   </div>
-  <script>
-    function goToResults() {
-      console.log("go to... ", {{@root.data.rid}});
-      // window.location.href = '/checkup/results?s1={{s1}}&s2={{s2}}&s3={{s3}}&s4={{s4}}&area={{body.answers-area}}&income_band={{body.answers-income_band}}&topic={{body.answers-topic}}&web_organisation={{urlencode body.answers-web_organisation}}';
-    }
-  </script>
-{{/withExtend}}
+</div>
+<script type="text/javascript">
+  function goToResults() {
+    window.location.href = '/checkup/results?rid={{@root.data.rid}}';
+  }
+</script>
