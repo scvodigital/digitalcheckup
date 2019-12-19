@@ -15,7 +15,6 @@
     "domain-map": "{:./data/domain-map.json}",
     "site-configurations": "{:./data/site-configurations.json}",
     "menus": "{:./data/menus.json}",
-    "checkup": "{:./data/checkup.json}",
     "areas": "{:./data/areas.json}",
     "elasticsearchUrl": "{$./data/elasticsearch-url.txt}",
     "handlebars": {

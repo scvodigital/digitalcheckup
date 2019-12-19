@@ -1,11 +1,13 @@
 {
   "name": "checkup",
+  "debug": true,
   "pattern": {
     "home": "/checkup",
     "section": "/checkup/:section"
   },
   "tasks": [
     "context.metaData.commonTasks.currentSite",
+    "context.metaData.commonTasks.getCheckupData",
     {
       "name": "destination",
       "taskModule": "renderLayout",

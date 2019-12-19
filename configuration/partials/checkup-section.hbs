@@ -1,4 +1,4 @@
-{{#with (getProperty @root.context.metaData.checkup section) ~}}
+{{#with (getProperty @root.data.checkup section) ~}}
 <form action="/checkup/{{next_section}}" method="post" class="checkup-section b-padding-full" id="checkup-{{../section}}">
   {{> checkup_scores section=@root.request.body.score-section}}
   <input type="hidden" name="score-section" value="{{../section}}" />

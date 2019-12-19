@@ -35,6 +35,7 @@
       },
       {
         "title": "In the workplace, staff are encouraged and empowered to... (tick all that apply) *",
+        "value": "q2",
         "type": "select-many",
         "options": [
           {
@@ -63,9 +64,65 @@
           }
         ]
       },
+      {{#compare @root.data.currentSite.name "housing" ~}}
+      {
+        "title": "Staff digital essential skills rating *",
+        "value": "q3",
+        "type": "select-one",
+        "options": [
+          {
+            "answer": "We don’t know what our staff digital skills levels are",
+            "score": 0
+          },
+          {
+            "answer": "Low - Less than 25% of staff have essential digital skills",
+            "score": 1
+          },
+          {
+            "answer": "Medium - 25-50% of staff have essential digital skills",
+            "score": 2
+          },
+          {
+            "answer": "High - 50-75% of staff have essential digital skills",
+            "score": 3
+          },
+          {
+            "answer": "Excellent - More than 75% of staff have essential digital skills",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "title": "Staff digital confidence rating *",
+        "value": "q4",
+        "type": "select-one",
+        "options": [
+          {
+            "answer": "We don’t know what our staff digital confidence levels are",
+            "score": 0
+          },
+          {
+            "answer": "Low - Less than 25% of staff are confident in their use of digital",
+            "score": 1
+          },
+          {
+            "answer": "Medium - 25-50% of staff are confident in their use of digital",
+            "score": 2
+          },
+          {
+            "answer": "High - 50-75% of staff are confident in their use of digital",
+            "score": 3
+          },
+          {
+            "answer": "Excellent - More than 75% of staff are confident in their use of digital",
+            "score": 4
+          }
+        ]
+      }
+      {{else}}
       {
         "title": "How well do you understand the digital skills of your staff and/or volunteers? *",
-        "value": "q2",
+        "value": "q3",
         "type": "select-one",
         "options": [
           {
@@ -86,6 +143,7 @@
           }
         ]
       }
+      {{/compare ~}}
     ],
     "next_section": "section-2"
   },
@@ -463,10 +521,10 @@
         ]
       }
     ],
-    "next_section": "section-6"
+    "next_section": "organisation-details"
   },
-  "section-6": {
-    "name": "Section 6",
+  "organisation-details": {
+    "name": "Organisation details",
     "title": "Your organisation size and priorities",
     "icon": "organisation",
     "progress": 75,

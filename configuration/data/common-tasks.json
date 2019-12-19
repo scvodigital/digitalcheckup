@@ -21,5 +21,15 @@
       },
       "output": "data"
     }
+  },
+  "getCheckupData": {
+    "name": "checkup",
+    "taskModule": "render",
+    "renderer": "handlebars",
+    "config": {
+      "output": "data",
+      "template": ">context.metaData.handlebars.templates.checkup_data",
+      "parseJson": true
+    }
   }
 }
