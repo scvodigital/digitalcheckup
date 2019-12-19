@@ -38,8 +38,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_resources",
-              "foot": ""
+              "body": ">context.metaData.handlebars.templates.checkup_resources"
             },
             "contentType": "text/html"
           }

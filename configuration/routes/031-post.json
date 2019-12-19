@@ -37,8 +37,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.blog_post",
-              "foot": ""
+              "body": ">context.metaData.handlebars.templates.blog_post"
             },
             "contentType": "text/html"
           }

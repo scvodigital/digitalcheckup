@@ -24,8 +24,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_checkup",
-              "foot": ""
+              "body": ">context.metaData.handlebars.templates.checkup_checkup"
             },
             "contentType": "text/html"
           }

@@ -29,8 +29,8 @@
     </div>
     <div class="container-fluid">
       <div class="container-content">
-        {{#compare @root.request.body.area "scotland"}}
-          <iframe src="https://www.surveygizmo.eu/s3/90133620/SCVO-Digital-Checkup?__no_style=true&s1={{s1}}&s2={{s2}}&s3={{s3}}&s4={{s4}}&overall={{overall}}&income_band={{body.income_band}}&topic={{body.topic}}&name={{urlencode body.name}}&email={{urlencode body.email}}&web_organisation={{urlencode body.web_organisation}}&area={{body.area}}&postcode={{urlencode body.postcode}}&next_project={{urlencode body.next_project}}&barriers={{urlencode body.barriers}}&support={{body.support}}" frameborder="0" width="700" height="10" style="overflow:hidden;visibility:hidden;"></iframe>
+        {{#compare @root.request.body.answers-area "scotland"}}
+          {{!-- <iframe src="https://www.surveygizmo.eu/s3/90133620/SCVO-Digital-Checkup?__no_style=true&s1={{s1}}&s2={{s2}}&s3={{s3}}&s4={{s4}}&overall={{overall}}&income_band={{body.answers-income_band}}&topic={{body.answers-topic}}&name={{urlencode body.name}}&email={{urlencode body.answers-email}}&web_organisation={{urlencode body.answers-web_organisation}}&area={{body.answers-area}}&postcode={{urlencode body.answers-postcode}}&next_project={{urlencode body.answers-next_project}}&barriers={{urlencode body.answers-barriers}}&support={{body.answers-support}}" frameborder="0" width="700" height="10" style="overflow:hidden;visibility:hidden;"></iframe> --}}
           <script>
             window.addEventListener("message", (event) => {
               if (event.data.hasOwnProperty('event')) {
@@ -55,7 +55,8 @@
   </div>
   <script>
     function goToResults() {
-      window.location.href = '/checkup/results?s1={{s1}}&s2={{s2}}&s3={{s3}}&s4={{s4}}&area={{body.area}}&income_band={{body.income_band}}&topic={{body.topic}}&web_organisation={{urlencode body.web_organisation}}';
+      console.log("go to... ", {{@root.data.rid}});
+      // window.location.href = '/checkup/results?s1={{s1}}&s2={{s2}}&s3={{s3}}&s4={{s4}}&area={{body.answers-area}}&income_band={{body.answers-income_band}}&topic={{body.answers-topic}}&web_organisation={{urlencode body.answers-web_organisation}}';
     }
   </script>
 {{/withExtend}}

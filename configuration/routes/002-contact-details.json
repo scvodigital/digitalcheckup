@@ -1,6 +1,6 @@
 {
-  "name": "checkup_details",
-  "pattern": "/checkup/details",
+  "name": "checkup_contact_details",
+  "pattern": "/checkup/contact-details",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
     {
@@ -19,8 +19,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_details",
-              "foot": ""
+              "body": ">context.metaData.handlebars.templates.checkup_contact-details"
             },
             "contentType": "text/html"
           }

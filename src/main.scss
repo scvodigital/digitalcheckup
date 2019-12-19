@@ -118,7 +118,11 @@ header {
       letter-spacing: -0.07rem;
       font-weight: 800;
       display: block;
-      line-height: $header-height;
+      // line-height: $header-height;
+      .mdc-typography--caption {
+        display: block;
+        font-weight: 800;
+      }
       img {
         vertical-align: middle;
       }
@@ -444,7 +448,7 @@ h4,
 .checkup-topic-resources-cyber a {
   color: $mdc-theme-pink;
 }
-#checkup-section-6,
+#checkup-organisation-details,
 #checkup-details,
 #checkup-confirmation,
 #checkup-results {

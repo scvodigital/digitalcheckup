@@ -1,16 +1,37 @@
 {
   "name": "checkup_submit",
+  "debug": true,
   "pattern": "/checkup/submit",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
+    "context.metaData.commonTasks.getCheckupData",
+    {
+      "name": "rid",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": "{{moment null 'X'}}-{{hash @root.request.body.email}}",
+        "output": "data"
+      }
+    },
+    {
+      "name": "responses",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.checkup_firebase-data",
+        "output": "data",
+        "parseJson": true
+      }
+    },
     {
       "name": "save_data",
       "taskModule": "firebaseRtbSet",
       "renderer": "handlebars",
       "config": {
         "appName": "digital-checkup",
-        "pathTemplate": "/submissions/{{moment null \"X\"}}-{{hash @root.request.body.email}}/",
         "setOrUpdate": "set",
+        "pathTemplate": "/submissions/{{@root.data.rid}}/",
         "dataTemplate": ">context.metaData.handlebars.templates.checkup_firebase-data"
       }
     },
@@ -30,8 +51,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_submit",
-              "foot": ""
+              "body": ">context.metaData.handlebars.templates.checkup_submit"
             },
             "contentType": "text/html"
           }

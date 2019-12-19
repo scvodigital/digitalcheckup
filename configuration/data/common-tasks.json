@@ -28,7 +28,7 @@
     "renderer": "handlebars",
     "config": {
       "output": "data",
-      "template": ">context.metaData.handlebars.templates.checkup_data",
+      "template": ">context.metaData.handlebars.templates.checkup_questions",
       "parseJson": true
     }
   }

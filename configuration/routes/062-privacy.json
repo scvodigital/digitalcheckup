@@ -22,8 +22,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_privacy",
-              "foot": ""
+              "body": ">context.metaData.handlebars.templates.pages_privacy"
             },
             "contentType": "text/html"
           }

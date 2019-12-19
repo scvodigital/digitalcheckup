@@ -19,8 +19,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_confirmation",
-              "foot": ""
+              "body": ">context.metaData.handlebars.templates.checkup_confirmation"
             },
             "contentType": "text/html"
           }

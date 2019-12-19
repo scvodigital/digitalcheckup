@@ -1,5 +1,5 @@
 <form action="/checkup/submit" method="post" class="checkup-section b-padding-full" id="checkup-confirmation">
-  {{> checkup_scores query_params=@root.request.body}}
+  {{> checkup_answers section=@root.request.body.answer-section}}
   <div class="checkup-section-header b-padding-full v-margin-full">
     <div class="container-fluid">
       <div class="container-content">
@@ -30,7 +30,7 @@
         </div>
         <div class="answer-block">
           <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
-            <textarea id="next_project" name="next_project" class="mdc-text-field__input" rows="10"></textarea>
+            <textarea id="next_project" name="answers-next_project" class="mdc-text-field__input" rows="10"></textarea>
             <label for="next_project" class="mdc-floating-label"></label>
           </div>
         </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="answer-block">
           <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
-            <textarea id="barriers" name="barriers" class="mdc-text-field__input" rows="10"></textarea>
+            <textarea id="barriers" name="answers-barriers" class="mdc-text-field__input" rows="10"></textarea>
             <label for="barriers" class="mdc-floating-label"></label>
           </div>
         </div>
@@ -54,8 +54,8 @@
           <div class="mdc-typography--body1 question-description">This could be funding, events, training and 1:1 support</div>
         </div>
         <ul class="answer-block">
-          <li class="answer">{{> components_radio_button label="Yes please - I'd like support to help put this into action" id="yes" name="support" value="Yes please"}}</li>
-          <li class="answer">{{> components_radio_button label="No thanks!" id="no" name="support" value="No thanks"}}</li>
+          <li class="answer">{{> components_radio_button label="Yes please - I'd like support to help put this into action" id="yes" name="answers-support" value="Yes please"}}</li>
+          <li class="answer">{{> components_radio_button label="No thanks!" id="no" name="answers-support" value="No thanks"}}</li>
         </ul>
       </div>
 

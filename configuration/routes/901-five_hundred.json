@@ -25,8 +25,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_500",
-              "foot": ""
+              "body": ">context.metaData.handlebars.templates.pages_500"
             },
             "contentType": "text/html"
           }

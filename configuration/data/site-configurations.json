@@ -5,6 +5,11 @@
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
     "for_singular": "organisation",
     "for_plural": "organisations",
+    "partner": {
+      "title": "Centre for Acceleration of Social Technology",
+      "url": "https://wearecast.org.uk",
+      "logo_filename": "cast-colour.png"
+    },
     "url": "https://digitalcheckup.org"
   },
   "housing": {
@@ -13,6 +18,11 @@
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other housing associations",
     "for_singular": "housing association",
     "for_plural": "housing associations",
+    "partner": {
+      "title": "The Scottish Federation of Housing Associations",
+      "url": "https://www.sfha.co.uk",
+      "logo_filename": "sfha-colour.png"
+    },
     "url": "https://housing.digitalcheckup.org"
   }
 }
