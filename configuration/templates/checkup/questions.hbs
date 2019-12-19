@@ -219,11 +219,13 @@
           {{/compare ~}}
         ]
       },
+      {{#compare @root.data.currentSite.name "housing" ~}},
       {
         "title": "Other - please detail",
         "value": "q2",
         "type": "freetext"
       },
+      {{/compare }}
       {
         "title": "Do you find your IT provision (technical support, hardware setup, internet access) to be... *",
         "value": "q3",
