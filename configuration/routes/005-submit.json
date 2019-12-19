@@ -15,7 +15,27 @@
       }
     },
     {
-      "name": "responses",
+      "name": "scoresIndividual",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.checkup_get-scores",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "scoresCombined",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.checkup_calculate-scores",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "response",
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
