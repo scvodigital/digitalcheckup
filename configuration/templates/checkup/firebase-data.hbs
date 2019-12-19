@@ -3,14 +3,14 @@
 {{~/inline~}}
 {{~#with @root.request.body~}}
 {
-  "email" : {{{safeStringify answers-email}}},
-  "name" : {{{safeStringify answers-name}}},
-  "organisation" : {{{safeStringify answers-web_organisation}}},
-  "postcode" : {{{safeStringify answers-postcode}}},
-  "area" : {{{safeStringify answers-area}}},
-  "income_band" : {{{safeStringify answers-organisation-details-income_band}}},
-  "topic" : {{{safeStringify answers-organisation-details-topic}}},
-  "next_project" : {{{safeStringify answers-next_project}}},
+  {{#if answers-email}}"email" : {{{safeStringify answers-email}}},{{/if}}
+  {{#if answers-name}}"name" : {{{safeStringify answers-name}}},{{/if}}
+  {{#if answers-web_organisation}}"organisation" : {{{safeStringify answers-web_organisation}}},{{/if}}
+  {{#if answers-postcode}}"postcode" : {{{safeStringify answers-postcode}}},{{/if}}
+  {{#if answers-area}}"area" : {{{safeStringify answers-area}}},{{/if}}
+  {{#if answers-organisation-details-income_band}}"income_band" : {{{safeStringify answers-organisation-details-income_band}}},{{/if}}
+  {{#if answers-organisation-details-topic}}"topic" : {{{safeStringify answers-organisation-details-topic}}},{{/if}}
+  {{#if answers-next_project}}"next_project" : {{{safeStringify answers-next_project}}},{{/if}}
   "barriers" : {{{safeStringify answers-barriers}}},
   "support" : {{{safeStringify answers-support}}},
   {{#each (filter (keyValue @root.request.body) "key" "testIn" "answers-section-") ~}}

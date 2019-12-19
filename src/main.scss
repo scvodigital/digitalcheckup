@@ -356,6 +356,9 @@ h4,
     .question-description {
       color: white;
       margin: 0;
+      a {
+        color: white;
+      }
     }
     .question-description {
       margin: $unit 0 0;
@@ -390,7 +393,8 @@ h4,
 .checkup-topic-resources-leadership a {
   color: $mdc-theme-purple;
 }
-#checkup-section-2 {
+#checkup-section-2,
+#checkup-section-6 {
   .checkup-section-header,
   .question-block .question,
   .cta .mdc-button {
