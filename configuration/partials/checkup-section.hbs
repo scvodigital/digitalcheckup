@@ -64,6 +64,14 @@
           {{/each ~}}
         </ul>
         {{/ifAny ~}}
+        {{#compare type "freetext" ~}}
+        <div class="answer-block">
+          <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+            <textarea id="{{slugify title}}" name="answers-{{../../section}}-{{value}}" class="mdc-text-field__input" rows="5"></textarea>
+            <label for="{{slugify title}}" class="mdc-floating-label"></label>
+          </div>
+        </div>
+        {{/compare ~}}
       </div>
       {{/each ~}}
       <div class="cta b-padding-full">
