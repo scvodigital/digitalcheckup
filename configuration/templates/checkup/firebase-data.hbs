@@ -3,6 +3,7 @@
 {{~/inline~}}
 {{~#with @root.request.body~}}
 {
+  {{#if answers-sid}}"sid" : {{{safeStringify answers-sid}}},{{/if}}
   {{#if answers-email}}"email" : {{{safeStringify answers-email}}},{{/if}}
   {{#if answers-name}}"name" : {{{safeStringify answers-name}}},{{/if}}
   {{#if answers-web_organisation}}"organisation" : {{{safeStringify answers-web_organisation}}},{{/if}}
@@ -36,7 +37,7 @@
   "percentage_tools_and_equipment" : {{>to_percentage score=(sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-2-") "value")) lower=-2 upper=35}},
   "percentage_content_marketing_and_data" : {{>to_percentage score=(add (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-3-") "value")) (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-3-") "value"))) lower=-10 upper=66}},
   "percentage_cyber_resilience" : {{>to_percentage score=(sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-5-") "value")) lower=-2 upper=15}},
-  "percentage_tec" : {{>to_percentage score=(sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-6-") "value")) lower=0 upper=100}},
+  "percentage_tec" : {{>to_percentage score=(sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-6-") "value")) lower=0 upper=9}},
   "percentage_total": {{>to_percentage score=(sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-") "value")) lower=-18 upper=136}},
   {{/compare ~}}
   {{/compare ~}}

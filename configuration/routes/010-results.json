@@ -1,8 +1,19 @@
 {
   "name": "checkup_results",
+  "debug": true,
   "pattern": "/checkup/results",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
+    {
+      "name": "rootResponse",
+      "taskModule": "firebaseRtbGet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "pathTemplate": "/submissions/{{default @root.request.params.query.rid 'null'}}/",
+        "defaultData": {}
+      }
+    },
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

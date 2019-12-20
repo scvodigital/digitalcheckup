@@ -4,11 +4,11 @@
       <div class="container-content">
         {{> checkup_progress progress=100}}
         <h1 class="mdc-typography--headline3">
-          {{#if @root.request.params.query.web_organisation ~}}
-            Checkup results for {{{@root.request.params.query.web_organisation}}}
+          {{#ifAny @root.data.rootResponse.organisation @root.request.params.query.web_organisation ~}}
+            Checkup results for {{{default @root.data.rootResponse.organisation @root.request.params.query.web_organisation}}}
           {{else}}
             Your checkup results
-          {{/if ~}}
+          {{/ifAny ~}}
         </h1>
       </div>
     </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="score">
                   {{@root.data.results.overall.average}}%
-                  {{#compare @root.request.params.query.income_band "!==" "0" ~}}
+                  {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
                     <span class="mdc-typography--body2">
                       (compared with {{@root.data.results.totalRespondents}} organisations across
                       {{@root.data.results.where}}
@@ -46,7 +46,7 @@
             </div>
           </div>
 
-          {{#ifAll @root.request.params.query.s1 @root.request.params.query.s2 @root.request.params.query.s3 @root.request.params.query.s4 ~}}
+          {{#ifAny @root.data.rootResponse.percentage_total (ifAll @root.request.params.query.s1 @root.request.params.query.s2 @root.request.params.query.s3 @root.request.params.query.s4) ~}}
             <div class="mdc-layout-grid">
               <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
@@ -80,7 +80,7 @@
                     </div>
                   {{/each ~}}
 
-                  {{#if @root.request.params.query.topic ~}}
+                  {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
                   {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
                   <div class="cta t-margin-full v-padding-full">
                     <a href="javascript: scrollToResources();" class="mdc-button mdc-button--raised">
@@ -89,11 +89,17 @@
                     </a>
                   </div>
                   {{/compare ~}}
-                  {{/if ~}}
+                  <div class="cta v-padding-full">
+                    <a href="/checkup?sid={{@root.request.params.query.rid}}" class="mdc-button mdc-button--raised">
+                      <span class="fas fa-share fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+                      Share with colleagues
+                    </a>
+                  </div>
+                  {{/ifAny ~}}
                 </div>
               </div>
             </div>
-          {{/ifAll ~}}
+          {{/ifAny ~}}
           {{else}}
           Error: something went wrong, please <a href="/checkup">start again</a>.
           {{/if ~}}
@@ -102,7 +108,7 @@
 
       <div class="v-padding-full">
         <div class="v-margin-full b-padding-full">
-          {{#compare @root.request.params.query.area "scotland" ~}}
+          {{#ifAll (compare @root.data.currentSite.name "default") (compare @root.request.params.query.area "scotland") ~}}
             <h3 class="mdc-typography--headline4 v-margin b-padding-full">
               We would love to discuss your results and next steps
             </h3>
@@ -111,9 +117,9 @@
               <!-- Calendly link widget begin -->
               <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
               <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-              <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/john-fitzgerald/check-up');return false;" class="mdc-button mdc-button--raised">
+              <a onclick="Calendly.showPopupWidget('https://calendly.com/john-fitzgerald/check-up');return false;" class="mdc-button mdc-button--raised">
                 <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
-                Book a follow-up call
+                Book a follow-up call with SCVO
               </a>
               <!-- Calendly link widget end -->
               <div class="mdc-typography--body1 t-margin-full">
@@ -127,15 +133,32 @@
               </script>
               <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t67hvr75';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
           </div>
+          {{/ifAll ~}}
+          {{#compare @root.data.currentSite.name "housing" ~}}
+          <h3 class="mdc-typography--headline4 v-margin b-padding-full">
+            We would love to discuss your results and next steps
+          </h3>
+
+          <div class="cta">
+            <!-- Calendly link widget begin -->
+            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+            <a onclick="Calendly.showPopupWidget('https://calendly.com/???/check-up');return false;" class="mdc-button mdc-button--raised mdc-button--disabled">
+              <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+              Book a follow-up call with SFHA
+            </a>
+            <!-- Calendly link widget end -->
+          </div>
           {{/compare ~}}
         </div>
       </div>
     </div>
   </div>
 
-  {{#if @root.request.params.query.topic ~}}
-    {{#with (getProperty @root.data.results.sections @root.request.params.query.topic)}}
-      <div class="checkup-topic-header checkup-topic-header-{{@root.request.params.query.topic}}" id="resources">
+  {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
+    {{#with (getProperty @root.data.results.sections (default @root.data.rootResponse.topic @root.request.params.query.topic)) ~}}
+    {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
+      <div class="checkup-topic-header checkup-topic-header-{{default @root.data.rootResponse.topic @root.request.params.query.topic}}" id="resources">
         <div class="container-fluid">
           <div class="container-content">
             <div class="mdc-layout-grid">
@@ -151,7 +174,7 @@
                   {{#if respondent~}}
                     <div class="mdc-typography--body1">
                       You scored {{respondent}}% - the average is {{average}}%
-                      {{#compare @root.request.params.query.income_band "!==" "0" ~}}
+                      {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
                         for {{@root.data.results.totalRespondents}} other organisations across
                         {{@root.data.results.where}}
                         in the same income bracket
@@ -164,7 +187,8 @@
           </div>
         </div>
       </div>
-    {{/with}}
+      {{/compare ~}}
+    {{/with ~}}
 
     {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
       <div class="container-fluid v-margin-full v-padding-full">
@@ -216,7 +240,7 @@
     </div>
     {{/compare ~}}
 
-  {{/if ~}}
+  {{/ifAny ~}}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>

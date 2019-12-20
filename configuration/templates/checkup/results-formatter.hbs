@@ -2,49 +2,99 @@
   {{round (multiply (divide (subtract score lower) (subtract upper lower)) 100) "up"}}
 {{~/inline~}}
 {{~#*inline "get_average"~}}
-  {{~#compare query.income_band "===" "0"~}}
+  {{~#compare income_band "0"~}}
     {{round (getProperty dataAverages aggregation) "up"}}
   {{else}}
     {{round
       (getProperty
-        (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" query.income_band))
+        (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
         aggregation
       ) "up"}}
   {{~/compare~}}
 {{~/inline~}}
 {{#withExtend this
   dataAverages=@root.data.primaryResponse.aggregations
-  query=@root.request.params.query}}
+  query=@root.request.params.query
+  rootResponse=@root.data.rootResponse ~}}
+  {{#if rootResponse ~}}
+  {
+    "overall": {
+      "respondent": {{rootResponse.percentage_total}},
+      "average": {{>get_average aggregation="total_stats.avg" income_band=rootResponse.income_band}}
+    },
+    "sections": {
+      "leadership": {
+        "respondent": {{rootResponse.percentage_leadership_culture_and_skills}},
+        "average": {{>get_average aggregation="leadership_culture_and_skills_stats.avg" income_band=rootResponse.income_band}},
+        "title": "Leadership, culture and skills",
+        "icon": "leadership"
+      },
+      "tools": {
+        "respondent": {{rootResponse.percentage_tools_and_equipment}},
+        "average": {{>get_average aggregation="tools_and_equipment_stats.avg" income_band=rootResponse.income_band}},
+        "title": "Tools and equipment",
+        "icon": "tools"
+      },
+      "data": {
+        "respondent": {{rootResponse.percentage_content_marketing_and_data}},
+        "average": {{>get_average aggregation="content_marketing_and_data_stats.avg" income_band=rootResponse.income_band}},
+        "title": "Content, marketing and data",
+        "icon": "leadership"
+      },
+      "cyber": {
+        "respondent": {{rootResponse.percentage_cyber_resilience}},
+        "average": {{>get_average aggregation="cyber_resilience_stats.avg" income_band=rootResponse.income_band}},
+        "title": "Cyber resilience",
+        "icon": "resilience"
+      }
+      {{#compare @root.data.currentSite.name "housing" ~}},
+      "tec": {
+        "respondent": {{rootResponse.percentage_tec}},
+        "average": {{>get_average aggregation="tec_stats.avg" income_band=rootResponse.income_band}},
+        "title": "Technology Enabled Care",
+        "icon": "tools"
+      }
+      {{/compare ~}}
+    },
+    "totalRespondents": {{default (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count") ""}},
+    {{#each @root.context.metaData.areas ~}}
+    {{#compare slug rootResponse.area ~}}
+    "whereEventual": "{{{long}}}",
+    {{/compare ~}}
+    {{/each ~}}
+    "where": "{{#compare rootResponse.area "scotland"}}Scotland{{else}}the UK{{/compare}}"
+  }
+  {{else}}
   {
     "overall": {
       "respondent": {{>to_percentage
           arr=(concat query.s1 "," query.s2 "," query.s3 "," query.s4)
           score=(sumArray (split (concat query.s1 "," query.s2 "," query.s3 "," query.s4) ","))
           lower=-18 upper=136~}},
-      "average": {{>get_average aggregation="total_stats.avg"}}
+      "average": {{>get_average aggregation="total_stats.avg" income_band=query.income_band}}
     },
     "sections": {
       "leadership": {
         "respondent": {{>to_percentage score=query.s1 lower=-4 upper=20}},
-        "average": {{>get_average aggregation="leadership_culture_and_skills_stats.avg"}},
+        "average": {{>get_average aggregation="leadership_culture_and_skills_stats.avg" income_band=query.income_band}},
         "title": "Leadership, culture and skills",
         "icon": "leadership"
       },
       "tools": {
         "respondent": {{>to_percentage score=query.s2 lower=-2 upper=35}},
-        "average": {{>get_average aggregation="tools_and_equipment_stats.avg"}},
+        "average": {{>get_average aggregation="tools_and_equipment_stats.avg" income_band=query.income_band}},
         "title": "Tools and equipment",
         "icon": "tools"
       },
       "data": {
         "respondent": {{>to_percentage score=query.s3 lower=-10 upper=66}},
-        "average": {{>get_average aggregation="content_marketing_and_data_stats.avg"}},
+        "average": {{>get_average aggregation="content_marketing_and_data_stats.avg" income_band=query.income_band}},
         "title": "Content, marketing and data",
         "icon": "leadership"
       },
       "cyber": {
         "respondent": {{>to_percentage score=query.s4 lower=-2 upper=15}},
-        "average": {{>get_average aggregation="cyber_resilience_stats.avg"}},
+        "average": {{>get_average aggregation="cyber_resilience_stats.avg" income_band=query.income_band}},
         "title": "Cyber resilience",
         "icon": "resilience"
       }
@@ -57,4 +107,5 @@
     {{/each ~}}
     "where": "{{#compare @root.request.params.query.area "scotland"}}Scotland{{else}}the UK{{/compare}}"
   }
-{{/withExtend}}
+  {{/if ~}}
+{{/withExtend ~}}

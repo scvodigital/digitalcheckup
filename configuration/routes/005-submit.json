@@ -10,7 +10,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": "{{moment null 'X'}}-{{hash @root.request.body.email}}",
+        "template": "{{hash (concat (moment null 'X') '-' (hash @root.request.body.email))}}",
         "output": "data"
       }
     },
@@ -19,7 +19,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.checkup_get-scores",
+        "template": ">context.metaData.handlebars.templates.checkup_scores_gather",
         "output": "data",
         "parseJson": true
       }
@@ -29,7 +29,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.checkup_calculate-scores",
+        "template": ">context.metaData.handlebars.templates.checkup_scores_calculate",
         "output": "data",
         "parseJson": true
       }

@@ -39,6 +39,11 @@
         "field": "percentage_tools_and_equipment"
       }
     },
+    "tec_stats": {
+      "extended_stats": {
+        "field": "percentage_tec"
+      }
+    },
     "grouped_by_income_band": {
       "terms": {
         "field": "income_band"
@@ -67,6 +72,11 @@
         "tools_and_equipment_stats": {
           "extended_stats": {
             "field": "percentage_tools_and_equipment"
+          }
+        },
+        "tec_stats": {
+          "extended_stats": {
+            "field": "percentage_tec"
           }
         }
       }

@@ -12,8 +12,8 @@
       "query": {
         "bool": {
           "must_not": [
-            {{#if @root.request.params.query.topic ~}}
-            {{#switch @root.request.params.query.topic ~}}
+            {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
+            {{#switch (default @root.data.rootResponse.topic @root.request.params.query.topic) ~}}
             {{#case "leadership" ~}}
             {
               "terms": {
@@ -32,6 +32,13 @@
               }
             },
             {{/case ~}}
+            {{#case "tec" ~}}
+            {
+              "term": {
+                "post_tags_slug": "technology-enabled-care"
+              }
+            },
+            {{/case ~}}
             {{#case "data" ~}}
             {
               "term": {
@@ -47,7 +54,7 @@
             },
             {{/case ~}}
             {{/switch ~}}
-            {{/if ~}}
+            {{/ifAny ~}}
             {
               "term": {
                 "categories_slug": "test"
@@ -94,6 +101,15 @@
           },
           "random_score": {},
           "weight": {{subtract 100 @root.data.results.sections.tools.respondent}}
+        },
+        {
+          "filter": {
+            "term": {
+              "post_tags_slug": "technology-enabled-care"
+            }
+          },
+          "random_score": {},
+          "weight": {{subtract 100 @root.data.results.sections.tec.respondent}}
         },
         {
           "filter": {
