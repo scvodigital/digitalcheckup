@@ -54,7 +54,7 @@
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
               <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-text-field--disabled{{/if}}" data-mdc-auto-init="MDCTextField">
-                <input type="text" id="web_organisation" name="answers-web_organisation" class="mdc-text-field__input mdc-text-field--fullwidth"data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} disabled value="{{@root.data.rootResponse.organisation}}" {{else}} value="" {{/if}}/>
+                <input type="text" id="web_organisation" name="answers-web_organisation" class="mdc-text-field__input mdc-text-field--fullwidth" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} disabled value="{{@root.data.rootResponse.organisation}}" {{else}} value="" {{/if}}/>
                 <label class="mdc-floating-label" for="web_organisation">
                   Your organisation name
                 </label>
@@ -62,7 +62,7 @@
               </div>
               {{#if @root.request.body.answers-sid ~}}
               <div class="mdc-text-field-helper-line sharing-info">
-                <div class="mdc-text-field-helper-text mdc-typography--caption">You accessed this checkup via a sharing link from {{@root.data.rootResponse.name}}. Your scores will be shown on a combined results page.</div>
+                <div class="mdc-text-field-helper-text mdc-typography--caption">You accessed this checkup via a sharing link from {{{@root.data.rootResponse.name}}}. Your scores will be shown on a combined results page.</div>
               </div>
               {{/if ~}}
             </div>
