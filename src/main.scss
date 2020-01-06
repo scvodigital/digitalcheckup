@@ -469,6 +469,17 @@ h4,
   }
 }
 
+.sharing-info {
+  border: 1px solid $mdc-theme-orange;
+  background-color: lighten($mdc-theme-orange, 40%);
+  padding: 6px 16px 8px;
+  border-radius: $border-radius;
+  .mdc-text-field-helper-text {
+    color: black !important;
+    opacity: 1;
+  }
+}
+
 .result {
   .score {
     font-size: 4rem;
@@ -618,6 +629,11 @@ footer.mdc-layout__footer {
     }
     .brand-logo {
       display: inline-block;
+      vertical-align: top;
+    }
+    .brand-logo.r-margin-full img {
+      height: 53px;
+      width: auto;
     }
   }
 }

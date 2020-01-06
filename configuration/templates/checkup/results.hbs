@@ -36,7 +36,9 @@
                   {{@root.data.results.overall.average}}%
                   {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
                     <span class="mdc-typography--body2">
-                      (compared with {{@root.data.results.totalRespondents}} organisations across
+                      (compared with
+                      {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
+                      based in 
                       {{@root.data.results.where}}
                       in the same income bracket)
                     </span>

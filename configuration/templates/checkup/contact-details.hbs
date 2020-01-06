@@ -1,5 +1,6 @@
 <form action="/checkup/confirmation" method="post" class="checkup-section b-padding-full" id="checkup-details">
   {{> checkup_answers section=@root.request.body.answer-section}}
+  <input type="hidden" name="answers-site" value="{{@root.data.currentSite.name}}" />
   <input type="hidden" name="answer-section" value="contact-details" />
   <div class="checkup-section-header b-padding-full v-margin-full">
     <div class="container-fluid">
@@ -60,8 +61,8 @@
                 <div class="mdc-line-ripple"></div>
               </div>
               {{#if @root.request.body.answers-sid ~}}
-              <div class="mdc-text-field-helper-line">
-                <div class="mdc-text-field-helper-text" style="opacity:1">You accessed this checkup via a sharing link from {{@root.data.rootResponse.name}}. Your scores will be shown on a combined results page.</div>
+              <div class="mdc-text-field-helper-line sharing-info">
+                <div class="mdc-text-field-helper-text mdc-typography--caption">You accessed this checkup via a sharing link from {{@root.data.rootResponse.name}}. Your scores will be shown on a combined results page.</div>
               </div>
               {{/if ~}}
             </div>
