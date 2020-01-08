@@ -13,8 +13,8 @@
   {{#if answers-organisation-details-income_band}}"income_band" : {{{safeStringify answers-organisation-details-income_band}}},{{/if}}
   {{#if answers-organisation-details-topic}}"topic" : {{{safeStringify answers-organisation-details-topic}}},{{/if}}
   {{#if answers-next_project}}"next_project" : {{{safeStringify answers-next_project}}},{{/if}}
-  "barriers" : {{{safeStringify answers-barriers}}},
-  "support" : {{{safeStringify answers-support}}},
+  {{#if answers-barriers}}"barriers" : {{{safeStringify answers-barriers}}},{{/if}}
+  {{#if answers-support}}"support" : {{#compare answers-support "Yes please"}}true{{else}}false{{/compare}},{{/if}}
   {{#each (filter (keyValue @root.request.body) "key" "testIn" "answers-section-") ~}}
   {{{safeStringify (replace key 'answers-' '')}}}: {{{safeStringify value}}},
   {{/each ~}}
