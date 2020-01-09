@@ -3,15 +3,13 @@
   "query": {
     "bool": {
       "filter": [
-        {{#if @root.request.params.query.area ~}}
-        {{#compare @root.request.params.query.area "scotland" ~}}
+        {{#ifAny @root.request.params.query.area @root.data.rootResponse.area ~}}
         {
           "term": {
-            "area": "{{@root.request.params.query.area}}"
+            "area": "{{default @root.request.params.query.area @root.data.rootResponse.area}}"
           }
         },
-        {{/compare ~}}
-        {{/if ~}}
+        {{/ifAny ~}}
         {
           "term": {
             "site": "{{@root.data.currentSite.name}}"

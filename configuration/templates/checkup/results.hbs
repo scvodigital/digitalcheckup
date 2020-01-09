@@ -28,6 +28,7 @@
                   {{@root.data.results.overall.respondent}}%
                 </div>
               </div>
+              {{#compare @root.data.additionalResponses.hits.total "===" 0 ~}}
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone result result-average">
                 <div class="mdc-typography--headline6">
                   Average score
@@ -38,13 +39,47 @@
                     <span class="mdc-typography--body2">
                       (compared with
                       {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
-                      based in 
+                      across
                       {{@root.data.results.where}}
                       in the same income bracket)
                     </span>
                   {{/compare ~}}
                 </div>
               </div>
+              {{else}}
+              {{#with @root.data.results.overall ~}}
+              {{#if shared_1_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_1_name}}}
+                </div>
+                <div class="score score-respondent">
+                  {{shared_1_percentage}}%
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_2_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_2_name}}}
+                </div>
+                <div class="score score-respondent">
+                  {{shared_2_percentage}}%
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_3_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_3_name}}}
+                </div>
+                <div class="score score-respondent">
+                  {{shared_4_percentage}}%
+                </div>
+              </div>
+              {{/if ~}}
+              {{/with ~}}
+              {{/compare ~}}
             </div>
           </div>
 
@@ -64,7 +99,21 @@
                   <div class="key">
                     <ul>
                       <li class="key-your">Your scores</li>
+                      {{#compare @root.data.additionalResponses.hits.total "===" 0 ~}}
                       <li class="key-average">Average scores</li>
+                      {{else}}
+                      {{#with @root.data.results.overall ~}}
+                      {{#if shared_1_name ~}}
+                      <li class="key-shared-1">{{{shared_1_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_2_name ~}}
+                      <li class="key-shared-2">{{{shared_2_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_3_name ~}}
+                      <li class="key-shared-3">{{{shared_3_name}}}</li>
+                      {{/if ~}}
+                      {{/with ~}}
+                      {{/compare ~}}
                     </ul>
                   </div>
 
@@ -75,9 +124,27 @@
                         <span class="score score-respondent">
                           {{respondent}}%
                         </span>
+                        {{#compare @root.data.additionalResponses.hits.total "===" 0 ~}}
                         <span class="score">
                           {{average}}%
                         </span>
+                        {{else}}
+                        {{#if shared_1_percentage ~}}
+                        <span class="score score-shared-1">
+                          {{shared_1_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_2_percentage ~}}
+                        <span class="score score-shared-2">
+                          {{shared_2_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_3_percentage ~}}
+                        <span class="score score-shared-3">
+                          {{shared_3_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{/compare ~}}
                       </div>
                     </div>
                   {{/each ~}}
@@ -177,9 +244,11 @@
                     <div class="mdc-typography--body1">
                       You scored {{respondent}}% - the average is {{average}}%
                       {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
-                        for {{@root.data.results.totalRespondents}} other organisations across
-                        {{@root.data.results.where}}
-                        in the same income bracket
+                      for
+                      {{inflect @root.data.results.totalRespondents (concat "other " @root.data.currentSite.for_singular) (concat "other " @root.data.currentSite.for_plural) true}}
+                      across
+                      {{@root.data.results.where}}
+                      in the same income bracket
                       {{/compare ~}}
                     </div>
                   {{/if ~}}
@@ -448,6 +517,7 @@ height = Math.min(width+90, window.innerHeight - margin.top - margin.bottom - 20
 //////////////////////////////////////////////////////////////
 
 var data = [
+  {{#compare @root.data.additionalResponses.hits.total "===" 0 ~}}
   [//Average scores
     {
       axis:"Overall",
@@ -475,7 +545,100 @@ var data = [
       axis:"Cyber",
       value:{{@root.data.results.sections.cyber.average}}/100
     }
-  ],[//Your scores
+  ],
+  {{else}}
+  {{#if @root.data.results.overall.shared_1_percentage ~}}
+  [//Shared 1 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_1_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_1_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_1_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_1_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_1_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_1_percentage}}/100
+    }
+  ],
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_2_percentage ~}}
+  [//Shared 2 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_2_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_2_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_2_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_2_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_2_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_2_percentage}}/100
+    }
+  ],
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_3_percentage ~}}
+  [//Shared 3 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_3_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_3_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_3_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_3_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_3_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_3_percentage}}/100
+    }
+  ],
+  {{/if ~}}
+  {{/compare ~}}
+  [//Your scores
     {
       axis:"Overall",
       value:{{@root.data.results.overall.respondent}}/100
@@ -509,9 +672,9 @@ var data = [
 //////////////////////////////////////////////////////////////
 
 var color = d3.scale.ordinal()
-.range(["#444444","#1976D2"]);
+.range(["#444444","#1377CD"]);
 var dotColor = d3.scale.ordinal()
-.range(["#ffffff","#1976D2"]);
+.range(["#ffffff","#1377CD"]);
 var fillOpacity = d3.scale.ordinal()
 .range(["0","0.1"]);
 var strokeStyle = d3.scale.ordinal()

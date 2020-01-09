@@ -182,6 +182,15 @@ h4,
 .score-respondent {
   color: $mdc-theme-blue !important;
 }
+.score-shared-1 {
+  color: $mdc-theme-purple !important;
+}
+.score-shared-2 {
+  color: $mdc-theme-green !important;
+}
+.score-shared-3 {
+  color: $mdc-theme-pink !important;
+}
 .mdc-typography--headline6 {
   font-weight: 400;
 }
@@ -507,6 +516,18 @@ h4,
     li.key-average::before {
       content: "\25CC";
       color: #444444;
+    }
+    li.key-shared-1::before {
+      content: "\25CF";
+      color: $mdc-theme-purple;
+    }
+    li.key-shared-2::before {
+      content: "\25CF";
+      color: $mdc-theme-green;
+    }
+    li.key-shared-3::before {
+      content: "\25CF";
+      color: $mdc-theme-pink;
     }
   }
 }
