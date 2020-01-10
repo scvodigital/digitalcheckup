@@ -17,7 +17,7 @@
   query=@root.request.params.query
   rootResponse=@root.data.rootResponse
   additionalResponses=@root.data.additionalResponses.hits.hits ~}}
-  {{#if rootResponse ~}}
+  {{#if query.rid ~}}
   {
     "overall": {
       "respondent": {{rootResponse.percentage_total}},
@@ -123,11 +123,11 @@
     },
     "totalRespondents": {{default (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" query.income_band)) "doc_count") ""}},
     {{#each @root.context.metaData.areas ~}}
-    {{#compare slug @root.request.params.query.area ~}}
+    {{#compare slug query.area ~}}
     "whereEventual": "{{{long}}}",
     {{/compare ~}}
     {{/each ~}}
-    "where": "{{#compare @root.request.params.query.area "scotland"}}Scotland{{else}}the UK{{/compare}}"
+    "where": "{{#compare query.area "scotland"}}Scotland{{else}}the UK{{/compare}}"
   }
   {{/if ~}}
 {{/withExtend ~}}

@@ -6,7 +6,7 @@
         {{#ifAny @root.request.params.query.area @root.data.rootResponse.area ~}}
         {
           "term": {
-            "area": "{{default @root.request.params.query.area @root.data.rootResponse.area}}"
+            "area": "{{default @root.data.rootResponse.area @root.request.params.query.area}}"
           }
         },
         {{/ifAny ~}}

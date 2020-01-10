@@ -102,6 +102,7 @@
           "random_score": {},
           "weight": {{subtract 100 @root.data.results.sections.tools.respondent}}
         },
+        {{#if @root.data.results.sections.tec ~}}
         {
           "filter": {
             "term": {
@@ -111,6 +112,7 @@
           "random_score": {},
           "weight": {{subtract 100 @root.data.results.sections.tec.respondent}}
         },
+        {{/if ~}}
         {
           "filter": {
             "term": {
