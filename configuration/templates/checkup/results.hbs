@@ -161,10 +161,12 @@
                   </div>
                   {{/compare ~}}
                   <div class="cta v-padding-full">
-                    <a href="/checkup?sid={{@root.request.params.query.rid}}" class="mdc-button mdc-button--raised">
-                      <span class="fas fa-share fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
-                      Share with colleagues
-                    </a>
+                    <div class="mdc-text-field mdc-text-field--with-trailing-icon">
+                      <input type="text" id="share-url" class="mdc-text-field__input" value="{{@root.request.fullUrl}}" readonly>
+                      <label for="share-url" class="mdc-floating-label">Share with colleagues</label>
+                      <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button"></i>
+                      <div class="mdc-line-ripple"></div>
+                    </div>
                   </div>
                   {{/ifAny ~}}
                 </div>
@@ -707,4 +709,13 @@ var radarChartOptions = {
 };
 //Call function to draw the Radar chart
 RadarChart(".radarChart", data, radarChartOptions);
+</script>
+
+<script>
+  //Share code
+  document.querySelector('#share-button').addEventListener('click', function() {
+    var textbox = document.querySelector('#share-url');
+    textbox.select();
+    document.execCommand('copy');
+  });
 </script>
