@@ -257,7 +257,7 @@
 
       <div class="v-padding-full">
         <div class="v-margin-full b-padding-full">
-          {{#ifAll (compare @root.data.currentSite.name "default") (compare @root.request.params.query.area "scotland") ~}}
+          {{#ifAll (compare @root.data.currentSite.name "default") (compare (default @root.request.params.query.area @root.data.rootResponse.area) "scotland") ~}}
             <h3 class="mdc-typography--headline4 v-margin b-padding-full">
               We would love to discuss your results and next steps
             </h3>
