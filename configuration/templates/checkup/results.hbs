@@ -321,6 +321,7 @@
                     {{{title}}}
                   </div>
                   {{#if respondent ~}}
+                  {{#compare @root.data.additionalResponses.hits.total 0 ~}}
                     <div class="mdc-typography--body1">
                       You scored {{respondent}}% - the average is {{average}}%
                       {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
@@ -331,6 +332,7 @@
                       in the same income bracket
                       {{/compare ~}}
                     </div>
+                  {{/compare ~}}
                   {{/if ~}}
                 </div>
               </div>
