@@ -53,7 +53,7 @@
                 <div class="mdc-typography--headline6">
                   {{{shared_1_name}}}
                 </div>
-                <div class="score score-respondent">
+                <div class="score score-shared-1">
                   {{shared_1_percentage}}%
                 </div>
               </div>
@@ -63,7 +63,7 @@
                 <div class="mdc-typography--headline6">
                   {{{shared_2_name}}}
                 </div>
-                <div class="score score-respondent">
+                <div class="score score-shared-2">
                   {{shared_2_percentage}}%
                 </div>
               </div>
@@ -73,8 +73,48 @@
                 <div class="mdc-typography--headline6">
                   {{{shared_3_name}}}
                 </div>
-                <div class="score score-respondent">
+                <div class="score score-shared-3">
+                  {{shared_3_percentage}}%
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_4_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_4_name}}}
+                </div>
+                <div class="score score-shared-4">
                   {{shared_4_percentage}}%
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_5_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_5_name}}}
+                </div>
+                <div class="score score-shared-5">
+                  {{shared_5_percentage}}%
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_6_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_6_name}}}
+                </div>
+                <div class="score score-shared-6">
+                  {{shared_6_percentage}}%
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_7_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_7_name}}}
+                </div>
+                <div class="score score-shared-7">
+                  {{shared_7_percentage}}%
                 </div>
               </div>
               {{/if ~}}
@@ -114,6 +154,18 @@
                       {{#if shared_3_name ~}}
                       <li class="key-shared-3">{{{shared_3_name}}}</li>
                       {{/if ~}}
+                      {{#if shared_4_name ~}}
+                      <li class="key-shared-4">{{{shared_4_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_5_name ~}}
+                      <li class="key-shared-5">{{{shared_5_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_6_name ~}}
+                      <li class="key-shared-6">{{{shared_6_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_7_name ~}}
+                      <li class="key-shared-7">{{{shared_7_name}}}</li>
+                      {{/if ~}}
                       {{/with ~}}
                       {{/compare ~}}
                     </ul>
@@ -146,6 +198,26 @@
                           {{shared_3_percentage}}%
                         </span>
                         {{/if ~}}
+                        {{#if shared_4_percentage ~}}
+                        <span class="score score-shared-4">
+                          {{shared_4_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_5_percentage ~}}
+                        <span class="score score-shared-5">
+                          {{shared_5_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_6_percentage ~}}
+                        <span class="score score-shared-6">
+                          {{shared_6_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_7_percentage ~}}
+                        <span class="score score-shared-7">
+                          {{shared_7_percentage}}%
+                        </span>
+                        {{/if ~}}
                         {{/compare ~}}
                       </div>
                     </div>
@@ -164,7 +236,7 @@
                     <div class="mdc-text-field mdc-text-field--with-trailing-icon">
                       <input type="text" id="share-url" class="mdc-text-field__input" value="https://{{@root.request.url.host}}/checkup?sid={{@root.request.params.query.rid}}" readonly>
                       <label for="share-url" class="mdc-floating-label mdc-floating-label--float-above">Share with colleagues</label>
-                      <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button"></i>
+                      <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button" title="Copy URL"></i>
                       <div class="mdc-line-ripple"></div>
                     </div>
                   </div>
@@ -666,6 +738,126 @@ var data = [
     {
       axis:"Cyber",
       value:{{@root.data.results.sections.cyber.shared_3_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_4_percentage ~}}
+  ,[//Shared 4 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_4_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_4_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_4_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_4_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_4_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_4_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_5_percentage ~}}
+  ,[//Shared 5 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_5_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_5_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_5_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_5_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_5_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_5_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_6_percentage ~}}
+  ,[//Shared 6 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_6_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_6_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_6_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_6_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_6_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_6_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_7_percentage ~}}
+  ,[//Shared 7 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_7_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_7_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_7_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_7_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_7_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_7_percentage}}/100
     }
   ]
   {{/if ~}}

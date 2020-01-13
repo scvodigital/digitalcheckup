@@ -27,6 +27,14 @@
       {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_total 0}},{{/if}}
       {{#if additionalResponses.[2]}}"shared_3_name": {{{safeStringify additionalResponses.[2]._source.name}}},{{/if}}
       {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_total 0}},{{/if}}
+      {{#if additionalResponses.[3]}}"shared_4_name": {{{safeStringify additionalResponses.[3]._source.name}}},{{/if}}
+      {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_total 0}},{{/if}}
+      {{#if additionalResponses.[4]}}"shared_5_name": {{{safeStringify additionalResponses.[4]._source.name}}},{{/if}}
+      {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_total 0}},{{/if}}
+      {{#if additionalResponses.[5]}}"shared_6_name": {{{safeStringify additionalResponses.[5]._source.name}}},{{/if}}
+      {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_total 0}},{{/if}}
+      {{#if additionalResponses.[6]}}"shared_7_name": {{{safeStringify additionalResponses.[6]._source.name}}},{{/if}}
+      {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_total 0}},{{/if}}
       "average": {{>get_average aggregation="total_stats.avg" income_band=rootResponse.income_band}}
     },
     "sections": {
@@ -35,6 +43,10 @@
         {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
         {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
         {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
+        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
+        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
+        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
+        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
         "average": {{>get_average aggregation="leadership_culture_and_skills_stats.avg" income_band=rootResponse.income_band}},
         "title": "Leadership, culture and skills",
         "icon": "leadership"
@@ -44,6 +56,10 @@
         {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_tools_and_equipment 0}},{{/if}}
         {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_tools_and_equipment 0}},{{/if}}
         {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_tools_and_equipment 0}},{{/if}}
+        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_tools_and_equipment 0}},{{/if}}
+        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_tools_and_equipment 0}},{{/if}}
+        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_tools_and_equipment 0}},{{/if}}
+        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_tools_and_equipment 0}},{{/if}}
         "average": {{>get_average aggregation="tools_and_equipment_stats.avg" income_band=rootResponse.income_band}},
         "title": "Tools and equipment",
         "icon": "tools"
@@ -53,6 +69,10 @@
         {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_content_marketing_and_data 0}},{{/if}}
         {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_content_marketing_and_data 0}},{{/if}}
         {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_content_marketing_and_data 0}},{{/if}}
+        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_content_marketing_and_data 0}},{{/if}}
+        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_content_marketing_and_data 0}},{{/if}}
+        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_content_marketing_and_data 0}},{{/if}}
+        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_content_marketing_and_data 0}},{{/if}}
         "average": {{>get_average aggregation="content_marketing_and_data_stats.avg" income_band=rootResponse.income_band}},
         "title": "Content, marketing and data",
         "icon": "leadership"
@@ -62,6 +82,10 @@
         {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_cyber_resilience 0}},{{/if}}
         {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_cyber_resilience 0}},{{/if}}
         {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_cyber_resilience 0}},{{/if}}
+        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_cyber_resilience 0}},{{/if}}
+        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_cyber_resilience 0}},{{/if}}
+        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_cyber_resilience 0}},{{/if}}
+        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_cyber_resilience 0}},{{/if}}
         "average": {{>get_average aggregation="cyber_resilience_stats.avg" income_band=rootResponse.income_band}},
         "title": "Cyber resilience",
         "icon": "resilience"
@@ -72,6 +96,10 @@
         {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_tec 0}},{{/if}}
         {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_tec 0 0}},{{/if}}
         {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_tec 0}},{{/if}}
+        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_tec 0}},{{/if}}
+        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_tec 0}},{{/if}}
+        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_tec 0}},{{/if}}
+        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_tec 0}},{{/if}}
         "average": {{>get_average aggregation="tec_stats.avg" income_band=rootResponse.income_band}},
         "title": "Technology Enabled Care",
         "icon": "tools"
