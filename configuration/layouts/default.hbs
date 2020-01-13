@@ -16,7 +16,7 @@
   ███████║╚██████╗ ╚████╔╝ ╚██████╔╝ ██╔╝  ██║  ██║╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
   ╚══════╝ ╚═════╝  ╚═══╝   ╚═════╝ ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
 
-  - - >
+  -->
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{~>asset_url url='images/icons/apple-touch-icon.png'~}}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{~>asset_url url='images/icons/favicon-32x32.png'~}}">
@@ -28,7 +28,7 @@
   <meta name="msapplication-config" content="{{~>asset_url url='images/icons/browserconfig.xml'~}}">
   <meta name="theme-color" content="#244B5A">
 
-  <!- - -->
+  <!-- - ->
 
   <link rel="apple-touch-icon" sizes="57x57" href="{{~>asset_url url='images/icons/apple-icon-57x57.png'~}}">
   <link rel="apple-touch-icon" sizes="60x60" href="{{~>asset_url url='images/icons/apple-icon-60x60.png'~}}">
@@ -49,7 +49,7 @@
   <meta name="msapplication-TileImage" content="{{~>asset_url url='images/icons/ms-icon-144x144.png'~}}">
   <meta name="theme-color" content="#C2185B">
 
-  <!-- <link rel="canonical" href="https://digitalcheckup.com{{request.params.uri.pathname}}" /> -->
+  <!- - <link rel="canonical" href="https://digitalcheckup.com{{request.params.uri.pathname}}" /> -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3467930-34"></script>
   <script>
   window.dataLayer = window.dataLayer || [];
@@ -213,7 +213,7 @@
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone about">
                   <h3>About</h3>
                   <p>
-                    <strong>{{@root.data.currentSite.title}}</strong> is run by the <a href="https://scvo.org">Scottish Council for Voluntary Organisations</a> in partnership with the <a href="{{@root.data.currentSite.partner.url}}">{{@root.data.currentSite.partner.title}}</a>. <a href="/about">Find out more</a>
+                    {{@root.data.currentSite.title}} is run by the <a href="https://scvo.org">Scottish Council for Voluntary Organisations</a> in partnership with the <a href="{{@root.data.currentSite.partner.url}}">{{@root.data.currentSite.partner.title}}</a>. <a href="/about">Find out more</a>
                   </p>
                 </div>
               </div>
