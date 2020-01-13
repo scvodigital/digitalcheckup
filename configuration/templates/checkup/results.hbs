@@ -89,11 +89,13 @@
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                   <div class="radarChart"></div>
 
+                  {{#unless @root.data.results.overall.shared_1_percentage ~}}
                   {{#compare @root.data.results.overall.respondent ">" @root.data.results.overall.average ~}}
                     <div class="t-margin-full t-padding-full mdc-typography--headline5">
                       Congratulations for scoring above the average but please don't let that make you complacent.
                     </div>
                   {{/compare ~}}
+                  {{/unless ~}}
                 </div>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                   <div class="key">
