@@ -20,7 +20,7 @@
   {{/each ~}}
   "score_leadership_culture_and_skills": {{{safeStringify (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-1-") "value"))}}},
   "score_tools_and_equipment": {{{safeStringify (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-2-") "value"))}}},
-  "score_content_marketing_and_data": {{{safeStringify (add (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-3-") "value")) (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-3-") "value")))}}},
+  "score_content_marketing_and_data": {{{safeStringify (add (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-3-") "value")) (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-4-") "value")))}}},
   "score_cyber_resilience": {{{safeStringify (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-5-") "value"))}}},
   {{#compare @root.data.currentSite.name "housing" ~}}
   "score_tec": {{{safeStringify (sumArray (map (filter (keyValue @root.data.scoresCombined) "key" "testIn" "scores-6-") "value"))}}},
