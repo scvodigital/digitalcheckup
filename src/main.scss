@@ -405,12 +405,13 @@ h4,
     border-left-color: $mdc-theme-purple;
   }
 }
+.checkup-topic-resources-leadership .mdc-card__title,
 .checkup-topic-header-leadership {
   background-color: $mdc-theme-purple;
 }
-.checkup-topic-resources-leadership a {
-  color: $mdc-theme-purple;
-}
+// .checkup-topic-resources-leadership a {
+//   color: $mdc-theme-purple;
+// }
 #checkup-section-2,
 #checkup-section-6 {
   .checkup-section-header,
