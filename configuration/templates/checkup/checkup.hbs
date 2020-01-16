@@ -1,5 +1,12 @@
 {{#if @root.request.params.section ~}}
 {{> checkup_section section=@root.request.params.section}}
 {{else}}
+{{#ifAll @root.request.params.query.sid @root.data.rootResponse.organisation @root.data.rootResponse.name ~}}
+<div class="container-fluid" style="margin-top:3rem;">
+  <div class="container-content">
+    Welcome to the housing digital checkup for {{@root.data.rootResponse.organisation}}. Please complete this survey to see your results compared to answers from {{@root.data.rootResponse.name}}.
+  </div>
+</div>
+{{/ifAll ~}}
 {{> checkup_section section="section-1"}}
 {{/if ~}}
