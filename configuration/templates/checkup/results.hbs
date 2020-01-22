@@ -45,7 +45,8 @@
                       {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
                       across
                       {{@root.data.results.where}}
-                      in the same income bracket)
+                      in the same
+                      {{#compare @root.data.currentSite.name "housing"}}turnover range{{else}}income bracket{{/compare }})
                     </span>
                   {{/compare ~}}
                 </div>
@@ -332,7 +333,8 @@
                       {{inflect @root.data.results.totalRespondents (concat "other " @root.data.currentSite.for_singular) (concat "other " @root.data.currentSite.for_plural) true}}
                       across
                       {{@root.data.results.where}}
-                      in the same income bracket
+                      in the same
+                      {{#compare @root.data.currentSite.name "housing"}}turnover range{{else}}income bracket{{/compare }})
                       {{/compare ~}}
                     </div>
                   {{/compare ~}}
