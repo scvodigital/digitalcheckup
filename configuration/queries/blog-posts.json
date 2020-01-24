@@ -29,7 +29,7 @@
         },
         {
           "terms": {
-            "categories_slug": [
+            "post_tags_slug": [
               "scvo",
               "goodhq"
             ]
@@ -39,7 +39,7 @@
       "must": [
         {
           "terms": {
-            "categories_slug": [
+            "post_tags_slug": [
               "digital-evolution"
             ]
           }

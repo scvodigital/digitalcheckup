@@ -2,6 +2,15 @@
   "size": 0,
   "query": {
     "bool": {
+      {{#compare @root.data.additionalResponses.hits.total ">" 0 ~}}
+      "must": [
+        {
+          "term": {
+            "sid": "{{@root.request.params.query.rid}}"
+          }
+        }
+      ],
+      {{/compare ~}}
       "filter": [
         {{#ifAny @root.request.params.query.area @root.data.rootResponse.area ~}}
         {

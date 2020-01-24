@@ -54,8 +54,16 @@
         {{/switch ~}}
         {{/ifAny ~}}
         {
-          "term": {
-            "categories_slug": "digital-evolution"
+          "terms": {
+            "post_tags_slug": [
+              "content-marketing-data",
+              "cyber-resilience",
+              "tools-equipment",
+              "leadership",
+              "culture",
+              "skills",
+              "technology-enabled-care"
+            ]
           }
         }
       ]

@@ -22,32 +22,38 @@
             <div class="mdc-layout-grid__inner">
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
                 <div class="mdc-typography--headline6">
-                  {{#compare @root.data.additionalResponses.hits.total 0 ~}}
+                  {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
                   Your overall score
                   {{else}}
                   {{{@root.data.rootResponse.name}}}
-                  {{/compare ~}}
+                  {{/ifAny ~}}
                 </div>
                 <div class="score score-respondent">
                   {{@root.data.results.overall.respondent}}%
                 </div>
               </div>
-              {{#compare @root.data.additionalResponses.hits.total 0 ~}}
+              {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone result result-average">
                 <div class="mdc-typography--headline6">
                   Average score
                 </div>
                 <div class="score">
                   {{@root.data.results.overall.average}}%
+                  {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
+                  <span class="mdc-typography--body2">
+                    (compared with your {{@root.data.additionalResponses.hits.total}} colleagues who have also completed the checkup via a sharing link)
+                  </span>
+                  {{else}}
                   {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
-                    <span class="mdc-typography--body2">
-                      (compared with
-                      {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
-                      across
-                      {{@root.data.results.where}}
-                      in the same
-                      {{#compare @root.data.currentSite.name "housing"}}turnover range{{else}}income bracket{{/compare }})
-                    </span>
+                  <span class="mdc-typography--body2">
+                    (compared with
+                    {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
+                    across
+                    {{@root.data.results.where}}
+                    in the same
+                    {{#compare @root.data.currentSite.name "housing"}}turnover range{{else}}income bracket{{/compare }})
+                  </span>
+                  {{/compare ~}}
                   {{/compare ~}}
                 </div>
               </div>
@@ -124,7 +130,7 @@
               </div>
               {{/if ~}}
               {{/with ~}}
-              {{/compare ~}}
+              {{/ifAny ~}}
             </div>
           </div>
 
@@ -146,7 +152,7 @@
                   <div class="key">
                     <ul>
                       <li class="key-your">Your scores</li>
-                      {{#compare @root.data.additionalResponses.hits.total 0 ~}}
+                      {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
                       <li class="key-average">Average scores</li>
                       {{else}}
                       {{#with @root.data.results.overall ~}}
@@ -172,7 +178,7 @@
                       <li class="key-shared-7">{{{shared_7_name}}}</li>
                       {{/if ~}}
                       {{/with ~}}
-                      {{/compare ~}}
+                      {{/ifAny ~}}
                     </ul>
                   </div>
 
@@ -183,7 +189,7 @@
                         <span class="score score-respondent">
                           {{respondent}}%
                         </span>
-                        {{#compare @root.data.additionalResponses.hits.total 0 ~}}
+                        {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
                         <span class="score">
                           {{average}}%
                         </span>
@@ -223,7 +229,7 @@
                           {{shared_7_percentage}}%
                         </span>
                         {{/if ~}}
-                        {{/compare ~}}
+                        {{/ifAny ~}}
                       </div>
                     </div>
                   {{/each ~}}
@@ -246,6 +252,9 @@
                       <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button" title="Copy URL"></i>
                       <div class="mdc-line-ripple"></div>
                     </div>
+                    <p class="mdc-typography--body1">
+                      Invite your colleagues to complete the checkup and see your results plotted together - a great way of comparing views on your digital maturity.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -324,17 +333,24 @@
                   </div>
                   {{#if respondent ~}}
                   {{#compare @root.data.additionalResponses.hits.total 0 ~}}
-                    <div class="mdc-typography--body1">
-                      You scored {{respondent}}% - the average is {{average}}%
-                      {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
-                      for
-                      {{inflect @root.data.results.totalRespondents (concat "other " @root.data.currentSite.for_singular) (concat "other " @root.data.currentSite.for_plural) true}}
-                      across
-                      {{@root.data.results.where}}
-                      in the same
-                      {{#compare @root.data.currentSite.name "housing"}}turnover range{{else}}income bracket{{/compare }})
-                      {{/compare ~}}
-                    </div>
+                  <div class="mdc-typography--body1">
+                    You scored {{respondent}}% - the average is {{average}}%
+                    {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
+                    for
+                    {{inflect @root.data.results.totalRespondents (concat "other " @root.data.currentSite.for_singular) (concat "other " @root.data.currentSite.for_plural) true}}
+                    across
+                    {{@root.data.results.where}}
+                    in the same
+                    {{#compare @root.data.currentSite.name "housing"}}turnover range{{else}}income bracket{{/compare}})
+                    {{/compare ~}}
+                  </div>
+                  {{else}}
+                  {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
+                  <div class="mdc-typography--body1">
+                    You scored {{respondent}}% - the average is {{average}}%
+                    (compared with your {{@root.data.additionalResponses.hits.total}} colleagues who have also completed the checkup via a sharing link)
+                  </div>
+                  {{/compare ~}}
                   {{/compare ~}}
                   {{/if ~}}
                 </div>
@@ -630,7 +646,7 @@ var data = [
       value:{{@root.data.results.sections.cyber.respondent}}/100
     }
   ]
-  {{#compare @root.data.additionalResponses.hits.total 0 ~}}
+  {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
   ,[//Average scores
     {
       axis:"Overall",
@@ -870,13 +886,13 @@ var data = [
     }
   ]
   {{/if ~}}
-  {{/compare ~}}
+  {{/ifAny ~}}
 ];
 //////////////////////////////////////////////////////////////
 //////////////////// Draw the Chart //////////////////////////
 //////////////////////////////////////////////////////////////
 
-{{#compare @root.data.additionalResponses.hits.total 0 ~}}
+{{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
 var color = d3.scale.ordinal()
 .range(["#1377CD","#444444"]);
 var dotColor = d3.scale.ordinal()
@@ -894,7 +910,7 @@ var fillOpacity = d3.scale.ordinal()
 .range(["0.1","0.1","0.1","0.1"]);
 var strokeStyle = d3.scale.ordinal()
 .range(["0","0","0","0"]);
-{{/compare ~}}
+{{/ifAny ~}}
 
 var radarChartOptions = {
   w: width,
@@ -918,5 +934,6 @@ RadarChart(".radarChart", data, radarChartOptions);
     var textbox = document.querySelector('#share-url');
     textbox.select();
     document.execCommand('copy');
+    alert("Digital Checkup sharing link copied to clipboard");
   });
 </script>
