@@ -239,7 +239,6 @@
                   {{/compare ~}}
                   {{/ifAny ~}}
 
-                  {{#compare @root.data.currentSite.name "housing" ~}}
                   <div class="cta v-padding-full">
                     <div class="mdc-text-field mdc-text-field--with-trailing-icon">
                       <input type="text" id="share-url" class="mdc-text-field__input" value="https://{{@root.request.url.host}}/checkup?sid={{@root.request.params.query.rid}}" readonly>
@@ -248,7 +247,6 @@
                       <div class="mdc-line-ripple"></div>
                     </div>
                   </div>
-                  {{/compare ~}}
                 </div>
               </div>
             </div>
