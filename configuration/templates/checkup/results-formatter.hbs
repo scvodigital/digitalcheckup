@@ -25,22 +25,22 @@
       {{#if additionalResponses.[0]}}"shared_1_date": {{{safeStringify additionalResponses.[0]._source.date_last_modified}}},{{/if}}
       {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_total 0}},{{/if}}
       {{#if additionalResponses.[1]}}"shared_2_name": {{{safeStringify additionalResponses.[1]._source.name}}},{{/if}}
-      {{#if additionalResponses.[0]}}"shared_2_date": {{{safeStringify additionalResponses.[1]._source.date_last_modified}}},{{/if}}
+      {{#if additionalResponses.[1]}}"shared_2_date": {{{safeStringify additionalResponses.[1]._source.date_last_modified}}},{{/if}}
       {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_total 0}},{{/if}}
       {{#if additionalResponses.[2]}}"shared_3_name": {{{safeStringify additionalResponses.[2]._source.name}}},{{/if}}
-      {{#if additionalResponses.[0]}}"shared_3_date": {{{safeStringify additionalResponses.[2]._source.date_last_modified}}},{{/if}}
+      {{#if additionalResponses.[2]}}"shared_3_date": {{{safeStringify additionalResponses.[2]._source.date_last_modified}}},{{/if}}
       {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_total 0}},{{/if}}
       {{#if additionalResponses.[3]}}"shared_4_name": {{{safeStringify additionalResponses.[3]._source.name}}},{{/if}}
-      {{#if additionalResponses.[0]}}"shared_4_date": {{{safeStringify additionalResponses.[3]._source.date_last_modified}}},{{/if}}
+      {{#if additionalResponses.[3]}}"shared_4_date": {{{safeStringify additionalResponses.[3]._source.date_last_modified}}},{{/if}}
       {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_total 0}},{{/if}}
       {{#if additionalResponses.[4]}}"shared_5_name": {{{safeStringify additionalResponses.[4]._source.name}}},{{/if}}
-      {{#if additionalResponses.[0]}}"shared_5_date": {{{safeStringify additionalResponses.[4]._source.date_last_modified}}},{{/if}}
+      {{#if additionalResponses.[4]}}"shared_5_date": {{{safeStringify additionalResponses.[4]._source.date_last_modified}}},{{/if}}
       {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_total 0}},{{/if}}
       {{#if additionalResponses.[5]}}"shared_6_name": {{{safeStringify additionalResponses.[5]._source.name}}},{{/if}}
-      {{#if additionalResponses.[0]}}"shared_6_date": {{{safeStringify additionalResponses.[5]._source.date_last_modified}}},{{/if}}
+      {{#if additionalResponses.[5]}}"shared_6_date": {{{safeStringify additionalResponses.[5]._source.date_last_modified}}},{{/if}}
       {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_total 0}},{{/if}}
       {{#if additionalResponses.[6]}}"shared_7_name": {{{safeStringify additionalResponses.[6]._source.name}}},{{/if}}
-      {{#if additionalResponses.[0]}}"shared_7_date": {{{safeStringify additionalResponses.[6]._source.date_last_modified}}},{{/if}}
+      {{#if additionalResponses.[6]}}"shared_7_date": {{{safeStringify additionalResponses.[6]._source.date_last_modified}}},{{/if}}
       {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_total 0}},{{/if}}
       {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
       "average": {{>get_average aggregation="total_stats.avg" income_band="0"}}
