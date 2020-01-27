@@ -31,6 +31,9 @@
                 <div class="score score-respondent">
                   {{@root.data.results.overall.respondent}}%
                 </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment @root.data.rootResponse.date_last_modified "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
               </div>
               {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone result result-average">
@@ -67,6 +70,9 @@
                 <div class="score score-shared-1">
                   {{shared_1_percentage}}%
                 </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_1_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
               </div>
               {{/if ~}}
               {{#if shared_2_percentage ~}}
@@ -76,6 +82,9 @@
                 </div>
                 <div class="score score-shared-2">
                   {{shared_2_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_2_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
                 </div>
               </div>
               {{/if ~}}
@@ -87,6 +96,9 @@
                 <div class="score score-shared-3">
                   {{shared_3_percentage}}%
                 </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_3_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
               </div>
               {{/if ~}}
               {{#if shared_4_percentage ~}}
@@ -96,6 +108,9 @@
                 </div>
                 <div class="score score-shared-4">
                   {{shared_4_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_4_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
                 </div>
               </div>
               {{/if ~}}
@@ -107,6 +122,9 @@
                 <div class="score score-shared-5">
                   {{shared_5_percentage}}%
                 </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_5_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
               </div>
               {{/if ~}}
               {{#if shared_6_percentage ~}}
@@ -117,6 +135,9 @@
                 <div class="score score-shared-6">
                   {{shared_6_percentage}}%
                 </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_6_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
               </div>
               {{/if ~}}
               {{#if shared_7_percentage ~}}
@@ -126,6 +147,9 @@
                 </div>
                 <div class="score score-shared-7">
                   {{shared_7_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_7_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
                 </div>
               </div>
               {{/if ~}}

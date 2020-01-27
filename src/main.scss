@@ -179,6 +179,17 @@ h4,
   color: $mdc-theme-mediumgrey;
   font-weight: 600;
 }
+.score {
+  margin-top: $unit/2;
+  line-height: 1;
+}
+.result {
+  .mdc-typography--caption {
+    font-size: .9rem;
+    color: lighten($mdc-theme-mediumgrey, 25%);
+    font-weight: 600;
+  }
+}
 .score-respondent {
   color: $mdc-theme-blue !important;
 }
