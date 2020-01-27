@@ -30,6 +30,9 @@
         }
       ]
     }
+  },
+  "sort": {
+    "date_last_modified": "desc"
   }
 }
 
