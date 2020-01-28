@@ -48,6 +48,9 @@
         </div>
       </div>
 
+      {{#compare @root.data.currentSite.name "housing" ~}}
+      <input type="hidden" name="answers-support" value="Yes please" />
+      {{else}}
       <div class="question-block mdc-elevation--z3">
         <div class="question">
           <h2 class="mdc-typography--headline5 question-title">Would you like additional support from a local infrastructure organisation based on your responses? *</h2>
@@ -58,6 +61,7 @@
           <li class="answer">{{> components_radio_button label="No thanks!" id="no" name="answers-support" value="No thanks"}}</li>
         </ul>
       </div>
+      {{/compare ~}}
 
       <div class="cta b-padding-full">
         <button type="submit" class="mdc-button mdc-button--raised">Submit</button>

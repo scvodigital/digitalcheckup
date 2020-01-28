@@ -756,33 +756,37 @@
     "progress": 75,
     "questions": [
       {
-        "title": "Estimated annual turnover *",
         "description": "This information enables us to compare your results to {{@root.data.currentSite.for_plural}} of a similar size. If you prefer not to submit this information, you result will be compared to the average of all {{@root.data.currentSite.for_plural}} who have completed the checkup",
         "value": "income_band",
+        {{#compare @root.data.currentSite.name "housing" ~}}
+        "title": "How much housing stock does your organisation manage? *",
         "type": "select-one",
         "options": [
-          {{#compare @root.data.currentSite.name "housing" ~}}
           {
-            "answer": "0 - £2m",
-            "value": "0m-2m"
+            "answer": "0 – 500 units",
+            "value": "0-500"
           },
           {
-            "answer": "£2m - £5m",
-            "value": "2m-5m"
+            "answer": "500 - 1,000 units",
+            "value": "500-1000"
           },
           {
-            "answer": "£5m - £10m",
-            "value": "5m-10m"
+            "answer": "1,000 – 1,500 units",
+            "value": "1000-1500"
           },
           {
-            "answer": "£10m - £20m",
-            "value": "10m-20m"
+            "answer": "1,500 – 3,000",
+            "value": "1500-3000"
           },
           {
-            "answer": "Over £20m",
-            "value": "20m+"
+            "answer": "3,000 and above",
+            "value": "3000+"
           }
-          {{else}}
+        ]
+        {{else}}
+        "title": "Estimated annual turnover *",
+        "type": "select-one",
+        "options": [
           {
             "answer": "Below £100,000",
             "value": "100000"
@@ -803,8 +807,8 @@
             "answer": "Unknown / Prefer not to say",
             "value": "0"
           }
-          {{/compare ~}}
         ]
+        {{/compare ~}}
       },
       {
         "title": "Choose your area of highest priority *",

@@ -53,8 +53,7 @@
                     {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
                     across
                     {{@root.data.results.where}}
-                    in the same
-                    {{#compare @root.data.currentSite.name "housing"}}turnover range{{else}}income bracket{{/compare }})
+                    {{#compare @root.data.currentSite.name "housing"}}of similar size{{else}}in the same income bracket{{/compare}})
                   </span>
                   {{/compare ~}}
                   {{/compare ~}}
@@ -364,8 +363,7 @@
                     {{inflect @root.data.results.totalRespondents (concat "other " @root.data.currentSite.for_singular) (concat "other " @root.data.currentSite.for_plural) true}}
                     across
                     {{@root.data.results.where}}
-                    in the same
-                    {{#compare @root.data.currentSite.name "housing"}}turnover range{{else}}income bracket{{/compare}})
+                    {{#compare @root.data.currentSite.name "housing"}}of similar size{{else}}in the same income bracket{{/compare}})
                     {{/compare ~}}
                   </div>
                   {{else}}
