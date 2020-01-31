@@ -125,9 +125,14 @@ footer.mdc-layout__footer {
   --mdc-layout-grid-gutter-phone: 0;
 }
 
+.scvo-tab-bar.mdc-top-app-bar__row {
+  height: 40px;
+}
 .scvo-link-bar {
   background-color: $gray-color;
   height: 40px;
+  padding: 0 $unit;
+  width: 100%;
   ul {
     list-style-type: none;
     margin: 0;
@@ -137,20 +142,24 @@ footer.mdc-layout__footer {
   }
   .text-link {
     display: inline-block;
+    box-sizing: border-box;
     height: 40px;
     line-height: 40px;
     border-bottom: $thick-line solid transparent;
     margin-right: $unit*(3/4);
     color: $secondary-color;
+    transition: border 0.3s;
   }
   .text-link:hover {
+    text-decoration: none;
     border-bottom: $thick-line solid $secondary-color;
   }
   .brand-logo {
-    margin-left: $unit/4;
+    // margin-left: $unit/4;
     line-height: 38px;
-    width: 90px;
+    // width: 90px;
     img {
+      height: 30px !important;
       vertical-align: middle;
     }
   }
@@ -198,7 +207,7 @@ figure,
 }
 
 .mdc-toolbar-fixed-adjust {
-  padding-top: $header-height;
+  padding-top: 124px;
 }
 
 .container,

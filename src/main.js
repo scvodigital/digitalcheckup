@@ -37,7 +37,7 @@ export class DigitalCheckup {
     // Headroom
     var header = document.querySelector("header.top-bar-stuck");
     var headroom  = new Headroom(header, {
-      "offset": 84,
+      "offset": 124,
       "tolerance": 5
     });
     headroom.init();
