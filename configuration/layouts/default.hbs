@@ -119,6 +119,9 @@
   <link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}">
 </head>
 <body class="mdc-theme--footer-dark-bg">
+  {{!-- <div class="hide-md hide-sm">
+    {{> components_scvo_bar}}
+  </div> --}}
   <digitalcheckup-site>
     <div class="mdc-typography">
       {{#ifAny request.params.query.debug (contains request.url.hostname ".local") ~}}
@@ -249,7 +252,7 @@
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone about">
                   <h3>About</h3>
                   <p>
-                    {{@root.data.currentSite.title}} is run by the <a href="https://scvo.org">Scottish Council for Voluntary Organisations</a> in partnership with the <a href="{{@root.data.currentSite.partner.url}}">{{@root.data.currentSite.partner.title}}</a>. <a href="/about">Find out more</a>
+                    {{@root.data.currentSite.title}} is run by the <a href="https://scvo.scot">Scottish Council for Voluntary Organisations</a> in partnership with the <a href="{{@root.data.currentSite.partner.url}}">{{@root.data.currentSite.partner.title}}</a>. <a href="/about">Find out more</a>
                   </p>
                 </div>
               </div>
@@ -270,7 +273,7 @@
                   <a href="{{@root.data.currentSite.partner.url}}" class="brand-logo r-margin-full" title="{{@root.data.currentSite.partner.title}}">
                     <img src="{{~>asset_url url=(concat 'images/logos/' @root.data.currentSite.partner.logo_filename)~}}" alt="{{@root.data.currentSite.partner.title}}" />
                   </a>
-                  <a href="https://scvo.org" class="brand-logo" title="Scottish Council for Voluntary Organisations">
+                  <a href="https://scvo.scot" class="brand-logo" title="Scottish Council for Voluntary Organisations">
                     {{!-- <img src="{{~>asset_url url='images/logos/scvo-legacy-black.png'~}}" alt="Scottish Council for Voluntary Organisations" /> --}}
                     <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
                   </a>
