@@ -41,6 +41,8 @@ h2,
 h3,
 h4 {
   font-family: $heading-font-family, $base-font-family, Helvetica, Arial, sans-serif;
+  font-feature-settings: "ss01" on;
+  letter-spacing: -0.08rem;
 }
 p,
 li,
@@ -109,6 +111,8 @@ footer h3,
 .mdc-top-app-bar__section--logo,
 .mdc-drawer .mdc-list-group__subheader {
   font-family: $heading-font-family, $base-font-family, Helvetica, Arial, sans-serif;
+  font-feature-settings: "ss01" on;
+  letter-spacing: -0.08rem;
 }
 footer.mdc-layout__footer {
   p, li, div, h3, a, strong {
@@ -169,7 +173,7 @@ html, body {
   height: 100%;
 }
 body {
-  background-color: $mdc-theme-footer-light;
+  background-color: $mdc-theme-footer;
   overflow: visible !important;
 }
 .mdc-top-app-bar {
@@ -806,7 +810,7 @@ footer.mdc-layout__footer {
   }
   .footer-main {
     margin-bottom: 0;
-    padding: $unit 0 $unit*3;
+    padding: $unit*1.5 0 $unit*2;
     background-color: $mdc-theme-footer;
     p,
     a {
@@ -814,12 +818,12 @@ footer.mdc-layout__footer {
     }
   }
   .footer-copyright {
-    background-color: $mdc-theme-footer-light;
-    p,
-    a,
-    a:hover {
-      color: $mdc-theme-footer;
-    }
+    // background-color: $mdc-theme-footer-light;
+    // p,
+    // a,
+    // a:hover {
+    //   color: $mdc-theme-footer;
+    // }
     p {
       font-size: 0.95rem;
       line-height: 1.4rem;
