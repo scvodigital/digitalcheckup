@@ -18,8 +18,8 @@ $mdc-theme-secondary: $mdc-theme-blue;
 $mdc-theme-secondary-dark: darken($mdc-theme-secondary, 15%);
 $mdc-theme-secondary-light: lighten($mdc-theme-secondary, 15%);
 
-$mdc-theme-footer: #244B5A;
-$mdc-theme-footer-light: #FEF9F9;
+$primary-color: #FF595A;
+$secondary-color: #244B5A;
 
 $unit: 1rem;
 $header-height: 84px;
@@ -174,7 +174,7 @@ html, body {
   height: 100%;
 }
 body {
-  background-color: $mdc-theme-footer;
+  background-color: $secondary-color;
   overflow: visible !important;
 }
 .mdc-top-app-bar {
@@ -795,24 +795,24 @@ footer.mdc-layout__footer {
     text-transform: none;
     font-size: 1.4rem;
   }
+  p,
   a,
-  a:hover,
-  .about a,
-  .about a:hover,
   .mdc-layout-grid p {
     color: white;
   }
   a {
     transition: border $transition-speed;
-    border-bottom: $thick-line solid transparent;
+    // border-bottom: $thick-line solid transparent;
   }
   a.brand-logo {
     border: none !important
   }
   .mdc-list .mdc-list-item a:hover,
+  .about a:hover,
   a:hover {
     text-decoration: none !important;
-    border-bottom: $thick-line solid white;
+    // border-bottom: $thick-line solid white;
+    color: $primary-color;
   }
   .fa-ul {
     .fa-li {
@@ -827,11 +827,7 @@ footer.mdc-layout__footer {
   .footer-main {
     margin-bottom: 0;
     padding: $unit*1.5 $unit $unit;
-    background-color: $mdc-theme-footer;
-    p,
-    a {
-      color: white;
-    }
+    background-color: $secondary-color;
   }
   .footer-copyright {
     p {
