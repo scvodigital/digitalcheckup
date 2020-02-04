@@ -801,7 +801,7 @@ footer.mdc-layout__footer {
     color: white;
   }
   a {
-    transition: border $transition-speed;
+    transition: color $transition-speed;
     // border-bottom: $thick-line solid transparent;
   }
   a.brand-logo {
