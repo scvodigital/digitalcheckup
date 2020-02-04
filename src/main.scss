@@ -25,6 +25,7 @@ $unit: 1rem;
 $header-height: 84px;
 $border-radius: $unit/5;
 $thick-line: 5px;
+$transition-speed: 0.3s;
 
 @import "./node_modules/material-components-web/material-components-web.scss";
 @import "./node_modules/@scvo/common/old/common-styles.scss";
@@ -801,6 +802,18 @@ footer.mdc-layout__footer {
   .mdc-layout-grid p {
     color: white;
   }
+  a {
+    transition: border $transition-speed;
+    border-bottom: $thick-line solid transparent;
+  }
+  a.brand-logo {
+    border: none !important
+  }
+  .mdc-list .mdc-list-item a:hover,
+  a:hover {
+    text-decoration: none !important;
+    border-bottom: $thick-line solid white;
+  }
   .fa-ul {
     .fa-li {
       .fas, .fal, .far, .fab {
@@ -808,9 +821,12 @@ footer.mdc-layout__footer {
       }
     }
   }
+  .mdc-list .mdc-list-item {
+    height: auto;
+  }
   .footer-main {
     margin-bottom: 0;
-    padding: $unit*1.5 0 $unit*2;
+    padding: $unit*1.5 $unit $unit;
     background-color: $mdc-theme-footer;
     p,
     a {
@@ -818,14 +834,7 @@ footer.mdc-layout__footer {
     }
   }
   .footer-copyright {
-    // background-color: $mdc-theme-footer-light;
-    // p,
-    // a,
-    // a:hover {
-    //   color: $mdc-theme-footer;
-    // }
     p {
-      font-size: 0.95rem;
       line-height: 1.4rem;
     }
     .brand-logo {
