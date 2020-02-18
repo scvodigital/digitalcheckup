@@ -215,21 +215,67 @@
           {
             "answer": "Mobile access to data/ systems for staff & customers via phone or tablet",
             "score": 3
+          },
+          {
+            "answer": "Other - please detail",
+            "score": 0
           }
           {{/compare ~}}
         ]
       },
       {{#compare @root.data.currentSite.name "housing" ~}}
       {
+        "title": "Which CRM – Customer Relationship Management System do you use? *",
+        "value": "q1a",
+        "type": "select-one",
+        "options": [
+          {
+            "answer": "SalesForce",
+            "score": 0
+          },
+          {
+            "answer": "Microsoft Dynamics",
+            "score": 0
+          },
+          {
+            "answer": "Other",
+            "score": 0
+          }
+      },
+      {
         "title": "Other - please detail",
-        "value": "q2",
+        "value": "q1a-other",
         "type": "freetext",
-        "placeholder": "Please describe any other systems you use"
+        "placeholder": "Please describe any other CRM you use"
+      },
+      {
+        "title": "Which cloud computing/storage (e.g. Sharepoint, Google Docs) system do you use? *",
+        "value": "q1b",
+        "type": "select-one",
+        "options": [
+          {
+            "answer": "G Suite",
+            "score": 0
+          },
+          {
+            "answer": "Office 365",
+            "score": 0
+          },
+          {
+            "answer": "Other",
+            "score": 0
+          }
+      },
+      {
+        "title": "Other - please detail",
+        "value": "q1b-other",
+        "type": "freetext",
+        "placeholder": "Please describe any other cloud computing/storage system you use"
       },
       {{/compare ~}}
       {
         "title": "Do you find your IT provision (technical support, hardware setup, internet access) to be... *",
-        "value": "q3",
+        "value": "q2",
         "type": "select-one",
         "options": [
           {
@@ -253,7 +299,7 @@
       {{#compare @root.data.currentSite.name "default" ~}}
       {
         "title": "Roughly what percentage of your income/fundraising is paid in using online payments as opposed to offline transactions? *",
-        "value": "q4",
+        "value": "q3",
         "type": "select-one",
         "options": [
           {
@@ -282,13 +328,13 @@
       {{#compare @root.data.currentSite.name "housing" ~}}
       {
         "title": "What housing management system do you use?",
-        "value": "q4",
+        "value": "q3",
         "type": "freetext",
         "placeholder": "Please enter a description"
       },
       {
         "title": "How do you rate it? *",
-        "value": "q5",
+        "value": "q4",
         "type": "select-one",
         "options": [
           {
@@ -315,7 +361,7 @@
       },
       {
         "title": "Can you tell us how much you spend per year on your Housing Management System and IT infrastructure i.e. CRM, Asset management and finance systems? *",
-        "value": "q6",
+        "value": "q5",
         "type": "select-one",
         "options": [
           {
@@ -346,7 +392,7 @@
       },
       {
         "title": "How would you rate your past or current experience with procuring a new supplier? *",
-        "value": "q7",
+        "value": "q6",
         "type": "select-one",
         "options": [
           {
@@ -369,7 +415,7 @@
       },
       {
         "title": "Which of the following processes can your tenants complete online, and what percentage are using online channels? *",
-        "value": "q8",
+        "value": "q7",
         "type": "select-many",
         "options": [
           {
@@ -391,6 +437,25 @@
           {
             "answer": "Real-time feedback",
             "score": 1
+          }
+        ]
+      },
+      {
+        "title": "What level would you say your tenants are engaged online with your organisation? (roughly) *",
+        "value": "q8",
+        "type": "select-one",
+        "options": [
+          {
+            "answer": "Low (less than 25%)",
+            "score": 1
+          },
+          {
+            "answer": "Medium (25-50%)",
+            "score": 2
+          },
+          {
+            "answer": "High (more than 50%)",
+            "score": 3
           }
         ]
       }
@@ -493,6 +558,12 @@
             "answer": "User experience mapping",
             "score": 4
           }
+          {{#compare @root.data.currentSite.name "housing" ~}},
+          {
+            "answer": "Analysis of social impact (Social Value Calculator, SROI, Community Insight)",
+            "score": 4
+          }
+          {{/compare ~}}
         ]
       }
     ],
@@ -836,6 +907,10 @@
           {
             "answer": "Technology Enabled Care",
             "value": "tec"
+          },
+          {
+            "answer": "Social impact (measurement) ",
+            "value": "social-impact"
           }
           {{/compare ~}}
         ]
