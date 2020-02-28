@@ -222,11 +222,11 @@
                   <ul class="fa-ul">
                     <li>
                       <span class="fa-li"><span class="fas fa-envelope"></span></span>
-                      <a href="mailto:digital@scvo.org.uk">digital@scvo.org.uk</a>
+                      <a href="mailto:{{@root.data.currentSite.email}}">{{@root.data.currentSite.email}}</a>
                     </li>
                     <li>
                       <span class="fa-li"><span class="fas fa-phone fa-flip-horizontal"></span></span>
-                      <a href="tel:+448001690022">0800 169 0022</a>
+                      <a href="tel:{{replace @root.data.currentSite.phone ' ' ''}}">{{@root.data.currentSite.phone}}</a>
                     </li>
                     <!-- <li>
                       <span class="fa-li"><span class="fab fa-twitter"></span></span>

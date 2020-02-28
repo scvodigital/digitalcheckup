@@ -10,6 +10,8 @@
       "url": "https://wearecast.org.uk",
       "logo_filename": "cast-white.png"
     },
+    "email": "digital@scvo.org.uk",
+    "phone": "0800 169 0022",
     "url": "https://digitalcheckup.org"
   },
   "housing": {
@@ -21,8 +23,10 @@
     "partner": {
       "title": "The Scottish Federation of Housing Associations",
       "url": "https://www.sfha.co.uk",
-      "logo_filename": "sfha-colour.png"
+      "logo_filename": "sfha-white.png"
     },
+    "email": "gdickson@sfha.co.uk",
+    "phone": "0141 332 8113",
     "url": "https://housing.digitalcheckup.org"
   }
 }
