@@ -29,24 +29,24 @@ function ConvertToCSV(objArray) {
 $(document).ready(function () {
   // Create Object
   var items = [
-    {{#each @root.data.allResponses ~}}
-    {{#compare this.site "housing" ~}}
+    {{#each (keyValue @root.data.allResponses) ~}}
+    {{#compare value.site "housing" ~}}
     {
-      "site": {{#if this.site}}{{{safeStringify this.site}}}{{else}}""{{/if}},
-      "rid": {{#if this.rid}}{{{safeStringify this.rid}}}{{else}}""{{/if}},
-      "sid": {{#if this.sid}}{{{safeStringify this.sid}}}{{else}}""{{/if}},
-      "email": {{#if this.email}}{{{safeStringify this.email}}}{{else}}""{{/if}},
-      "name": {{#if this.name}}{{{safeStringify this.name}}}{{else}}""{{/if}},
-      "organisation": {{#if this.organisation}}{{{safeStringify this.organisation}}}{{else}}""{{/if}},
-      "postcode": {{#if this.postcode}}{{{safeStringify this.postcode}}}{{else}}""{{/if}},
-      "area": {{#if this.area}}{{{safeStringify this.area}}}{{else}}""{{/if}},
-      "income_band": {{#if this.income_band}}{{{safeStringify this.income_band}}}{{else}}""{{/if}},
-      "topic": {{#if this.topic}}{{{safeStringify this.topic}}}{{else}}""{{/if}},
-      "next_project": {{#if this.next_project}}{{{safeStringify (replace (replace this.next_project '\n' ' ') ',' ' ')}}}{{else}}""{{/if}},
-      "barriers": {{#if this.barriers}}{{{safeStringify (replace (replace this.barriers '\n' ' ') ',' ' ')}}}{{else}}""{{/if}},
-      "support": {{#if this.support}}{{this.support}}{{else}}false{{/if}},
+      "site": {{#if value.site}}{{{safeStringify value.site}}}{{else}}""{{/if}},
+      "rid": {{#ifAny key value.rid}}{{{safeStringify (default value.rid key)}}}{{else}}""{{/ifAny}},
+      "sid": {{#if value.sid}}{{{safeStringify value.sid}}}{{else}}""{{/if}},
+      "email": {{#if value.email}}{{{safeStringify value.email}}}{{else}}""{{/if}},
+      "name": {{#if value.name}}{{{safeStringify value.name}}}{{else}}""{{/if}},
+      "organisation": {{#if value.organisation}}{{{safeStringify value.organisation}}}{{else}}""{{/if}},
+      "postcode": {{#if value.postcode}}{{{safeStringify value.postcode}}}{{else}}""{{/if}},
+      "area": {{#if value.area}}{{{safeStringify value.area}}}{{else}}""{{/if}},
+      "income_band": {{#if value.income_band}}{{{safeStringify value.income_band}}}{{else}}""{{/if}},
+      "topic": {{#if value.topic}}{{{safeStringify value.topic}}}{{else}}""{{/if}},
+      "next_project": {{#if value.next_project}}{{{safeStringify (replace (replace value.next_project '\n' ' ') ',' ' ')}}}{{else}}""{{/if}},
+      "barriers": {{#if value.barriers}}{{{safeStringify (replace (replace value.barriers '\n' ' ') ',' ' ')}}}{{else}}""{{/if}},
+      "support": {{#if value.support}}{{value.support}}{{else}}false{{/if}},
       {{#each (split 'section-1-q1 section-1-q2 section-1-q3 section-1-q4 section-2-q1 section-2-q2 section-2-q3 section-2-q4 section-2-q5 section-2-q6 section-2-q7 section-2-q8 section-3-q1 section-3-q2 section-4-q1 section-4-q2 section-4-q3 section-4-q4 section-4-q5 section-5-q1 section-5-q2 section-6-q1 section-6-q2 section-6-q3' ' ') ~}}
-      {{#each (filter (keyValue ../this) "key" "testIn" this) ~}}
+      {{#each (filter (keyValue ../value) "key" "testIn" this) ~}}
       {{#if value ~}}
       {{{safeStringify key}}}: {{{safeStringify (replace (replace value '\n' ' ') ',' ' ')}}},
       {{else}}
@@ -54,14 +54,14 @@ $(document).ready(function () {
       {{/if}}
       {{/each ~}}
       {{/each ~}}
-      "percentage_tools_and_equipment": {{#if this.percentage_tools_and_equipment}}{{this.percentage_tools_and_equipment}}{{else}}0{{/if}},
-      "percentage_leadership_culture_and_skills": {{#if this.percentage_leadership_culture_and_skills}}{{this.percentage_leadership_culture_and_skills}}{{else}}0{{/if}},
-      "percentage_tools_and_equipment": {{#if this.percentage_tools_and_equipment}}{{this.percentage_tools_and_equipment}}{{else}}0{{/if}},
-      "percentage_content_marketing_and_data": {{#if this.percentage_content_marketing_and_data}}{{this.percentage_content_marketing_and_data}}{{else}}0{{/if}},
-      "percentage_cyber_resilience": {{#if this.percentage_cyber_resilience}}{{this.percentage_cyber_resilience}}{{else}}0{{/if}},
-      "percentage_tec": {{#if this.percentage_tec}}{{this.percentage_tec}}{{else}}0{{/if}},
-      "percentage_total": {{#if this.percentage_total}}{{this.percentage_total}}{{else}}0{{/if}},
-      "date_last_modified": {{#if this.date_last_modified}}{{{safeStringify this.date_last_modified}}}{{else}}""{{/if}}
+      "percentage_tools_and_equipment": {{#if value.percentage_tools_and_equipment}}{{value.percentage_tools_and_equipment}}{{else}}0{{/if}},
+      "percentage_leadership_culture_and_skills": {{#if value.percentage_leadership_culture_and_skills}}{{value.percentage_leadership_culture_and_skills}}{{else}}0{{/if}},
+      "percentage_tools_and_equipment": {{#if value.percentage_tools_and_equipment}}{{value.percentage_tools_and_equipment}}{{else}}0{{/if}},
+      "percentage_content_marketing_and_data": {{#if value.percentage_content_marketing_and_data}}{{value.percentage_content_marketing_and_data}}{{else}}0{{/if}},
+      "percentage_cyber_resilience": {{#if value.percentage_cyber_resilience}}{{value.percentage_cyber_resilience}}{{else}}0{{/if}},
+      "percentage_tec": {{#if value.percentage_tec}}{{value.percentage_tec}}{{else}}0{{/if}},
+      "percentage_total": {{#if value.percentage_total}}{{value.percentage_total}}{{else}}0{{/if}},
+      "date_last_modified": {{#if value.date_last_modified}}{{{safeStringify value.date_last_modified}}}{{else}}""{{/if}}
     },
     {{/compare ~}}
     {{/each ~}}
