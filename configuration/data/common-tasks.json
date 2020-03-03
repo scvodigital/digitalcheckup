@@ -31,5 +31,37 @@
       "template": ">context.metaData.handlebars.templates.checkup_questions_data",
       "parseJson": true
     }
+  },
+  "authNotRequired": {
+    "name": "auth",
+    "taskModule": "firebaseAuth",
+    "config": {
+      "tokenPath": "request.cookies.dc_token",
+      "cookieName": "dc_cookie",
+      "cookieOptions": {
+        "maxAge": 1209600000,
+        "secure": true,
+        "path": "/"
+      },
+      "appName": "digital-checkup",
+      "noTokenRoute": "",
+      "notAuthenticatedRoute": ""
+    }
+  },
+  "authRequired": {
+    "name": "auth",
+    "taskModule": "firebaseAuth",
+    "config": {
+      "tokenPath": "request.cookies.dc_token",
+      "cookieName": "dc_cookie",
+      "cookieOptions": {
+        "maxAge": 1209600000,
+        "secure": true,
+        "path": "/"
+      },
+      "appName": "digital-checkup",
+      "noTokenRoute": "sign_in",
+      "notAuthenticatedRoute": "sign_in"
+    }
   }
 }

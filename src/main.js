@@ -2,6 +2,7 @@ import "@babel/polyfill";
 import { default as Headroom } from 'headroom.js';
 import * as mdc from 'material-components-web';
 import { ComponentsInitialiser } from '../node_modules/@scvo/common/old/components-initialiser';
+import { Auth } from '../node_modules/@scvo/common/old/firebase-auth';
 import * as querystring from 'querystring';
 
 import * as cookieInfoScript from '../node_modules/@scvo/common/old/cookie-info-script' ;
@@ -9,7 +10,7 @@ import * as cookieInfoScript from '../node_modules/@scvo/common/old/cookie-info-
 export class DigitalCheckup {
   constructor(firebaseConfig) {
     this.firebaseConfig = firebaseConfig;
-    // this.auth = new Auth(this.firebaseConfig, '/upgrade-token?token={idToken}', 'fs_cookie');
+    this.auth = new Auth(this.firebaseConfig, '/upgrade-token?token={idToken}', 'dc_cookie');
 
     this.componentsInitialiser = new ComponentsInitialiser();
     this.componentsInitialiser.initialise();
@@ -97,13 +98,13 @@ export class DigitalCheckup {
       const $dismissButton = $helpBox.find('.help-box__dismiss-button');
       $dismissButton.on('click', (evt) => {
         $helpBox.addClass('help-box--dismissed');
-        const dismissedCookie = this.getCookie('fs_dismissed') || '';
+        const dismissedCookie = this.getCookie('dc_dismissed') || '';
         const dismissedList = dismissedCookie.substr(1, dismissedCookie.length - 2).split('][');
         if (dismissedList.indexOf(id) === -1) {
           dismissedList.push(id);
         }
         const newCookie = '[' + dismissedList.join('][') + ']';
-        this.setCookie('fs_dismissed', newCookie);
+        this.setCookie('dc_dismissed', newCookie);
       });
     });
 
