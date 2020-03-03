@@ -174,10 +174,11 @@
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                   <div class="key">
                     <ul>
-                      <li class="key-your">Your scores</li>
                       {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+                      <li class="key-your">Your scores</li>
                       <li class="key-average">Average scores</li>
                       {{else}}
+                      <li class="key-your">{{{@root.data.rootResponse.name}}}</li>
                       {{#with @root.data.results.overall ~}}
                       {{#if shared_1_name ~}}
                       <li class="key-shared-1">{{{shared_1_name}}}</li>
