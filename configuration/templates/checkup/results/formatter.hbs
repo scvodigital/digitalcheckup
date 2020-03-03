@@ -5,11 +5,16 @@
   {{~#compare income_band "0"~}}
     {{round (getProperty dataAverages aggregation) "up"}}
   {{else}}
-    {{round
-      (getProperty
-        (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
-        aggregation
-      ) "up"}}
+    {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
+      aggregation) ~}}
+      {{round
+        (getProperty
+          (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
+          aggregation
+        ) "up"}}
+    {{else}}
+      0
+    {{/if ~}}
   {{~/compare~}}
 {{~/inline~}}
 {{#withExtend this
@@ -137,7 +142,7 @@
       }
       {{/compare ~}}
     },
-    "totalRespondents": {{default (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count") ""}},
+    "totalRespondents": {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count")}}{{getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count"}}{{else}}0{{/if}},
     {{#each @root.context.metaData.areas ~}}
     {{#compare slug rootResponse.area ~}}
     "whereEventual": "{{{long}}}",
