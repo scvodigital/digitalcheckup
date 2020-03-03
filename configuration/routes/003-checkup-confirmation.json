@@ -19,7 +19,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_confirmation"
+              "body": ">context.metaData.handlebars.templates.checkup_questions_confirmation"
             },
             "contentType": "text/html"
           }

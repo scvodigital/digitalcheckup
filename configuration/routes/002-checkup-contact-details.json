@@ -1,20 +1,15 @@
 {
-  "name": "checkup",
-  "debug": true,
-  "pattern": {
-    "home": "/checkup",
-    "section": "/checkup/:section"
-  },
+  "name": "checkup_contact_details",
+  "pattern": "/checkup/contact-details",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
-    "context.metaData.commonTasks.getCheckupData",
     {
       "name": "rootResponse",
       "taskModule": "firebaseRtbGet",
       "renderer": "handlebars",
       "config": {
         "appName": "digital-checkup",
-        "pathTemplate": "/submissions/{{default @root.request.params.query.sid 'null'}}/",
+        "pathTemplate": "/submissions/{{default @root.request.body.answers-sid 'null'}}/",
         "defaultData": {}
       }
     },
@@ -34,7 +29,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_checkup"
+              "body": ">context.metaData.handlebars.templates.checkup_questions_contact-details"
             },
             "contentType": "text/html"
           }

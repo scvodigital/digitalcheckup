@@ -52,7 +52,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": ">context.metaData.handlebars.templates.checkup_results-formatter",
+        "template": ">context.metaData.handlebars.templates.checkup_results_formatter",
         "parseJson": true
       }
     },
@@ -97,7 +97,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_results"
+              "body": ">context.metaData.handlebars.templates.checkup_results_page"
             },
             "contentType": "text/html"
           }

@@ -39,7 +39,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.checkup_firebase-data",
+        "template": ">context.metaData.handlebars.templates.checkup_database_firebase",
         "output": "data",
         "parseJson": true
       }
@@ -52,7 +52,7 @@
         "appName": "digital-checkup",
         "setOrUpdate": "set",
         "pathTemplate": "/submissions/{{@root.data.rid}}/",
-        "dataTemplate": ">context.metaData.handlebars.templates.checkup_firebase-data"
+        "dataTemplate": ">context.metaData.handlebars.templates.checkup_database_firebase"
       }
     },
     {
@@ -71,7 +71,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_submit"
+              "body": ">context.metaData.handlebars.templates.checkup_questions_submit"
             },
             "contentType": "text/html"
           }

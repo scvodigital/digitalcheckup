@@ -393,7 +393,7 @@
             <div class="mdc-layout-grid__inner">
               {{#each @root.data.supplimentaryResponses.resources_focus.hits.hits ~}}
                 {{#with _source ~}}
-                  {{> resource slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
+                  {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
                 {{/with ~}}
               {{/each ~}}
             </div>
@@ -424,7 +424,7 @@
           <div class="mdc-layout-grid__inner">
             {{#each @root.data.supplimentaryResponses.resources_relevant.hits.hits ~}}
             {{#with _source ~}}
-            {{> resource slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
+            {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
             {{/with ~}}
             {{/each ~}}
           </div>
