@@ -45,6 +45,12 @@ h4 {
   font-feature-settings: "ss01" on;
   letter-spacing: -0.08rem;
 }
+h1.font-default,
+h2.font-default,
+h3.font-default,
+h4.font-default {
+  font-feature-settings: "ss01" off;
+}
 p,
 li,
 .mdc-tab,
@@ -489,6 +495,7 @@ h4,
     color: white;
   }
   .mdc-typography--body2 {
+    font-weight: 600;
     text-transform: uppercase;
   }
   .mdc-typography--headline3 {

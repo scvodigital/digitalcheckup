@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="container-content">
         {{> checkup_progress progress=100}}
-        <h1 class="mdc-typography--headline3">
+        <h1 class="mdc-typography--headline3 font-default">
           {{#ifAny @root.data.rootResponse.organisation @root.request.params.query.web_organisation ~}}
             Checkup results for {{{default @root.data.rootResponse.organisation @root.request.params.query.web_organisation}}}
           {{else}}
@@ -534,7 +534,7 @@ function RadarChart(id, data, options) {
   //Append the labels at each axis
   axis.append("text")
   .attr("class", "legend")
-  .style("font-size", "1rem")
+  .style("font-size", "0.9rem")
   .style("font-variant", "all-small-caps")
   .attr("text-anchor", "middle")
   .attr("dy", "0.35em")
