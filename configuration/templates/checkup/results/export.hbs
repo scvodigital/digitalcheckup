@@ -29,8 +29,9 @@ function ConvertToCSV(objArray) {
 $(document).ready(function () {
   // Create Object
   var items = [
+    {{#ifAll @root.request.params.query.date_start @root.request.params.query.date_end ~}}
     {{#each (keyValue @root.data.allResponses) ~}}
-    {{#compare value.site "housing" ~}}
+    {{#ifAll (compare value.site "housing") (compare (momentFormat (moment value.date_last_modified "YYYY-MM-DDTHH:mm:ssZ") "YYYYMMDD") ">=" (replace @root.request.params.query.date_start '-' '')) (compare (momentFormat (moment value.date_last_modified "YYYY-MM-DDTHH:mm:ssZ") "YYYYMMDD") "<=" (replace @root.request.params.query.date_end '-' '')) ~}}
     {
       "site": {{#if value.site}}{{{safeStringify value.site}}}{{else}}""{{/if}},
       "rid": {{#ifAny key value.rid}}{{{safeStringify (default value.rid key)}}}{{else}}""{{/ifAny}},
@@ -63,9 +64,10 @@ $(document).ready(function () {
       "percentage_total": {{#if value.percentage_total}}{{value.percentage_total}}{{else}}0{{/if}},
       "date_last_modified": {{#if value.date_last_modified}}{{{safeStringify value.date_last_modified}}}{{else}}""{{/if}}
     },
-    {{/compare ~}}
+    {{/ifAll ~}}
     {{/each ~}}
     {}
+    {{/ifAll ~}}
   ];
 
   // Convert Object to JSON
@@ -84,6 +86,23 @@ $(document).ready(function () {
     {{!-- <h1>JSON</h1>
     <pre id="json"></pre> --}}
     <h1>Export of checkup data for SFHA</h1>
+    {{#ifAll @root.request.params.query.date_start @root.request.params.query.date_end ~}}
     <a download="sfha-checkup-export.csv" href="#" id="csv" class="mdc-button mdc-button--raised b-margin-full">Download CSV</a>
+    <div class="b-margin-full">
+      <a href="/checkup/results-export">Change date range</a>
+    </div>
+    {{else}}
+    <form action="/checkup/results-export" method="GET" class="b-margin-full">
+      <div class="form-group b-margin">
+        <label class="form-label" for="date_start">Start date</label>
+        <input class="form-input" type="date" name="date_start" id="date_start" value="{{momentFormat (moment (dateMath 'now-7d') 'x') 'YYYY-MM-DD'}}" />
+      </div>
+      <div class="form-group b-margin">
+        <label class="form-label" for="date_end">End date</label>
+        <input class="form-input" type="date" name="date_end" id="date_end" value="{{momentFormat (moment now) 'YYYY-MM-DD'}}" />
+      </div>
+      <input type="submit" value="Submit" class="mdc-button mdc-button--raised" />
+    </form>
+    {{/ifAll ~}}
   </div>
 </div>
