@@ -15,7 +15,7 @@
   </div>
   <div class="container-fluid">
     <div class="container-content">
-      {{#if @root.data.rootResponse.percentage_total ~}}
+      {{#ifAny @root.data.rootResponse.percentage_total @root.request.params.query.s1 ~}}
       <div class="question-block mdc-elevation--z3">
         <div class="results-block">
           <div class="mdc-layout-grid t-margin-full">
@@ -337,7 +337,7 @@
       </div>
       {{else}}
       Error 500: Something went wrong processing your checkup, please <a href="/checkup">start again</a>.
-      {{/if ~}}
+      {{/ifAny ~}}
     </div>
   </div>
 
