@@ -19,9 +19,15 @@ $mdc-theme-secondary-dark: darken($mdc-theme-secondary, 15%);
 $mdc-theme-secondary-light: lighten($mdc-theme-secondary, 15%);
 
 $primary-color: #FF595A;
+$primary-color-light: #ffd6d6;
+$primary-color-dark: #C5143D;
 $secondary-color: #244B5A;
+$secondary-color-light: lighten($secondary-color, 10%) !default;
+$secondary-color-dark: darken($secondary-color, 10%) !default;
+$yellow-color: #FFDB00;
 
 $unit: 1rem;
+$padding: 1.2rem;
 $header-height: 84px;
 $border-radius: $unit/5;
 $thick-line: 5px;
@@ -218,7 +224,7 @@ figure,
 }
 
 .mdc-toolbar-fixed-adjust {
-  padding-top: 84px;
+  padding-top: 164px;
 }
 
 .container,
@@ -652,6 +658,31 @@ h4,
   .mdc-text-field-helper-text {
     color: black !important;
     opacity: 1;
+  }
+}
+
+a.bg-yellow {
+  background: $yellow-color !important;
+  border: none;
+  display: block;
+  color: $secondary-color;
+  .columns {
+    margin-left: -($padding/2);
+    margin-right: -($padding/2);
+    .column {
+      padding-left: $padding/2;
+      padding-right: $padding/2;
+    }
+  }
+}
+a.bg-yellow:hover {
+  text-decoration: none;
+  h2,
+  h3,
+  .fa-fw,
+  .link-hover {
+    color: $primary-color-dark;
+    text-decoration: none;
   }
 }
 
