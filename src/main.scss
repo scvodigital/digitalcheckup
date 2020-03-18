@@ -906,3 +906,9 @@ footer.mdc-layout__footer {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 959px) and (min-width: 600px) {
+  .mdc-top-app-bar {
+    height: 180px;
+  }
+}
