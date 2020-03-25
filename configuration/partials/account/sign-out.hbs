@@ -3,8 +3,8 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   window.setTimeout(function() {
     digitalcheckup.auth.sessionCleanup().then(function() {
-      fundingscotland.setCookie('dc_token');
-      fundingscotland.setCookie('dc_cookie');
+      digitalcheckup.setCookie('dc_token');
+      digitalcheckup.setCookie('dc_cookie');
       window.location.href = '/';
     }).catch(function(err) {
       console.error('Error signing out:', err);
