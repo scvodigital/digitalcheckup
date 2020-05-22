@@ -661,11 +661,23 @@ h4,
   }
 }
 
+.bg-yellow,
 a.bg-yellow {
   background: $yellow-color !important;
+  color: $secondary-color;
+  text-decoration: none;
+}
+a.bg-yellow {
   border: none;
   display: block;
-  color: $secondary-color;
+  .fa-fw,
+  h2,
+  h3,
+  h4,
+  p {
+    text-decoration: none;
+    transition: color $transition-speed;
+  }
   .columns {
     margin-left: -($padding/2);
     margin-right: -($padding/2);
@@ -676,14 +688,44 @@ a.bg-yellow {
   }
 }
 a.bg-yellow:hover {
-  text-decoration: none;
+  .fa-fw,
   h2,
   h3,
-  .fa-fw,
-  .link-hover {
+  h4,
+  p {
     color: $primary-color-dark;
-    text-decoration: none;
   }
+}
+.banner-coronavirus-info-hub {
+  padding: $unit $unit/2;
+  h2,
+  h3,
+  h4,
+  p {
+    font-family: $footer-font-family;
+  }
+  .fa-ul {
+    margin-left: $unit*3.5 !important;
+    margin-bottom: 0 !important;
+    li {
+      margin: 0;
+    }
+    .fa-li {
+      top: $unit/10;
+      left: -($unit*3.5);
+      width: $unit*3.5;
+    }
+  }
+  .banner-content {
+    padding-left: $unit;
+    p {
+      font-weight: 400;
+    }
+  }
+}
+.no-margin {
+  padding: 0;
+  margin: 0;
 }
 
 #share-button {
