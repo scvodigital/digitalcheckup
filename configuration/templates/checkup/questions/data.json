@@ -10,6 +10,7 @@
         "title": "Do your senior leaders (senior management, board and trustees) understand the need to adapt to a digital world? *",
         "value": "q1",
         "type": "select-one",
+        "metric": "leadership_culture_and_skills",
         "options": [
           {
             "answer": "Digital is not recognised as important and is not often discussed at a senior level",
@@ -37,6 +38,7 @@
         "title": "In the workplace, staff are encouraged and empowered to... (tick all that apply) *",
         "value": "q2",
         "type": "select-many",
+        "metric": "leadership_culture_and_skills",
         "options": [
           {
             "answer": "Be curious",
@@ -69,6 +71,7 @@
         "title": "Staff digital essential skills rating *",
         "value": "q3",
         "type": "select-one",
+        "metric": "leadership_culture_and_skills",
         "options": [
           {
             "answer": "We don’t know what our staff digital skills levels are",
@@ -96,6 +99,7 @@
         "title": "Staff digital confidence rating *",
         "value": "q4",
         "type": "select-one",
+        "metric": "leadership_culture_and_skills",
         "options": [
           {
             "answer": "We don’t know what our staff digital confidence levels are",
@@ -124,6 +128,7 @@
         "title": "How well do you understand the digital skills of your staff and/or volunteers? *",
         "value": "q3",
         "type": "select-one",
+        "metric": "leadership_culture_and_skills",
         "options": [
           {
             "answer": "We don't know what digital skills or gaps exist in our workforce",
@@ -158,6 +163,7 @@
         "title": "Which of these technologies does your organisation use? (Tick all that apply) *",
         "value": "q1",
         "type": "select-many",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "Company website",
@@ -228,6 +234,7 @@
         "title": "Which CRM – Customer Relationship Management System do you use? *",
         "value": "q1a",
         "type": "select-one",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "SalesForce",
@@ -253,6 +260,7 @@
         "title": "Which cloud computing/storage (e.g. Sharepoint, Google Docs) system do you use? *",
         "value": "q1b",
         "type": "select-one",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "G Suite",
@@ -279,6 +287,7 @@
         "title": "Do you find your IT provision (technical support, hardware setup, internet access) to be... *",
         "value": "q2",
         "type": "select-one",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "a regular headache which affects our confidence in trying new things",
@@ -303,6 +312,7 @@
         "title": "Roughly what percentage of your income/fundraising is paid in using online payments as opposed to offline transactions? *",
         "value": "q3",
         "type": "select-one",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "0-20%",
@@ -338,6 +348,7 @@
         "title": "How do you rate it? *",
         "value": "q4",
         "type": "select-one",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "Very bad - not fit for purpose, no integration",
@@ -365,6 +376,7 @@
         "title": "Can you tell us how much you spend per year on your Housing Management System and IT infrastructure i.e. CRM, Asset management and finance systems? *",
         "value": "q5",
         "type": "select-one",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "Less than £1,000",
@@ -396,6 +408,7 @@
         "title": "How would you rate your past or current experience with procuring a new supplier? *",
         "value": "q6",
         "type": "select-one",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "a regular headache which affects our confidence in trying new things",
@@ -419,6 +432,7 @@
         "title": "Which of the following processes can your tenants complete online, and what percentage are using online channels? *",
         "value": "q7",
         "type": "select-many",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "New tenant registration",
@@ -446,6 +460,7 @@
         "title": "What level would you say your tenants are engaged online with your organisation? (roughly) *",
         "value": "q8",
         "type": "select-one",
+        "metric": "tools_and_equipment",
         "options": [
           {
             "answer": "Low (less than 25%)",
@@ -476,6 +491,7 @@
         "title": "Which of the following content types do you use within your organisation? *",
         "value": "q1",
         "type": "select-many",
+        "metric": "content_marketing_and_data",
         "options": [
           {
             "answer": "Web news and updates",
@@ -523,6 +539,7 @@
         "title": "Which of the following approaches do you use to understand the needs of your users in developing or improving your services? *",
         "value": "q2",
         "type": "select-many",
+        "metric": "content_marketing_and_data",
         "options": [
           {
             "answer": "Analysis of website analytics",
@@ -582,6 +599,7 @@
         "title": "Data collection *",
         "value": "q1",
         "type": "select-one",
+        "metric": "content_marketing_and_data",
         "options": [
           {
             "answer": "We don't collect any user data at all",
@@ -601,6 +619,7 @@
         "title": "Decision making *",
         "value": "q2",
         "type": "select-one",
+        "metric": "content_marketing_and_data",
         "options": [
           {
             "answer": "We don't analyse any data to make decisions",
@@ -620,6 +639,7 @@
         "title": "Data storage *",
         "value": "q3",
         "type": "select-one",
+        "metric": "content_marketing_and_data",
         "options": [
           {
             "answer": "We don't know if we store and use data appropriately",
@@ -639,6 +659,7 @@
         "title": "Risk management *",
         "value": "q4",
         "type": "select-one",
+        "metric": "content_marketing_and_data",
         "options": [
           {
             "answer": "We do not know if our data collection and management is a risk to our organisation",
@@ -658,6 +679,7 @@
         "title": "GDPR - General Data Protection Regulation *",
         "value": "q5",
         "type": "select-one",
+        "metric": "content_marketing_and_data",
         "options": [
           {
             "answer": "We are unaware of GDPR or are unaware of the implications for us",
@@ -687,6 +709,7 @@
         "title": "Which statement best describes your organisation's approach to Cyber Security? *",
         "value": "q1",
         "type": "select-one",
+        "metric": "cyber_resilience",
         "options": [
           {
             "answer": "We do not have enough knowledge to discuss cyber threats or security at a senior level",
@@ -710,6 +733,7 @@
         "title": "Has training been delivered to staff in any of the following areas? *",
         "value": "q2",
         "type": "select-many",
+        "metric": "cyber_resilience",
         "options": [
           {
             "answer": "Password security",
@@ -752,6 +776,7 @@
         "title": "Warden call/emergency call/telecare system *",
         "value": "q1",
         "type": "select-one",
+        "metric": "tec",
         "options": [
           {
             "answer": "We do not provide any form of warden call/emergency call/Telecare system to our tenants",
@@ -775,6 +800,7 @@
         "title": "Other forms of Technology Enabled Care *",
         "value": "q2",
         "type": "select-one",
+        "metric": "tec",
         "options": [
           {
             "answer": "We are not currently providing and form of TEC to our tenants",
@@ -799,6 +825,7 @@
         "description": "To find out more/sign up go to <a href=\"https://techousing.co.uk/the-charter-pledges/\" target=\"_blank\">https://techousing.co.uk/the-charter-pledges/</a> *",
         "value": "q3",
         "type": "select-one",
+        "metric": "tec",
         "options": [
           {
             "answer": "We are aware of the TECH Charter but do not think that it is relevant to our tenants or our organisation",

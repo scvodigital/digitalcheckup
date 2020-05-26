@@ -1,0 +1,28 @@
+{{~#*inline "answers_and_scores"~}}
+  {{{json key="maxScore" value=(maths maxExpression scores=(pluck options "score"))}}},
+  {{{json key="minScore" value=(maths minExpression scores=(pluck options "score"))}}},
+  {{{json key="answers" value=(filter options "answer" "valueIn" answers)}}},
+  {{{json key="score" value=(maths "sum(scores)" scores=(pluck (filter options "answer" "valueIn" answers) "score"))}}}
+{{~/inline~}}
+
+{{#json type="array"}}
+  {{#each @root.data.checkup}}
+    {{#each questions}}
+      {{#if metric}}
+        {{#json type="object"}}
+          {{{json key="metric" value=metric}}},
+          {{#if @root.route.debugs}}
+            {{{json key="section" value=@../key}}},
+            {{{json key="question" value=(concat 'answers-' value)}}},
+            {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../key '-' value))}}},
+          {{/if}}
+          {{#compare type "===" "select-one"}}
+            {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}
+          {{else}}
+            {{>answers_and_scores maxExpression="sum(scores)" minExpression="min(min(scores), 0)" options=options answers=(split (lookup @root.request.body (concat 'answers-' @../key '-' value)) ";")}}
+          {{/compare}}
+        {{/json}},
+      {{/if}}
+    {{/each}}
+  {{/each}}
+{{/json}}

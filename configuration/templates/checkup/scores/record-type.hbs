@@ -1,0 +1,6 @@
+{{!-- TODO: Add more heuristics here to work out the Salesforce RecordType DeveloperName --}}
+{{~#compare @root.data.currentSite.name "housing" ~}}
+  Digital_Housing_Associations
+{{~else~}}
+  Digital
+{{~/compare~}}

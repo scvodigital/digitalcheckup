@@ -1,0 +1,41 @@
+{{#json type="object"}}
+  {{{json key="responseId" value=(default @root.request.params.rid @root.data.rid)}}},
+  {{{json key="sharingId" value=(default @root.request.params.sid "")}}},
+  {{{json key="recordType" value=(default @root.data.recordType "Digital")}}},
+
+  {{!-- TODO: Move these into questions within the questionnaire JSON --}}
+  {{{json key="organisation" value=@root.request.body.answers-web_organisation}}},
+  {{{json key="email" value=@root.request.body.answers-email}}},
+  {{{json key="contactName" value=@root.request.body.answers-name}}},
+  {{{json key="postcode" value=@root.request.body.answers-postcode}}},
+  {{{json key="wantsSupport" value=(if (compare @root.request.body.answers-support "===" "No thanks") false else=true)}}},
+  {{{json key="wantsSupport" value=false}}},
+
+  {{#each @root.data.checkup}}
+    {{#each questions}}
+      {{#if checkup_question}}
+        {{{json key=checkup_question value=(lookup @root.request.body (concat 'answers-' @../key '-' value))}}},
+      {{/if}}
+    {{/each}}
+  {{/each}}
+
+  {{#json key="responses" type="array"}}
+    {{#each (groupBy @root.data.metrics "metric")}}
+      {{#json type="object"}}
+        {{{json key="metric" value=(concat @key)}}},
+        {{{json key="percentageScore" value=(maths "ceil((sum(scores) - sum(minScores)) / (sum(maxScores) - sum(minScores)) * 100)" scores=(pluck this "score") maxScores=(pluck this "maxScore") minScores=(pluck this "minScore"))}}}
+      {{/json}},
+    {{/each}}
+
+    {{#each @root.data.checkup}}
+      {{#each questions}}
+        {{#unless checkup_question}}
+          {{#json type="object"}}
+            {{{json key="question" value=title}}},
+            {{{json key="answer" value=(default (lookup @root.request.body (concat 'answers-' @../key '-' value)) "")}}}
+          {{/json}},
+        {{/unless}}
+      {{/each}}
+    {{/each}}
+  {{/json}}
+{{/json}}

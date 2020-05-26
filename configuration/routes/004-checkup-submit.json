@@ -15,6 +15,46 @@
       }
     },
     {
+      "name": "metrics",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.checkup_scores_metrics",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "recordType",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.checkup_scores_record-type",
+        "output": "data"
+      }
+    },
+    {
+      "name": "salesforceSession",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.checkup_database_salesforce-session",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "generateSaveCheckupSessionTask",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.checkup_database_salesforce-task",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    "data.generateSaveCheckupSessionTask",
+    {
       "name": "scoresIndividual",
       "taskModule": "render",
       "renderer": "handlebars",
@@ -56,26 +96,20 @@
       }
     },
     {
-      "name": "destination",
-      "taskModule": "renderLayout",
+      "name": "redirectUrl",
+      "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "logic": {
-          "if": [
-            "default"
-          ]
-        },
-        "output": "body",
-        "layouts": {
-          "default": {
-            "layout": ">context.metaData.handlebars.layouts.default",
-            "parts": {
-              "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_questions_submit"
-            },
-            "contentType": "text/html"
-          }
-        }
+        "template": "/checkup/results?rid={{#if @root.data.response.sid}}{{@root.data.response.sid}}{{else}}{{@root.data.rid}}{{/if}}",
+        "output": "data"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.redirectUrl",
+        "statusCode": 301
       }
     }
   ]

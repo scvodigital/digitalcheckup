@@ -1,0 +1,16 @@
+{
+  "name": "saveCheckupSession",
+  "taskModule": "salesforceApex",
+  "renderer": "handlebars",
+  "config": {
+    {{#compare @root.data.currentSite.name "housing" ~}}
+      "connection": "sfhaCheckups",
+    {{else}}
+      "connection": "scvoMattSandbox",
+    {{/compare}}
+    "output": "data",
+    "method": "POST",
+    "body": ">data.salesforceSession",
+    "apexClassPath": "/CheckupSession/"
+  }
+}
