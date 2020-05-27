@@ -2,6 +2,7 @@
   "name": "checkup_submit",
   "debug": true,
   "pattern": "/checkup/submit",
+  "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
     "context.metaData.commonTasks.getCheckupData",

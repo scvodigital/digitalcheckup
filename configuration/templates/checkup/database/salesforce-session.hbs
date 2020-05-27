@@ -29,13 +29,24 @@
 
     {{#each @root.data.checkup}}
       {{#each questions}}
-        {{#unless checkup_question}}
-          {{#json type="object"}}
-            {{{json key="question" value=title}}},
-            {{{json key="answer" value=(default (lookup @root.request.body (concat 'answers-' @../key '-' value)) "")}}}
-          {{/json}},
-        {{/unless}}
+        {{#json type="object"}}
+          {{{json key="question" value=(concat @../index "." @index ". " title)}}},
+          {{{json key="answer" value=(default (lookup @root.request.body (concat 'answers-' @../key '-' value)) "")}}}
+        {{/json}},
       {{/each}}
     {{/each}}
+
+    {{#withExtend this sectionNumber=(length (getKeys @root.data.checkup))}}
+      {{#json type="object"}}
+        {{{json key="question" value=(concat sectionNumber ".1. If you could tackle one digital project in the next three months, what would that be?")}}},
+        {{{json key="answer" value=(default @root.request.body.answers-next_project "")}}}
+      {{/json}},
+      {{#json type="object"}}
+        {{{json key="question" value=(concat sectionNumber ".2. What are the top barriers to digital change in your organisation?")}}},
+        {{{json key="answer" value=(default @root.request.body.answers-barriers "")}}}
+      {{/json}},
+    {{/withExtend}}
+
+    {{#if}}
   {{/json}}
 {{/json}}

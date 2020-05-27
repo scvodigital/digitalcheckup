@@ -3,9 +3,7 @@
   "pattern": "/404",
   "defaultStatusCode": 404,
   "metaData": {
-    "hideSearch": true
-  },
-  "metaData": {
+    "hideSearch": true,
     "title": "404: Page not found"
   },
   "tasks": [

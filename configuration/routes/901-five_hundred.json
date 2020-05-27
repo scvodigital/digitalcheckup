@@ -2,9 +2,7 @@
   "name": "five_hundred",
   "pattern": "/500",
   "metaData": {
-    "hideSearch": true
-  },
-  "metaData": {
+    "hideSearch": true,
     "title": "500: Error"
   },
   "tasks": [
