@@ -2,6 +2,16 @@
   <div class="container-content">
     <h1 class="mdc-typography--headline3">Error 500: Sorry about that</h1>
     <p>If you'd like to report this error, please paste the following into your email:</p>
-    <pre>{{{json value=@root.errors}}}</pre>
+    <pre>
+Request:
+{{{json value=@root.request}}}
+
+Errors:
+{{#if @root.errors}}
+{{{json value=@root.errors}}}
+{{else}}
+Some how you are here but there are no errors. Strange
+{{/if}}
+    </pre>
   </div>
 </div>
