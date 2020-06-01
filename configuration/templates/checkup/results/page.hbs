@@ -269,6 +269,7 @@
                   {{/compare ~}}
                   {{/ifAny ~}}
 
+                  {{#unless @root.data.results.overall.shared_1_percentage ~}}
                   {{#if @root.request.params.query.rid ~}}
                   <div class="cta v-padding-full">
                     <div class="mdc-text-field mdc-text-field--with-trailing-icon">
@@ -282,6 +283,7 @@
                     </p>
                   </div>
                   {{/if ~}}
+                  {{/unless ~}}
                 </div>
               </div>
             </div>
