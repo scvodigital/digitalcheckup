@@ -1,6 +1,6 @@
 {{#json type="object"}}
   {{{json key="responseId" value=@root.data.rid}}},
-  {{{json key="sharingId" value=(default @root.request.body.sid "")}}},
+  {{{json key="sharingId" value=(default @root.request.body.answers-sid "")}}},
   {{{json key="recordType" value=(default @root.data.recordType "Digital")}}},
 
   {{!-- TODO: Move these into questions within the questionnaire JSON --}}
