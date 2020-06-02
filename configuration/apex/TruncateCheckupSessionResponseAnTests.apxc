@@ -1,0 +1,180 @@
+@isTest(SeeAllData=false)
+global class TruncateCheckupSessionResponseAnTests {
+    static public Id checkupId {
+        get { return [SELECT Id FROM Checkup__c WHERE Response_Id__c = 'response-answer-truncate-test'].Id; }
+    }
+
+    static Id metricRecordTypeId {
+        get { return Schema.SObjectType.Checkup_Session_Response__c.getRecordTypeInfosByDeveloperName().get('Metric_Response').getRecordTypeId(); }
+    }
+
+    static Id answerRecordTypeId {
+        get { return Schema.SObjectType.Checkup_Session_Response__c.getRecordTypeInfosByDeveloperName().get('Question_Response').getRecordTypeId(); }
+    }
+
+    /**
+     * @description Sets up our test Checkup__c record all responses are linked to
+     */
+    @TestSetup
+    static void createMockData() {
+		Checkup__c testCheckup = new Checkup__c(
+            Email__c = 'test.contact@organisation.org',
+            Wants_Support__c = true,
+            Wants_Reminder__c = true,
+            Response_Id__c = 'response-answer-truncate-test',
+            Latest_Session_Time__c = DateTime.now()
+        );
+        insert testCheckup;
+    }
+
+    /**
+     * @description Tests to make sure the trigger doesn't affect or fail on
+     * non-answer responses on both insert and update
+     */
+    static testMethod void testMetricResponse() {
+        DateTime sessionTime = DateTime.Now();
+
+        // Create a basic metric response object and insert it
+        Checkup_Session_Response__c response = new Checkup_Session_Response__c(
+        	Checkup__c = checkupId,
+            RecordTypeId = metricRecordTypeId,
+            Session_Time__c = sessionTime,
+            Metric__c = 'metric_1',
+            Percentage_Score__c = 0.45
+        );
+        insert response;
+
+        // Get newly inserted object so we can test its post-trigger state
+        Checkup_Session_Response__c testResponse1 = [
+            SELECT Answer__c, Answer_Truncated__c, Metric__c, Percentage_Score__c
+            FROM Checkup_Session_Response__c
+            WHERE
+            	Checkup__c = :checkupId AND
+            	Session_Time__c = :sessionTime
+        ];
+
+        // Check that our Answer fields are blank as it is a metric response
+        System.assert(String.isBlank(testResponse1.Answer__c));
+        System.assert(String.isBlank(testResponse1.Answer_Truncated__c));
+
+        // Alter the response in some way
+        response.Percentage_Score__c = 0.5;
+        update response;
+
+        // Get newly updated object so we can test its post-trigger state
+        Checkup_Session_Response__c testResponse2 = [
+            SELECT Answer__c, Answer_Truncated__c, Metric__c, Percentage_Score__c
+            FROM Checkup_Session_Response__c
+            WHERE
+            	Checkup__c = :checkupId AND
+            	Session_Time__c = :sessionTime
+        ];
+
+        // Check that our Answer fields are still blank as it is a metric response
+        System.assert(String.isBlank(testResponse2.Answer__c));
+        System.assert(String.isBlank(testResponse2.Answer_Truncated__c));
+    }
+
+    /**
+     * @description Tests that answers shorter than 255 will be copied un-truncated to
+     * the Answer_Truncated__c field on both insert and update
+     */
+    static testMethod void testShortAnswerResponse() {
+        DateTime sessionTime = DateTime.Now().addDays(1);
+        String shortAnswer = 'Test short answer';
+
+        // Create an answer response object with an answer < 255 characters long and insert it
+        Checkup_Session_Response__c response = new Checkup_Session_Response__c(
+        	Checkup__c = checkupId,
+            RecordTypeId = answerRecordTypeId,
+            Session_Time__c = sessionTime,
+            Question__c = 'question_1',
+            Answer__c = shortAnswer
+        );
+        insert response;
+
+        // Get newly inserted object so we can test its post-trigger state
+        Checkup_Session_Response__c testResponse1 = [
+            SELECT Answer__c, Answer_Truncated__c, Metric__c, Percentage_Score__c
+            FROM Checkup_Session_Response__c
+            WHERE
+            	Checkup__c = :checkupId AND
+            	Session_Time__c = :sessionTime
+        ];
+
+        // Check that the Answer__c and Answer_Truncated__c fields have the same text
+        System.assertEquals(shortAnswer, testResponse1.Answer__c);
+        System.assertEquals(shortAnswer, testResponse1.Answer_Truncated__c);
+
+        // Alter our response in some way
+        String shorterAnswer = 'Test shorter';
+        testResponse1.Answer__c = shorterAnswer;
+        update testResponse1;
+
+        // Get newly updated object so we can test its post-trigger state
+        Checkup_Session_Response__c testResponse2 = [
+            SELECT Answer__c, Answer_Truncated__c, Metric__c, Percentage_Score__c
+            FROM Checkup_Session_Response__c
+            WHERE
+            	Checkup__c = :checkupId AND
+            	Session_Time__c = :sessionTime
+        ];
+
+        // Check the Answer__c and Answer_Truncated__c fields still have the same text
+        System.assertEquals(shorterAnswer, testResponse2.Answer__c);
+        System.assertEquals(shorterAnswer, testResponse2.Answer_Truncated__c);
+    }
+
+    /**
+     * @description Tests that answers longer than 255 will be copied truncated to
+     * the Answer_Truncated__c field on both insert and update
+     */
+    static testMethod void testLongAnswerResponse() {
+        DateTime sessionTime = DateTime.Now().addDays(2);
+        String longAnswer 			= 'I am a test response that is way too verbose and serves the sole purpose of being above 255 characters long. This is quite a simple humble but important purpose as - while my trigger may look basic - there is always the chance of something going very wrong.';
+        String longAnswerTruncated 	= 'I am a test response that is way too verbose and serves the sole purpose of being above 255 characters long. This is quite a simple humble but important purpose as - while my trigger may look basic - there is always the chance of something going very w...';
+
+        // Create a answer response object with an answer > 255 characters long and insert it
+        Checkup_Session_Response__c response = new Checkup_Session_Response__c(
+        	Checkup__c = checkupId,
+            RecordTypeId = answerRecordTypeId,
+            Session_Time__c = sessionTime,
+            Question__c = 'question_2',
+            Answer__c = longAnswer
+        );
+        insert response;
+
+        // Get newly inserted object so we can test its post-trigger state
+        Checkup_Session_Response__c testResponse1 = [
+            SELECT Answer__c, Answer_Truncated__c, Metric__c, Percentage_Score__c
+            FROM Checkup_Session_Response__c
+            WHERE
+            	Checkup__c = :checkupId AND
+            	Session_Time__c = :sessionTime
+        ];
+
+        // Check that its Answer has been copied and truncated into the Answer_Truncated__c field
+        System.assertEquals(longAnswer, testResponse1.Answer__c);
+        System.assertEquals(longAnswerTruncated, testResponse1.Answer_Truncated__c);
+
+        // Alter our response in some way
+        String longerAnswer 			= 'I am a test response that is way too verbose and serves the sole purpose of being above 255 characters long. This is quite a simple humble but important purpose as - while my trigger may look basic - there is always the chance of something going completely wrong.';
+        String longerAnswerTruncated 	= 'I am a test response that is way too verbose and serves the sole purpose of being above 255 characters long. This is quite a simple humble but important purpose as - while my trigger may look basic - there is always the chance of something going comple...';
+
+        response.Answer__c = longerAnswer;
+        update response;
+
+        // Get newly updated object so we can test its post-trigger state
+        Checkup_Session_Response__c testResponse2 = [
+            SELECT Answer__c, Answer_Truncated__c, Metric__c, Percentage_Score__c
+            FROM Checkup_Session_Response__c
+            WHERE
+            	Checkup__c = :checkupId AND
+            	Session_Time__c = :sessionTime
+        ];
+
+        // Check that our Answer has been copied and truncated into the Answer_Truncated__c field
+        System.assertEquals(longerAnswer, testResponse2.Answer__c);
+        System.assertEquals(longerAnswerTruncated, testResponse2.Answer_Truncated__c);
+    }
+}

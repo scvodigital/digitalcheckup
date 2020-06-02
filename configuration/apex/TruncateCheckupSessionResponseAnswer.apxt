@@ -1,0 +1,18 @@
+/**
+ * @author Matthew Parry-Wilkes
+ * @date 2020
+ *
+ * @group Checkups
+ * @description A trigger to copy Answer__c text into Answer_Truncated__c
+ * and abbreviate it to 255 characters long. This is then used in the
+ * Answer_or_Percentage_Score__c Formula field
+ */
+trigger TruncateCheckupSessionResponseAnswer on Checkup_Session_Response__c (before insert, before update) {
+    for (Checkup_Session_Response__c item : Trigger.new) {
+        if (!String.isBlank(item.Answer__c) && item.Answer__c.length() > 255) {
+            item.Answer_Truncated__c = item.Answer__c.abbreviate(255);
+        } else {
+            item.Answer_Truncated__c = item.Answer__c;
+        }
+    }
+}

@@ -19,14 +19,16 @@
     {{/each}}
   {{/each}}
 
-  {{#json key="responses" type="array"}}
+  {{#json key="metricResponses" type="array"}}
     {{#each (groupBy @root.data.metrics "metric")}}
       {{#json type="object"}}
         {{{json key="metric" value=(concat @key)}}},
         {{{json key="percentageScore" value=(maths "ceil((sum(scores) - sum(minScores)) / (sum(maxScores) - sum(minScores)) * 100)" scores=(pluck this "score") maxScores=(pluck this "maxScore") minScores=(pluck this "minScore"))}}}
       {{/json}},
     {{/each}}
+  {{/json}},
 
+  {{#json key="questionResponses" type="array"}}
     {{#each @root.data.checkup}}
       {{#each questions}}
         {{#json type="object"}}

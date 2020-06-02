@@ -1,0 +1,531 @@
+@isTest(SeeAllData=false)
+global class SaveCheckupSessionTests {
+    static testMethod void saveCheckupSessionValidTest() {
+        RestRequest request = new RestRequest();
+
+        request.requestUri = 'https://yourInstance.salesforce.com/services/apexrest/CheckupSession/';
+        request.httpMethod = 'POST';
+        request.addHeader('Content-Type', 'application/json');
+        request.requestBody = Blob.valueOf(String.join(new String[]{
+            '{',
+        	'"recordType": "Digital",',
+        	'"contactName": "Test Contact",',
+        	'"email": "test.contact@organisation.org",',
+        	'"organisation": "Test Organisation",',
+        	'"postcode": "EH6 4AD",',
+        	'"responseId": "test-response-id",',
+        	'"sharingId": "test-sharing-id",',
+        	'"localAuthority": "Edinburgh, City of",',
+        	'"estimatedAnnualTurnover": "<100000",',
+        	'"wantsSupport": true,',
+        	'"wantsReminder": false,',
+            '"metricResponses": [',
+            '{ "metric": "metric_1", "percentageScore": 0.45 }',
+            '],',
+            '"questionResponses": [',
+            '{ "question": "When did you have breakfast", "answer": "At 07:00" }',
+            ']',
+            '}'
+            }, ' '));
+        RestContext.request = request;
+
+        System.debug('Requesting: ' + request.requestUri);
+        debug('Headers', request.headers);
+        debug('Body', request.requestBody);
+
+		SaveCheckupSession.SaveCheckupSessionRestResponse restResponse = SaveCheckupSession.saveCheckupSession();
+
+        debug('Rest response', restResponse);
+
+        System.assert(restResponse.success);
+    }
+
+    static testMethod void saveCheckupSessionInvalidTest() {
+        RestRequest request = new RestRequest();
+
+        request.requestUri = 'https://yourInstance.salesforce.com/services/apexrest/CheckupSession/';
+        request.httpMethod = 'POST';
+        request.addHeader('Content-Type', 'application/json');
+        request.requestBody = Blob.valueOf(String.join(new String[]{
+            '{',
+        	'"recordType": "Digital",',
+        	'"email": "test.contact@organisation.org",',
+        	'"organisation": "Test Organisation",',
+        	'"postcode": "EH6 4AD",',
+        	'"responseId": "test-response-id",',
+        	'"sharingId": "test-sharing-id",',
+        	'"localAuthority": "Edinburgh, City of",',
+        	'"estimatedAnnualTurnover": "<100000",',
+        	'"wantsSupport": true,',
+        	'"wantsReminder": false,',
+            '"metricResponses": [',
+            '{ "metric": "metric_1", "percentageScore": 0.45 }',
+            '],',
+            '"questionResponses": [',
+            '{ "question": "When did you have breakfast", "answer": "At 07:00" }',
+            ']',
+            '}'
+            }, ' '));
+        RestContext.request = request;
+
+        System.debug('Requesting: ' + request.requestUri);
+        debug('Headers', request.headers);
+        debug('Body', request.requestBody);
+
+		SaveCheckupSession.SaveCheckupSessionRestResponse restResponse = SaveCheckupSession.saveCheckupSession();
+
+        debug('Rest response', restResponse);
+
+        System.assert(!restResponse.success);
+        System.assertEquals('Checkup Sessions must specify a contact name', restResponse.errorMessage);
+    }
+
+    static testMethod void testDeserialisationWithValidCheckup() {
+        String title = 'Valid Checkup';
+        String json = String.join(new String[]{
+            '{',
+        	'"recordType": "Digital",',
+        	'"contactName": "Test Contact",',
+        	'"email": "test.contact@organisation.org",',
+        	'"organisation": "Test Organisation",',
+        	'"postcode": "EH6 4AD",',
+        	'"responseId": "test-response-id",',
+        	'"sharingId": "test-sharing-id",',
+        	'"localAuthority": "Edinburgh, City of",',
+        	'"estimatedAnnualTurnover": "<100000",',
+        	'"wantsSupport": true,',
+        	'"wantsReminder": false,',
+            '"metricResponses": [',
+            '{ "metric": "metric_1", "percentageScore": 0.45 }',
+            '],',
+            '"questionResponses": [',
+            '{ "question": "When did you have breakfast", "answer": "At 07:00" }',
+            ']',
+            '}'
+        }, ' ');
+        List<String> expectedIssues = new List<String>();
+
+        deserialisationTestHelper(title, json, expectedIssues);
+    }
+
+    static testMethod void testDeserialisationWithEmptyRequestBody() {
+		String title = 'Empty Request Body';
+        String json = '';
+		List<String> expectedIssues = new SaveCheckupSession.CheckupSession().validationIssues;
+
+        deserialisationTestHelper(title, json, expectedIssues);
+    }
+
+    static testMethod void testDeserialisationWithCorruptJson() {
+		String title = 'Corrupt Json';
+        String json = '{ "recordType": "Digital';
+		List<String> expectedIssues = new SaveCheckupSession.CheckupSession().validationIssues;
+
+        deserialisationTestHelper(title, json, expectedIssues);
+    }
+
+    static testMethod void testDeserialisationWithNoContactOrOrganisation() {
+        String title = 'Checkup No Contact or Organisation';
+        String json = String.join(new String[]{
+            '{',
+        	'"recordType": "Digital",',
+        	'"email": "test.contact@organisation.org",',
+        	'"postcode": "EH6 4AD",',
+        	'"responseId": "test-response-id",',
+        	'"sharingId": "test-sharing-id",',
+        	'"localAuthority": "Edinburgh, City of",',
+        	'"estimatedAnnualTurnover": "<100000",',
+        	'"wantsSupport": true,',
+        	'"wantsReminder": false,',
+            '"metricResponses": [',
+            '{ "metric": "metric_1", "percentageScore": 0.45 }',
+            '],',
+            '"questionResponses": [',
+            '{ "question": "When did you have breakfast", "answer": "At 07:00" }',
+            ']',
+            '}'
+        }, ' ');
+        List<String> expectedIssues = new String[] {
+            'Checkup Sessions must specify a contact name'
+        };
+
+        deserialisationTestHelper(title, json, expectedIssues);
+    }
+
+    static testMethod void testDeserialisationWithInvalidRecordType() {
+        String title = 'Invalid Record Type';
+        String json = String.join(new String[]{
+            '{',
+        	'"recordType": "NoSuchRecordType",',
+        	'"contactName": "Test Contact",',
+        	'"email": "test.contact@organisation.org",',
+        	'"organisation": "Test Organisation",',
+        	'"postcode": "EH6 4AD",',
+        	'"responseId": "test-response-id",',
+        	'"sharingId": "test-sharing-id",',
+        	'"localAuthority": "Edinburgh, City of",',
+        	'"estimatedAnnualTurnover": "<100000",',
+        	'"wantsSupport": true,',
+        	'"wantsReminder": false,',
+            '"metricResponses": [',
+            '{ "metric": "metric_1", "percentageScore": 0.45 }',
+            '],',
+            '"questionResponses": [',
+            '{ "question": "When did you have breakfast", "answer": "At 07:00" }',
+            ']',
+            '}'
+        }, ' ');
+        List<String> expectedIssues = new String[] {
+            'Checkup Sessions must specify a valid record type'
+        };
+
+        deserialisationTestHelper(title, json, expectedIssues);
+    }
+
+    static testMethod void testDeserialisationWithNoResponses() {
+        String title = 'No Responses';
+        String json = String.join(new String[]{
+            '{',
+        	'"recordType": "Digital",',
+        	'"contactName": "Test Contact",',
+        	'"email": "test.contact@organisation.org",',
+        	'"organisation": "Test Organisation",',
+        	'"postcode": "EH6 4AD",',
+        	'"responseId": "test-response-id",',
+        	'"sharingId": "test-sharing-id",',
+        	'"localAuthority": "Edinburgh, City of",',
+        	'"estimatedAnnualTurnover": "<100000",',
+        	'"wantsSupport": true,',
+        	'"wantsReminder": false,',
+            '"metricResponses": [],',
+            '"questionResponses": []',
+            '}'
+        }, ' ');
+        List<String> expectedIssues = new String[] {
+            'Checkup Sessions must have at least one Metric Response'
+        };
+
+        deserialisationTestHelper(title, json, expectedIssues);
+    }
+
+    static testMethod void testDeserialisationWithInvalidResponses() {
+        String title = 'Invalid Responses';
+        String json = String.join(new String[]{
+            '{',
+        	'"recordType": "Digital",',
+        	'"contactName": "Test Contact",',
+        	'"email": "test.contact@organisation.org",',
+        	'"organisation": "Test Organisation",',
+        	'"postcode": "EH6 4AD",',
+        	'"responseId": "test-response-id",',
+        	'"sharingId": "test-sharing-id",',
+        	'"localAuthority": "Edinburgh, City of",',
+        	'"estimatedAnnualTurnover": "<100000",',
+        	'"wantsSupport": true,',
+        	'"wantsReminder": false,',
+            '"metricResponses": [ { "question": "I question", "percentageScore": 0.45 } ],',
+            '"questionResponses": [ { "metric": "I metric", "answer": "I should be a percentage score" } ]',
+            '}'
+        }, ' ');
+        //This is kind of dumb and annoying behavior. If a response object is totally corrupt the whole CheckupSession fails to deserialise
+        List<String> expectedIssues = new SaveCheckupSession.CheckupSession().validationIssues;
+
+        deserialisationTestHelper(title, json, expectedIssues);
+    }
+
+    static testMethod void testDeserialisationWithIncompleteResponses() {
+        String title = 'Incomplete Responses';
+        String json = String.join(new String[]{
+            '{',
+        	'"recordType": "Digital",',
+        	'"contactName": "Test Contact",',
+        	'"email": "test.contact@organisation.org",',
+        	'"organisation": "Test Organisation",',
+        	'"postcode": "EH6 4AD",',
+        	'"responseId": "test-response-id",',
+        	'"sharingId": "test-sharing-id",',
+        	'"localAuthority": "Edinburgh, City of",',
+        	'"estimatedAnnualTurnover": "<100000",',
+        	'"wantsSupport": true,',
+        	'"wantsReminder": false,',
+            '"metricResponses": [ { "percentageScore": 0.45 } ],',
+            '"questionResponses": [ { "answer": "I should be a percentage score" } ]',
+            '}'
+        }, ' ');
+        //This is kind of dumb and annoying behavior. If a response object is totally corrupt the whole CheckupSession fails to deserialise
+        List<String> expectedIssues = new String[] {
+            'Metric Response 0: Metric Responses must have a metric',
+            'Question Response 0: Question Responses must have a question'
+        };
+
+        deserialisationTestHelper(title, json, expectedIssues);
+    }
+
+    static testMethod void testSaveCheckupSessionCheckupNewAndExisting() {
+        // Create a CheckupSession that is new (its responseId doesn't exist in a Checkup__c)
+        SaveCheckupSession.CheckupSession checkupSessionNew = new SaveCheckupSession.CheckupSession();
+        checkupSessionNew.recordType = 'Digital';
+        checkupSessionNew.contactName = 'Test Contact';
+        checkupSessionNew.email = 'test.contact@organisation.org';
+        checkupSessionNew.organisation = 'Test Organisation';
+        checkupSessionNew.postcode = 'EH6 4AD';
+        checkupSessionNew.responseId = 'test-response-id-new';
+        checkupSessionNew.localAuthority = 'Edinburgh, City of';
+        checkupSessionNew.estimatedAnnualTurnover = '<100000';
+        checkupSessionNew.wantsSupport = true;
+        checkupSessionNew.wantsReminder = false;
+        checkupSessionNew.metricResponses = new List<SaveCheckupSession.MetricResponse>();
+        checkupSessionNew.questionResponses = new List<SaveCheckupSession.QuestionResponse>();
+
+        // Get the (hopefully) newly created and saved Checkup__c of our CheckupSession
+        Checkup__c checkupNew = SaveCheckupSession.saveCheckupSessionCheckup(checkupSessionNew);
+
+        // See if we can find our newly created checkup by its Response_Id__c
+        Checkup__c testCheckupNew = [SELECT Id, Web_Contact_Name__c, Web_Organisation__c, Response_Id__c FROM Checkup__c WHERE Response_Id__c = :checkupSessionNew.responseId];
+
+        // Do some assertin'
+        System.assertEquals(checkupNew.Id, testCheckupNew.Id);
+        System.assertEquals(checkupSessionNew.contactName, testCheckupNew.Web_Contact_Name__c);
+        System.assertEquals(checkupSessionNew.organisation, testCheckupNew.Web_Organisation__c);
+        System.assertEquals(checkupSessionNew.responseId, testCheckupNew.Response_Id__c);
+
+        // Now create a new CheckupSession that shares it's responseId with our first one
+        SaveCheckupSession.CheckupSession checkupSessionExisting = new SaveCheckupSession.CheckupSession();
+        checkupSessionExisting.recordType = checkupSessionNew.recordType;
+        checkupSessionExisting.contactName = checkupSessionNew.contactName;
+        checkupSessionExisting.email = checkupSessionNew.email;
+        checkupSessionExisting.organisation = checkupSessionNew.organisation;
+        checkupSessionExisting.postcode = checkupSessionNew.postcode;
+        checkupSessionExisting.responseId = checkupSessionNew.responseId;
+        checkupSessionExisting.localAuthority = checkupSessionNew.localAuthority;
+        checkupSessionExisting.estimatedAnnualTurnover = checkupSessionNew.estimatedAnnualTurnover;
+        checkupSessionExisting.wantsSupport = checkupSessionNew.wantsSupport;
+        /// Going to flip this value to test it updates
+        checkupSessionExisting.wantsReminder = !checkupSessionNew.wantsReminder;
+        checkupSessionExisting.metricResponses = checkupSessionNew.metricResponses;
+        checkupSessionExisting.questionResponses = checkupSessionNew.questionResponses;
+
+        // Get the (hopefully) newly created and saved Checkup__c of our new CheckupSession
+        Checkup__c checkupExisting = SaveCheckupSession.saveCheckupSessionCheckup(checkupSessionExisting);
+
+        // See if we can find our newly created checkup by its Response_Id__c
+        Checkup__c testCheckupExisting = [SELECT Id, Web_Contact_Name__c, Web_Organisation__c, Response_Id__c, Wants_Reminder__c FROM Checkup__c WHERE Response_Id__c = :checkupSessionExisting.responseId];
+
+        // Do some more assertin'
+        System.assertEquals(checkupExisting.Id, testCheckupExisting.Id);
+        System.assertEquals(checkupSessionExisting.contactName, testCheckupExisting.Web_Contact_Name__c);
+        System.assertEquals(checkupSessionExisting.organisation, testCheckupExisting.Web_Organisation__c);
+        System.assertEquals(checkupSessionExisting.responseId, testCheckupExisting.Response_Id__c);
+        System.assertEquals(checkupSessionExisting.wantsReminder, testCheckupExisting.Wants_Reminder__c);
+    }
+
+    static testMethod void testSaveCheckupSessionCheckupNewAndExistingWithDefaultWants() {
+        // Create a CheckupSession that is new (its responseId doesn't exist in a Checkup__c)
+        SaveCheckupSession.CheckupSession checkupSessionNew = new SaveCheckupSession.CheckupSession();
+        checkupSessionNew.recordType = 'Digital';
+        checkupSessionNew.contactName = 'Test Contact';
+        checkupSessionNew.email = 'test.contact@organisation.org';
+        checkupSessionNew.organisation = 'Test Organisation';
+        checkupSessionNew.postcode = 'EH6 4AD';
+        checkupSessionNew.responseId = 'test-response-id-new';
+        checkupSessionNew.localAuthority = 'Edinburgh, City of';
+        checkupSessionNew.estimatedAnnualTurnover = '<100000';
+        checkupSessionNew.metricResponses = new List<SaveCheckupSession.MetricResponse>();
+        checkupSessionNew.questionResponses = new List<SaveCheckupSession.QuestionResponse>();
+
+        // Get the (hopefully) newly created and saved Checkup__c of our CheckupSession
+        Checkup__c checkupNew = SaveCheckupSession.saveCheckupSessionCheckup(checkupSessionNew);
+
+        // Do some assertin'
+        System.assertEquals(false, checkupNew.Wants_Support__c, 'New default Wants_Support__c');
+        System.assertEquals(false, checkupNew.Wants_Reminder__c, 'New default Wants_Reminder__c');
+
+        // Now create a new CheckupSession that shares it's responseId with our first one
+        SaveCheckupSession.CheckupSession checkupSessionExisting = new SaveCheckupSession.CheckupSession();
+        checkupSessionExisting.recordType = checkupSessionNew.recordType;
+        checkupSessionExisting.contactName = checkupSessionNew.contactName;
+        checkupSessionExisting.email = checkupSessionNew.email;
+        checkupSessionExisting.organisation = checkupSessionNew.organisation;
+        checkupSessionExisting.postcode = checkupSessionNew.postcode;
+        checkupSessionExisting.responseId = checkupSessionNew.responseId;
+        checkupSessionExisting.localAuthority = checkupSessionNew.localAuthority;
+        checkupSessionExisting.estimatedAnnualTurnover = checkupSessionNew.estimatedAnnualTurnover;
+        checkupSessionExisting.metricResponses = checkupSessionNew.metricResponses;
+        checkupSessionExisting.questionResponses = checkupSessionNew.questionResponses;
+
+        // Get the (hopefully) newly created and saved Checkup__c of our new CheckupSession
+        Checkup__c checkupExisting = SaveCheckupSession.saveCheckupSessionCheckup(checkupSessionExisting);
+
+        // Do some more assertin'
+        System.assertEquals(false, checkupExisting.Wants_Support__c, 'Existing default Wants_Support__c');
+        System.assertEquals(false, checkupExisting.Wants_Reminder__c, 'Existing default Wants_Reminder__c');
+    }
+
+    static testMethod void testSaveCheckupSessionResponses() {
+        Id metricRecordTypeId = Schema.SObjectType.Checkup_Session_Response__c.getRecordTypeInfosByDeveloperName().get('Metric_Response').getRecordTypeId();
+        Id answerRecordTypeId = Schema.SObjectType.Checkup_Session_Response__c.getRecordTypeInfosByDeveloperName().get('Question_Response').getRecordTypeId();
+
+        // Create a Checkup__c to test attaching our session responses to.
+        Checkup__c checkup = new Checkup__c(
+            Email__c = 'test.contact@organisation.org',
+            Wants_Support__c = true,
+            Wants_Reminder__c = true,
+            Response_Id__c = 'response-id-sessions',
+            Latest_Session_Time__c = DateTime.Now()
+        );
+        insert checkup;
+
+        Id checkupId = [Select Id FROM Checkup__c WHERE Response_Id__c = :checkup.Response_Id__c].Id;
+
+        // Create a list for our first set of responses
+        List<SaveCheckupSession.MetricResponse> firstMetricResponses = new List<SaveCheckupSession.MetricResponse>();
+        List<SaveCheckupSession.QuestionResponse> firstQuestionResponses = new List<SaveCheckupSession.QuestionResponse>();
+
+        // Create a metric response
+        SaveCheckupSession.MetricResponse firstResponseMetric = new SaveCheckupSession.MetricResponse();
+        firstResponseMetric.metric = 'How breakfast?';
+        firstResponseMetric.percentageScore = 0.8;
+        firstMetricResponses.add(firstResponseMetric);
+
+        // Create a question response
+        SaveCheckupSession.QuestionResponse firstResponseQuestion = new SaveCheckupSession.QuestionResponse();
+        firstResponseQuestion.question = 'What did you have for breakfast?';
+        firstResponseQuestion.answer = 'Malted Wheaties';
+        firstQuestionResponses.add(firstResponseQuestion);
+
+        List<Checkup_Session_Response__c> firstResponses = SaveCheckupSession.saveResponses(firstMetricResponses, firstQuestionResponses, checkup);
+
+        // Fetch Checkup_Session_Response__c for their given Checkup__c.Response_Id__c
+        List<Checkup_Session_Response__c> testFirstResponses = [
+            SELECT
+            	Id, Session_Time__c, Checkup__r.Id, Question__c,
+            	Answer__c, Metric__c, Percentage_Score__c, RecordType.DeveloperName
+            FROM Checkup_Session_Response__c
+            WHERE
+            	Checkup__r.Id = :checkupId AND
+            	Session_Time__c = :checkup.Latest_Session_Time__c
+       	];
+
+        firstResponses.sort();
+        testFirstResponses.sort();
+
+        for (Integer i = 0; i < firstResponses.size(); i++) {
+            Checkup_Session_Response__c checkupSessionResponse = firstResponses[i];
+            Checkup_Session_Response__c testCheckupSessionResponse = testFirstResponses[i];
+
+            System.assertEquals(checkupSessionResponse.Checkup__c, testCheckupSessionResponse.Checkup__c);
+
+            if (testCheckupSessionResponse.RecordTypeId == metricRecordTypeId) {
+                // If the response is a metric response then test it with data in our first metric CheckupSessionResponse
+                System.assertEquals(firstResponseMetric.metric, testCheckupSessionResponse.Metric__c);
+                System.assertEquals(firstResponseMetric.percentageScore, testCheckupSessionResponse.Percentage_Score__c);
+            } else if (testCheckupSessionResponse.RecordTypeId == answerRecordTypeId) {
+                // If the response is an answer response then test it with data in our first answer CheckupSessionResponse
+                System.assertEquals(firstResponseQuestion.question, testCheckupSessionResponse.Question__c);
+                System.assertEquals(firstResponseQuestion.answer, testCheckupSessionResponse.Answer__c);
+            } else {
+                System.assert(false, 'Invalid record type');
+            }
+        }
+
+        // Create a list for our second set of responses
+        List<SaveCheckupSession.MetricResponse> secondMetricResponses = new List<SaveCheckupSession.MetricResponse>();
+        List<SaveCheckupSession.QuestionResponse> secondQuestionResponses = new List<SaveCheckupSession.QuestionResponse>();
+
+        // Create a metric response
+        SaveCheckupSession.MetricResponse secondResponseMetric = new SaveCheckupSession.MetricResponse();
+        secondResponseMetric.metric = 'How breakfast?';
+        secondResponseMetric.percentageScore = 0.6;
+        secondMetricResponses.add(secondResponseMetric);
+
+        // Create a question response
+        SaveCheckupSession.QuestionResponse secondResponseAnswer = new SaveCheckupSession.QuestionResponse();
+        secondResponseAnswer.question = 'What did you have for breakfast?';
+        secondResponseAnswer.answer = 'Toast';
+        secondQuestionResponses.add(secondResponseAnswer);
+
+        checkup.Latest_Session_Time__c = DateTime.now().addDays(1);
+        update checkup;
+
+        List<Checkup_Session_Response__c> secondResponses = SaveCheckupSession.saveResponses(secondMetricResponses, secondQuestionResponses, checkup);
+
+        // Fetch Checkup_Session_Response__c for their given Checkup__c.Response_Id__c
+        List<Checkup_Session_Response__c> testSecondCheckupSessionResponses = [
+            SELECT
+            	Id, Session_Time__c, Checkup__r.Id, Question__c,
+            	Answer__c, Metric__c, Percentage_Score__c, RecordType.DeveloperName
+            FROM Checkup_Session_Response__c
+            WHERE
+            	Checkup__r.Id = :checkupId AND
+            	Session_Time__c = :checkup.Latest_Session_Time__c
+       	];
+
+        secondResponses.sort();
+        testSecondCheckupSessionResponses.sort();
+
+        for (Integer i = 0; i < secondResponses.size(); i++) {
+            Checkup_Session_Response__c checkupSessionResponse = secondResponses[i];
+            Checkup_Session_Response__c testCheckupSessionResponse = testSecondCheckupSessionResponses[i];
+
+            System.assertEquals(checkupSessionResponse.Checkup__c, testCheckupSessionResponse.Checkup__c);
+
+            if (testCheckupSessionResponse.RecordTypeId == metricRecordTypeId) {
+                // If the response is a metric response then test it with data in our second metric CheckupSessionResponse
+                System.assertEquals(secondResponseMetric.metric, testCheckupSessionResponse.Metric__c);
+                System.assertEquals(secondResponseMetric.percentageScore, testCheckupSessionResponse.Percentage_Score__c);
+            } else if (testCheckupSessionResponse.RecordTypeId == answerRecordTypeId) {
+                // If the response is an answer response then test it with data in our second answer CheckupSessionResponse
+                System.assertEquals(secondResponseAnswer.question, testCheckupSessionResponse.Question__c);
+                System.assertEquals(secondResponseAnswer.answer, testCheckupSessionResponse.Answer__c);
+            } else {
+                System.assert(false, 'Invalid record type');
+            }
+        }
+
+        // Finally check that our Checkup__c now has 4 Checkup_Session_Response__c objects
+        Integer totalResponses = Database.countQuery('SELECT COUNT() FROM Checkup_Session_Response__c WHERE Checkup__r.Id = \'' + checkupId + '\'');
+        System.assertEquals(4, totalResponses);
+    }
+
+    /** Below are helper methods that just assist with the unit tests **/
+
+    /**
+     * @description Prints 2 debug lines, the first being a title, the second being the contents of any object
+     *
+     * @param title the String that is printed first
+     * @param o Any object to print
+     */
+    public static void debug(String title, Object o) {
+        System.debug(title + ':');
+        System.debug(o);
+    }
+
+    /**
+     * @description A helper method that calls our main getCheckupSessionFromRequest method for deserialisation
+     * but prints a couple of useful debug messages of incoming JSON and deserialised output and then runs validation tests
+     *
+     * @param testName The string name of the test object we are deserialising
+     * @param json Then string of the JSON that is sent in the RestRequest.requestBody
+     * @param expectedIssues A list of all issues you expect to find
+     */
+    static void deserialisationTestHelper(String testName, String json, List<String> expectedIssues) {
+        debug(testName + ' JSON', json);
+        SaveCheckupSession.CheckupSession checkup = SaveCheckupSession.getCheckupSessionFromRequest(Blob.valueOf(json));
+        debug(testName + ' Deserialised', checkup);
+
+        System.debug(String.format('{0}: Expected issue count: {1}, Actual issue count: {2}', new List<Object> { testName, expectedIssues.size(), checkup.validationIssues.size() }));
+        debug(testName + ': Expected Issues', expectedIssues);
+        debug(testName + ': Actual Issues', checkup.validationIssues);
+
+        if (expectedIssues.size() > 0) {
+            System.assert(!checkup.isValid);
+        	System.assertEquals(checkup.validationIssues.size(), expectedIssues.size());
+        } else {
+            System.assert(checkup.isValid);
+        }
+
+        for (String expectedIssue : expectedIssues) {
+            System.assert(checkup.validationIssues.contains(expectedIssue), 'Checking for issue: "' + expectedIssue + '"');
+        }
+    }
+}

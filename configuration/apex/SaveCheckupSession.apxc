@@ -1,0 +1,432 @@
+/**
+ * @author Matthew Parry-Wilkes
+ * @date 2020
+ *
+ * @group Checkups
+ * @description A class to handle Rest requests to save Checkup data with a session of responses
+ */
+@RestResource(urlMapping='/CheckupSession/*')
+global with sharing class SaveCheckupSession {
+    /**
+     * @description A class used to deserialise the Checkup Session that has been POSTed
+     */
+    global class CheckupSession {
+        public String recordType;
+        public String contactName;
+        public String email;
+        public String organisation;
+        public String postcode;
+        public String responseId;
+        public String sharingId;
+        public String localAuthority;
+        public String estimatedAnnualTurnover;
+        public Boolean wantsSupport;
+        public Boolean wantsReminder;
+        public List<QuestionResponse> questionResponses;
+        public List<MetricResponse> metricResponses;
+
+        /**
+         * @description Get the RecordTypeId of a Checkup__c for the name stored in self.recordType
+         */
+        public Id recordTypeId {
+            get { return Schema.SObjectType.Checkup__c.getRecordTypeInfosByDeveloperName().get(recordType).getRecordTypeId(); }
+        }
+
+        /**
+         * @description Get a list of each validation issue there is on this object and child objects.
+         * This doubles as our validator
+         */
+        public List<String> validationIssues {
+            get {
+                List<String> issues = new List<String>();
+
+                if (String.isBlank(recordType)) {
+                    issues.add('Checkup Sessions must specify a record type');
+                }
+
+                try {
+                    Id validateRecordTypeId = recordTypeId;
+                } catch (Exception ex) {
+                    issues.add('Checkup Sessions must specify a valid record type');
+                }
+
+                if (String.isBlank(responseId)) {
+                    issues.add('Checkup Sessions must specify a response Id');
+                }
+
+                if (String.isBlank(email)) {
+                    issues.add('Checkup Sessions must specify an email');
+                }
+
+                if (String.isBlank(contactName)) {
+                    issues.add('Checkup Sessions must specify a contact name');
+                }
+
+                if (questionResponses != null && questionResponses.size() > 0) {
+                    Integer index = 0;
+                    for (QuestionResponse response : questionResponses) {
+                        if (!response.isValid) {
+                            for (String validationIssue : response.validationIssues) {
+                                // Prepend the index of the response where there was an issue
+                                String issue = String.format('Question Response {0}: {1}', new List<Object> { index, validationIssue });
+                                // And add it to our issues list
+                                issues.add(issue);
+                            }
+                        }
+                        index++;
+                    }
+                }
+
+                if (metricResponses == null || metricResponses.size() == 0) {
+                    issues.add('Checkup Sessions must have at least one Metric Response');
+                } else {
+                    Integer index = 0;
+                    for (MetricResponse response : metricResponses) {
+                        if (!response.isValid) {
+                            for (String validationIssue : response.validationIssues) {
+                                // Prepend the index of the response where there was an issue
+                                String issue = String.format('Metric Response {0}: {1}', new List<Object> { index, validationIssue });
+                                // And add it to our issues list
+                                issues.add(issue);
+                            }
+                        }
+                        index++;
+                    }
+                }
+
+                return issues;
+            }
+        }
+
+        /**
+         * @description Get the validation state of this object by checking size of validationIssues
+         */
+        public Boolean isValid {
+            get { return validationIssues.size() == 0; }
+        }
+    }
+
+    /**
+     * @description A class used to deserialise Checkup Session Question Responses that have been POSTed
+     */
+    global class QuestionResponse {
+        public String question;
+        public String answer;
+
+        /**
+         * @description Get a list of each validation issue there is on this object.
+         * This doubles as our validator
+         */
+        public List<string> validationIssues {
+            get {
+                List<String> issues = new List<String>();
+
+                if (String.isBlank(question)) {
+                    issues.add('Question Responses must have a question');
+                }
+
+                return issues;
+            }
+        }
+
+        /**
+         * @description Get the validation state of this object by checking size of validationIssues
+         */
+        public Boolean isValid {
+            get { return validationIssues.size() == 0; }
+        }
+
+        public Checkup_Session_Response__c toSObject(Checkup__c checkup) {
+            return new Checkup_Session_Response__c(
+                Question__c = question,
+                Answer__c = answer == null ? '[No Response]': answer,
+                RecordTypeId = Schema.SObjectType.Checkup_Session_Response__c.getRecordTypeInfosByDeveloperName().get('Question_Response').getRecordTypeId(),
+                Session_Time__c = checkup.Latest_Session_Time__c,
+                Checkup__c = checkup.Id
+            );
+        }
+    }
+
+    /**
+     * @description A class used to deserialise Checkup Session Metric Responses that have been POSTed
+     */
+    global class MetricResponse {
+        public String metric;
+        public Decimal percentageScore;
+
+        /**
+         * @description Get a list of each validation issue there is on this object.
+         * This doubles as our validator
+         */
+        public List<string> validationIssues {
+            get {
+                List<String> issues = new List<String>();
+
+                if (String.isBlank(metric)) {
+                    issues.add('Metric Responses must have a metric');
+                }
+
+                return issues;
+            }
+        }
+
+        /**
+         * @description Get the validation state of this object by checking size of validationIssues
+         */
+        public Boolean isValid {
+            get { return validationIssues.size() == 0; }
+        }
+
+        public Checkup_Session_Response__c toSObject(Checkup__c checkup) {
+            return new Checkup_Session_Response__c(
+                Metric__c = metric,
+                Percentage_Score__c = percentageScore == null ? 0 : percentageScore,
+                RecordTypeId = Schema.SObjectType.Checkup_Session_Response__c.getRecordTypeInfosByDeveloperName().get('Metric_Response').getRecordTypeId(),
+                Session_Time__c = checkup.Latest_Session_Time__c,
+                Checkup__c = checkup.Id
+            );
+        }
+    }
+
+    /**
+     * @description A class hold all data that should be returned with every request
+     */
+    global class SaveCheckupSessionRestResponse {
+        public CheckupSession checkupSession;
+        public Boolean success;
+        public String errorMessage;
+        public String errorStackTrace;
+        public Integer errorLineNumber;
+        public String errorTypeName;
+    }
+
+    /**
+     * @description A custom Exception object for use when POSTed data is invalid
+     */
+    global class InvalidCheckupSessionException extends Exception { }
+
+    /**
+     * @description The method that responds to RestRequests on
+     * https://yourInstance.salesforce.com/services/apexrest/CheckupSession/
+     * which takes a POSTed CheckupSession with its responses and saves its data.
+     * The CheckupSession is extracted from RestContext.request.requestBody
+     *
+     * @return A JSON object that contains the CheckupSession along with a "success" flag and any exception information
+     */
+    @HttpPost
+    global static SaveCheckupSessionRestResponse saveCheckupSession() {
+        RestRequest req = RestContext.request;
+        RestResponse res = RestContext.response;
+
+        // Create an object to return in the RestResponse
+        SaveCheckupSessionRestResponse checkupRestResponse = new SaveCheckupSessionRestResponse();
+
+        try {
+            // Get a deserialised CheckupSession object to work with
+            CheckupSession checkupSession = getCheckupSessionFromRequest(req.requestBody);
+            checkupRestResponse.checkupSession = checkupSession;
+
+            // Check for any data issues with our deserialised CheckupSession
+            if (!checkupSession.isValid) {
+                System.debug('CheckupSession Validation Issues:');
+                System.debug(checkupSession.validationIssues);
+                // We've got problems so throw a validation exception for a "400 Bad Request"
+                throw new InvalidCheckupSessionException(String.join(checkupSession.validationIssues, ',\n'));
+            }
+
+            // Insert or Update our main Checkup__c object for the session
+            Checkup__c checkup = saveCheckupSessionCheckup(checkupSession);
+
+            // Insert each response to the current session
+            List<Checkup_Session_Response__c> responses = saveResponses(checkupSession.metricResponses, checkupSession.questionResponses, checkup);
+
+            // If we are here, nothing bad happened so the request was a success
+            checkupRestResponse.success = true;
+        } catch (Exception ex) {
+            // Set our RestResponse success to false as there was an Exception
+            checkupRestResponse.success = false;
+
+            // Store exception details in RestResponse
+            checkupRestResponse.errorMessage = ex.getMessage();
+            checkupRestResponse.errorStackTrace = ex.getStackTraceString();
+            checkupRestResponse.errorLineNumber = ex.getLineNumber();
+            checkupRestResponse.errorTypeName = ex.getTypeName();
+
+            if (ex.getTypeName() == 'InvalidCheckupSessionException') {
+                // The exception was down to bad user input or a poorly formed
+                // request so set our response status to '400 Bad Request'
+                //
+                // NOTE: This throws an error and isn't really needed
+                // res.statusCode = 400;
+            } else {
+                // The exception was down to something else so set our response
+                // status to '500 Internal Server Error'
+                //
+                // NOTE: This throws an error and isn't really needed
+                // res.statusCode = 500;
+            }
+        }
+
+        // Send back our response
+        return checkupRestResponse;
+    }
+
+    /**
+     * @description Deserialises the Blob given in the body of our request to a CheckupSession object
+     *
+     * @param requestBody the Blob that contains the serialised CheckupSession
+     * @return The deserialised and validated CheckupSession object
+     */
+    public static CheckupSession getCheckupSessionFromRequest(Blob requestBody) {
+        // Get the String content of our Blob
+        String sessionJson = requestBody.toString();
+
+        System.debug('Request Body:');
+        System.debug(sessionJson);
+
+        // Create an empty CheckupSession object to store our deserialised session
+        CheckupSession checkupSession;
+
+        try {
+            // Doing this in a `try` in case there is a problem with the serialised data
+            checkupSession = (CheckupSession)JSON.deserializeStrict(sessionJson,  CheckupSession.class);
+        } catch (Exception ex) {
+            System.debug('CheckupSession Deserialisation ' + ex.getTypeName() + ': Failed to deserialise Checkup Session');
+            System.debug('CheckupSession Deserialisation ' + ex.getMessage());
+            System.debug('CheckupSession Deserialisation ' + ex.getLineNumber());
+            System.debug('CheckupSession Deserialisation ' + ex.getStackTraceString());
+            checkupSession = new CheckupSession();
+        }
+
+        System.debug('Deserialised:');
+        System.debug(checkupSession);
+
+        // Return our deserialised CheckupSession
+        return checkupSession;
+    }
+
+    /**
+     * @description Inserts or Updates a new Checkup__c from a CheckupSession depending on whether a
+     * Response Id has already been used
+     *
+     * @param checkupSession containing the data for the new Checkup__c object
+     * @return the new or existing Checkup__c object
+     */
+    public static Checkup__c saveCheckupSessionCheckup(CheckupSession checkupSession) {
+        // Gets possible existing Checkup__c with matching response Id
+        List<Checkup__c> existingCheckups = [
+            SELECT
+            Id, Name,
+            Email__c, Latest_Session_Time__c,
+            Local_Authority__c, Estimated_Annual_Turnover__c,
+            Wants_Support__c, Wants_Reminder__c, Web_Contact_Name__c,
+            Web_Organisation__c, Web_Postcode__c, Sharing_ID__c,
+            Response_ID__c, RecordTypeId, RecordType.Name, Status__c
+            FROM Checkup__c
+            WHERE Response_Id__c = :checkupSession.responseId
+        ];
+
+        // Create empty Checkup__c to store our new OR existing Checkup__c instance
+        Checkup__c checkup;
+
+        //Get the current time to be used in Session_Time__c to group responses together
+        DateTime latestSessionTime = DateTime.now();
+
+        if (existingCheckups.isEmpty()) {
+            // Nothing in our list so we create a new Checkup__c instance and populate it with our data
+            System.debug('No existing checkup, creating a new one');
+
+            checkup = new Checkup__c(
+                Email__c = checkupSession.email,
+                Local_Authority__c = checkupSession.localAuthority,
+                Estimated_Annual_Turnover__c = checkupSession.estimatedAnnualTurnover,
+                Web_Contact_Name__c = checkupSession.contactName,
+                Web_Postcode__c = checkupSession.postcode,
+                Web_Organisation__c = checkupSession.organisation,
+                Response_ID__c = checkupSession.responseId,
+                Sharing_ID__c = checkupSession.sharingId,
+                RecordTypeId = checkupSession.recordTypeId,
+                Latest_Session_Time__c = latestSessionTime
+            );
+
+            if (checkupSession.wantsSupport == null) {
+                checkup.Wants_Support__c = false;
+            } else {
+                checkup.Wants_Support__c = checkupSession.wantsSupport;
+            }
+
+            if (checkupSession.wantsReminder == null) {
+                checkup.Wants_Reminder__c = false;
+            } else {
+                checkup.Wants_Reminder__c = checkupSession.wantsReminder;
+            }
+
+            // Then insert it
+            insert checkup;
+        } else {
+            // A Checkup__c was found so we should use it and update its existing fields
+            System.debug('Found an existing checkup so using it');
+            System.debug(checkup);
+
+            checkup = existingCheckups[0];
+            checkup.Local_Authority__c = checkupSession.localAuthority;
+            checkup.Estimated_Annual_Turnover__c = checkupSession.estimatedAnnualTurnover;
+            checkup.Web_Contact_Name__c = checkupSession.contactName;
+            checkup.Web_Postcode__c = checkupSession.postcode;
+            checkup.Web_Organisation__c = checkupSession.organisation;
+            checkup.Status__c = 'New';
+            checkup.Latest_Session_Time__c = latestSessionTime;
+
+            if (checkupSession.wantsSupport != null) {
+                checkup.Wants_Support__c = checkupSession.wantsSupport;
+            }
+
+            if (checkupSession.wantsReminder != null) {
+                checkup.Wants_Reminder__c = checkupSession.wantsReminder;
+            }
+
+            // The update it
+            update checkup;
+        }
+
+        // Return our new or updated Checkup__c
+        return checkup;
+    }
+
+    /*
+     * @description Saves a list of Checkup_Session_Response__c from a list of CheckupSessionQustionResponses and MetricResponses,
+     * each linked to a given Checkup__c record ID all grouped by a newly generated Session_Time__c
+     *
+     * @param metricResponses The list of MetricResponse objects to be converted and saved
+     * @param questionResponses The list of QuestionResponse objects to be converted and saved
+     * @param checkup The Checkup__c that all of our new Checkup_Session_Response__c objects are linked to
+     * @return The list of newly created Checkup_Session_Response__c objects
+     */
+    public static List<Checkup_Session_Response__c> saveResponses(List<MetricResponse> metricResponses, List<QuestionResponse> questionResponses, Checkup__c checkup) {
+        // Create a new list for our new objects
+        List<Checkup_Session_Response__c> responses = new List<Checkup_Session_Response__c>();
+
+        // Loop through our metric responses
+        for (MetricResponse metricResponse : metricResponses) {
+            // Add new Checkup_Session_Response__c to our list
+            responses.add(metricResponse.toSObject(checkup));
+        }
+
+        if (questionResponses != null) {
+            // Loop through our question responses
+            for (QuestionResponse questionResponse : questionResponses) {
+                // Add new Checkup_Session_Response__c to our list
+                responses.add(questionResponse.toSObject(checkup));
+            }
+        }
+
+        System.debug('Creating ' + String.valueOf(metricResponses.size()) + ' session Metric Responses');
+        System.debug('Creating ' + String.valueOf(QuestionResponses.size()) + ' session Question Responses');
+
+        // Insert all our new Checkup_Session_Response__c objects
+        insert responses;
+
+        // And return them
+        return responses;
+    }
+}
