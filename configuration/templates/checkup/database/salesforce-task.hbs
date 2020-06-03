@@ -1,3 +1,4 @@
+{{#ifAny (compare @root.data.currentSite.name "housing") (compare @root.request.body.answers-area "scotland")}}
 {
   "name": "saveCheckupSession",
   "taskModule": "salesforceApex",
@@ -14,3 +15,14 @@
     "apexClassPath": "/CheckupSession/"
   }
 }
+{{else}}
+{
+  "name": "saveCheckupSession",
+  "taskModule": "render",
+  "renderer": "handlebars",
+  "config": {
+    "template": "Not saving to Salesforce because submission isn't for SFHA and respondent not in Scotland",
+    "output": "data"
+  }
+}
+{{/ifAny}}
