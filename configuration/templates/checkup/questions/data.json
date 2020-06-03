@@ -799,7 +799,7 @@
     "questions": [
       {
         "title": "Do you provide information or forms of Technology enabled care in your organisation? *",
-        "value": "q2",
+        "value": "q1",
         "type": "select-one",
         "metric": "Technology enabled care",
         "options": [
@@ -824,7 +824,7 @@
       {
         "title": "Do you know about the TEC in Housing (TECH) Charter? It consists of 7 pledges that your organisation can make to commit to adopting Technology enabled care.",
         "description": "To find out more/sign up go to <a href=\"https://techousing.co.uk/the-charter-pledges\" target=\"_blank\">https://techousing.co.uk/the-charter-pledges</a> *",
-        "value": "q3",
+        "value": "q2",
         "type": "select-one",
         "metric": "Technology enabled care",
         "options": [
