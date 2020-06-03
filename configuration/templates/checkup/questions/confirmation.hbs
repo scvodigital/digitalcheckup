@@ -31,7 +31,7 @@
         <div class="answer-block">
           <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
             <textarea id="next_project" name="answers-next_project" class="mdc-text-field__input" rows="10" placeholder="Please enter a description" maxlength="32767"></textarea>
-            <label for="next_project" class="mdc-floating-label"></label>
+            <label for="answers-next_project" class="mdc-floating-label"></label>
           </div>
         </div>
       </div>
@@ -43,12 +43,24 @@
         <div class="answer-block">
           <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
             <textarea id="barriers" name="answers-barriers" class="mdc-text-field__input" rows="10" placeholder="Please enter a description" maxlength="32767"></textarea>
-            <label for="barriers" class="mdc-floating-label"></label>
+            <label for="answers-barriers" class="mdc-floating-label"></label>
           </div>
         </div>
       </div>
 
       {{#compare @root.data.currentSite.name "housing" ~}}
+      <div class="question-block mdc-elevation--z3">
+        <div class="question">
+          <h2 class="mdc-typography--headline5 question-title">Due to COVID19 situation – has it made your organisation digitally transform / change the way it performs a specific service or operation / consider changing the way your staff work?</h2>
+        </div>
+        <div class="answer-block">
+          <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+            <textarea id="covid19" name="answers-covid19" class="mdc-text-field__input" rows="10" placeholder="Please enter a description" maxlength="32767"></textarea>
+            <label for="answers-covid19" class="mdc-floating-label"></label>
+          </div>
+        </div>
+      </div>
+
       <input type="hidden" name="answers-support" value="Yes please" />
       {{else}}
       <div class="question-block mdc-elevation--z3">

@@ -122,6 +122,26 @@
             "score": 4
           }
         ]
+      },
+      {
+        "title": "Does your organisation have a digital strategy – independent or linked to your overall business plan / business strategy?",
+        "value": "q4",
+        "type": "select-one",
+        "metric": "Leadership culture and skills",
+        "options": [
+          {
+            "answer": "Yes",
+            "score": 5
+          },
+          {
+            "answer": "No",
+            "score": 0
+          },
+          {
+            "answer": "We are in the process of creating one",
+            "score": 3
+          }
+        ]
       }
       {{else}}
       {
@@ -272,6 +292,10 @@
           },
           {
             "answer": "Other",
+            "score": 0
+          },
+          {
+            "answer": "None – we still use onsite server",
             "score": 0
           }
         ]
@@ -770,78 +794,55 @@
     "name": "Section 6",
     "title": "Technology Enabled Care",
     "icon": "tools",
+    "description": "Technology Enabled Care (TEC) is the term used when any form of digital technology is used to support someone’s health and/or wellbeing e.g. to keep in touch with friends and family, to get help in an emergency, to control their living environment, to get information / advice to help manage a condition, to connect with health or care services remotely.",
     "progress": 70,
     "questions": [
       {
-        "title": "Warden call/emergency call/telecare system *",
-        "value": "q1",
-        "type": "select-one",
-        "metric": "Technology enabled care",
-        "options": [
-          {
-            "answer": "We do not provide any form of warden call/emergency call/Telecare system to our tenants",
-            "score": 0
-          },
-          {
-            "answer": "We provide a warden call/emergency call/Telecare system, are not fully aware of the implications of the analogue switch off or the procurement options",
-            "score": 1
-          },
-          {
-            "answer": "We provide a warden call/emergency call/Telecare system, are fully aware of the implications of the analogue switch off in 2025 but are not fully aware of the procurement options",
-            "score": 2
-          },
-          {
-            "answer": "We provide a warden call/emergency call/telecare system, are fully aware of the implications of the analogue switch off in 2025 and are actively engaged in procuring digitally capable replacement equipment",
-            "score": 3
-          }
-        ]
-      },
-      {
-        "title": "Other forms of Technology Enabled Care *",
+        "title": "Do you provide information or forms of Technology enabled care in your organisation? *",
         "value": "q2",
         "type": "select-one",
         "metric": "Technology enabled care",
         "options": [
           {
-            "answer": "We are not currently providing and form of TEC to our tenants",
+            "answer": "We do not currently provide any information to tenants about how technology could support their health or wellbeing or where they could get more information",
             "score": 0
           },
           {
-            "answer": "We have started to undertake some are undertaking some pockets of TEC activities to introduce TEC to our tenants",
+            "answer": "We have started to undertake some pockets of activity to introduce our tenants to TEC",
             "score": 1
           },
           {
-            "answer": "We have trained some staff and offer some TEC solutions to some of our tenants",
+            "answer": "We have trained some staff who offer some TEC solutions to some of our tenants",
             "score": 2
           },
           {
-            "answer": "We have trained all our workforce on the benefits of TEC, introduced and a variety of TEC solutions and have integrated technology into all services that we offer to support tenants of all ages",
+            "answer": "We have trained all of our workforce on the benefits of TEC, introduced a variety of TEC solutions in consultation with tenants and have integrated technology into all services that we offer to support tenants of all ages",
             "score": 3
           }
         ]
       },
       {
-        "title": "7 pledges that demonstrate your organisation’s commitment to Technology Enabled Care",
-        "description": "To find out more/sign up go to <a href=\"https://techousing.co.uk/the-charter-pledges/\" target=\"_blank\">https://techousing.co.uk/the-charter-pledges/</a> *",
+        "title": "Do you know about the TEC in Housing (TECH) Charter? It consists of 7 pledges that your organisation can make to commit to adopting Technology enabled care.",
+        "description": "To find out more/sign up go to <a href=\"https://techousing.co.uk/the-charter-pledges\" target=\"_blank\">https://techousing.co.uk/the-charter-pledges</a> *",
         "value": "q3",
         "type": "select-one",
         "metric": "Technology enabled care",
         "options": [
           {
-            "answer": "We are aware of the TECH Charter but do not think that it is relevant to our tenants or our organisation",
-            "score": 0
-          },
-          {
-            "answer": "We are not aware of the TECH Charter",
-            "score": 1
+            "answer": "We have signed up to the TEC in Housing (TECH) Charter as we understand how TEC can benefit our tenants and our organisation",
+            "score": 3
           },
           {
             "answer": "We are aware of the TECH Charter and are in the process of signing up to it",
             "score": 2
           },
           {
-            "answer": "We have signed up to the TEC in Housing (TECH) Charter as we understand how TEC can potentially benefit our tenants and our organisation",
-            "score": 3
+            "answer": "We are not aware of the TECH Charter",
+            "score": 1
+          },
+          {
+            "answer": "We are aware of the TECH Charter but do not think it is relevant to our tenants or our organisation",
+            "score": 0
           }
         ]
       }
