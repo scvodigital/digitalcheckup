@@ -35,7 +35,7 @@
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
               <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded" data-mdc-auto-init="MDCTextField">
                 <input type="text" id="name" name="answers-name" class="mdc-text-field__input mdc-text-field--fullwidth" value="" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} required{{/if}}>
-                <label class="mdc-floating-label" for="name">
+                <label class="mdc-floating-label" for="answers-name">
                   Your name
                 </label>
                 <div class="mdc-line-ripple"></div>
@@ -44,10 +44,27 @@
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
               <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded" data-mdc-auto-init="MDCTextField">
                 <input type="text" id="email" name="answers-email" class="mdc-text-field__input mdc-text-field--fullwidth" value="" data-lpignore="true" autocomplete="off">
-                <label class="mdc-floating-label" for="email">
+                <label class="mdc-floating-label" for="answers-email">
                   Email address
                 </label>
                 <div class="mdc-line-ripple"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+              <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded" data-mdc-auto-init="MDCTextField">
+                <input type="text" id="job_title" name="answers-job_title" class="mdc-text-field__input mdc-text-field--fullwidth" value="" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} required{{/if}}>
+                <label class="mdc-floating-label" for="answers-job_title">
+                  Your job title
+                </label>
+                <div class="mdc-line-ripple"></div>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+              <div class="mdc-typography--body1">
+                Your email address will only be used to send you information regarding this survey. If you ask for additional support we will email you in the first instance. We will not share your information with any third parties unless you ask us to do so.<br />
+                You can read our <a href="/privacy" target="_blank">privacy notice</a> for more information.
               </div>
             </div>
           </div>
@@ -58,7 +75,7 @@
               {{/if ~}}
               <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-text-field--disabled{{/if}}" data-mdc-auto-init="MDCTextField">
                 <input type="text" id="web_organisation" name="answers-web_organisation" class="mdc-text-field__input mdc-text-field--fullwidth" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} disabled value="{{@root.data.rootResponse.organisation}}" {{else}} value="" {{/if}}/>
-                <label class="mdc-floating-label" for="web_organisation">
+                <label class="mdc-floating-label" for="answers-web_organisation">
                   Your organisation name
                 </label>
                 <div class="mdc-line-ripple"></div>
@@ -68,12 +85,6 @@
                 <div class="mdc-text-field-helper-text mdc-typography--caption">You accessed this checkup via a sharing link from {{{@root.data.rootResponse.name}}}. Your scores will be shown on a combined results page.</div>
               </div>
               {{/if ~}}
-            </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-typography--body1">
-                Your email address will only be used to send you information regarding this survey. If you ask for additional support we will email you in the first instance. We will not share your information with any third parties unless you ask us to do so.<br />
-                You can read our <a href="/privacy" target="_blank">privacy notice</a> for more information.
-              </div>
             </div>
           </div>
           <!-- <div class="mdc-layout-grid__inner">
@@ -104,7 +115,7 @@
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
               <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-text-field--disabled{{/if}}" data-mdc-auto-init="MDCTextField">
                 <input type="text" id="postcode" name="answers-postcode" class="mdc-text-field__input mdc-text-field--fullwidth" data-lpignore="true" autocomplete="off" {{#if @root.request.body.answers-sid}} disabled value="{{@root.data.rootResponse.postcode}}" {{else}} value="" {{/if}}/>
-                <label class="mdc-floating-label" for="postcode">
+                <label class="mdc-floating-label" for="answers-postcode">
                   Postcode
                 </label>
                 <div class="mdc-line-ripple"></div>
