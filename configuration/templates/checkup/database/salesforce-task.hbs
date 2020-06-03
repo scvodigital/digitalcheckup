@@ -1,4 +1,4 @@
-{{#ifAny (compare @root.data.currentSite.name "housing") (compare @root.request.body.answers-area "scotland")}}
+{{#ifAny (compare @root.data.currentSite.name "housing") (ifAll (compare @root.data.currentSite.name "default") (compare @root.request.body.answers-area "scotland")) ~}}
 {
   "name": "saveCheckupSession",
   "taskModule": "salesforceApex",
@@ -25,4 +25,4 @@
     "output": "data"
   }
 }
-{{/ifAny}}
+{{/ifAny ~}}
