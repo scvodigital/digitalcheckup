@@ -759,6 +759,8 @@ a.bg-yellow:hover {
     li.key-average::before {
       content: "\25CC";
       color: #444444;
+      font-size: 1.8rem;
+      margin-left: .15rem;
     }
     li.key-shared-1::before {
       content: "\25CF";
