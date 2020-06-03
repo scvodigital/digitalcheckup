@@ -47,6 +47,10 @@
         {{{json key="question" value=(concat sectionNumber ".2. What are the top barriers to digital change in your organisation?")}}},
         {{{json key="answer" value=(default @root.request.body.answers-barriers "")}}}
       {{/json}},
+      {{#json type="object"}}
+        {{{json key="question" value=(concat sectionNumber ".3. Due to COVID19 situation – has it made your organisation digitally transform / change the way it performs a specific service or operation / consider changing the way your staff work?")}}},
+        {{{json key="answer" value=(default @root.request.body.answers-covid19 "")}}}
+      {{/json}},
     {{/withExtend}}
   {{/json}}
 {{/json}}
