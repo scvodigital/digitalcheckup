@@ -2,11 +2,11 @@
   {{{json key="responseId" value=@root.data.rid}}},
   {{{json key="sharingId" value=(default @root.request.body.answers-sid "")}}},
   {{{json key="recordType" value=(default @root.data.recordType "Digital")}}},
-  {{{json key="status" value="New"}}},
+  {{!-- {{{json key="status" value="New"}}}, --}}
 
   {{!-- TODO: Move these into questions within the questionnaire JSON --}}
   {{{json key="organisation" value=@root.request.body.answers-web_organisation}}},
-  {{{json key="jobTitle" value=@root.request.body.answers-job_title}}},
+  {{!-- {{{json key="jobTitle" value=@root.request.body.answers-job_title}}}, --}}
   {{{json key="email" value=@root.request.body.answers-email}}},
   {{{json key="contactName" value=@root.request.body.answers-name}}},
   {{{json key="postcode" value=@root.request.body.answers-postcode}}},
@@ -34,7 +34,7 @@
     {{#each @root.data.checkup}}
       {{#each questions}}
         {{#json type="object"}}
-          {{{json key="question" value=(concat @../index "." @index ". " title)}}},
+          {{{json key="question" value=(concat (add @../index 1) "." (add @index 1) ": " title)}}},
           {{{json key="answer" value=(default (lookup @root.request.body (concat 'answers-' @../key '-' value)) "")}}}
         {{/json}},
       {{/each}}
