@@ -2,13 +2,11 @@
   {{{json key="responseId" value=@root.data.rid}}},
   {{{json key="sharingId" value=(default @root.request.body.answers-sid "")}}},
   {{{json key="recordType" value=(default @root.data.recordType "Digital")}}},
-  {{!-- {{{json key="status" value="New"}}}, --}}
 
-  {{!-- TODO: Move these into questions within the questionnaire JSON --}}
   {{{json key="organisation" value=@root.request.body.answers-web_organisation}}},
-  {{!-- {{{json key="jobTitle" value=@root.request.body.answers-job_title}}}, --}}
-  {{{json key="email" value=@root.request.body.answers-email}}},
   {{{json key="contactName" value=@root.request.body.answers-name}}},
+  {{{json key="email" value=@root.request.body.answers-email}}},
+  {{!-- {{{json key="jobTitle" value=@root.request.body.answers-job_title}}}, --}}
   {{{json key="postcode" value=@root.request.body.answers-postcode}}},
   {{{json key="wantsSupport" value=(if (compare @root.request.body.answers-support "===" "No thanks") false else=true)}}},
   {{{json key="wantsReminder" value=false}}},
