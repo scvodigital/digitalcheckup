@@ -6,7 +6,7 @@
   {{{json key="organisation" value=@root.request.body.answers-web_organisation}}},
   {{{json key="contactName" value=@root.request.body.answers-name}}},
   {{{json key="email" value=@root.request.body.answers-email}}},
-  {{!-- {{{json key="jobTitle" value=@root.request.body.answers-job_title}}}, --}}
+  {{{json key="jobTitle" value=@root.request.body.answers-job_title}}},
   {{{json key="postcode" value=@root.request.body.answers-postcode}}},
   {{{json key="wantsSupport" value=(if (compare @root.request.body.answers-support "===" "No thanks") false else=true)}}},
   {{{json key="wantsReminder" value=false}}},
