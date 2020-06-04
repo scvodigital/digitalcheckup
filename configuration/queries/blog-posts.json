@@ -30,8 +30,7 @@
         {
           "terms": {
             "post_tags_slug": [
-              "scvo",
-              "goodhq"
+              "scvo"
             ]
           }
         }
