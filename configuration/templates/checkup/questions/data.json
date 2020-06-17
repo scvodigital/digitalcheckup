@@ -35,7 +35,7 @@
         ]
       },
       {
-        "title": "In the workplace, staff are encouraged and empowered to... (tick all that apply) *",
+        "title": "In the workplace, staff are encouraged and empowered to... (tick all that apply)",
         "value": "q2",
         "type": "select-many",
         "metric": "Leadership culture and skills",
@@ -125,7 +125,7 @@
       },
       {
         "title": "Does your organisation have a digital strategy – independent or linked to your overall business plan / business strategy?",
-        "value": "q4",
+        "value": "q5",
         "type": "select-one",
         "metric": "Leadership culture and skills",
         "options": [
@@ -180,7 +180,7 @@
     "progress": 25,
     "questions": [
       {
-        "title": "Which of these technologies does your organisation use? (Tick all that apply) *",
+        "title": "Which of these technologies does your organisation use? (Tick all that apply)",
         "value": "q1",
         "type": "select-many",
         "metric": "Tools and equipment",
@@ -281,9 +281,9 @@
         "placeholder": "Please describe any other CRM you use"
       },
       {
-        "title": "Which cloud computing/storage (e.g. Sharepoint, Google Docs) system do you use? *",
+        "title": "Which cloud computing/storage (e.g. Sharepoint, Google Docs) system do you use? (Tick all that apply)",
         "value": "q1b",
-        "type": "select-one",
+        "type": "select-many",
         "metric": "Tools and equipment",
         "options": [
           {
@@ -299,7 +299,11 @@
             "score": 0
           },
           {
-            "answer": "None – we still use onsite server",
+            "answer": "We use both cloud based and server",
+            "score": 0
+          },
+          {
+            "answer": "We only use onsite server",
             "score": 0
           }
         ]
@@ -373,7 +377,7 @@
         "placeholder": "Please enter a description"
       },
       {
-        "title": "How do you rate it? *",
+        "title": "How do you rate your Housing Management System? *",
         "value": "q4",
         "type": "select-one",
         "metric": "Tools and equipment",
@@ -457,7 +461,7 @@
         ]
       },
       {
-        "title": "Which of the following processes can your tenants complete online, and what percentage are using online channels? *",
+        "title": "Which of the following processes can your tenants complete online? (Tick all that apply)",
         "value": "q7",
         "type": "select-many",
         "metric": "Tools and equipment",
@@ -516,7 +520,7 @@
     "progress": 37,
     "questions": [
       {
-        "title": "Which of the following content types do you use within your organisation? *",
+        "title": "Which of the following content types do you use within your organisation? (Tick all that apply)",
         "value": "q1",
         "type": "select-many",
         "metric": "Content marketing and data",
@@ -564,7 +568,7 @@
         ]
       },
       {
-        "title": "Which of the following approaches do you use to understand the needs of your users in developing or improving your services? *",
+        "title": "Which of the following approaches do you use to understand the needs of your users in developing or improving your services? (Tick all that apply)",
         "value": "q2",
         "type": "select-many",
         "metric": "Content marketing and data",
@@ -758,7 +762,7 @@
         ]
       },
       {
-        "title": "Has training been delivered to staff in any of the following areas? *",
+        "title": "Has training been delivered to staff in any of the following areas? (Tick all that apply)",
         "value": "q2",
         "type": "select-many",
         "metric": "Cyber resilience",
