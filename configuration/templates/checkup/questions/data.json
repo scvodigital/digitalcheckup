@@ -281,7 +281,7 @@
         "placeholder": "Please describe any other CRM you use"
       },
       {
-        "title": "Which cloud computing/storage (e.g. Sharepoint, Google Docs) system do you use? (Tick all that apply)",
+        "title": "Which cloud computing/storage (e.g. Sharepoint, Google Docs) system do you use? (Tick any that apply)",
         "value": "q1b",
         "type": "select-many",
         "metric": "Tools and equipment",
@@ -461,7 +461,7 @@
         ]
       },
       {
-        "title": "Which of the following processes can your tenants complete online? (Tick all that apply)",
+        "title": "Which of the following processes can your tenants complete online? (Tick any that apply)",
         "value": "q7",
         "type": "select-many",
         "metric": "Tools and equipment",
