@@ -235,6 +235,10 @@
           }
           {{#compare @root.data.currentSite.name "housing" ~}},
           {
+            "answer": "Digital Asset management",
+            "score": 3
+          },
+          {
             "answer": "IoT to support health and well-being or a tenant digital care platform",
             "score": 3
           },
@@ -443,26 +447,42 @@
         "metric": "Tools and equipment",
         "options": [
           {
-            "answer": "a regular headache which affects our confidence in trying new things",
-            "score": -2
-          },
-          {
-            "answer": "sufficient for where we are currently, but improving systems would cause issues",
+            "answer": "We found it difficult to articulate our service needs during the procurement exercise",
             "score": 0
           },
           {
-            "answer": "well managed and the occasional hiccup aside, is not a barrier to our development",
+            "answer": "We managed to adequately articulate our service needs during the procurement exercise",
             "score": 3
           },
           {
-            "answer": "excellent, we are confident that our needs will be met in most circumstances",
+            "answer": "We were confident and understood what we needed to articulate for our service needs during the procurement exercise",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "title": "How would your rate your experience with suppliers with the tender responses we receive when procuring digital services? *",
+        "value": "q7",
+        "type": "select-one",
+        "metric": "Tools and equipment",
+        "options": [
+          {
+            "answer": "Not satisfied - they didn't meet our requirements",
+            "score": 0
+          },
+          {
+            "answer": "Satisfied - they met some of the requirements",
+            "score": 3
+          },
+          {
+            "answer": "Highly satisfied - they met all of our requirements",
             "score": 5
           }
         ]
       },
       {
         "title": "Which of the following processes can your tenants complete online? (Tick any that apply)",
-        "value": "q7",
+        "value": "q8",
         "type": "select-many",
         "metric": "Tools and equipment",
         "options": [
@@ -490,7 +510,7 @@
       },
       {
         "title": "What level would you say your tenants are engaged online with your organisation? (roughly) *",
-        "value": "q8",
+        "value": "q9",
         "type": "select-one",
         "metric": "Tools and equipment",
         "options": [
