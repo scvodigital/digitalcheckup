@@ -258,6 +258,7 @@
                     </div>
                   {{/each ~}}
 
+                  {{#unless @root.request.params.query.slp}}
                   {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
                   {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
                   <div class="cta t-margin-full v-padding-full">
@@ -284,6 +285,7 @@
                   </div>
                   {{/if ~}}
                   {{/unless ~}}
+                  {{/unless ~}}
                 </div>
               </div>
             </div>
@@ -293,16 +295,16 @@
 
       <div class="v-padding-full">
         <div class="v-margin-full b-padding-full">
-          {{#ifAll @root.request.body.slp @root.request.params.query.rid}}
+          {{#ifAll @root.request.params.query.slp @root.request.params.query.rid}}
           <h3 class="mdc-typography--headline4 v-margin b-padding-full">
             Continue Senior Leaders Programme application
           </h3>
-          <p class="mdc-typography--body1">
+          <div class="cta">
             <a href="https://scvo.scot/support/digital/evolution/senior-leaders-2021/apply?rid={{@root.request.params.query.rid}}" class="mdc-button mdc-button--raised">
               <span class="fas fa-pen-alt fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
               Proceed to application form
             </a>
-          </p>
+          </div>
           {{else}}
           {{#ifAll (compare @root.data.currentSite.name "default") (compare (default @root.request.params.query.area @root.data.rootResponse.area) "scotland") ~}}
             <h3 class="mdc-typography--headline4 v-margin b-padding-full">
@@ -339,7 +341,7 @@
             <!-- Calendly link widget begin -->
             <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
             <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-            <a onclick="Calendly.showPopupWidget('https://calendly.com/gdickson-3/digital-check-up');return false;" class="mdc-button mdc-button--raised mdc-button--disabled">
+            <a onclick="Calendly.showPopupWidget('https://calendly.com/gdickson-3/digital-check-up');return false;" class="mdc-button mdc-button--raised">
               <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
               Book a follow-up call with SFHA
             </a>
@@ -355,6 +357,7 @@
     </div>
   </div>
 
+  {{#unless @root.request.params.query.slp}}
   {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
     {{#with (getProperty @root.data.results.sections (default @root.data.rootResponse.topic @root.request.params.query.topic)) ~}}
     {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
@@ -452,6 +455,7 @@
     {{/compare ~}}
 
   {{/ifAny ~}}
+  {{/unless}}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
