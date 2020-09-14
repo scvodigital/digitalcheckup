@@ -2,6 +2,22 @@
   <div class="checkup-section-header b-padding-full v-margin-full">
     <div class="container-fluid">
       <div class="container-content">
+        {{#ifAll @root.request.params.query.slp @root.request.params.query.rid}}
+        <div class="v-padding-full b-margin-full">
+          <div class="v-margin-full b-padding-full">
+            <h3 class="mdc-typography--headline4 v-margin b-padding-full">
+              Continue Senior Leaders Programme application
+            </h3>
+            <div class="cta b-margin-full">
+              <a href="https://scvo.scot/support/digital/evolution/senior-leaders-2021/apply?rid={{@root.request.params.query.rid}}" class="mdc-button mdc-button--raised">
+                <span class="fas fa-pen-alt fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+                Proceed to application form
+              </a>
+            </div>
+          </div>
+        </div>
+        {{/ifAll}}
+
         {{> checkup_progress progress=100}}
         <h1 class="mdc-typography--headline3 font-default">
           {{#ifAny @root.data.rootResponse.organisation @root.request.params.query.web_organisation ~}}
@@ -295,17 +311,7 @@
 
       <div class="v-padding-full">
         <div class="v-margin-full b-padding-full">
-          {{#ifAll @root.request.params.query.slp @root.request.params.query.rid}}
-          <h3 class="mdc-typography--headline4 v-margin b-padding-full">
-            Continue Senior Leaders Programme application
-          </h3>
-          <div class="cta">
-            <a href="https://scvo.scot/support/digital/evolution/senior-leaders-2021/apply?rid={{@root.request.params.query.rid}}" class="mdc-button mdc-button--raised">
-              <span class="fas fa-pen-alt fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
-              Proceed to application form
-            </a>
-          </div>
-          {{else}}
+          {{#unless @root.request.params.query.slp}}
           {{#ifAll (compare @root.data.currentSite.name "default") (compare (default @root.request.params.query.area @root.data.rootResponse.area) "scotland") ~}}
             <h3 class="mdc-typography--headline4 v-margin b-padding-full">
               We would love to discuss your results and next steps
@@ -332,6 +338,7 @@
               <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t67hvr75';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
           </div>
           {{/ifAll ~}}
+          {{/unless}}
           {{#compare @root.data.currentSite.name "housing" ~}}
           <h3 class="mdc-typography--headline4 v-margin b-padding-full">
             We would love to discuss your results and next steps
@@ -348,7 +355,6 @@
             <!-- Calendly link widget end -->
           </div>
           {{/compare ~}}
-          {{/ifAll}}
         </div>
       </div>
       {{else}}
