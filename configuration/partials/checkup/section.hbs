@@ -2,9 +2,9 @@
 <form action="/checkup/{{next_section}}" method="post" class="checkup-section b-padding-full" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
-  {{#if @root.request.params.query.slp}}
+  {{#ifAny @root.request.params.query.slp @root.request.body.slp}}
   <input type="hidden" name="slp" value="true" />
-  {{/if}}
+  {{/ifAny}}
   <div class="checkup-section-header b-padding-full v-margin-full">
     <div class="container-fluid">
       <div class="container-content">
