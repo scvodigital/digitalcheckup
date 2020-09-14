@@ -9,3 +9,6 @@
 {{#if @root.request.params.query.rid ~}}
 <input type="hidden" name="answers-rid" value="{{@root.request.params.query.rid}}" />
 {{/if ~}}
+{{#ifAny @root.request.params.query.slp @root.request.body.slp}}
+<input type="hidden" name="slp" value="true" />
+{{/ifAny}}
