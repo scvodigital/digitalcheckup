@@ -16,7 +16,7 @@
     "site-configurations": "{:./data/site-configurations.json}",
     "menus": "{:./data/menus.json}",
     "areas": "{:./data/areas.json}",
-    "elasticsearchUrl": "{$./data/elasticsearch-url.txt}",
+    "elasticsearchUrl": "{$./data/elasticsearch-legacy-url.txt}",
     "handlebars": {
       "partials": {
         "{$./partials/**/*.*}": "includeRelativePath=false&regexExpression=(-)&regexOptions=gi&regexReplace=_"
