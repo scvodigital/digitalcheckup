@@ -1,6 +1,7 @@
 {
   "default": {
     "name": "default",
+    "type": "organisations",
     "title": "Digital Checkup",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
     "for_singular": "organisation",
@@ -14,8 +15,25 @@
     "phone": "0800 169 0022",
     "url": "https://digitalcheckup.org"
   },
+  "organisation": {
+    "name": "organisation",
+    "type": "organisations",
+    "title": "Digital Checkup for organisations",
+    "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
+    "for_singular": "organisation",
+    "for_plural": "organisations",
+    "partner": {
+      "title": "Centre for Acceleration of Social Technology",
+      "url": "https://wearecast.org.uk",
+      "logo_filename": "cast-white.png"
+    },
+    "email": "digital@scvo.org.uk",
+    "phone": "0800 169 0022",
+    "url": "https://organisation.digitalcheckup.org"
+  },
   "housing": {
     "name": "housing",
+    "type": "organisations",
     "title": "Digital Checkup for Housing Associations",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other housing associations",
     "for_singular": "housing association",
@@ -28,5 +46,34 @@
     "email": "gdickson@sfha.co.uk",
     "phone": "0141 332 8113",
     "url": "https://housing.digitalcheckup.org"
+  },
+  "cyber": {
+    "name": "cyber",
+    "type": "organisations",
+    "title": "Cyber checkup",
+    "description": "",
+    "for_singular": "organisation",
+    "for_plural": "organisations",
+    "email": "digital@scvo.org.uk",
+    "phone": "0800 169 0022",
+    "url": "https://cyber.digitalcheckup.org"
+  },
+  "lifeskills": {
+    "name": "lifeskills",
+    "type": "skills",
+    "title": "Essential Digital Skills for life",
+    "description": "",
+    "email": "digital@scvo.org.uk",
+    "phone": "0800 169 0022",
+    "url": "https://lifeskills.digitalcheckup.org"
+  },
+  "workskills": {
+    "name": "workskills",
+    "type": "skills",
+    "title": "Essential Digital Skills for work",
+    "description": "",
+    "email": "digital@scvo.org.uk",
+    "phone": "0800 169 0022",
+    "url": "https://workskills.digitalcheckup.org"
   }
 }

@@ -2,8 +2,16 @@
   "domains": [
     "digitalcheckup.org",
     "digitalcheckup.local",
+    "organisation.digitalcheckup.org",
+    "digitalcheckup-organisation.local",
     "housing.digitalcheckup.org",
-    "digitalcheckup-housing.local"
+    "digitalcheckup-housing.local",
+    "cyber.digitalcheckup.org",
+    "digitalcheckup-cyber.local",
+    "lifeskills.digitalcheckup.org",
+    "digitalcheckup-lifeskills.local",
+    "workskills.digitalcheckup.org",
+    "digitalcheckup-workskills.local"
   ],
   "routes": [
     "{:./routes/*.json}"

@@ -1,6 +1,14 @@
 {
   "digitalcheckup_org": "default",
   "digitalcheckup_local": "default",
+  "organisation_digitalcheckup_org": "organisation",
+  "digitalcheckup-organisation_local": "organisation",
   "housing_digitalcheckup_org": "housing",
-  "digitalcheckup-housing_local": "housing"
+  "digitalcheckup-housing_local": "housing",
+  "lifeskills_digitalcheckup_org": "lifeskills",
+  "digitalcheckup-lifeskills_local": "lifeskills",
+  "workskills_digitalcheckup_org": "workskills",
+  "digitalcheckup-workskills_local": "workskills",
+  "cyber_digitalcheckup_org": "cyber",
+  "digitalcheckup-cyber_local": "cyber"
 }
