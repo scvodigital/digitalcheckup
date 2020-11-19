@@ -1,96 +1,104 @@
-<div class="container-home-hero">
-  <div class="container-fluid">
-    <div class="container-home v-padding-full b-margin-full">
-      <div class="mdc-layout-grid v-padding-full">
-        <div class="mdc-layout-grid__inner">
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full">
-            <h1 class="mdc-typography--headline2">
-              Benchmark your {{@root.data.currentSite.for_singular}} and plot a route ahead
-            </h1>
-            <div class="mdc-typography--headline5 t-margin-full">
-              Take our simple Digital Check-up to assess your current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}}
+{{#compare @root.data.currentSite.type "organisations"}}
+  <div class="container-home-hero">
+    <div class="container-fluid">
+      <div class="container-home v-padding-full b-margin-full">
+        <div class="mdc-layout-grid v-padding-full">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full">
+              <h1 class="mdc-typography--headline2">
+                Benchmark your {{@root.data.currentSite.for_singular}} and plot a route ahead
+              </h1>
+              <div class="mdc-typography--headline5 t-margin-full">
+                Take our simple Digital Check-up to assess your current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}}
+              </div>
+              <div class="cta v-padding-full">
+                <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
+                {{#unless (compare @root.data.currentSite.name "default") ~}}
+                <p>
+                  <a href="https://{{@root.context.domains.[0]}}">Not a {{@root.data.currentSite.for_singular}}?</a>
+                </p>
+                {{/unless ~}}
+              </div>
             </div>
-            <div class="cta v-padding-full">
-              <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
-              {{#unless (compare @root.data.currentSite.name "default") ~}}
-              <p>
-                <a href="https://{{@root.context.domains.[0]}}">Not a {{@root.data.currentSite.for_singular}}?</a>
-              </p>
-              {{/unless ~}}
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+              {{#compare @root.data.currentSite.name "housing" ~}}
+              <img src="{{~>asset_url url='images/logos/sfha-large.png'~}}" style="max-width: 100%;" />
+              {{else}}
+              <img src="{{~>asset_url url='images/plot-route@2x.png'~}}" style="max-width: 100%;" />
+              {{/compare ~}}
             </div>
-          </div>
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-            {{#compare @root.data.currentSite.name "housing" ~}}
-            <img src="{{~>asset_url url='images/logos/sfha-large.png'~}}" style="max-width: 100%;" />
-            {{else}}
-            <img src="{{~>asset_url url='images/plot-route@2x.png'~}}" style="max-width: 100%;" />
-            {{/compare ~}}
           </div>
         </div>
-      </div>
-      <div class="mdc-typography--body2 text-center b-margin-full">
-        The information you provide will be stored in our database to allow us to analyse responses. Read our full <a href="/privacy">privacy notice</a>.
+        <div class="mdc-typography--body2 text-center b-margin-full">
+          The information you provide will be stored in our database to allow us to analyse responses. Read our full <a href="/privacy">privacy notice</a>.
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container-home-pull v-padding-full">
+  <div class="container-home-pull v-padding-full">
+    <div class="container-fluid">
+      <div class="container-home">
+        <h2 class="mdc-typography--headline5 text-center">
+          Identify the strengths and the gaps your {{@root.data.currentSite.for_singular}} is facing with digital technology
+        </h2>
+        <div class="mdc-layout-grid v-padding-full">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+              <div class="leadership trapezoid">
+                <div class="trapezoid-content">
+                  <img src="{{~>asset_url url='images/icon-leadership@2x.png'~}}" class="icon" />
+                </div>
+              </div>
+              <div class="mdc-typography--body1">Leadership, culture, and skills</div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+              <div class="tools trapezoid">
+                <div class="trapezoid-content">
+                  <img src="{{~>asset_url url='images/icon-tools@2x.png'~}}" class="icon" />
+                </div>
+              </div>
+              <div class="mdc-typography--body1">Tools and equipment</div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+              <div class="content trapezoid">
+                <div class="trapezoid-content">
+                  <img src="{{~>asset_url url='images/icon-content-marketing-data@2x.png'~}}" class="icon" />
+                </div>
+              </div>
+              <div class="mdc-typography--body1">Content, marketing and data</div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+              <div class="cyber trapezoid">
+                <div class="trapezoid-content">
+                  <img src="{{~>asset_url url='images/icon-resilience@2x.png'~}}" class="icon" />
+                </div>
+              </div>
+              <div class="mdc-typography--body1">Cyber resilience and online threats</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid">
-    <div class="container-home">
-      <h2 class="mdc-typography--headline5 text-center">
-        Identify the strengths and the gaps your {{@root.data.currentSite.for_singular}} is facing with digital technology
+    <div class="container-home v-padding-full text-center">
+      <h2 class="mdc-typography--headline4">
+        Get the support your {{@root.data.currentSite.for_singular}} needs
       </h2>
-      <div class="mdc-layout-grid v-padding-full">
-        <div class="mdc-layout-grid__inner">
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
-            <div class="leadership trapezoid">
-              <div class="trapezoid-content">
-                <img src="{{~>asset_url url='images/icon-leadership@2x.png'~}}" class="icon" />
-              </div>
-            </div>
-            <div class="mdc-typography--body1">Leadership, culture, and skills</div>
-          </div>
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
-            <div class="tools trapezoid">
-              <div class="trapezoid-content">
-                <img src="{{~>asset_url url='images/icon-tools@2x.png'~}}" class="icon" />
-              </div>
-            </div>
-            <div class="mdc-typography--body1">Tools and equipment</div>
-          </div>
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
-            <div class="content trapezoid">
-              <div class="trapezoid-content">
-                <img src="{{~>asset_url url='images/icon-content-marketing-data@2x.png'~}}" class="icon" />
-              </div>
-            </div>
-            <div class="mdc-typography--body1">Content, marketing and data</div>
-          </div>
-          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
-            <div class="cyber trapezoid">
-              <div class="trapezoid-content">
-                <img src="{{~>asset_url url='images/icon-resilience@2x.png'~}}" class="icon" />
-              </div>
-            </div>
-            <div class="mdc-typography--body1">Cyber resilience and online threats</div>
-          </div>
-        </div>
+      <div class="mdc-typography--body1">
+        Once you have completed the checkup, you can request 1:1 support to explore the resources most relevant to your needs.<br />
+        If you would like to speak to us or have any questions, please email <a href="mailto:{{@root.data.currentSite.email}}">{{@root.data.currentSite.email}}</a>.
       </div>
+      <div class="cta v-padding-full">
+        <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
+      </div>
+      <br />
     </div>
   </div>
-</div>
-<div class="container-fluid">
-  <div class="container-home v-padding-full text-center">
-    <h2 class="mdc-typography--headline4">
-      Get the support your {{@root.data.currentSite.for_singular}} needs
-    </h2>
-    <div class="mdc-typography--body1">
-      Once you have completed the checkup, you can request 1:1 support to explore the resources most relevant to your needs.<br />
-      If you would like to speak to us or have any questions, please email <a href="mailto:{{@root.data.currentSite.email}}">{{@root.data.currentSite.email}}</a>.
+{{else}}
+  <div class="container-fluid">
+    <div class="container-home v-padding-full v-margin-full">
+      {{@root.data.currentSite.title}} home page
     </div>
-    <div class="cta v-padding-full">
-      <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
-    </div>
-    <br />
   </div>
-</div>
+{{/compare}}

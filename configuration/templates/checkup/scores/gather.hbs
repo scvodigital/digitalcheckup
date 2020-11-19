@@ -1,5 +1,5 @@
 {
-  {{#each @root.data.checkup ~}}
+  {{#each (getProperty @root.data.checkup @root.data.currentSite.name) ~}}
   {{#each questions ~}}
   {{#compare type "select-one" ~}}
   {{{safeStringify (concat 'answers-' (slugify ../name) '-' value)}}}: "{{~#each options ~}}{{~#compare answer (getProperty @root.request.body (concat 'answers-' (slugify ../../name) '-' ../value))~}}{{score}};{{~/compare~}}{{~/each ~}}",

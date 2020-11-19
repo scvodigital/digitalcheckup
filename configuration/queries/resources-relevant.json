@@ -8,6 +8,7 @@
     "post_tags_slug"
   ],
   "query": {
+    {{#compare @root.data.currentSite.type "organisations"}}
     "function_score": {
       "query": {
         "bool": {
@@ -145,5 +146,8 @@
       "boost_mode": "multiply",
       "min_score" : 0
     }
+    {{else}}
+    "match_none": {}
+    {{/compare}}
   }
 }

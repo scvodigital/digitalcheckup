@@ -6,7 +6,7 @@
 {{~/inline~}}
 
 {{#json type="array"}}
-  {{#each @root.data.checkup}}
+  {{#each (getProperty @root.data.checkup @root.data.currentSite.name)}}
     {{#each questions}}
       {{#if metric}}
         {{#json type="object"}}
@@ -19,7 +19,9 @@
           {{#compare type "===" "select-one"}}
             {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}
           {{else}}
-            {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=options answers=(split (lookup @root.request.body (concat 'answers-' @../key '-' value)) ";")}}
+            {{#if options}}
+              {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=options answers=(split (lookup @root.request.body (concat 'answers-' @../key '-' value)) ";")}}
+            {{/if}}
           {{/compare}}
         {{/json}},
       {{/if}}

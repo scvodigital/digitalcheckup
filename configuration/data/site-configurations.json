@@ -2,6 +2,7 @@
   "default": {
     "name": "default",
     "type": "organisations",
+    "sf_type": "Digital",
     "title": "Digital Checkup",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
     "for_singular": "organisation",
@@ -18,6 +19,7 @@
   "organisation": {
     "name": "organisation",
     "type": "organisations",
+    "sf_type": "Digital_Organisations",
     "title": "Digital Checkup for organisations",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
     "for_singular": "organisation",
@@ -34,6 +36,7 @@
   "housing": {
     "name": "housing",
     "type": "organisations",
+    "sf_type": "Digital_Housing_Associations",
     "title": "Digital Checkup for Housing Associations",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other housing associations",
     "for_singular": "housing association",
@@ -50,7 +53,8 @@
   "cyber": {
     "name": "cyber",
     "type": "organisations",
-    "title": "Cyber checkup",
+    "sf_type": "Cyber",
+    "title": "Cyber Checkup",
     "description": "",
     "for_singular": "organisation",
     "for_plural": "organisations",
@@ -61,6 +65,7 @@
   "lifeskills": {
     "name": "lifeskills",
     "type": "skills",
+    "sf_type": "Essential_Digital_Skills_for_life",
     "title": "Essential Digital Skills for life",
     "description": "",
     "email": "digital@scvo.org.uk",
@@ -70,6 +75,7 @@
   "workskills": {
     "name": "workskills",
     "type": "skills",
+    "sf_type": "Essential_Digital_Skills_for_work",
     "title": "Essential Digital Skills for work",
     "description": "",
     "email": "digital@scvo.org.uk",

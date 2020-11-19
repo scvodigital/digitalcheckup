@@ -11,7 +11,7 @@
   {{{json key="wantsSupport" value=(if (compare @root.request.body.answers-support "===" "No thanks") false else=true)}}},
   {{{json key="wantsReminder" value=false}}},
 
-  {{#each @root.data.checkup}}
+  {{#each (getProperty @root.data.checkup @root.data.currentSite.name)}}
     {{#each questions}}
       {{#if checkup_question}}
         {{{json key=checkup_question value=(lookup @root.request.body (concat 'answers-' @../key '-' value))}}},
@@ -29,7 +29,7 @@
   {{/json}},
 
   {{#json key="questionResponses" type="array"}}
-    {{#each @root.data.checkup}}
+    {{#each (getProperty @root.data.checkup @root.data.currentSite.name)}}
       {{#each questions}}
         {{#json type="object"}}
           {{{json key="question" value=(concat (add @../index 1) "." (add @index 1) ": " title)}}},

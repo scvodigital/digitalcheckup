@@ -1,4 +1,4 @@
-<form action="/checkup/confirmation" method="post" class="checkup-section b-padding-full" id="checkup-details">
+<form action="/checkup/{{#compare @root.data.currentSite.type 'organisations'}}confirmation{{else}}submit{{/compare}}" method="post" class="checkup-section b-padding-full" id="checkup-details">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answers-site" value="{{@root.data.currentSite.name}}" />
   <input type="hidden" name="answer-section" value="contact-details" />
@@ -53,80 +53,77 @@
           </div>
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded" data-mdc-auto-init="MDCTextField">
-                <input type="text" id="job_title" name="answers-job_title" class="mdc-text-field__input mdc-text-field--fullwidth" value="" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} required{{/if}}>
-                <label class="mdc-floating-label" for="answers-job_title">
-                  Your job title
-                </label>
-                <div class="mdc-line-ripple"></div>
-              </div>
+              {{#compare @root.data.currentSite.type "organisations"}}
+                <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded" data-mdc-auto-init="MDCTextField">
+                  <input type="text" id="job_title" name="answers-job_title" class="mdc-text-field__input mdc-text-field--fullwidth" value="" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} required{{/if}}>
+                  <label class="mdc-floating-label" for="answers-job_title">
+                    Your job title
+                  </label>
+                  <div class="mdc-line-ripple"></div>
+                </div>
+              {{/compare}}
             </div>
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
               <div class="mdc-typography--body1">
-                Your email address will only be used to send you information regarding this survey. If you ask for additional support we will email you in the first instance. We will not share your information with any third parties unless you ask us to do so.<br />
+                Your email address will only be used to send you information regarding this survey. {{#compare @root.data.currentSite.type "organisations"}}If you ask for additional support we will email you in the first instance.{{/compare}} We will not share your information with any third parties unless you ask us to do so.<br />
                 You can read our <a href="/privacy" target="_blank">privacy notice</a> for more information.
               </div>
             </div>
           </div>
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              {{#if @root.request.body.answers-sid ~}}
-              <input type="hidden" name="answers-web_organisation" value="{{@root.data.rootResponse.organisation}}" />
-              {{/if ~}}
-              <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-text-field--disabled{{/if}}" data-mdc-auto-init="MDCTextField">
-                <input type="text" id="web_organisation" name="answers-web_organisation" class="mdc-text-field__input mdc-text-field--fullwidth" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} disabled value="{{@root.data.rootResponse.organisation}}" {{else}} value="" {{/if}}/>
-                <label class="mdc-floating-label" for="answers-web_organisation">
-                  Your organisation name
-                </label>
-                <div class="mdc-line-ripple"></div>
-              </div>
-              {{#if @root.request.body.answers-sid ~}}
-              <div class="mdc-text-field-helper-line sharing-info">
-                <div class="mdc-text-field-helper-text mdc-typography--caption">You accessed this checkup via a sharing link from {{{@root.data.rootResponse.name}}}. Your scores will be shown on a combined results page.</div>
-              </div>
-              {{/if ~}}
-            </div>
-          </div>
-          <!-- <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-typography--headline6 v-margin">
-                Where is your organisation based?
+          {{#compare @root.data.currentSite.type "organisations"}}
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                {{#if @root.request.body.answers-sid ~}}
+                <input type="hidden" name="answers-web_organisation" value="{{@root.data.rootResponse.organisation}}" />
+                {{/if ~}}
+                <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-text-field--disabled{{/if}}" data-mdc-auto-init="MDCTextField">
+                  <input type="text" id="web_organisation" name="answers-web_organisation" class="mdc-text-field__input mdc-text-field--fullwidth" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} disabled value="{{@root.data.rootResponse.organisation}}" {{else}} value="" {{/if}}/>
+                  <label class="mdc-floating-label" for="answers-web_organisation">
+                    Your organisation name
+                  </label>
+                  <div class="mdc-line-ripple"></div>
+                </div>
+                {{#if @root.request.body.answers-sid ~}}
+                <div class="mdc-text-field-helper-line sharing-info">
+                  <div class="mdc-text-field-helper-text mdc-typography--caption">You accessed this checkup via a sharing link from {{{@root.data.rootResponse.name}}}. Your scores will be shown on a combined results page.</div>
+                </div>
+                {{/if ~}}
               </div>
             </div>
-          </div> -->
-          <div class="mdc-layout-grid__inner t-margin-full">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              {{#if @root.request.body.answers-sid ~}}
-              <input type="hidden" name="answers-area" value="{{@root.data.rootResponse.area}}" />
-              {{/if ~}}
-              <div class="mdc-select mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-select--disabled{{/if}}" data-mdc-auto-init="MDCSelect">
-                <span class="mdc-select__dropdown-icon"></span>
-                <select class="mdc-select__native-control" id="area" name="answers-area">
-                  {{#each @root.context.metaData.areas ~}}
-                  <option value="{{slug}}"{{#compare @root.data.rootResponse.area slug}} selected="selected"{{/compare}}>{{short}}</option>
-                  {{/each ~}}
-                </select>
-                <label class="mdc-floating-label mdc-select__label--float-above mdc-floating-label--float-above" for="area">
-                  Where is your organisation based?
-                </label>
-                <div class="mdc-line-ripple"></div>
+            <div class="mdc-layout-grid__inner t-margin-full">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                {{#if @root.request.body.answers-sid ~}}
+                <input type="hidden" name="answers-area" value="{{@root.data.rootResponse.area}}" />
+                {{/if ~}}
+                <div class="mdc-select mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-select--disabled{{/if}}" data-mdc-auto-init="MDCSelect">
+                  <span class="mdc-select__dropdown-icon"></span>
+                  <select class="mdc-select__native-control" id="area" name="answers-area">
+                    {{#each @root.context.metaData.areas ~}}
+                    <option value="{{slug}}"{{#compare @root.data.rootResponse.area slug}} selected="selected"{{/compare}}>{{short}}</option>
+                    {{/each ~}}
+                  </select>
+                  <label class="mdc-floating-label mdc-select__label--float-above mdc-floating-label--float-above" for="area">
+                    Where is your organisation based?
+                  </label>
+                  <div class="mdc-line-ripple"></div>
+                </div>
               </div>
-            </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-text-field--disabled{{/if}}" data-mdc-auto-init="MDCTextField">
-                <input type="text" id="postcode" name="answers-postcode" class="mdc-text-field__input mdc-text-field--fullwidth" data-lpignore="true" autocomplete="off" {{#if @root.request.body.answers-sid}} disabled value="{{@root.data.rootResponse.postcode}}" {{else}} value="" {{/if}}/>
-                <label class="mdc-floating-label" for="answers-postcode">
-                  Postcode
-                </label>
-                <div class="mdc-line-ripple"></div>
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded{{#if @root.request.body.answers-sid}} mdc-text-field--disabled{{/if}}" data-mdc-auto-init="MDCTextField">
+                  <input type="text" id="postcode" name="answers-postcode" class="mdc-text-field__input mdc-text-field--fullwidth" data-lpignore="true" autocomplete="off" {{#if @root.request.body.answers-sid}} disabled value="{{@root.data.rootResponse.postcode}}" {{else}} value="" {{/if}}/>
+                  <label class="mdc-floating-label" for="answers-postcode">
+                    Postcode
+                  </label>
+                  <div class="mdc-line-ripple"></div>
+                </div>
               </div>
-            </div>
+            {{/compare}}
           </div>
         </div>
       </div>
 
       <div class="cta b-padding-full">
-        <button type="submit" class="mdc-button mdc-button--raised">Next section</button>
+        <button type="submit" class="mdc-button mdc-button--raised">{{#compare @root.data.currentSite.type 'organisations'}}Next section{{else}}Submit{{/compare}}</button>
       </div>
     </div>
   </div>

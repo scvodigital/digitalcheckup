@@ -1,4 +1,4 @@
-{{#ifAny (compare @root.data.currentSite.name "housing") (ifAll (compare @root.data.currentSite.name "default") (compare @root.request.body.answers-area "scotland")) ~}}
+{{#ifAny (compare @root.data.currentSite.type "skills") (compare @root.data.currentSite.name "cyber") (compare @root.data.currentSite.name "housing") (ifAll (ifAny (compare @root.data.currentSite.name "default") (compare @root.data.currentSite.name "default")) (compare @root.request.body.answers-area "scotland")) ~}}
 {
   "name": "saveCheckupSession",
   "taskModule": "salesforceApex",
@@ -21,7 +21,7 @@
   "taskModule": "render",
   "renderer": "handlebars",
   "config": {
-    "template": "Not saving to Salesforce because submission isn't for SFHA and respondent not in Scotland",
+    "template": "Not saving to Salesforce because submission isn't for SFHA, Cyber, Skills, or Digital Organisations respondent not in Scotland",
     "output": "data"
   }
 }

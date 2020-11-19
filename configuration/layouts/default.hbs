@@ -150,17 +150,32 @@
             {{> components_scvo_bar}}
           </section>
         </div> --}}
-        {{> layout_covid_19}}
+        {{!-- {{> layout_covid_19}} --}}
         <div class="container-fluid">
           <div class="mdc-top-app-bar__row mdc-top-app-bar__upper">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start mdc-top-app-bar__section--logo">
               <a href="/">
-                Digital Checkup
-                {{#unless (compare @root.data.currentSite.name "default") ~}}
-                <span class="mdc-typography--caption">
-                  For {{@root.data.currentSite.for_plural}}
-                </span>
-                {{/unless ~}}
+                {{#compare @root.data.currentSite.name "default"}}
+                  Digital Checkup
+                  {{!-- s --}}
+                {{else}}
+                  {{#compare @root.data.currentSite.type "organisations"}}
+                    {{#compare @root.data.currentSite.name "cyber"}}
+                      <span style="font-feature-settings: initial;">{{@root.data.currentSite.title}}</span>
+                    {{else}}
+                      Digital Checkup
+                      <span class="mdc-typography--caption">
+                        For {{@root.data.currentSite.for_plural}}
+                      </span>
+                    {{/compare}}
+                  {{/compare}}
+                  {{#compare @root.data.currentSite.type "skills"}}
+                    Essential Digital Skills
+                    <span class="mdc-typography--caption">
+                      For {{#compare @root.data.currentSite.name "lifeskills"}}life{{else}}work{{/compare}}
+                    </span>
+                  {{/compare}}
+                {{/compare}}
               </a>
             </section>
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
@@ -255,7 +270,7 @@
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone about">
                   <h3>About</h3>
                   <p>
-                    {{@root.data.currentSite.title}} is run by the <a href="https://scvo.org">Scottish Council for Voluntary Organisations</a>{{#if @root.data.currentSite.partner}} in partnership with the <a href="{{@root.data.currentSite.partner.url}}">{{@root.data.currentSite.partner.title}}</a>{{/if}}. <a href="/about">Find out more</a>
+                    {{@root.data.currentSite.title}} is {{#unless (compare @root.data.currentSite.name "default")}}a <a href="https://digitalcheckup.org">Digital Checkup</a>{{/unless}} run by the <a href="https://scvo.org">Scottish Council for Voluntary Organisations</a>{{#if @root.data.currentSite.partner}} in partnership with the <a href="{{@root.data.currentSite.partner.url}}">{{@root.data.currentSite.partner.title}}</a>{{/if}}. <a href="/about">Find out more</a>
                   </p>
                 </div>
               </div>

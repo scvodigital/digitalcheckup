@@ -22,6 +22,7 @@
   query=@root.request.params.query
   rootResponse=@root.data.rootResponse
   additionalResponses=@root.data.additionalResponses.hits.hits ~}}
+  {{#compare @root.data.currentSite.type "organisations"}}
   {{#if query.rid ~}}
   {
     "overall": {
@@ -194,4 +195,7 @@
     "where": "{{#compare query.area "scotland"}}Scotland{{else}}the UK{{/compare}}"
   }
   {{/if ~}}
+  {{else}}
+  {}
+  {{/compare}}
 {{/withExtend ~}}
