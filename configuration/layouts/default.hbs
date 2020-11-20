@@ -168,23 +168,23 @@
                   <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
                 {{/unless}}
                 {{/unless}}
-                <h1>
+                <h1 class="text-secondary">
                   {{#compare @root.data.currentSite.name "default"}}
-                    Digital Checkup
+                    <span class="text-brand">Digital</span> Checkup
                     {{!-- s --}}
                   {{else}}
                     {{#compare @root.data.currentSite.type "organisations"}}
                       {{#compare @root.data.currentSite.name "cyber"}}
-                        <span style="font-feature-settings: initial;">{{@root.data.currentSite.title}}</span>
+                        <span style="font-feature-settings: initial;" class="text-brand">Cyber</span> Checkup
                       {{else}}
-                        Digital Checkup
+                        <span class="text-brand">Digital</span> Checkup
                         <span class="mdc-typography--caption">
                           For {{@root.data.currentSite.for_plural}}
                         </span>
                       {{/compare}}
                     {{/compare}}
                     {{#compare @root.data.currentSite.type "skills"}}
-                      Essential Digital Skills
+                      Essential <span class="text-brand">Digital</span> Skills
                       <span class="mdc-typography--caption">
                         For {{#compare @root.data.currentSite.name "lifeskills"}}life{{else}}work{{/compare}}
                       </span>

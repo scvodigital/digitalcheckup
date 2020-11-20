@@ -44,7 +44,7 @@ $padding: 1.2rem;
 // $header-height: 165px;
 $border-radius: $unit/5;
 $thick-line: 5px;
-$transition-speed: 0.3s;
+$transition-speed: 0.12s;
 
 html {
   font-size: 22px;
@@ -128,6 +128,7 @@ footer h3,
 .mdc-drawer--temporary .mdc-list-item,
 .mdc-list {
   font-family: $base-font-family, Helvetica, Arial, sans-serif;
+  color: $secondary-color;
 }
 .mdc-card__title,
 .mdc-drawer__title,
@@ -281,7 +282,7 @@ figure,
 
 .container,
 .container-fluid {
-  max-width: 1400px;
+  max-width: 1370px;
   width: 100%;
   margin: 0 auto;
   padding: 0 2.4rem;
@@ -316,8 +317,8 @@ figure,
 }
 .mdc-button:hover {
   box-shadow: none;
-  background-color: $secondary-color-light;
-  color: white;
+  background-color: $secondary-color-light !important;
+  color: white !important;
 }
 
 header {
@@ -338,10 +339,9 @@ header {
         max-width: 250px;
         width: 100%;
         height: 100%;
-        padding: $unit*2 $unit*3 $unit*2 0;
+        padding: $unit*2 $unit*3 $unit*2.5 0;
       }
       h1 {
-        color: $mdc-theme-blue;
         font-size: 2.95rem;
         line-height: 1.55;
         font-family: "Asap";
@@ -351,6 +351,9 @@ header {
         display: block;
         margin: 0;
         padding: $unit*1.5 0;
+        .text-brand {
+          color: $mdc-theme-blue;
+        }
         .mdc-typography--caption {
           display: block;
           font-weight: 800;
@@ -454,7 +457,7 @@ h4,
 .mdc-typography--headline4,
 .mdc-typography--headline5,
 .mdc-typography--headline6 {
-  color: $mdc-theme-mediumgrey;
+  color: $secondary-color;
   font-weight: 600;
 }
 .score {
@@ -702,6 +705,7 @@ h4,
   .question-block .question,
   .cta .mdc-button {
     background-color: $mdc-theme-purple;
+    color: white;
   }
   .question-block {
     border-left-color: $mdc-theme-purple;
@@ -720,6 +724,7 @@ h4,
   .question-block .question,
   .cta .mdc-button {
     background-color: $mdc-theme-lightblue;
+    color: white;
   }
   .question-block {
     border-left-color: $mdc-theme-lightblue;
@@ -737,6 +742,7 @@ h4,
   .question-block .question,
   .cta .mdc-button {
     background-color: $mdc-theme-green;
+    color: white;
   }
   .question-block {
     border-left-color: $mdc-theme-green;
@@ -754,6 +760,7 @@ h4,
   .question-block .question,
   .cta .mdc-button {
     background-color: $mdc-theme-darkgreen;
+    color: white;
   }
   .question-block {
     border-left-color: $mdc-theme-darkgreen;
@@ -764,6 +771,7 @@ h4,
   .question-block .question,
   .cta .mdc-button {
     background-color: $mdc-theme-pink;
+    color: white;
   }
   .question-block {
     border-left-color: $mdc-theme-pink;
@@ -787,7 +795,7 @@ h4,
   .checkup-section-header .mdc-typography--body1,
   .checkup-section-header .mdc-typography--body2,
   .checkup-section-header .mdc-typography--headline3 {
-    color: $mdc-theme-mediumgrey;
+    color: $secondary-color;
   }
   .question-block .question {
     background-color: $mdc-theme-blue;
@@ -1001,13 +1009,13 @@ a.bg-yellow:hover {
   background: black;
 }
 ::-webkit-input-placeholder {
-  color: $mdc-theme-mediumgrey;
+  color: $secondary-color-light;
 }
 ::-ms-input-placeholder {
-  color: $mdc-theme-mediumgrey;
+  color: $secondary-color-light;
 }
 ::-moz-placeholder {
-  color: $mdc-theme-mediumgrey;
+  color: $secondary-color-light;
 }
 
 // Footer ======================================================================
