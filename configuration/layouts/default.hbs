@@ -198,11 +198,13 @@
                 <span class="far fa-fw fa-2x fa-bars"></span>
               </button>
             </section>
-            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
-              <div class="cta v-padding-full">
-                <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
-              </div>
-            </section>
+            {{#unless (contains @root.request.url.pathname "/checkup")}}
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
+                <div class="cta v-padding-full">
+                  <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
+                </div>
+              </section>
+            {{/unless}}
           </div>
           <div class="mdc-top-app-bar__row mdc-top-app-bar__lower hide-md hide-sm">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
