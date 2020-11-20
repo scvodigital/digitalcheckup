@@ -1976,8 +1976,8 @@
     }
   },
   "lifeskills": {
-    "section-1": {
-      "name": "Section 1",
+    "foundation": {
+      "name": "",
       "title": "Foundation Skills",
       "description": "",
       "icon": "",
@@ -2033,10 +2033,10 @@
           "metric": "Foundation"
         }
       ],
-      "next_section": "section-2"
+      "next_section": "foundation-check"
     },
-    "section-2": {
-      "name": "Section 2",
+    "section-1": {
+      "name": "Section 1",
       "title": "Communicating",
       "description": "",
       "icon": "",
@@ -2073,10 +2073,10 @@
           "metric": "Communicating"
         }
       ],
-      "next_section": "section-3"
+      "next_section": "section-2"
     },
-    "section-3": {
-      "name": "Section 3",
+    "section-2": {
+      "name": "Section 2",
       "title": "Transacting",
       "description": "",
       "icon": "",
@@ -2113,10 +2113,10 @@
           "metric": "Transacting"
         }
       ],
-      "next_section": "section-4"
+      "next_section": "section-3"
     },
-    "section-4": {
-      "name": "Section 4",
+    "section-3": {
+      "name": "Section 3",
       "title": "Handling Information and Content",
       "description": "",
       "icon": "",
@@ -2153,10 +2153,10 @@
           "metric": "Handling Information and Content"
         }
       ],
-      "next_section": "section-5"
+      "next_section": "section-4"
     },
-    "section-5": {
-      "name": "Section 5",
+    "section-4": {
+      "name": "Section 4",
       "title": "Problem Solving",
       "description": "",
       "icon": "",
@@ -2193,10 +2193,10 @@
           "metric": "Problem Solving"
         }
       ],
-      "next_section": "section-6"
+      "next_section": "section-5"
     },
-    "section-6": {
-      "name": "Section 6",
+    "section-5": {
+      "name": "Section 5",
       "title": "Being Safe, Legal and Confident Online",
       "description": "",
       "icon": "",
@@ -2344,65 +2344,6 @@
   "workskills": {
     "section-1": {
       "name": "Section 1",
-      "title": "Foundation Skills",
-      "description": "",
-      "icon": "",
-      "progress": 13,
-      "questions": [
-        {
-          "title": "I can turn on a device",
-          "description": "Finding the power button and logging in",
-          "value": "q1",
-          "type": "measurement-foundation",
-          "metric": "Foundation"
-        },
-        {
-          "title": "I can use the controls on a device",
-          "description": "Using a touchscreen, keyboard, mouse or trackpad",
-          "value": "q2",
-          "type": "measurement-foundation",
-          "metric": "Foundation"
-        },
-        {
-          "title": "I can use accessibility tools on my device to make it easier",
-          "description": "Volume settings, making text bigger, brightness settings",
-          "value": "q3",
-          "type": "measurement-foundation",
-          "metric": "Foundation"
-        },
-        {
-          "title": "I can interact with the home screen or desktop on my device",
-          "description": "Launching applications, finding ‘home’ or the desktop",
-          "value": "q4",
-          "type": "measurement-foundation",
-          "metric": "Foundation"
-        },
-        {
-          "title": "I can connect my device to a safe and secure internet connection",
-          "description": "Opening internet connection settings and connecting a secure network",
-          "value": "q5",
-          "type": "measurement-foundation",
-          "metric": "Foundation"
-        },
-        {
-          "title": "I know that my passwords and personal information must be kept safe as they have a value to others",
-          "description": "Sharing your password is like giving someone the keys to your house",
-          "value": "q6",
-          "type": "measurement-foundation",
-          "metric": "Foundation"
-        },
-        {
-          "title": "I can update and change my password when prompted to do so",
-          "description": "Understanding how to create a strong password and making changes to it if you need to",
-          "value": "q7",
-          "type": "measurement-foundation",
-          "metric": "Foundation"
-        }
-      ],
-      "next_section": "section-2"
-    },
-    "section-2": {
-      "name": "Section 2",
       "title": "Communicating",
       "description": "",
       "icon": "",
@@ -2439,10 +2380,10 @@
           "metric": "Communicating"
         }
       ],
-      "next_section": "section-3"
+      "next_section": "section-2"
     },
-    "section-3": {
-      "name": "Section 3",
+    "section-2": {
+      "name": "Section 2",
       "title": "Transacting",
       "description": "",
       "icon": "",
@@ -2479,10 +2420,10 @@
           "metric": "Transacting"
         }
       ],
-      "next_section": "section-4"
+      "next_section": "section-3"
     },
-    "section-4": {
-      "name": "Section 4",
+    "section-3": {
+      "name": "Section 3",
       "title": "Handling Information and Content",
       "description": "",
       "icon": "",
@@ -2519,10 +2460,10 @@
           "metric": "Handling Information and Content"
         }
       ],
-      "next_section": "section-5"
+      "next_section": "section-4"
     },
-    "section-5": {
-      "name": "Section 5",
+    "section-4": {
+      "name": "Section 4",
       "title": "Problem Solving",
       "description": "",
       "icon": "",
@@ -2559,10 +2500,10 @@
           "metric": "Problem Solving"
         }
       ],
-      "next_section": "section-6"
+      "next_section": "section-5"
     },
-    "section-6": {
-      "name": "Section 6",
+    "section-5": {
+      "name": "Section 5",
       "title": "Being Safe, Legal and Confident Online",
       "description": "",
       "icon": "",
