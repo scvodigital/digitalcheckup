@@ -2,29 +2,31 @@
 <form action="/checkup/{{next_section}}" method="post" class="checkup-section b-padding-full" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
-  <div class="checkup-section-header b-padding-full v-margin-full">
-    <div class="container-fluid">
-      <div class="container-content">
-        {{#if progress ~}}
-        {{> checkup_progress progress=progress}}
-        {{/if ~}}
-        <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
-              {{#ifAll icon title ~}}
-              <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
-              {{/ifAll ~}}
-            </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
-              {{#if name ~}}
-              <div class="mdc-typography--body2">{{{name}}}</div>
-              {{/if ~}}
-              {{#if title ~}}
-              <h1 class="mdc-typography--headline3">{{{title}}}</h1>
-              {{/if ~}}
-              {{#if description ~}}
-              <div class="mdc-typography--body1">{{{description}}}</div>
-              {{/if ~}}
+  <div class="checkup-section-header-container">
+    <div class="checkup-section-header b-padding-full v-margin-full">
+      <div class="container-fluid">
+        <div class="container-content">
+          {{#if progress ~}}
+          {{> checkup_progress progress=progress}}
+          {{/if ~}}
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
+                {{#ifAll icon title ~}}
+                <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
+                {{/ifAll ~}}
+              </div>
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
+                {{#if name ~}}
+                <div class="mdc-typography--body2">{{{name}}}</div>
+                {{/if ~}}
+                {{#if title ~}}
+                <h1 class="mdc-typography--headline3">{{{title}}}</h1>
+                {{/if ~}}
+                {{#if description ~}}
+                <div class="mdc-typography--body1">{{{description}}}</div>
+                {{/if ~}}
+              </div>
             </div>
           </div>
         </div>

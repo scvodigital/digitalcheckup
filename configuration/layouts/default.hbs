@@ -119,6 +119,13 @@
   <link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}">
 </head>
 <body class="mdc-theme--footer-dark-bg">
+  {{#unless (compare @root.data.currentSite.name "housing")}}
+  {{#unless (compare @root.data.currentSite.name "default")}}
+    <div class="hide-md hide-sm">
+      {{> components_scvo_bar}}
+    </div>
+  {{/unless}}
+  {{/unless}}
   <digitalcheckup-site>
     <div class="mdc-typography">
       {{#if (contains request.url.hostname ".local") ~}}
@@ -144,8 +151,9 @@
         {{/if}}
       {{/if}}
 
-      <header class="mdc-top-app-bar mdc-elevation--z6 top-bar-stuck" id="top-bar">
+      <header class="mdc-top-app-bar" id="top-bar">
         {{!-- <div class="mdc-top-app-bar__row mdc-top-app-bar__lower scvo-tab-bar">
+        <header class="mdc-top-app-bar mdc-elevation--z6 top-bar-stuck" id="top-bar">
           <section class="mdc-top-app-bar__row mdc-top-app-bar__section--align-start">
             {{> components_scvo_bar}}
           </section>
@@ -154,36 +162,50 @@
         <div class="container-fluid">
           <div class="mdc-top-app-bar__row mdc-top-app-bar__upper">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start mdc-top-app-bar__section--logo">
-              <a href="/">
-                {{#compare @root.data.currentSite.name "default"}}
-                  Digital Checkup
-                  {{!-- s --}}
-                {{else}}
-                  {{#compare @root.data.currentSite.type "organisations"}}
-                    {{#compare @root.data.currentSite.name "cyber"}}
-                      <span style="font-feature-settings: initial;">{{@root.data.currentSite.title}}</span>
-                    {{else}}
-                      Digital Checkup
+              <a href="/" class="site-brand">
+                {{#unless (compare @root.data.currentSite.name "housing")}}
+                {{#unless (compare @root.data.currentSite.name "default")}}
+                  <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
+                {{/unless}}
+                {{/unless}}
+                <h1>
+                  {{#compare @root.data.currentSite.name "default"}}
+                    Digital Checkup
+                    {{!-- s --}}
+                  {{else}}
+                    {{#compare @root.data.currentSite.type "organisations"}}
+                      {{#compare @root.data.currentSite.name "cyber"}}
+                        <span style="font-feature-settings: initial;">{{@root.data.currentSite.title}}</span>
+                      {{else}}
+                        Digital Checkup
+                        <span class="mdc-typography--caption">
+                          For {{@root.data.currentSite.for_plural}}
+                        </span>
+                      {{/compare}}
+                    {{/compare}}
+                    {{#compare @root.data.currentSite.type "skills"}}
+                      Essential Digital Skills
                       <span class="mdc-typography--caption">
-                        For {{@root.data.currentSite.for_plural}}
+                        For {{#compare @root.data.currentSite.name "lifeskills"}}life{{else}}work{{/compare}}
                       </span>
                     {{/compare}}
                   {{/compare}}
-                  {{#compare @root.data.currentSite.type "skills"}}
-                    Essential Digital Skills
-                    <span class="mdc-typography--caption">
-                      For {{#compare @root.data.currentSite.name "lifeskills"}}life{{else}}work{{/compare}}
-                    </span>
-                  {{/compare}}
-                {{/compare}}
+                </h1>
               </a>
             </section>
-            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-              <button class="mdc-top-app-bar__navigation-icon hide-lg" data-drawer-target="#mobile-menu" aria-label="Menu">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-lg">
+              <button class="mdc-top-app-bar__navigation-icon" data-drawer-target="#mobile-menu" aria-label="Menu">
                 <span class="far fa-fw fa-2x fa-bars"></span>
               </button>
             </section>
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
+              <div class="cta v-padding-full">
+                <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
+              </div>
+            </section>
+          </div>
+          <div class="mdc-top-app-bar__row mdc-top-app-bar__lower hide-md hide-sm">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                 {{#>components_tab_bar
                     extraClasses="mdc-tab-bar__auto-width"
                     id="main-tab-bar"}}
@@ -218,7 +240,8 @@
 
       <div class="mdc-drawer-scrim"></div>
 
-      <main class="main-body mdc-toolbar-fixed-adjust{{#if layoutParts.sidebar}} drawer-container-permanent{{else}} drawer-container-temporary{{/if}}">
+      <main class="main-body {{#if layoutParts.sidebar}} drawer-container-permanent{{else}} drawer-container-temporary{{/if}}">
+        {{!-- mdc-toolbar-fixed-adjust --}}
         {{#if layoutParts.sidebar ~}}
         <aside class="mdc-drawer mdc-drawer--occasional" id="sidebar-temporary" data-menu-button=".filter-search-button">
           {{{layoutParts.sidebar}}}

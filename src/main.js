@@ -36,12 +36,12 @@ export class DigitalCheckup {
     this.windowResized();
 
     // Headroom
-    var header = document.querySelector("header.top-bar-stuck");
-    var headroom  = new Headroom(header, {
-      "offset": 164,
-      "tolerance": 5
-    });
-    headroom.init();
+    // var header = document.querySelector("header.top-bar-stuck");
+    // var headroom  = new Headroom(header, {
+    //   "offset": 164,
+    //   "tolerance": 5
+    // });
+    // headroom.init();
 
     const ci = new cookieinfo();
     ci.options.message = "We use cookies to track anonymous usage statistics and do not collect any personal information that can be used to identify you. By continuing to visit this site you agree to our use of cookies.";

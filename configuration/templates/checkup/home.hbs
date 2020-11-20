@@ -1,7 +1,7 @@
 {{#compare @root.data.currentSite.type "organisations"}}
   <div class="container-home-hero">
     <div class="container-fluid">
-      <div class="container-home v-padding-full b-margin-full">
+      <div class="container-home v-padding-full">
         <div class="mdc-layout-grid v-padding-full">
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full">
@@ -97,8 +97,10 @@
   </div>
 {{else}}
   <div class="container-fluid">
-    <div class="container-home v-padding-full v-margin-full">
-      {{@root.data.currentSite.title}} home page
+    <div class="container-home v-padding-full">
+      <p class="v-margin-full">
+        {{@root.data.currentSite.title}} home page
+      </p>
       <div class="cta v-padding-full">
         <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
       </div>

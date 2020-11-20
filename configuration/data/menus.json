@@ -1,12 +1,12 @@
 {
   "main": [
     {
-      "label": "Welcome",
+      "label": "Home",
       "path": "//",
       "route": "^/$"
     },
     {
-      "label": "Take the checkup",
+      "label": "Checkup",
       "path": "/checkup",
       "route": "^/checkup"
     },
