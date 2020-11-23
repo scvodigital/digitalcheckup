@@ -254,7 +254,9 @@ body {
 .bg-grey-light {
   background-color: $mdc-theme-lightgrey;
 }
-// .main-body {
+.main-body {
+  min-height: 40vh;
+}
 //   // background-color: $mdc-theme-lightgrey;
 //   padding-bottom: $unit;
 // }
