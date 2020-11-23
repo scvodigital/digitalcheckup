@@ -1,29 +1,33 @@
 {{#ifAny @root.request.params.query.slp @root.request.body.slp}}
-<div class="container-fluid" style="margin-top:3rem;">
-  <div class="container-content">
-    <h1 class="mdc-typography--headline3">
-      Senior Leaders Programme
-    </h1>
-    <h3 class="mdc-typography--headline5">
-      Please complete this checkup to start the Senior Leaders Programme application process
-    </h3>
+  <div class="container-fluid" style="margin-top:3rem;">
+    <div class="container-content">
+      <h1 class="mdc-typography--headline3">
+        Senior Leaders Programme
+      </h1>
+      <h3 class="mdc-typography--headline5">
+        Please complete this checkup to start the Senior Leaders Programme application process
+      </h3>
+    </div>
   </div>
-</div>
 {{/ifAny}}
 {{#if @root.request.params.section ~}}
-{{> checkup_section section=@root.request.params.section}}
+  {{> checkup_section section=@root.request.params.section}}
 {{else}}
-{{#ifAll @root.request.params.query.sid @root.data.rootResponse.organisation @root.data.rootResponse.name ~}}
-<div class="container-fluid" style="margin-top:3rem;">
-  <div class="container-content">
-    <h1 class="mdc-typography--headline3">
-      Welcome to the {{@root.data.currentSite.for_singular}} digital checkup for {{@root.data.rootResponse.organisation}}
-    </h1>
-    <h3 class="mdc-typography--headline5">
-      Please complete this checkup to see your results compared to answers from {{@root.data.rootResponse.name}}
-    </h3>
-  </div>
-</div>
-{{/ifAll ~}}
-{{> checkup_section section="section-1"}}
+  {{#ifAll @root.request.params.query.sid @root.data.rootResponse.organisation @root.data.rootResponse.name ~}}
+    <div class="container-fluid" style="margin-top:3rem;">
+      <div class="container-content">
+        <h1 class="mdc-typography--headline3">
+          Welcome to the {{@root.data.currentSite.for_singular}} digital checkup for {{@root.data.rootResponse.organisation}}
+        </h1>
+        <h3 class="mdc-typography--headline5">
+          Please complete this checkup to see your results compared to answers from {{@root.data.rootResponse.name}}
+        </h3>
+      </div>
+    </div>
+  {{/ifAll ~}}
+  {{#compare @root.data.currentSite.name 'lifeskills'}}
+    {{> checkup_section section="foundation"}}
+  {{else}}
+    {{> checkup_section section="section-1"}}
+  {{/compare}}
 {{/if ~}}
