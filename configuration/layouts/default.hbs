@@ -118,7 +118,7 @@
 
   <link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}">
 </head>
-<body class="mdc-theme--footer-dark-bg">
+<body>
   {{#unless (compare @root.data.currentSite.name "housing")}}
   {{#unless (compare @root.data.currentSite.name "default")}}
     <div class="hide-md hide-sm">
@@ -127,7 +127,7 @@
   {{/unless}}
   {{/unless}}
   <digitalcheckup-site>
-    <div class="mdc-typography">
+    <div class="mdc-typography" {{#unless (compare @root.data.currentSite.name "housing")}}style="background-image: url(https://scvo.scot/rouleaux.svg?color=f4fbfc&style=solid);"{{/unless}}>
       {{#if (contains request.url.hostname ".local") ~}}
         {{#if errors.[0]}}
           <div style="z-index:100;position:fixed;top:0;right:0;padding:5px;background-color:#ff0000;color:#ffffff;">

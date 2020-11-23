@@ -1,9 +1,9 @@
 {{#with (getProperty (getProperty @root.data.checkup @root.data.currentSite.name) section) ~}}
-<form action="/checkup/{{next_section}}" method="post" class="checkup-section b-padding-full" id="checkup-{{../section}}">
+<form action="/checkup/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
   <div class="checkup-section-header-container">
-    <div class="checkup-section-header b-padding-full v-margin-full">
+    <div class="checkup-section-header b-padding-full">
       <div class="container-fluid">
         <div class="container-content">
           {{#if progress ~}}
@@ -33,71 +33,73 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="container-content">
-      <div class="mdc-typography--body2">
-        * required information
-      </div>
-      {{#each questions ~}}
-      <div class="question-block mdc-elevation--z3">
-        <div class="question">
-          {{#if title ~}}
-          <h2 class="mdc-typography--headline5 question-title">{{{title}}}</h2>
-          {{/if ~}}
-          {{#if description ~}}
-          <div class="mdc-typography--body1 question-description">{{{description}}}</div>
-          {{/if ~}}
+  <div class="bg-grey-light b-padding-full">
+    <div class="container-fluid">
+      <div class="container-content v-padding-full">
+        <div class="mdc-typography--body2">
+          * required information
         </div>
-        {{#ifAny (compare type "select-one") (compare type "select-many") ~}}
-          <ul class="answer-block">
-            {{#each options ~}}
-            {{#switch ../type ~}}
-            {{#case "select-one" ~}}
-            {{#if answer ~}}
-            <li class="answer">{{> components_radio_button label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
+        {{#each questions ~}}
+        <div class="question-block mdc-elevation--z3">
+          <div class="question">
+            {{#if title ~}}
+            <h2 class="mdc-typography--headline5 question-title">{{{title}}}</h2>
             {{/if ~}}
-            {{/case ~}}
-            {{#case "select-many" ~}}
-            {{#if answer ~}}
-            <li class="answer">{{> components_checkbox label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+            {{#if description ~}}
+            <div class="mdc-typography--body1 question-description">{{{description}}}</div>
             {{/if ~}}
-            {{/case ~}}
-            {{/switch ~}}
-            {{/each ~}}
-          </ul>
-        {{/ifAny ~}}
-        {{#compare type "freetext" ~}}
-          <div class="answer-block">
-            <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
-              <textarea id="{{slugify title}}" name="answers-{{../../section}}-{{value}}" class="mdc-text-field__input" rows="5" placeholder="{{placeholder}}" maxlength="32767"></textarea>
-              <label for="{{slugify title}}" class="mdc-floating-label"></label>
-            </div>
           </div>
-        {{/compare ~}}
-        {{#ifAny (compare type "measurement-foundation") (compare type "measurement-eds") ~}}
-          <ul class="answer-block">
-            {{#each (split "I can do this,I can partially do this,I can't do this" ",")}}
-              <li class="answer" id="option-{{slugify (concat ../value '-' this)}}"{{#compare ../type "measurement-eds"}} onclick="{{#compare this 'I can do this'}}hide{{else}}show{{/compare}}Options('{{../value}}');"{{/compare}}>{{> components_radio_button label=this id=(slugify (concat this ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
-            {{/each}}
-            {{#compare type "measurement-eds"}}
-              {{#each (split "I’d like to learn how to do this,I have no interest in this" ",")}}
-                <li class="answer hidden option-eds-{{../value}}" id="option-{{slugify (concat ../value '-' this)}}">{{> components_checkbox label=this id=(slugify (concat this ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+          {{#ifAny (compare type "select-one") (compare type "select-many") ~}}
+            <ul class="answer-block">
+              {{#each options ~}}
+              {{#switch ../type ~}}
+              {{#case "select-one" ~}}
+              {{#if answer ~}}
+              <li class="answer">{{> components_radio_button label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
+              {{/if ~}}
+              {{/case ~}}
+              {{#case "select-many" ~}}
+              {{#if answer ~}}
+              <li class="answer">{{> components_checkbox label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+              {{/if ~}}
+              {{/case ~}}
+              {{/switch ~}}
+              {{/each ~}}
+            </ul>
+          {{/ifAny ~}}
+          {{#compare type "freetext" ~}}
+            <div class="answer-block">
+              <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                <textarea id="{{slugify title}}" name="answers-{{../../section}}-{{value}}" class="mdc-text-field__input" rows="5" placeholder="{{placeholder}}" maxlength="32767"></textarea>
+                <label for="{{slugify title}}" class="mdc-floating-label"></label>
+              </div>
+            </div>
+          {{/compare ~}}
+          {{#ifAny (compare type "measurement-foundation") (compare type "measurement-eds") ~}}
+            <ul class="answer-block">
+              {{#each (split "I can do this,I can partially do this,I can't do this" ",")}}
+                <li class="answer" id="option-{{slugify (concat ../value '-' this)}}"{{#compare ../type "measurement-eds"}} onclick="{{#compare this 'I can do this'}}hide{{else}}show{{/compare}}Options('{{../value}}');"{{/compare}}>{{> components_radio_button label=this id=(slugify (concat this ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
               {{/each}}
-            {{/compare}}
-          </ul>
-        {{/ifAny ~}}
-      </div>
-      {{/each ~}}
-      <script>
-      function showOptions(question) {
-        $(".option-eds-"+question).removeClass('hidden');
-      }
-      function hideOptions(question) {
-        $(".option-eds-"+question).addClass('hidden').find('.mdc-form-field').removeClass('checked');
-      }
-      </script>
-      <div class="cta b-padding-full">
-        <button type="submit" class="mdc-button mdc-button--raised">Next section</button>
+              {{#compare type "measurement-eds"}}
+                {{#each (split "I’d like to learn how to do this,I have no interest in this" ",")}}
+                  <li class="answer hidden option-eds-{{../value}}" id="option-{{slugify (concat ../value '-' this)}}">{{> components_checkbox label=this id=(slugify (concat this ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+                {{/each}}
+              {{/compare}}
+            </ul>
+          {{/ifAny ~}}
+        </div>
+        {{/each ~}}
+        <script>
+        function showOptions(question) {
+          $(".option-eds-"+question).removeClass('hidden');
+        }
+        function hideOptions(question) {
+          $(".option-eds-"+question).addClass('hidden').find('.mdc-form-field').removeClass('checked');
+        }
+        </script>
+        <div class="cta b-padding-full">
+          <button type="submit" class="mdc-button mdc-button--raised">Next section</button>
+        </div>
       </div>
     </div>
   </div>
