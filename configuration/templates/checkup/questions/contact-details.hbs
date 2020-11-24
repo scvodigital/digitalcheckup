@@ -22,9 +22,11 @@
   </div>
   <div class="container-fluid">
     <div class="container-content">
+      {{#compare @root.data.currentSite.type "organisations"}}
       <div class="mdc-typography--body2">
         * required information
       </div>
+      {{/compare}}
 
       <div class="question-block mdc-elevation--z3">
         <div class="question">

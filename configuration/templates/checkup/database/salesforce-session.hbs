@@ -8,7 +8,7 @@
   {{{json key="email" value=@root.request.body.answers-email}}},
   {{{json key="jobTitle" value=@root.request.body.answers-job_title}}},
   {{{json key="postcode" value=@root.request.body.answers-postcode}}},
-  {{{json key="wantsSupport" value=(if (compare @root.request.body.answers-support "===" "No thanks") false else=true)}}},
+  {{{json key="wantsSupport" value=(if (compare @root.request.body.answers-support "===" "Yes please") true else=false)}}},
   {{{json key="wantsReminder" value=false}}},
 
   {{#each (getProperty @root.data.checkup @root.data.currentSite.name)}}
@@ -38,19 +38,21 @@
       {{/each}}
     {{/each}}
 
-    {{#withExtend this sectionNumber=(length (getKeys @root.data.checkup))}}
-      {{#json type="object"}}
-        {{{json key="question" value=(concat sectionNumber ".1. If you could tackle one digital project in the next three months, what would that be?")}}},
-        {{{json key="answer" value=(default @root.request.body.answers-next_project "")}}}
-      {{/json}},
-      {{#json type="object"}}
-        {{{json key="question" value=(concat sectionNumber ".2. What are the top barriers to digital change in your organisation?")}}},
-        {{{json key="answer" value=(default @root.request.body.answers-barriers "")}}}
-      {{/json}},
-      {{#json type="object"}}
-        {{{json key="question" value=(concat sectionNumber ".3. Due to COVID19 situation – has it made your organisation digitally transform / change the way it performs a specific service or operation / consider changing the way your staff work?")}}},
-        {{{json key="answer" value=(default @root.request.body.answers-covid19 "")}}}
-      {{/json}},
-    {{/withExtend}}
+    {{#compare @root.data.currentSite.type "organisations"}}
+      {{#withExtend this sectionNumber=(length (getKeys @root.data.checkup))}}
+        {{#json type="object"}}
+          {{{json key="question" value=(concat sectionNumber ".1. If you could tackle one digital project in the next three months, what would that be?")}}},
+          {{{json key="answer" value=(default @root.request.body.answers-next_project "")}}}
+        {{/json}},
+        {{#json type="object"}}
+          {{{json key="question" value=(concat sectionNumber ".2. What are the top barriers to digital change in your organisation?")}}},
+          {{{json key="answer" value=(default @root.request.body.answers-barriers "")}}}
+        {{/json}},
+        {{#json type="object"}}
+          {{{json key="question" value=(concat sectionNumber ".3. Due to COVID19 situation – has it made your organisation digitally transform / change the way it performs a specific service or operation / consider changing the way your staff work?")}}},
+          {{{json key="answer" value=(default @root.request.body.answers-covid19 "")}}}
+        {{/json}},
+      {{/withExtend}}
+    {{/compare}}
   {{/json}}
 {{/json}}

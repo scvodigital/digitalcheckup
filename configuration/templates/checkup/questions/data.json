@@ -1980,7 +1980,7 @@
       "name": "",
       "title": "Foundation Skills",
       "description": "",
-      "icon": "",
+      "icon": "fa-wifi",
       "progress": 13,
       "questions": [
         {
@@ -2039,7 +2039,7 @@
       "name": "Section 1",
       "title": "Communicating",
       "description": "",
-      "icon": "",
+      "icon": "fa-comment-alt-lines",
       "progress": 26,
       "questions": [
         {
@@ -2079,7 +2079,7 @@
       "name": "Section 2",
       "title": "Transacting",
       "description": "",
-      "icon": "",
+      "icon": "fa-browser",
       "progress": 39,
       "questions": [
         {
@@ -2119,7 +2119,7 @@
       "name": "Section 3",
       "title": "Handling Information and Content",
       "description": "",
-      "icon": "",
+      "icon": "fa-file-search",
       "progress": 51,
       "questions": [
         {
@@ -2159,7 +2159,7 @@
       "name": "Section 4",
       "title": "Problem Solving",
       "description": "",
-      "icon": "",
+      "icon": "fa-question-circle",
       "progress": 63,
       "questions": [
         {
@@ -2199,7 +2199,7 @@
       "name": "Section 5",
       "title": "Being Safe, Legal and Confident Online",
       "description": "",
-      "icon": "",
+      "icon": "fa-shield-check",
       "progress": 75,
       "questions": [
         {
@@ -2239,7 +2239,7 @@
       "name": "Demographic",
       "title": "Your details",
       "description": "",
-      "icon": "",
+      "icon": "fa-user",
       "progress": 89,
       "questions": [
         {
@@ -2346,7 +2346,7 @@
       "name": "Section 1",
       "title": "Communicating",
       "description": "",
-      "icon": "",
+      "icon": "comment-alt-lines",
       "progress": 26,
       "questions": [
         {
@@ -2386,7 +2386,7 @@
       "name": "Section 2",
       "title": "Transacting",
       "description": "",
-      "icon": "",
+      "icon": "fa-browser",
       "progress": 39,
       "questions": [
         {
@@ -2426,7 +2426,7 @@
       "name": "Section 3",
       "title": "Handling Information and Content",
       "description": "",
-      "icon": "",
+      "icon": "fa-file-search",
       "progress": 51,
       "questions": [
         {
@@ -2466,7 +2466,7 @@
       "name": "Section 4",
       "title": "Problem Solving",
       "description": "",
-      "icon": "",
+      "icon": "fa-question-circle",
       "progress": 63,
       "questions": [
         {
@@ -2506,7 +2506,7 @@
       "name": "Section 5",
       "title": "Being Safe, Legal and Confident Online",
       "description": "",
-      "icon": "",
+      "icon": "fa-shield-check",
       "progress": 75,
       "questions": [
         {
@@ -2546,7 +2546,7 @@
       "name": "Demographic",
       "title": "Your details",
       "description": "",
-      "icon": "",
+      "icon": "fa-user",
       "progress": 89,
       "questions": [
         {

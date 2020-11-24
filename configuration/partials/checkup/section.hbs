@@ -13,7 +13,11 @@
             <div class="mdc-layout-grid__inner">
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
                 {{#ifAll icon title ~}}
-                <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
+                  {{#if (contains icon 'fa-')}}
+                    <span class="far {{icon}} fa-3x fa-fw"></span>
+                  {{else}}
+                    <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
+                  {{/if}}
                 {{/ifAll ~}}
               </div>
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
