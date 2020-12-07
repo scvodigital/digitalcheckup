@@ -1,7 +1,7 @@
 {{#json type="object"}}
   {{{json key="responseId" value=@root.data.rid}}},
   {{{json key="sharingId" value=(default @root.request.body.answers-sid "")}}},
-  {{{json key="recordType" value=(default @root.data.recordType "Digital")}}},
+  {{{json key="recordType" value=(default @root.data.recordType "Digital Organisations")}}},
 
   {{{json key="organisation" value=@root.request.body.answers-web_organisation}}},
   {{{json key="contactName" value=@root.request.body.answers-name}}},
