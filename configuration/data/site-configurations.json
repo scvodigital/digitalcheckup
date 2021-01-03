@@ -12,7 +12,7 @@
       "url": "https://wearecast.org.uk",
       "logo_filename": "cast-white.png"
     },
-    "email": "digital@scvo.org.uk",
+    "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://digitalcheckup.org"
   },
@@ -29,7 +29,7 @@
       "url": "https://wearecast.org.uk",
       "logo_filename": "cast-white.png"
     },
-    "email": "digital@scvo.org.uk",
+    "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://organisation.digitalcheckup.org"
   },
@@ -58,7 +58,7 @@
     "description": "",
     "for_singular": "organisation",
     "for_plural": "organisations",
-    "email": "digital@scvo.org.uk",
+    "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://cyber.digitalcheckup.org"
   },
@@ -68,7 +68,7 @@
     "sf_type": "Essential_Digital_Skills_for_life",
     "title": "Essential Digital Skills for life",
     "description": "",
-    "email": "digital@scvo.org.uk",
+    "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://lifeskills.digitalcheckup.org"
   },
@@ -78,7 +78,7 @@
     "sf_type": "Essential_Digital_Skills_for_work",
     "title": "Essential Digital Skills for work",
     "description": "",
-    "email": "digital@scvo.org.uk",
+    "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://workskills.digitalcheckup.org"
   }
