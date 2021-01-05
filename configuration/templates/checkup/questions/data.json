@@ -690,51 +690,51 @@
           "options": [
             {
               "answer": "Cloud productivity tools (eg Office 365, G Suite)",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Team communication tools (eg Slack, Microsoft Teams)",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Video conferencing",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Social media channels",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Online enquiries (eg live chat)",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Online bookings or referrals",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Email campaigns (eg Mailchimp)",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Online donations or payments (eg JustGiving, Stripe, PayPal)",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Mobile-friendly (responsive) website",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Database (CRM system)",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Online events/webinars/live streaming",
-              "score": 0
+              "score": 3
             },
             {
               "answer": "Website usage data (e.g. Google Analytics)",
-              "score": 0
+              "score": 3
             }
           ]
         },
@@ -1076,35 +1076,35 @@
           "options": [
             {
               "answer": "Network firewall",
-              "score": 0
+              "score": 4
             },
             {
               "answer": "Malware protection",
-              "score": 0
+              "score": 4
             },
             {
               "answer": "Antivirus",
-              "score": 0
+              "score": 4
             },
             {
               "answer": "Remote wipe",
-              "score": 0
+              "score": 4
             },
             {
               "answer": "Strong passwords",
-              "score": 0
+              "score": 4
             },
             {
               "answer": "Backups",
-              "score": 0
+              "score": 4
             },
             {
               "answer": "Software updates",
-              "score": 0
+              "score": 4
             },
             {
               "answer": "Least privilege (ie only granting admin level access where this is needed)",
-              "score": 0
+              "score": 4
             }
           ]
         }
