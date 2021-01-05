@@ -564,7 +564,7 @@
           "options": [
             {
               "answer": "Digital is not recognised as important and is not often discussed at a senior level",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "Digital is recognised as important to our future but progress just doesn't happen",
@@ -580,55 +580,23 @@
             },
             {
               "answer": "Digital is embedded into what we do – it cuts across all areas and is part of our daily practices",
-              "score": 5
-            }
-          ]
-        },
-        {
-          "title": "In the workplace, staff are encouraged and empowered to... (tick all that apply)",
-          "value": "q2",
-          "type": "select-many",
-          "metric": "Leadership culture and skills",
-          "options": [
-            {
-              "answer": "Be curious",
-              "score": 1
-            },
-            {
-              "answer": "Be proactive",
-              "score": 1
-            },
-            {
-              "answer": "Be open and transparent",
-              "score": 1
-            },
-            {
-              "answer": "Collaborate across teams",
-              "score": 2
-            },
-            {
-              "answer": "Test new ideas",
-              "score": 2
-            },
-            {
-              "answer": "Learn from failure",
-              "score": 3
+              "score": 4
             }
           ]
         },
         {
           "title": "How well do you understand the digital skills of your staff and/or volunteers? *",
-          "value": "q3",
+          "value": "q2",
           "type": "select-one",
           "metric": "Leadership culture and skills",
           "options": [
             {
               "answer": "We don't know what digital skills or gaps exist in our workforce",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "We believe that our staff have the basic skills necessary to perform their roles",
-              "score": 0
+              "score": 1
             },
             {
               "answer": "We have a good understanding of the skills of our staff – but no training offer to develop further",
@@ -636,7 +604,71 @@
             },
             {
               "answer": "We have an active digital skills assessment and development programme",
-              "score": 5
+              "score": 3
+            }
+          ]
+        },
+        {
+          "title": "How do you invest in technology? *",
+          "value": "q3",
+          "type": "select-one",
+          "metric": "Leadership culture and skills",
+          "options": [
+            {
+              "answer": "We are not able to invest in technology",
+              "score": 0
+            },
+            {
+              "answer": "We go with what trusted suppliers recommend",
+              "score": 1
+            },
+            {
+              "answer": "We wait to see what our competitors are using",
+              "score": 2
+            },
+            {
+              "answer": "We carry out lots of research and prepare very comprehensive briefs",
+              "score": 3
+            },
+            {
+              "answer": "We test and learn at a small scale then scale up what works",
+              "score": 4
+            }
+          ]
+        },
+        {
+          "title": "How do you work during projects?",
+          "value": "q4",
+          "type": "select-many",
+          "metric": "Leadership culture and skills",
+          "options": [
+            {
+              "answer": "Does your team self organise and work autonomously?",
+              "score": 1
+            },
+            {
+              "answer": "Does your team regularly reflect and learn on what worked, and what didn’t work?",
+              "score": 1
+            },
+            {
+              "answer": "Can your team make small incremental changes to service delivery?",
+              "score": 1
+            },
+            {
+              "answer": "Is your project plan broken down into manageable chunks?",
+              "score": 1
+            },
+            {
+              "answer": "Do you have a shared 'definition of done'?",
+              "score": 1
+            },
+            {
+              "answer": "Do you use 'standup' meetings?",
+              "score": 1
+            },
+            {
+              "answer": "Do you run retrospective meetings?",
+              "score": 1
             }
           ]
         }
@@ -657,52 +689,52 @@
           "metric": "Tools and equipment",
           "options": [
             {
-              "answer": "Company website",
-              "score": 1
+              "answer": "Cloud productivity tools (eg Office 365, G Suite)",
+              "score": 0
             },
             {
-              "answer": "Content Management System (e.g. Wordpress, Umbraco)",
-              "score": 1
+              "answer": "Team communication tools (eg Slack, Microsoft Teams)",
+              "score": 0
             },
             {
-              "answer": "Email (e.g. Outlook, Gmail)",
-              "score": 1
+              "answer": "Video conferencing",
+              "score": 0
             },
             {
-              "answer": "Email campaign management (e.g. MailChimp, Campaign Monitor)",
-              "score": 2
+              "answer": "Social media channels",
+              "score": 0
+            },
+            {
+              "answer": "Online enquiries (eg live chat)",
+              "score": 0
+            },
+            {
+              "answer": "Online bookings or referrals",
+              "score": 0
+            },
+            {
+              "answer": "Email campaigns (eg Mailchimp)",
+              "score": 0
+            },
+            {
+              "answer": "Online donations or payments (eg JustGiving, Stripe, PayPal)",
+              "score": 0
+            },
+            {
+              "answer": "Mobile-friendly (responsive) website",
+              "score": 0
+            },
+            {
+              "answer": "Database (CRM system)",
+              "score": 0
+            },
+            {
+              "answer": "Online events/webinars/live streaming",
+              "score": 0
             },
             {
               "answer": "Website usage data (e.g. Google Analytics)",
-              "score": 2
-            },
-            {
-              "answer": "Social Media Management tools (e.g. Hootsuite, Sprout Social)",
-              "score": 2
-            },
-            {
-              "answer": "Online donations or payments (e.g. WorldPay, NetBanx)",
-              "score": 2
-            },
-            {
-              "answer": "Online shop (e.g. Ecommerce)",
-              "score": 2
-            },
-            {
-              "answer": "Messaging and/or collaboration tools (e.g. Slack, Yammer)",
-              "score": 3
-            },
-            {
-              "answer": "Project management tools (e.g. Microsoft Project, Basecamp)",
-              "score": 3
-            },
-            {
-              "answer": "CRM - Customer Relationship Management (e.g. Salesforce, Dynamics)",
-              "score": 3
-            },
-            {
-              "answer": "Cloud computing/storage (e.g. Sharepoint, Google Docs)",
-              "score": 3
+              "score": 0
             }
           ]
         },
@@ -714,7 +746,7 @@
           "options": [
             {
               "answer": "a regular headache which affects our confidence in trying new things",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "sufficient for where we are currently, but improving systems would cause issues",
@@ -722,39 +754,11 @@
             },
             {
               "answer": "well managed and the occasional hiccup aside, is not a barrier to our development",
-              "score": 3
-            },
-            {
-              "answer": "excellent, we are confident that our needs will be met in most circumstances",
-              "score": 5
-            }
-          ]
-        },
-        {
-          "title": "Roughly what percentage of your income/fundraising is paid in using online payments as opposed to offline transactions? *",
-          "value": "q3",
-          "type": "select-one",
-          "metric": "Tools and equipment",
-          "options": [
-            {
-              "answer": "0-20%",
-              "score": 0
-            },
-            {
-              "answer": "21-40%",
-              "score": 1
-            },
-            {
-              "answer": "41-60%",
               "score": 2
             },
             {
-              "answer": "61-80%",
+              "answer": "excellent, we are confident that our needs will be met in most circumstances",
               "score": 3
-            },
-            {
-              "answer": "81-100%",
-              "score": 5
             }
           ]
         }
@@ -768,6 +772,50 @@
       "icon": "content-marketing",
       "progress": 37,
       "questions": [
+        {
+          "title": "Which of the following approaches do you use to understand the needs of your users in developing or improving your services? (Tick all that apply)",
+          "value": "q2",
+          "type": "select-many",
+          "metric": "Content marketing and data",
+          "options": [
+            {
+              "answer": "Analysis of website analytics",
+              "score": 1
+            },
+            {
+              "answer": "Focus groups / face to face workshops",
+              "score": 1
+            },
+            {
+              "answer": "Online feedback surveys",
+              "score": 1
+            },
+            {
+              "answer": "Controlled testing (A/B, split testing)",
+              "score": 1
+            },
+            {
+              "answer": "Social media usage data (Facebook insights/Twitter stats)",
+              "score": 1
+            },
+            {
+              "answer": "Social media engagements (comments, posts, direct messages)",
+              "score": 1
+            },
+            {
+              "answer": "Development of user personas",
+              "score": 1
+            },
+            {
+              "answer": "User experience mapping",
+              "score": 1
+            },
+            {
+              "answer": "Content strategy",
+              "score": 1
+            }
+          ]
+        },
         {
           "title": "Which of the following content types do you use within your organisation? (Tick all that apply)",
           "value": "q1",
@@ -784,19 +832,19 @@
             },
             {
               "answer": "Webinars or live video",
-              "score": 3
+              "score": 1
             },
             {
               "answer": "Hosted video (YouTube)",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "Campaign / promotion emails",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "E-newsletter or regular bulletin",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "Information downloads (PDFs)",
@@ -804,59 +852,19 @@
             },
             {
               "answer": "Surveys or voting",
-              "score": 3
+              "score": 1
+            },
+            {
+              "answer": "Podcasts",
+              "score": 1
             },
             {
               "answer": "Social Media content",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "Mobile apps (iPhone, Android)",
-              "score": 5
-            }
-          ]
-        },
-        {
-          "title": "Which of the following approaches do you use to understand the needs of your users in developing or improving your services? (Tick all that apply)",
-          "value": "q2",
-          "type": "select-many",
-          "metric": "Content marketing and data",
-          "options": [
-            {
-              "answer": "Analysis of website analytics",
-              "score": 2
-            },
-            {
-              "answer": "Focus groups / face to face workshops",
-              "score": 2
-            },
-            {
-              "answer": "Online feedback surveys",
-              "score": 2
-            },
-            {
-              "answer": "Controlled testing (A/B, split testing)",
-              "score": 2
-            },
-            {
-              "answer": "Social media usage data (Facebook insights/Twitter stats)",
-              "score": 2
-            },
-            {
-              "answer": "Social media engagements (comments, posts, direct messages)",
-              "score": 2
-            },
-            {
-              "answer": "Co-design or coproduction of services",
-              "score": 4
-            },
-            {
-              "answer": "Development of user personas",
-              "score": 4
-            },
-            {
-              "answer": "User experience mapping",
-              "score": 4
+              "score": 1
             }
           ]
         }
@@ -878,15 +886,15 @@
           "options": [
             {
               "answer": "We don't collect any user data at all",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "We collect basic data such as name and contact details",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "We collect a lot of user data (preferences, service use, etc.)",
-              "score": 4
+              "score": 2
             }
           ]
         },
@@ -898,15 +906,15 @@
           "options": [
             {
               "answer": "We don't analyse any data to make decisions",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "We analyse data as-and-when we need to",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "We have a reporting framework and analyse our data it to make decisions",
-              "score": 4
+              "score": 2
             }
           ]
         },
@@ -918,15 +926,15 @@
           "options": [
             {
               "answer": "We don't know if we store and use data appropriately",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "We hold data in several places (databases, 3rd party systems) some of which we don't manage",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "We are confident that our data is held securely and used appropriately, by us and/or 3rd party systems",
-              "score": 4
+              "score": 2
             }
           ]
         },
@@ -938,15 +946,15 @@
           "options": [
             {
               "answer": "We do not know if our data collection and management is a risk to our organisation",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "We understand our data collection and management is a risk, steps need to be taken",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "We have assessed the risks and are confident of how we collect and manage data",
-              "score": 4
+              "score": 2
             }
           ]
         },
@@ -958,15 +966,15 @@
           "options": [
             {
               "answer": "We are unaware of GDPR or are unaware of the implications for us",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "We have some understanding of how it affects us",
-              "score": 2
+              "score": 1
             },
             {
               "answer": "We feel confident of the processes we have in place to ensure a good level of compliance",
-              "score": 4
+              "score": 2
             }
           ]
         }
@@ -981,18 +989,18 @@
       "progress": 62,
       "questions": [
         {
-          "title": "Which statement best describes your organisation's approach to Cyber Security? *",
+          "title": "Is there Board engagement on cyber security? *",
           "value": "q1",
           "type": "select-one",
           "metric": "Cyber resilience",
           "options": [
             {
               "answer": "We do not have enough knowledge to discuss cyber threats or security at a senior level",
-              "score": -2
+              "score": 0
             },
             {
               "answer": "Cyber security has been discussed but it is not seen as a business priority",
-              "score": 0
+              "score": 1
             },
             {
               "answer": "Discussions have taken place and we have a plan that is still in progress or still to happen",
@@ -1000,35 +1008,103 @@
             },
             {
               "answer": "Online threats have been assessed and feature highly alongside other business risks and priorities",
-              "score": 5
+              "score": 3
             }
           ]
         },
         {
-          "title": "Has training been delivered to staff in any of the following areas? (Tick all that apply)",
+          "title": "Are you required to achieve compliance with a recognised cyber security certification? *",
           "value": "q2",
+          "type": "select-one",
+          "metric": "Cyber resilience",
+          "options": [
+            {
+              "answer": "Yes",
+              "score": 0
+            },
+            {
+              "answer": "No",
+              "score": 1
+            }
+          ]
+        },
+        {
+          "title": "Which certification scheme have you been asked to comply with? (tick all that apply)",
+          "value": "q3",
           "type": "select-many",
           "metric": "Cyber resilience",
           "options": [
             {
-              "answer": "Password security",
+              "answer": "ISO27001",
+              "score": 4
+            },
+            {
+              "answer": "CE Plus",
+              "score": 3
+            },
+            {
+              "answer": "CE",
               "score": 2
             },
             {
-              "answer": "Phishing scams and email security",
+              "answer": "Other",
+              "score": 1
+            }
+          ]
+        },
+        {
+          "title": "Staff training and knowledge",
+          "value": "q4",
+          "type": "select-many",
+          "metric": "Cyber resilience",
+          "options": [
+            {
+              "answer": "Have your staff and volunteers received cyber security training in the last 12 months?",
               "score": 2
             },
             {
-              "answer": "Hardware security (USB pens, Laptops, tablets & phones)",
+              "answer": "Do your staff and volunteers know how to report a suspicious email?",
               "score": 2
+            }
+          ]
+        },
+        {
+          "title": "Which technical controls have you put in place to boost your cyber resilience?",
+          "value": "q5",
+          "type": "select-many",
+          "metric": "Cyber resilience",
+          "options": [
+            {
+              "answer": "Network firewall",
+              "score": 0
             },
             {
-              "answer": "Data handling",
-              "score": 2
+              "answer": "Malware protection",
+              "score": 0
             },
             {
-              "answer": "Viruses and malware",
-              "score": 2
+              "answer": "Antivirus",
+              "score": 0
+            },
+            {
+              "answer": "Remote wipe",
+              "score": 0
+            },
+            {
+              "answer": "Strong passwords",
+              "score": 0
+            },
+            {
+              "answer": "Backups",
+              "score": 0
+            },
+            {
+              "answer": "Software updates",
+              "score": 0
+            },
+            {
+              "answer": "Least privilege (ie only granting admin level access where this is needed)",
+              "score": 0
             }
           ]
         }
@@ -1066,6 +1142,17 @@
             {
               "answer": "Unknown / Prefer not to say",
               "value": "0"
+            }
+          ]
+        },
+        {
+          "title": "What is your organisation's main area of work?",
+          "value": "Main area of work",
+          "type": "select-one",
+          "options": [
+            {
+              "answer": "Test",
+              "value": "test"
             }
           ]
         },
