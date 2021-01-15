@@ -85,7 +85,8 @@
                 <li class="answer" id="option-{{slugify (concat ../value '-' this)}}"{{#compare ../type "measurement-eds"}} onclick="{{#compare this 'I can do this'}}hide{{else}}show{{/compare}}Options('{{../value}}');"{{/compare}}>{{> components_radio_button label=this id=(slugify (concat this ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
               {{/each}}
               {{#compare type "measurement-eds"}}
-                {{#each (split "I’d like to learn how to do this,I have no interest in this" ",")}}
+                {{!-- TODO: Remove 'This is not relevant to my current role' on life skills checkup --}}
+                {{#each (split "I’d like to learn how to do this,This is not relevant to my current role" ",")}}
                   <li class="answer hidden option-eds-{{../value}}" id="option-{{slugify (concat ../value '-' this)}}">{{> components_checkbox label=this id=(slugify (concat this ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
                 {{/each}}
               {{/compare}}
