@@ -20,7 +20,7 @@
   ],
   "metaData": {
     "assetsVersion": "{:../package.json@version}",
-    "assetsBase": "https://storage.googleapis.com/scvo-assets/test/checkup/",
+    "assetsBase": "https://storage.googleapis.com/scvo-assets/test/digitalcheckup/",
     "title": "Digital Checkup",
     "domain-map": "{:./data/domain-map.json}",
     "site-configurations": "{:./data/site-configurations.json}",
