@@ -1,6 +1,6 @@
 {
   "name": "checkup_foundation-terminal",
-  "pattern": "/checkup/foundation-terminal",
+  "pattern": "/life/foundation-terminal",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
     {

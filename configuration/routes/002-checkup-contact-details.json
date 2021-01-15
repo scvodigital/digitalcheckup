@@ -1,6 +1,10 @@
 {
   "name": "checkup_contact_details",
-  "pattern": "/checkup/contact-details",
+  "pattern": {
+    "organisation_contact": "/checkup/contact-details",
+    "life_contact": "/life/contact-details",
+    "work_contact": "/work/contact-details"
+  },
   "tasks": [
     "context.metaData.commonTasks.currentSite",
     {
