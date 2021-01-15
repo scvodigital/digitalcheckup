@@ -74,12 +74,11 @@
               <div class="hidden" data-container-of="{{slugify value}}">
                 {{#each supplementary-options}}
                   {{#each this}}
-                  
                   <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "supplement-" "answers-" ../../../../section "-" ../../value) value=value}}</li>
                   {{/each}}
                 {{/each}}
-              {{/if}}
               </div>
+              {{/if}}
             </ul>
           {{/ifAny ~}}
           {{#if (compare type "select-grid") ~}}
@@ -112,7 +111,7 @@
               {{#if supplementary-options}}
               <li class="hidden" data-container-of="{{slugify value}}">
               {{#each supplementary-options}}
-                <select class="hidden" data-supplement={{@key}} data-supplement-of={{slugify ../value}} 
+                <select class="hidden" data-supplement={{@key}} data-supplement-of={{slugify ../value}}
                 name="{{concat 'supplement-' 'answers-' ../../../section '-' (slugify ../value)}}">
                   <option disabled selected value> -- select an option -- </option>
                 {{#each this}}
