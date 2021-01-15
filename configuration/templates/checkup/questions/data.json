@@ -683,61 +683,68 @@
       "progress": 25,
       "questions": [
         {
-          "title": "Which of these technologies does your organisation use? (Tick all that apply)",
+          "title": "How often does your organisation use the following technologies?",
           "value": "q1",
-          "type": "select-many",
+          "type": "select-grid",
           "metric": "Tools and equipment",
+          "answer-options": [
+            {
+              "answer-option" : "Never",
+              "score" : 0
+            },
+            {
+              "answer-option" : "Occasionally",
+              "score" : 1
+            },
+            {
+              "answer-option" : "Sometimes",
+              "score" : 2
+            },
+            {
+              "answer-option" : "Often",
+              "score" : 3
+            }
+          ],
           "options": [
             {
-              "answer": "Cloud productivity tools (eg Office 365, G Suite)",
-              "score": 3
+              "answer" : "Cloud productivity tools (eg Office 365, G Suite)"
             },
             {
-              "answer": "Team communication tools (eg Slack, Microsoft Teams)",
-              "score": 3
+              "answer" : "Team communication tools (eg Slack, Microsoft Teams)"
             },
             {
-              "answer": "Video conferencing",
-              "score": 3
+              "answer" : "Video conferencing"
             },
             {
-              "answer": "Social media channels",
-              "score": 3
+              "answer" : "Social media channels"
             },
             {
-              "answer": "Online enquiries (eg live chat)",
-              "score": 3
+              "answer" : "Online enquiries (eg live chat)"
             },
             {
-              "answer": "Online bookings or referrals",
-              "score": 3
+              "answer" : "Online bookings or referrals"
             },
             {
-              "answer": "Email campaigns (eg Mailchimp)",
-              "score": 3
+              "answer" : "Email campaigns (eg Mailchimp)"
             },
             {
-              "answer": "Online donations or payments (eg JustGiving, Stripe, PayPal)",
-              "score": 3
+              "answer" : "Online donations or payments (eg JustGiving, Stripe, PayPal)"
             },
             {
-              "answer": "Mobile-friendly (responsive) website",
-              "score": 3
+              "answer" : "Mobile-friendly (responsive) website"
             },
             {
-              "answer": "Database (CRM system)",
-              "score": 3
+              "answer" : "Database (CRM system)"
             },
             {
-              "answer": "Online events/webinars/live streaming",
-              "score": 3
+              "answer" : "Online events/webinars/live streaming"
             },
             {
-              "answer": "Website usage data (e.g. Google Analytics)",
-              "score": 3
+              "answer" : "Website usage data (e.g. Google Analytics)"
             }
           ]
         },
+
         {
           "title": "Do you find your IT provision (technical support, hardware setup, internet access) to be... *",
           "value": "q2",
@@ -773,8 +780,122 @@
       "progress": 37,
       "questions": [
         {
+          "title": "This tests select radio buttons with fruit",
+          "value": "Test2",
+          "supplements": true,
+          "type": "select-one",
+          "options": [
+            {
+              "answer": "Apple",
+              "value": "apple",
+              "supplementary" : "apple"
+            },
+            {
+              "answer": "Citrus",
+              "value": "citrus",
+              "supplementary" : "citrus"
+            },
+            {
+              "answer": "Pizza",
+              "value": "pizza",
+              "supplementary" : "nonesir"
+            }
+          ],
+          "supplementary-options": {
+            "apple" : [
+              {
+                "answer": "Shiny Green Cooking Apple",
+                "value": "green cooking"
+              },
+              {
+                "answer": "Red Cox's Apple",
+                "value": "red cox"
+              },
+              {
+                "answer": "Tough, Brown Gristly Wild Apple",
+                "value": "wild apple"
+              }
+            ],
+            "citrus" : [
+              {
+                "answer": "Orange",
+                "value": "orange"
+              },
+              {
+                "answer": "Lemon",
+                "value": "lemon"
+              },
+              {
+                "answer": "Lime",
+                "value": "lime"
+              },
+              {
+                "answer": "Pomelo",
+                "value": "pomelo"
+              }
+            ]
+          }
+        },
+
+        {
+          "title": "Demo of selects with substances",
+          "value": "Main area of work",
+          "type": "select-dropdown",
+          "supplements": true,
+          "options": [
+            {
+              "answer": "Solid",
+              "value": "solid",
+              "supplementary" : "solid"
+            },
+            {
+              "answer": "Liquid",
+              "value": "liquid",
+              "supplementary" : "liquid"
+            },
+            {
+              "answer": "Homeopathic",
+              "value": "homeopathic",
+              "supplementary" : "nonesir"
+            }
+          ],
+          "supplementary-options": {
+            "solid" : [
+              {
+                "answer": "Iron",
+                "value": "iron"
+              },
+              {
+                "answer": "Silicon",
+                "value": "silicon"
+              }
+            ],
+            "liquid" : [
+              {
+                "answer": "Water",
+                "value": "water"
+              },
+              {
+                "answer": "Helium",
+                "value": "helium"
+              }
+            ]
+          }
+        }
+
+      ],
+      "next_section": "section-4"
+    },
+    "section-4": {
+      "name": "Section 4",
+      "title": "Data management",
+      "description": "Using digital tools means charities can access large amounts of real-time data. But you need a strategic approach to make the most of it",
+      "icon": "data",
+      "progress": 50,
+      "questions": [
+        {
           "title": "Which of the following approaches do you use to understand the needs of your users in developing or improving your services? (Tick all that apply)",
-          "value": "q2",
+          "value": "q2x",
           "type": "select-many",
           "metric": "Content marketing and data",
           "options": [
@@ -818,7 +939,7 @@
         },
         {
           "title": "Which of the following content types do you use within your organisation? (Tick all that apply)",
-          "value": "q1",
+          "value": "q1x",
           "type": "select-many",
           "metric": "Content marketing and data",
           "options": [
@@ -867,17 +988,7 @@
               "score": 1
             }
           ]
-        }
-      ],
-      "next_section": "section-4"
-    },
-    "section-4": {
-      "name": "Section 4",
-      "title": "Data management",
-      "description": "Using digital tools means charities can access large amounts of real-time data. But you need a strategic approach to make the most of it",
-      "icon": "data",
-      "progress": 50,
-      "questions": [
+        },
         {
           "title": "Data collection *",
           "value": "q1",
@@ -1142,17 +1253,6 @@
             {
               "answer": "Unknown / Prefer not to say",
               "value": "0"
-            }
-          ]
-        },
-        {
-          "title": "What is your organisation's main area of work?",
-          "value": "Main area of work",
-          "type": "select-one",
-          "options": [
-            {
-              "answer": "Test",
-              "value": "test"
             }
           ]
         },
