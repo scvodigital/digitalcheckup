@@ -59,18 +59,72 @@
               {{#switch ../type ~}}
               {{#case "select-one" ~}}
               {{#if answer ~}}
-              <li class="answer">{{> components_radio_button label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
+              <li class="answer">{{> components_radio_button supplementor=../value supplements=../supplements target=supplementary label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
               {{/if ~}}
               {{/case ~}}
               {{#case "select-many" ~}}
               {{#if answer ~}}
-              <li class="answer">{{> components_checkbox label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+              <li class="answer">{{> components_checkbox supplementor=../value supplements=../supplements target=supplementary label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
               {{/if ~}}
               {{/case ~}}
               {{/switch ~}}
               {{/each ~}}
+              {{!-- Supplementary options --}}
+              {{#if supplementary-options}}
+              <div class="hidden" data-container-of="{{slugify value}}">
+                {{#each supplementary-options}}
+                  {{#each this}}
+                  
+                  <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "supplement-" "answers-" ../../../../section "-" ../../value) value=value}}</li>
+                  {{/each}}
+                {{/each}}
+              {{/if}}
+              </div>
             </ul>
           {{/ifAny ~}}
+          {{#if (compare type "select-grid") ~}}
+            <table>
+              {{#each options}}
+              <tr>
+                <td>
+                  {{answer}}
+                </td>
+                {{#each ../answer-options}}
+                  <td>
+                    {{> components_radio_button label=answer-option id=(slugify (concat ../answer "-" answer-option)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=value required="true"}}
+                  </td>
+                {{/each}}
+              </tr>
+              {{/each}}
+            </table>
+          {{/if}}
+          {{#if (compare type "select-dropdown") ~}}
+             <ul class="answer-block">
+               <li >
+                <select {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' (slugify value)}}">
+                  <option disabled selected value> -- select an option -- </option>
+                  {{#each options}}
+                  <option  data-supplement-target="{{supplementary}}" value="{{value}}">{{answer}}</option>
+                  {{/each}}
+                </select>
+              </li>
+            {{!-- Supplementary options --}}
+              {{#if supplementary-options}}
+              <li class="hidden" data-container-of="{{slugify value}}">
+              {{#each supplementary-options}}
+                <select class="hidden" data-supplement={{@key}} data-supplement-of={{slugify ../value}} 
+                name="{{concat 'supplement-' 'answers-' ../../../section '-' (slugify ../value)}}">
+                  <option disabled selected value> -- select an option -- </option>
+                {{#each this}}
+                  <option value="{{value}}">{{answer}}</option>
+                {{/each}}
+                </select>
+              {{/each}}
+              </li>
+              {{/if}}
+              </ul>
+          {{/if}}
+
           {{#compare type "freetext" ~}}
             <div class="answer-block">
               <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
@@ -93,14 +147,6 @@
           {{/ifAny ~}}
         </div>
         {{/each ~}}
-        <script>
-        function showOptions(question) {
-          $(".option-eds-"+question).removeClass('hidden');
-        }
-        function hideOptions(question) {
-          $(".option-eds-"+question).addClass('hidden').find('.mdc-form-field').removeClass('checked');
-        }
-        </script>
         <div class="cta b-padding-full">
           <button type="submit" class="mdc-button mdc-button--raised">Next section</button>
         </div>
@@ -109,3 +155,14 @@
   </div>
 </form>
 {{/with ~}}
+
+
+<script>
+
+function showOptions(question) {
+  $(".option-eds-"+question).removeClass('hidden');
+}
+function hideOptions(question) {
+  $(".option-eds-"+question).addClass('hidden').find('.mdc-form-field').removeClass('checked');
+}
+</script>
