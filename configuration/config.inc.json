@@ -1,24 +1,26 @@
 {
   "domains": [
     "digitalcheckup.org",
-    "digitalcheckup.local",
-    "organisation.digitalcheckup.org",
-    "digitalcheckup-organisation.local",
+    "checkup.scot",
+    "checkup.local",
+    "organisation.checkup.scot",
+    "checkup-organisation.local",
     "housing.digitalcheckup.org",
-    "digitalcheckup-housing.local",
-    "cyber.digitalcheckup.org",
-    "digitalcheckup-cyber.local",
-    "lifeskills.digitalcheckup.org",
-    "digitalcheckup-lifeskills.local",
-    "workskills.digitalcheckup.org",
-    "digitalcheckup-workskills.local"
+    "housing.checkup.scot",
+    "checkup-housing.local",
+    "cyber.checkup.scot",
+    "checkup-cyber.local",
+    "governance.checkup.scot",
+    "checkup-governance.local",
+    "skills.checkup.scot",
+    "checkup-skills.local"
   ],
   "routes": [
     "{:./routes/*.json}"
   ],
   "metaData": {
     "assetsVersion": "{:../package.json@version}",
-    "assetsBase": "https://storage.googleapis.com/scvo-assets/test/digitalcheckup/",
+    "assetsBase": "https://storage.googleapis.com/scvo-assets/test/checkup/",
     "title": "Digital Checkup",
     "domain-map": "{:./data/domain-map.json}",
     "site-configurations": "{:./data/site-configurations.json}",

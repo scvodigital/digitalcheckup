@@ -2,8 +2,12 @@
   "name": "checkup_page",
   "debug": true,
   "pattern": {
-    "home": "/checkup",
-    "section": "/checkup/:section"
+    "organisation_home": "/checkup",
+    "organisation_section": "/checkup/:section",
+    "life_home": "/life",
+    "life_section": "/life/:section",
+    "work_home": "/work",
+    "work_section": "/work/:section"
   },
   "tasks": [
     "context.metaData.commonTasks.currentSite",

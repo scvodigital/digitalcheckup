@@ -1,14 +1,16 @@
 {
   "digitalcheckup_org": "default",
-  "digitalcheckup_local": "default",
-  "organisation_digitalcheckup_org": "organisation",
-  "digitalcheckup-organisation_local": "organisation",
+  "checkup_scot": "default",
+  "checkup_local": "default",
+  "organisation_checkup_scot": "organisation",
+  "checkup-organisation_local": "organisation",
   "housing_digitalcheckup_org": "housing",
-  "digitalcheckup-housing_local": "housing",
-  "lifeskills_digitalcheckup_org": "lifeskills",
-  "digitalcheckup-lifeskills_local": "lifeskills",
-  "workskills_digitalcheckup_org": "workskills",
-  "digitalcheckup-workskills_local": "workskills",
-  "cyber_digitalcheckup_org": "cyber",
-  "digitalcheckup-cyber_local": "cyber"
+  "housing_checkup_scot": "housing",
+  "checkup-housing_local": "housing",
+  "skills_checkup_scot": "skills",
+  "checkup-skills_local": "skills",
+  "governance_checkup_scot": "governance",
+  "checkup-governance_local": "governance",
+  "cyber_checkup_scot": "cyber",
+  "checkup-cyber_local": "cyber"
 }

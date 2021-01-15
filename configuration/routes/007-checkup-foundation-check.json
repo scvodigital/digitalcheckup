@@ -1,6 +1,6 @@
 {
   "name": "checkup_foundation-check",
-  "pattern": "/checkup/foundation-check",
+  "pattern": "/life/foundation-check",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
     {

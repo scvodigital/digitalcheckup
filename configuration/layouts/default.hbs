@@ -158,7 +158,6 @@
             {{> components_scvo_bar}}
           </section>
         </div> --}}
-        {{!-- {{> layout_covid_19}} --}}
         <div class="container-fluid">
           <div class="mdc-top-app-bar__row mdc-top-app-bar__upper">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start mdc-top-app-bar__section--logo">
@@ -171,7 +170,6 @@
                 <h1 class="text-secondary">
                   {{#compare @root.data.currentSite.name "default"}}
                     <span class="text-brand">Digital</span> Checkup
-                    {{!-- s --}}
                   {{else}}
                     {{#compare @root.data.currentSite.type "organisations"}}
                       {{#compare @root.data.currentSite.name "cyber"}}
@@ -185,9 +183,6 @@
                     {{/compare}}
                     {{#compare @root.data.currentSite.type "skills"}}
                       Essential <span class="text-brand">Digital</span> Skills
-                      <span class="mdc-typography--caption">
-                        For {{#compare @root.data.currentSite.name "lifeskills"}}life{{else}}work{{/compare}}
-                      </span>
                     {{/compare}}
                   {{/compare}}
                 </h1>
@@ -199,11 +194,13 @@
               </button>
             </section>
             {{#unless (contains @root.request.url.pathname "/checkup")}}
-              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
-                <div class="cta v-padding-full">
-                  <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
-                </div>
-              </section>
+              {{#compare @root.data.currentSite.type "organisations"}}
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
+                  <div class="cta v-padding-full">
+                    <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
+                  </div>
+                </section>
+              {{/compare}}
             {{/unless}}
           </div>
           <div class="mdc-top-app-bar__row mdc-top-app-bar__lower hide-md hide-sm">
@@ -211,7 +208,7 @@
                 {{#>components_tab_bar
                     extraClasses="mdc-tab-bar__auto-width"
                     id="main-tab-bar"}}
-                  {{#each @root.context.metaData.menus.main ~}}
+                  {{#each (getProperty @root.context.metaData.menus @root.data.currentSite.type) ~}}
                     {{>components_tab
                         url=(stripTrailingSlash path)
                         labelClasses=""
@@ -227,7 +224,7 @@
       <aside class="mdc-drawer mdc-drawer--modal" id="mobile-menu" data-mdc-auto-init="MDCDrawer">
         <div class="mdc-drawer__content">
           <nav class="mdc-list">
-            {{#each @root.context.metaData.menus.main ~}}
+            {{#each (getProperty @root.context.metaData.menus @root.data.currentSite.type) ~}}
             <a class="mdc-list-item {{#if (regexMatch @root.request.url.pathname route "gi")}} mdc-list-item--activated{{/if}}"
                href="{{stripTrailingSlash path}}" {{#if (regexMatch @root.request.url.pathname route "gi")}}aria-selected="true"{{else}}aria-hidden="true"{{/if}}>
               {{#if icon ~}}

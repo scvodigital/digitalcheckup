@@ -1,5 +1,5 @@
 {
-  "main": [
+  "organisations": [
     {
       "label": "Home",
       "path": "//",
@@ -19,6 +19,23 @@
       "label": "About",
       "path": "/about",
       "route": "^/about"
+    }
+  ],
+  "skills": [
+    {
+      "label": "Home",
+      "path": "//",
+      "route": "^/$"
+    },
+    {
+      "label": "Life skills",
+      "path": "/life",
+      "route": "^/life"
+    },
+    {
+      "label": "Work skills",
+      "path": "/work",
+      "route": "^/work"
     }
   ]
 }

@@ -1,7 +1,12 @@
 {
   "name": "checkup_submit",
   "debug": true,
-  "pattern": "/checkup/submit",
+  "pattern": {
+    "organisation_submit": "/checkup/submit",
+    "life_submit": "/life/submit",
+    "work_submit": "/work/submit"
+  },
+  "pattern": "/checkup/",
   "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.currentSite",

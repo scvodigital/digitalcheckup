@@ -1,6 +1,10 @@
 {
   "name": "checkup_confirmation",
-  "pattern": "/checkup/confirmation",
+  "pattern": {
+    "organisation_confirmation": "/checkup/confirmation",
+    "life_confirmation": "/life/confirmation",
+    "work_confirmation": "/work/confirmation"
+  },
   "tasks": [
     "context.metaData.commonTasks.currentSite",
     {

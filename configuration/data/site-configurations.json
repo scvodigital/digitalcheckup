@@ -31,7 +31,7 @@
     },
     "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
-    "url": "https://organisation.digitalcheckup.org"
+    "url": "https://organisation.checkup.scot"
   },
   "housing": {
     "name": "housing",
@@ -60,26 +60,28 @@
     "for_plural": "organisations",
     "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
-    "url": "https://cyber.digitalcheckup.org"
+    "url": "https://cyber.checkup.scot"
   },
-  "lifeskills": {
-    "name": "lifeskills",
+  "governance": {
+    "name": "governance",
+    "type": "organisations",
+    "sf_type": "Governance",
+    "title": "Governance Checkup",
+    "description": "",
+    "for_singular": "organisation",
+    "for_plural": "organisations",
+    "email": "digital@scvo.scot",
+    "phone": "0800 169 0022",
+    "url": "https://governance.checkup.scot"
+  },
+  "skills": {
+    "name": "skills",
     "type": "skills",
     "sf_type": "Essential_Digital_Skills_for_life",
-    "title": "Essential Digital Skills for life",
+    "title": "Essential Digital Skills",
     "description": "",
     "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
-    "url": "https://lifeskills.digitalcheckup.org"
-  },
-  "workskills": {
-    "name": "workskills",
-    "type": "skills",
-    "sf_type": "Essential_Digital_Skills_for_work",
-    "title": "Essential Digital Skills for work",
-    "description": "",
-    "email": "digital@scvo.scot",
-    "phone": "0800 169 0022",
-    "url": "https://workskills.digitalcheckup.org"
+    "url": "https://skills.checkup.scot"
   }
 }

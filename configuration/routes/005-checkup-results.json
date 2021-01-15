@@ -1,7 +1,11 @@
 {
   "name": "checkup_results",
   "debug": true,
-  "pattern": "/checkup/results",
+  "pattern": {
+    "organisation_results": "/checkup/results",
+    "life_results": "/life/results",
+    "work_results": "/work/results"
+  },
   "tasks": [
     "context.metaData.commonTasks.currentSite",
     {
