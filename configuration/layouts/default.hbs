@@ -171,18 +171,23 @@
                   {{#compare @root.data.currentSite.name "default"}}
                     <span class="text-brand">Digital</span> Checkup
                   {{else}}
-                    {{#compare @root.data.currentSite.type "organisations"}}
-                      {{#compare @root.data.currentSite.name "cyber"}}
-                        <span style="font-feature-settings: initial;" class="text-brand">Cyber</span> Checkup
+                    {{#compare @root.data.currentSite.name "cyber"}}
+                      <span style="font-feature-settings: initial;" class="text-brand">Cyber</span> Checkup
+                    {{else}}
+                      {{#compare @root.data.currentSite.type "skills"}}
+                        Essential <span class="text-brand">Digital</span> Skills
                       {{else}}
-                        <span class="text-brand">Digital</span> Checkup
-                        <span class="mdc-typography--caption">
-                          For {{@root.data.currentSite.for_plural}}
-                        </span>
+                        {{#compare @root.data.currentSite.name "governance"}}
+                          <span class="text-brand">Good Governance</span> Checkup
+                        {{else}}
+                          {{#compare @root.data.currentSite.type "organisation"}}
+                            <span class="text-brand">Digital</span> Checkup
+                            <span class="mdc-typography--caption">
+                              For {{@root.data.currentSite.for_plural}}
+                            </span>
+                          {{/compare}}
+                        {{/compare}}
                       {{/compare}}
-                    {{/compare}}
-                    {{#compare @root.data.currentSite.type "skills"}}
-                      Essential <span class="text-brand">Digital</span> Skills
                     {{/compare}}
                   {{/compare}}
                 </h1>
@@ -194,7 +199,7 @@
               </button>
             </section>
             {{#unless (contains @root.request.url.pathname "/checkup")}}
-              {{#compare @root.data.currentSite.type "organisations"}}
+              {{#compare @root.data.currentSite.type "organisation"}}
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
                   <div class="cta v-padding-full">
                     <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
@@ -348,14 +353,14 @@
         console.log( "Handler for .change() called." );
         // Identify the option
         console.log($(this).is("input"));
-        var element = ($(this).is("select")) ? $(this).find('option:selected') : $(this); 
+        var element = ($(this).is("select")) ? $(this).find('option:selected') : $(this);
         var supplement = element.data('supplement-target');
         // Identify its supplement
         console.log("supplement is... " + supplement);
         // This thing's
         let suppRef = $(this).attr("data-supplementor");
         console.log(suppRef);
-        // supplement-of- ids 
+        // supplement-of- ids
         // Close down all
         supplements = $('*[data-supplement-of="'+ suppRef +'"]');
         var found = false;
@@ -373,7 +378,7 @@
             suppElement.addClass("hidden");
           }
         });
-        if (found) {$('*[data-container-of="' + suppRef + '"]').removeClass('hidden');} 
+        if (found) {$('*[data-container-of="' + suppRef + '"]').removeClass('hidden');}
         else {$('*[data-container-of="' + suppRef + '"]').addClass('hidden');}
       });
 

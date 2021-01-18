@@ -1,7 +1,7 @@
 {
   "default": {
     "name": "default",
-    "type": "organisations",
+    "type": "organisation",
     "sf_type": "Digital",
     "title": "Digital Checkup",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
@@ -18,7 +18,7 @@
   },
   "organisation": {
     "name": "organisation",
-    "type": "organisations",
+    "type": "organisation",
     "sf_type": "Digital_Organisations",
     "title": "Digital Checkup for organisations",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
@@ -35,7 +35,7 @@
   },
   "housing": {
     "name": "housing",
-    "type": "organisations",
+    "type": "organisation",
     "sf_type": "Digital_Housing_Associations",
     "title": "Digital Checkup for Housing Associations",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other housing associations",
@@ -52,7 +52,7 @@
   },
   "cyber": {
     "name": "cyber",
-    "type": "organisations",
+    "type": "cyber",
     "sf_type": "Cyber",
     "title": "Cyber Checkup",
     "description": "",
@@ -64,12 +64,12 @@
   },
   "governance": {
     "name": "governance",
-    "type": "organisations",
+    "type": "governance",
     "sf_type": "Governance",
-    "title": "Governance Checkup",
+    "title": "Good Governance Checkup",
     "description": "",
-    "for_singular": "organisation",
-    "for_plural": "organisations",
+    "for_singular": "charity",
+    "for_plural": "charities",
     "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://governance.checkup.scot"

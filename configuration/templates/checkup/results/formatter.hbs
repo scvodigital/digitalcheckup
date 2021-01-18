@@ -22,7 +22,7 @@
   query=@root.request.params.query
   rootResponse=@root.data.rootResponse
   additionalResponses=@root.data.additionalResponses.hits.hits ~}}
-  {{#compare @root.data.currentSite.type "organisations"}}
+  {{#compare @root.data.currentSite.type "organisation"}}
   {{#if query.rid ~}}
   {
     "overall": {
