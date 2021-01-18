@@ -2533,7 +2533,7 @@
       "name": "Section 1",
       "title": "Communicating",
       "description": "",
-      "icon": "comment-alt-lines",
+      "icon": "fa-comment-alt-lines",
       "progress": 26,
       "questions": [
         {
