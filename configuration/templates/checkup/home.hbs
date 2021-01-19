@@ -1,4 +1,4 @@
-{{#compare @root.data.currentSite.type "organisations"}}
+{{#compare @root.data.currentSite.type "organisation"}}
   <div class="container-home-hero">
     <div class="container-fluid">
       <div class="container-home v-padding-full">
@@ -35,51 +35,80 @@
       </div>
     </div>
   </div>
-  <div class="container-home-pull v-padding-full">
+{{else}}
+  {{#compare @root.data.currentSite.type "skills"}}
     <div class="container-fluid">
-      <div class="container-home">
-        <h2 class="mdc-typography--headline5 text-center">
-          Identify the strengths and the gaps your {{@root.data.currentSite.for_singular}} is facing with digital technology
-        </h2>
-        <div class="mdc-layout-grid v-padding-full">
+      <div class="container-home v-padding-full">
+        <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
-              <div class="leadership trapezoid">
-                <div class="trapezoid-content">
-                  <img src="{{~>asset_url url='images/icon-leadership@2x.png'~}}" class="icon" />
-                </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+              <h1>Essential Digital Skills for life</h1>
+              <p class="v-margin-full">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta felis ut nunc pharetra varius. Aliquam fermentum purus lectus, eget scelerisque ex laoreet a. Nam pretium imperdiet ex sed viverra. Sed interdum, eros ut aliquam fringilla, ex lacus suscipit massa, ac tristique magna arcu ac dui. Phasellus cursus vulputate iaculis. Aliquam fringilla felis eget nisl congue, in faucibus nunc fermentum. Nam lacinia imperdiet consequat. Praesent a ligula nisl. Pellentesque euismod lectus ut ex scelerisque rhoncus. Fusce ac sem diam. Morbi ut interdum risus, a vulputate dui.
+              </p>
+              <div class="cta v-padding-full b-margin-full text-center">
+                <a href="/life" class="mdc-button mdc-button--raised">Life skills checkup</a>
               </div>
-              <div class="mdc-typography--body1">Leadership, culture, and skills</div>
             </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
-              <div class="tools trapezoid">
-                <div class="trapezoid-content">
-                  <img src="{{~>asset_url url='images/icon-tools@2x.png'~}}" class="icon" />
-                </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+              <h1>Essential Digital Skills for work</h1>
+              <p class="v-margin-full">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et sapien quis massa ultricies porta. Mauris ac auctor risus. Fusce suscipit tempor mauris. Sed imperdiet tortor elit, vel hendrerit diam blandit eget. Nullam iaculis eros mi, eget iaculis ipsum molestie at. Vivamus id mi et sapien tempor mollis vitae et diam. Sed auctor ornare velit.
+              </p>
+              <div class="cta v-padding-full b-margin-full text-center">
+                <a href="/work" class="mdc-button mdc-button--raised">Work skills checkup</a>
               </div>
-              <div class="mdc-typography--body1">Tools and equipment</div>
-            </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
-              <div class="content trapezoid">
-                <div class="trapezoid-content">
-                  <img src="{{~>asset_url url='images/icon-content-marketing-data@2x.png'~}}" class="icon" />
-                </div>
-              </div>
-              <div class="mdc-typography--body1">Content, marketing and data</div>
-            </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
-              <div class="cyber trapezoid">
-                <div class="trapezoid-content">
-                  <img src="{{~>asset_url url='images/icon-resilience@2x.png'~}}" class="icon" />
-                </div>
-              </div>
-              <div class="mdc-typography--body1">Cyber resilience and online threats</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  {{else}}
+    <div class="container-fluid">
+      <div class="container-home v-padding-full">
+        <p class="v-margin-full">
+          {{@root.data.currentSite.title}} home page
+        </p>
+        {{!-- <div class="cta v-padding-full">
+          <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
+        </div> --}}
+      </div>
+    </div>
+  {{/compare}}
+{{/compare}}
+{{#if @root.data.currentSite.sections_heading}}
+<div class="container-home-pull v-padding-full sections">
+  <div class="container-fluid">
+    <div class="container-home">
+      <h2 class="mdc-typography--headline5 text-center">
+        {{{@root.data.currentSite.sections_heading}}}
+      </h2>
+      <div class="mdc-layout-grid v-padding-full">
+        <div class="mdc-layout-grid__inner">
+          {{#each @root.data.currentSite.sections}}
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+              {{#if number}}
+                <div class="number" style="background-color:#{{color}};">{{number}}</div>
+              {{/if}}
+              <div class="{{class}} {{shape}}"{{#compare shape 'plectrum'}} style="background-image: url(https://scvo.scot/rouleaux.svg?color={{color}}&style=solid);"{{/compare}}>
+                <div class="{{shape}}-content"{{#compare shape 'plectrum'}} style="background-image: url(https://scvo.scot/rouleaux.svg?color=244B5A&style=solid);"{{/compare}}>
+                  {{#if (contains icon 'fa-')}}
+                    <span class="far {{icon}} fa-3x fa-fw icon"{{#if color}} style="color:#{{color}};"{{/if}}></span>
+                  {{else}}
+                    <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
+                  {{/if}}
+                </div>
+              </div>
+              <div class="mdc-typography--body1 text-center"{{#if color}} style="color:#{{color}};"{{/if}}><strong>{{{title}}}</strong></div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+{{/if}}
+{{#compare @root.data.currentSite.type "organisation"}}
   <div class="container-fluid">
     <div class="container-home v-padding-full text-center">
       <h2 class="mdc-typography--headline4">
@@ -93,17 +122,6 @@
         <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
       </div>
       <br />
-    </div>
-  </div>
-{{else}}
-  <div class="container-fluid">
-    <div class="container-home v-padding-full">
-      <p class="v-margin-full">
-        {{@root.data.currentSite.title}} home page
-      </p>
-      <div class="cta v-padding-full">
-        <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
-      </div>
     </div>
   </div>
 {{/compare}}

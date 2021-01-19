@@ -788,33 +788,33 @@
           "options": [
             {
               "answer": "Apple",
-              "supplementary" : "apple",
               "score" : 1
             },
             {
               "answer": "Citrus",
-              "supplementary" : "citrus",
               "score" : 2
             },
             {
               "answer": "Pizza",
-              "supplementary" : "nonesir",
               "score" : 3
             }
           ],
           "supplementary-options": {
-            "apple" : [
+            "Apple" : [
               {
-                "answer": "Shiny Green Cooking Apple"
+                "answer": "Shiny Green Cooking Apple",
+                "score": 10
               },
               {
-                "answer": "Red Cox's Apple"
+                "answer": "Red Cox's Apple",
+                "score": 100
               },
               {
-                "answer": "Tough, Brown Gristly Wild Apple"
+                "answer": "Tough, Brown Gristly Wild Apple",
+                "score": 1000
               }
             ],
-            "citrus" : [
+            "Citrus" : [
               {
                 "answer": "Orange"
               },
@@ -839,27 +839,32 @@
           "options": [
             {
               "answer": "Solid",
-              "supplementary" : "solid"
+              "supplementary" : "solid",
+              "score" : 2
             },
             {
               "answer": "Liquid",
-              "supplementary" : "liquid"
+              "supplementary" : "liquid",
+              "score" : 3
             },
             {
               "answer": "Homeopathic",
-              "supplementary" : "nonesir"
+              "supplementary" : "nonesir",
+              "score" : 4
             }
           ],
           "supplementary-options": {
-            "solid" : [
+            "Solid" : [
               {
-                "answer": "Iron"
+                "answer": "Iron",
+                "score" : 10
               },
               {
-                "answer": "Silicon"
+                "answer": "Silicon",
+                "score" : 100
               }
             ],
-            "liquid" : [
+            "Liquid" : [
               {
                 "answer": "Water"
               },
@@ -2151,7 +2156,7 @@
       "next_section": "contact-details"
     }
   },
-  "skills": {
+  "lifeskills": {
     "foundation": {
       "name": "",
       "title": "Foundation Skills",
@@ -2522,7 +2527,7 @@
       "name": "Section 1",
       "title": "Communicating",
       "description": "",
-      "icon": "comment-alt-lines",
+      "icon": "fa-comment-alt-lines",
       "progress": 26,
       "questions": [
         {

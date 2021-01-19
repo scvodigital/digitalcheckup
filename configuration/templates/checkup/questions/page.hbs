@@ -25,7 +25,7 @@
       </div>
     </div>
   {{/ifAll ~}}
-  {{#ifAll (compare @root.data.currentSite.name 'lifeskills') (compare @root.request.params.path "!==" "checkup_foundation-check")}}
+  {{#ifAll (compare @root.data.currentSite.name 'skills') (compare @root.request.url.pathname '/life') (compare @root.request.params.path "!==" "checkup_foundation-check")}}
     {{> checkup_section section="foundation"}}
   {{else}}
     {{> checkup_section section="section-1"}}

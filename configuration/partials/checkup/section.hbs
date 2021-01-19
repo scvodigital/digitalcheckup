@@ -1,5 +1,5 @@
-{{#with (getProperty (getProperty @root.data.checkup @root.data.currentSite.name) section) ~}}
-<form action="/checkup/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
+{{#with (getProperty (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) section) ~}}
+<form action="{{#if (contains @root.request.url.pathname '/life')}}/life{{else}}{{#if (contains @root.request.url.pathname '/work')}}/work{{else}}/checkup{{/if}}{{/if}}/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
   <div class="checkup-section-header-container">
@@ -59,12 +59,12 @@
               {{#switch ../type ~}}
               {{#case "select-one" ~}}
               {{#if answer ~}}
-              <li class="answer">{{> components_radio_button supplementor=../value supplements=../supplements target=supplementary label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
+              <li class="answer">{{> components_radio_button supplementor=../value supplements=../supplements target=answer label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
               {{/if ~}}
               {{/case ~}}
               {{#case "select-many" ~}}
               {{#if answer ~}}
-              <li class="answer">{{> components_checkbox supplementor=../value supplements=../supplements target=supplementary label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+              <li class="answer">{{> components_checkbox supplementor=../value supplements=../supplements target=answer label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
               {{/if ~}}
               {{/case ~}}
               {{/switch ~}}
@@ -77,8 +77,8 @@
                   <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "supplement-" "answers-" ../../../../section "-" ../../value) value=value}}</li>
                   {{/each}}
                 {{/each}}
-              {{/if}}
               </div>
+              {{/if}}
             </ul>
           {{/ifAny ~}}
           {{#if (compare type "select-grid") ~}}
@@ -103,7 +103,7 @@
                 <select {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' value}}">
                   <option disabled selected value> -- select an option -- </option>
                   {{#each options}}
-                  <option  data-supplement-target="{{supplementary}}" value="{{default value answer}}">{{answer}}</option>
+                  <option  data-supplement-target="{{answer}}" value="{{default value answer}}">{{answer}}</option>
                   {{/each}}
                 </select>
               </li>
