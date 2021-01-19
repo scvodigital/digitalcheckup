@@ -29,12 +29,25 @@
   {{/json}},
 
   {{#json key="questionResponses" type="array"}}
-    {{#each @root.data.checkup}}
+    {{#each  (getProperty @root.data.checkup @root.data.currentSite.name)}}
       {{#each questions}}
+        {{#compare type 'select-grid'}}
+          {{#each options}}
+            {{#json type="object"}}
+              {{{json key="question" value=(concat (add @../../index 1) "." (add @../index 1) ": " ../title ':' answer)}}},
+              {{{json key="answer" value=(concat (default (lookup @root.request.body (concat 'answers-' @../../key '-' ../value '-' (slugify answer))) ""))}}}
+            {{/json}},
+          {{/each}}
+        {{else}}
         {{#json type="object"}}
           {{{json key="question" value=(concat (add @../index 1) "." (add @index 1) ": " title)}}},
-          {{{json key="answer" value=(default (lookup @root.request.body (concat 'answers-' @../key '-' value)) "")}}}
+          {{#if (lookup @root.request.body (concat 'supplement-answers-' @../key '-' value))}}
+            {{{json key="answer" value=(concat (default (lookup @root.request.body (concat 'answers-' @../key '-' value))) ';' (join (arrayify (lookup @root.request.body (concat 'supplement-answers-' @../key '-' value))) ';')) }}}
+          {{else}}
+            {{{json key="answer" value=(default (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}}
+          {{/if}}
         {{/json}},
+        {{/compare}}
       {{/each}}
     {{/each}}
 

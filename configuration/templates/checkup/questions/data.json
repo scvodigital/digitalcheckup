@@ -689,19 +689,19 @@
           "metric": "Tools and equipment",
           "answer-options": [
             {
-              "answer-option" : "Never",
+              "answer" : "Never",
               "score" : 0
             },
             {
-              "answer-option" : "Occasionally",
+              "answer" : "Occasionally",
               "score" : 1
             },
             {
-              "answer-option" : "Sometimes",
+              "answer" : "Sometimes",
               "score" : 2
             },
             {
-              "answer-option" : "Often",
+              "answer" : "Often",
               "score" : 3
             }
           ],
@@ -778,114 +778,103 @@
       "description": "Digital tools and approaches make it dramatically easier to reach thousands of people, and more importantly, to hear about their needs and priorities",
       "icon": "content-marketing",
       "progress": 37,
-      "questions": [
+      "questions": [ 
         {
           "title": "This tests select radio buttons with fruit",
           "value": "Test2",
           "supplements": true,
           "type": "select-one",
+          "metric": "Content & Marketing",
           "options": [
             {
               "answer": "Apple",
-              "value": "apple",
-              "supplementary" : "apple"
+              "supplementary" : "apple",
+              "score" : 1
             },
             {
               "answer": "Citrus",
-              "value": "citrus",
-              "supplementary" : "citrus"
+              "supplementary" : "citrus",
+              "score" : 2
             },
             {
               "answer": "Pizza",
-              "value": "pizza",
-              "supplementary" : "nonesir"
+              "supplementary" : "nonesir",
+              "score" : 3
             }
           ],
           "supplementary-options": {
             "apple" : [
               {
-                "answer": "Shiny Green Cooking Apple",
-                "value": "green cooking"
+                "answer": "Shiny Green Cooking Apple"
               },
               {
-                "answer": "Red Cox's Apple",
-                "value": "red cox"
+                "answer": "Red Cox's Apple"
               },
               {
-                "answer": "Tough, Brown Gristly Wild Apple",
-                "value": "wild apple"
+                "answer": "Tough, Brown Gristly Wild Apple"
               }
             ],
             "citrus" : [
               {
-                "answer": "Orange",
-                "value": "orange"
+                "answer": "Orange"
               },
               {
-                "answer": "Lemon",
-                "value": "lemon"
+                "answer": "Lemon"
               },
               {
-                "answer": "Lime",
-                "value": "lime"
+                "answer": "Lime"
               },
               {
-                "answer": "Pomelo",
-                "value": "pomelo"
+                "answer": "Pomelo"
               }
             ]
           }
         },
-
         {
           "title": "Demo of selects with substances",
           "value": "Main area of work",
           "type": "select-dropdown",
+          "metric": "Content & Marketing",
           "supplements": true,
           "options": [
             {
               "answer": "Solid",
-              "value": "solid",
               "supplementary" : "solid"
             },
             {
               "answer": "Liquid",
-              "value": "liquid",
               "supplementary" : "liquid"
             },
             {
               "answer": "Homeopathic",
-              "value": "homeopathic",
               "supplementary" : "nonesir"
             }
           ],
           "supplementary-options": {
             "solid" : [
               {
-                "answer": "Iron",
-                "value": "iron"
+                "answer": "Iron"
               },
               {
-                "answer": "Silicon",
-                "value": "silicon"
+                "answer": "Silicon"
               }
             ],
             "liquid" : [
               {
-                "answer": "Water",
-                "value": "water"
+                "answer": "Water"
               },
               {
-                "answer": "Helium",
-                "value": "helium"
+                "answer": "Helium"
               }
             ]
           }
         }
 
       ],
-      "next_section": "section-4"
-    },
+      "next_section": "submit"
+    }
+  },
+  "old-org-end": {
     "section-4": {
       "name": "Section 4",
       "title": "Data management",

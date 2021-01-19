@@ -74,7 +74,6 @@
               <div class="hidden" data-container-of="{{slugify value}}">
                 {{#each supplementary-options}}
                   {{#each this}}
-                  
                   <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "supplement-" "answers-" ../../../../section "-" ../../value) value=value}}</li>
                   {{/each}}
                 {{/each}}
@@ -91,7 +90,7 @@
                 </td>
                 {{#each ../answer-options}}
                   <td>
-                    {{> components_radio_button label=answer-option id=(slugify (concat ../answer "-" answer-option)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=value required="true"}}
+                    {{> components_radio_button label=answer id=(slugify (concat ../answer "-" answer)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=(default value answer) required="true"}}
                   </td>
                 {{/each}}
               </tr>
@@ -101,10 +100,10 @@
           {{#if (compare type "select-dropdown") ~}}
              <ul class="answer-block">
                <li >
-                <select {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' (slugify value)}}">
+                <select {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' value}}">
                   <option disabled selected value> -- select an option -- </option>
                   {{#each options}}
-                  <option  data-supplement-target="{{supplementary}}" value="{{value}}">{{answer}}</option>
+                  <option  data-supplement-target="{{supplementary}}" value="{{default value answer}}">{{answer}}</option>
                   {{/each}}
                 </select>
               </li>
@@ -113,10 +112,10 @@
               <li class="hidden" data-container-of="{{slugify value}}">
               {{#each supplementary-options}}
                 <select class="hidden" data-supplement={{@key}} data-supplement-of={{slugify ../value}} 
-                name="{{concat 'supplement-' 'answers-' ../../../section '-' (slugify ../value)}}">
+                name="{{concat 'supplement-' 'answers-' ../../../section '-' ../value}}">
                   <option disabled selected value> -- select an option -- </option>
                 {{#each this}}
-                  <option value="{{value}}">{{answer}}</option>
+                  <option value="{{default value answer}}">{{answer}}</option>
                 {{/each}}
                 </select>
               {{/each}}
@@ -139,8 +138,7 @@
                 <li class="answer" id="option-{{slugify (concat ../value '-' this)}}"{{#compare ../type "measurement-eds"}} onclick="{{#compare this 'I can do this'}}hide{{else}}show{{/compare}}Options('{{../value}}');"{{/compare}}>{{> components_radio_button label=this id=(slugify (concat this ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
               {{/each}}
               {{#compare type "measurement-eds"}}
-                {{!-- TODO: Remove 'This is not relevant to my current role' on life skills checkup --}}
-                {{#each (split "I’d like to learn how to do this,This is not relevant to my current role" ",")}}
+                {{#each (split "I’d like to learn how to do this,I have no interest in this" ",")}}
                   <li class="answer hidden option-eds-{{../value}}" id="option-{{slugify (concat ../value '-' this)}}">{{> components_checkbox label=this id=(slugify (concat this ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
                 {{/each}}
               {{/compare}}

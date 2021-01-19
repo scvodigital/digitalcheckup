@@ -9,21 +9,37 @@
   {{#each (getProperty @root.data.checkup @root.data.currentSite.name)}}
     {{#each questions}}
       {{#if metric}}
-        {{#json type="object"}}
-          {{{json key="metric" value=metric}}},
-          {{#if @root.route.debugs}}
+        {{#compare type 'select-grid'}}
+          {{#each options}}
+            {{#json type="object"}}
+              {{{json key="metric" value=../metric}}},
+              {{{json key="section" value=@../../key}}},
+              {{{json key="question" value=(concat 'answers-' ../value '-' answer)}}},
+              {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../../key '-' ../value '-' (slugify answer)))}}},
+              {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=../answer-options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../../key '-' ../value '-' (slugify answer))))}}
+            {{/json}},
+          {{/each}}
+        {{else}}
+          {{#json type="object"}}
+            {{{json key="metric" value=metric}}},
             {{{json key="section" value=@../key}}},
             {{{json key="question" value=(concat 'answers-' value)}}},
             {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../key '-' value))}}},
-          {{/if}}
-          {{#compare type "===" "select-one"}}
-            {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}
-          {{else}}
-            {{#if options}}
-              {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=options answers=(split (lookup @root.request.body (concat 'answers-' @../key '-' value)) ";")}}
-            {{/if}}
-          {{/compare}}
-        {{/json}},
+            {{#switch type  ~}}
+              {{#case "select-one"}}
+                {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}
+              {{/case}}
+              {{#case "select-dropdown"}}
+                {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}
+              {{/case}}
+              {{#case "select-many"}}
+                {{#if options}}
+                  {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=options answers=(split (lookup @root.request.body (concat 'answers-' @../key '-' value)) ";")}}
+                {{/if}}
+              {{/case}}
+            {{/switch}}
+          {{/json}},
+        {{/compare}}
       {{/if}}
     {{/each}}
   {{/each}}
