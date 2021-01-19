@@ -27,6 +27,17 @@ $secondary-color-dark: darken($secondary-color, 10%) !default;
 $yellow-color: #FFDB00;
 $digital-color: #ECF8FA;
 
+$blue-color: #4CBED5;
+$blue-color-light: #edf8fa;
+$blue-color-alt: #f4fbfc;
+$blue-color-light-var: f4fbfc;
+$blue-color-dark: #6f9dae;
+$purple-color: #C0B5DA;
+$green-color: #AFD5A6;
+$yellow-color: #F9DA18;
+$pink-color: #FEB3B4;
+$orange-color: #F8AB23;
+
 $goodmoves-legacy-color: rgb(68, 133, 50);
 $goodmoves-color: #537F2C;
 $tfn-legacy-color: #3b9db1;
@@ -563,10 +574,43 @@ h4,
   .cyber.trapezoid {
     background-color: $mdc-theme-pink;
   }
+
+  .plectrum {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 125px;
+    width: 125px;
+    margin: 0 auto 1rem;
+    position: relative;
+    .plectrum-content {
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 121px;
+      width: 121px;
+      padding-top: 4px;
+      margin: auto;
+    }
+    .icon {
+      line-height: 125px;
+      margin-left: .5rem;
+    }
+  }
+  .number {
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    line-height: 38px;
+    font-weight: bold;
+    transform: translate(-38px, 100%);
+    font-size: 1.2rem;
+    margin: -38px auto 0;
+  }
 }
 
 .container-home-pull {
-  background-color: $mdc-theme-darkgrey;
+  background-color: $secondary-color;
   .mdc-typography--body1,
   .mdc-typography--headline5 {
     color: white;

@@ -5,6 +5,33 @@
     "sf_type": "Digital",
     "title": "Digital Checkup",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
+    "sections_heading": "Identify the strengths and the gaps your organisation is facing with digital technology",
+    "sections": [
+      {
+        "title": "Leadership, culture, and skills",
+        "class": "leadership",
+        "shape": "trapezoid",
+        "icon": "leadership"
+      },
+      {
+        "title": "Tools and equipment",
+        "class": "tools",
+        "shape": "trapezoid",
+        "icon": "tools"
+      },
+      {
+        "title": "Content, marketing and data",
+        "class": "content",
+        "shape": "trapezoid",
+        "icon": "content-marketing-data"
+      },
+      {
+        "title": "Cyber resilience and online threats",
+        "class": "cyber",
+        "shape": "trapezoid",
+        "icon": "resilience"
+      }
+    ],
     "for_singular": "organisation",
     "for_plural": "organisations",
     "partner": {
@@ -22,6 +49,41 @@
     "sf_type": "Digital_Organisations",
     "title": "Digital Checkup for organisations",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
+    "sections_heading": "Identify the strengths and the gaps your organisation is facing with digital technology",
+    "sections": [
+      {
+        "title": "Leadership, culture, and skills",
+        "class": "leadership",
+        "number": 1,
+        "shape": "plectrum",
+        "color": "C0B5DA",
+        "icon": "fa-compass"
+      },
+      {
+        "title": "Tools and equipment",
+        "class": "tools",
+        "number": 2,
+        "shape": "plectrum",
+        "color": "ffd6d6",
+        "icon": "fa-briefcase"
+      },
+      {
+        "title": "Content, marketing and data",
+        "class": "content",
+        "number": 3,
+        "shape": "plectrum",
+        "color": "AFD5A6",
+        "icon": "fa-bullseye-arrow fa-rotate-180"
+      },
+      {
+        "title": "Cyber resilience and online threats",
+        "class": "cyber",
+        "number": 4,
+        "shape": "plectrum",
+        "color": "F8AB23",
+        "icon": "fa-shield-check"
+      }
+    ],
     "for_singular": "organisation",
     "for_plural": "organisations",
     "partner": {
@@ -39,6 +101,33 @@
     "sf_type": "Digital_Housing_Associations",
     "title": "Digital Checkup for Housing Associations",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other housing associations",
+    "sections_heading": "Identify the strengths and the gaps your housing association is facing with digital technology",
+    "sections": [
+      {
+        "title": "Leadership, culture, and skills",
+        "class": "leadership",
+        "shape": "trapezoid",
+        "icon": "leadership"
+      },
+      {
+        "title": "Tools and equipment",
+        "class": "tools",
+        "shape": "trapezoid",
+        "icon": "tools"
+      },
+      {
+        "title": "Content, marketing and data",
+        "class": "content",
+        "shape": "trapezoid",
+        "icon": "content-marketing-data"
+      },
+      {
+        "title": "Cyber resilience and online threats",
+        "class": "cyber",
+        "shape": "trapezoid",
+        "icon": "resilience"
+      }
+    ],
     "for_singular": "housing association",
     "for_plural": "housing associations",
     "partner": {
@@ -56,6 +145,41 @@
     "sf_type": "Cyber",
     "title": "Cyber Checkup",
     "description": "",
+    "sections_heading": "TBC",
+    "sections": [
+      {
+        "title": "test",
+        "class": "tools",
+        "number": 1,
+        "shape": "plectrum",
+        "color": "ffd6d6",
+        "icon": "fa-shield"
+      },
+      {
+        "title": "test",
+        "class": "tools",
+        "number": 2,
+        "shape": "plectrum",
+        "color": "ffd6d6",
+        "icon": "fa-shield"
+      },
+      {
+        "title": "test",
+        "class": "tools",
+        "number": 3,
+        "shape": "plectrum",
+        "color": "ffd6d6",
+        "icon": "fa-shield"
+      },
+      {
+        "title": "test",
+        "class": "cyber",
+        "number": 4,
+        "shape": "plectrum",
+        "color": "ffd6d6",
+        "icon": "fa-shield-check"
+      }
+    ],
     "for_singular": "organisation",
     "for_plural": "organisations",
     "email": "digital@scvo.scot",
@@ -68,6 +192,33 @@
     "sf_type": "Governance",
     "title": "Good Governance Checkup",
     "description": "",
+    "sections_heading": "",
+    "sections": [
+      {
+        "title": "",
+        "class": "",
+        "shape": "plectrum",
+        "icon": ""
+      },
+      {
+        "title": "",
+        "class": "",
+        "shape": "plectrum",
+        "icon": ""
+      },
+      {
+        "title": "",
+        "class": "",
+        "shape": "plectrum",
+        "icon": ""
+      },
+      {
+        "title": "",
+        "class": "",
+        "shape": "plectrum",
+        "icon": ""
+      }
+    ],
     "for_singular": "charity",
     "for_plural": "charities",
     "email": "digital@scvo.scot",
@@ -80,6 +231,33 @@
     "sf_type": "Essential_Digital_Skills_for_life",
     "title": "Essential Digital Skills",
     "description": "",
+    "sections_heading": "",
+    "sections": [
+      {
+        "title": "",
+        "class": "",
+        "shape": "plectrum",
+        "icon": ""
+      },
+      {
+        "title": "",
+        "class": "",
+        "shape": "plectrum",
+        "icon": ""
+      },
+      {
+        "title": "",
+        "class": "",
+        "shape": "plectrum",
+        "icon": ""
+      },
+      {
+        "title": "",
+        "class": "",
+        "shape": "plectrum",
+        "icon": ""
+      }
+    ],
     "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://skills.checkup.scot"
