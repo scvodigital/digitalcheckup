@@ -4,17 +4,17 @@ $mdc-theme-green: #588223;
 $mdc-theme-darkgreen: #6B7D23;
 $mdc-theme-pink: #D21262;
 $mdc-theme-blue: #1377CD;
-$mdc-theme-lightblue: #107FA6;
+$mdc-theme-lightblue: #5ECADA;
 $mdc-theme-darkblue: #00519f;
 $mdc-theme-darkgrey: #2A2A2A;
 $mdc-theme-mediumgrey: #585858;
 $mdc-theme-lightgrey: #F6F6F6;
 
-$mdc-theme-primary: $mdc-theme-blue;
+$mdc-theme-primary: $mdc-theme-lightblue;
 $mdc-theme-primary-dark: darken($mdc-theme-primary, 15%);
 $mdc-theme-primary-light: lighten($mdc-theme-primary, 15%);
 
-$mdc-theme-secondary: $mdc-theme-blue;
+$mdc-theme-secondary: $mdc-theme-lightblue;
 $mdc-theme-secondary-dark: darken($mdc-theme-secondary, 15%);
 $mdc-theme-secondary-light: lighten($mdc-theme-secondary, 15%);
 
@@ -376,9 +376,9 @@ header {
         letter-spacing: -0.03rem;
         display: block;
         margin: 0;
-        padding: 0 0 $unit*1.5;
+        padding: 0 0 $unit*2.25;
         .text-brand {
-          color: $mdc-theme-blue;
+          color: $primary-color;
         }
         .mdc-typography--caption {
           display: block;
@@ -392,7 +392,7 @@ header {
     }
   }
   .mdc-top-app-bar__navigation-icon {
-    color: $mdc-theme-blue !important;
+    color: $primary-color !important;
   }
   .container-fluid .mdc-top-app-bar__row.mdc-top-app-bar__upper {
     height: auto;
@@ -402,7 +402,7 @@ header {
   //   height: $header-height;
   // }
   .container-fluid .mdc-top-app-bar__row.mdc-top-app-bar__lower {
-    border-bottom: 2px solid $mdc-theme-blue;
+    border-bottom: 2px solid $primary-color;
     height: auto !important;
     .mdc-tab-bar {
       height: auto;
@@ -434,7 +434,7 @@ header {
         border-radius: .1rem .1rem 0 0;
       }
       .mdc-tab.mdc-tab--active {
-        background: $mdc-theme-blue !important;
+        background: $primary-color !important;
         .mdc-tab__text-label {
           color: white;
         }
@@ -498,7 +498,7 @@ h4,
   }
 }
 .score-respondent {
-  color: $mdc-theme-blue !important;
+  color: $primary-color !important;
 }
 .score-shared-1 {
   color: $mdc-theme-pink !important;
@@ -525,7 +525,7 @@ h4,
 
 // .cta {
 //   .mdc-button {
-//     background-color: $mdc-theme-blue;
+//     background-color: $mdc-theme-lightblue;
 //     height: $unit*3;
 //     text-transform: uppercase;
 //     padding: 0 $unit*1.33;
@@ -653,7 +653,7 @@ h4,
     padding: 0;
     .progress-label {
       border-radius: $border-radius 0 0 $border-radius;
-      background-color: $mdc-theme-blue;
+      background-color: $mdc-theme-lightblue;
       color: white;
       font-size: 0.95rem;
       .progress-label-text {
@@ -686,7 +686,7 @@ h4,
 }
 
 .checkup-topic-header {
-  background-color: $mdc-theme-blue;
+  background-color: $mdc-theme-lightblue;
   padding: $unit*2 0;
 }
 
@@ -711,7 +711,7 @@ h4,
 .question-block {
   background-color: white;
   margin: $unit 0 $unit*2;
-  border-left: $unit/2 solid $mdc-theme-blue;
+  border-left: $unit/2 solid $mdc-theme-lightblue;
   border-radius: $border-radius;
   .question {
     border-radius: 0 $border-radius 0 0;
@@ -858,7 +858,7 @@ h4,
     color: $secondary-color;
   }
   .question-block .question {
-    background-color: $mdc-theme-blue;
+    background-color: $mdc-theme-lightblue;
   }
 }
 
@@ -966,7 +966,7 @@ a.bg-yellow:hover {
     }
     li.key-your::before {
       content: "\25CF";
-      color: $mdc-theme-blue;
+      color: $mdc-theme-lightblue;
     }
     li.key-average::before {
       content: "\25CC";
