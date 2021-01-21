@@ -564,7 +564,7 @@
           "options": [
             {
               "answer": "Digital is not recognised as important and is not often discussed at a senior level",
-              "score": 0
+              "score": -2
             },
             {
               "answer": "Digital is recognised as important to our future but progress just doesn't happen",
@@ -580,23 +580,55 @@
             },
             {
               "answer": "Digital is embedded into what we do – it cuts across all areas and is part of our daily practices",
-              "score": 4
+              "score": 5
+            }
+          ]
+        },
+        {
+          "title": "In the workplace, staff are encouraged and empowered to... (tick all that apply)",
+          "value": "q2",
+          "type": "select-many",
+          "metric": "Leadership culture and skills",
+          "options": [
+            {
+              "answer": "Be curious",
+              "score": 1
+            },
+            {
+              "answer": "Be proactive",
+              "score": 1
+            },
+            {
+              "answer": "Be open and transparent",
+              "score": 1
+            },
+            {
+              "answer": "Collaborate across teams",
+              "score": 2
+            },
+            {
+              "answer": "Test new ideas",
+              "score": 2
+            },
+            {
+              "answer": "Learn from failure",
+              "score": 3
             }
           ]
         },
         {
           "title": "How well do you understand the digital skills of your staff and/or volunteers? *",
-          "value": "q2",
+          "value": "q3",
           "type": "select-one",
           "metric": "Leadership culture and skills",
           "options": [
             {
               "answer": "We don't know what digital skills or gaps exist in our workforce",
-              "score": 0
+              "score": -2
             },
             {
               "answer": "We believe that our staff have the basic skills necessary to perform their roles",
-              "score": 1
+              "score": 0
             },
             {
               "answer": "We have a good understanding of the skills of our staff – but no training offer to develop further",
@@ -604,71 +636,7 @@
             },
             {
               "answer": "We have an active digital skills assessment and development programme",
-              "score": 3
-            }
-          ]
-        },
-        {
-          "title": "How do you invest in technology? *",
-          "value": "q3",
-          "type": "select-one",
-          "metric": "Leadership culture and skills",
-          "options": [
-            {
-              "answer": "We are not able to invest in technology",
-              "score": 0
-            },
-            {
-              "answer": "We go with what trusted suppliers recommend",
-              "score": 1
-            },
-            {
-              "answer": "We wait to see what our competitors are using",
-              "score": 2
-            },
-            {
-              "answer": "We carry out lots of research and prepare very comprehensive briefs",
-              "score": 3
-            },
-            {
-              "answer": "We test and learn at a small scale then scale up what works",
-              "score": 4
-            }
-          ]
-        },
-        {
-          "title": "How do you work during projects?",
-          "value": "q4",
-          "type": "select-many",
-          "metric": "Leadership culture and skills",
-          "options": [
-            {
-              "answer": "Does your team self organise and work autonomously?",
-              "score": 1
-            },
-            {
-              "answer": "Does your team regularly reflect and learn on what worked, and what didn’t work?",
-              "score": 1
-            },
-            {
-              "answer": "Can your team make small incremental changes to service delivery?",
-              "score": 1
-            },
-            {
-              "answer": "Is your project plan broken down into manageable chunks?",
-              "score": 1
-            },
-            {
-              "answer": "Do you have a shared 'definition of done'?",
-              "score": 1
-            },
-            {
-              "answer": "Do you use 'standup' meetings?",
-              "score": 1
-            },
-            {
-              "answer": "Do you run retrospective meetings?",
-              "score": 1
+              "score": 5
             }
           ]
         }
@@ -871,9 +839,241 @@
             ]
           }
         }
-
       ],
-      "next_section": "submit"
+      "next_section": "section-4"
+    },
+    "section-4": {
+      "name": "Section 4",
+      "title": "Data management",
+      "description": "Using digital tools means charities can access large amounts of real-time data. But you need a strategic approach to make the most of it",
+      "icon": "data",
+      "progress": 50,
+      "questions": [
+        {
+          "title": "Data collection *",
+          "value": "q1",
+          "type": "select-one",
+          "metric": "Content marketing and data",
+          "options": [
+            {
+              "answer": "We don't collect any user data at all",
+              "score": -2
+            },
+            {
+              "answer": "We collect basic data such as name and contact details",
+              "score": 2
+            },
+            {
+              "answer": "We collect a lot of user data (preferences, service use, etc.)",
+              "score": 4
+            }
+          ]
+        },
+        {
+          "title": "Decision making *",
+          "value": "q2",
+          "type": "select-one",
+          "metric": "Content marketing and data",
+          "options": [
+            {
+              "answer": "We don't analyse any data to make decisions",
+              "score": -2
+            },
+            {
+              "answer": "We analyse data as-and-when we need to",
+              "score": 2
+            },
+            {
+              "answer": "We have a reporting framework and analyse our data it to make decisions",
+              "score": 4
+            }
+          ]
+        },
+        {
+          "title": "Data storage *",
+          "value": "q3",
+          "type": "select-one",
+          "metric": "Content marketing and data",
+          "options": [
+            {
+              "answer": "We don't know if we store and use data appropriately",
+              "score": -2
+            },
+            {
+              "answer": "We hold data in several places (databases, 3rd party systems) some of which we don't manage",
+              "score": 2
+            },
+            {
+              "answer": "We are confident that our data is held securely and used appropriately, by us and/or 3rd party systems",
+              "score": 4
+            }
+          ]
+        },
+        {
+          "title": "Risk management *",
+          "value": "q4",
+          "type": "select-one",
+          "metric": "Content marketing and data",
+          "options": [
+            {
+              "answer": "We do not know if our data collection and management is a risk to our organisation",
+              "score": -2
+            },
+            {
+              "answer": "We understand our data collection and management is a risk, steps need to be taken",
+              "score": 2
+            },
+            {
+              "answer": "We have assessed the risks and are confident of how we collect and manage data",
+              "score": 4
+            }
+          ]
+        },
+        {
+          "title": "GDPR - General Data Protection Regulation *",
+          "value": "q5",
+          "type": "select-one",
+          "metric": "Content marketing and data",
+          "options": [
+            {
+              "answer": "We are unaware of GDPR or are unaware of the implications for us",
+              "score": -2
+            },
+            {
+              "answer": "We have some understanding of how it affects us",
+              "score": 2
+            },
+            {
+              "answer": "We feel confident of the processes we have in place to ensure a good level of compliance",
+              "score": 4
+            }
+          ]
+        }
+      ],
+      "next_section": "section-5"
+    },
+    "section-5": {
+      "name": "Section 5",
+      "title": "Cyber resilience & online threats",
+      "description": "Putting more information online, and digitising transactions can mean you are more vulnerable to cyber attack. So cyber resilience is more important than ever",
+      "icon": "resilience",
+      "progress": 62,
+      "questions": [
+        {
+          "title": "Which statement best describes your organisation's approach to Cyber Security? *",
+          "value": "q1",
+          "type": "select-one",
+          "metric": "Cyber resilience",
+          "options": [
+            {
+              "answer": "We do not have enough knowledge to discuss cyber threats or security at a senior level",
+              "score": -2
+            },
+            {
+              "answer": "Cyber security has been discussed but it is not seen as a business priority",
+              "score": 0
+            },
+            {
+              "answer": "Discussions have taken place and we have a plan that is still in progress or still to happen",
+              "score": 2
+            },
+            {
+              "answer": "Online threats have been assessed and feature highly alongside other business risks and priorities",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "title": "Has training been delivered to staff in any of the following areas? (Tick all that apply)",
+          "value": "q2",
+          "type": "select-many",
+          "metric": "Cyber resilience",
+          "options": [
+            {
+              "answer": "Password security",
+              "score": 2
+            },
+            {
+              "answer": "Phishing scams and email security",
+              "score": 2
+            },
+            {
+              "answer": "Hardware security (USB pens, Laptops, tablets & phones)",
+              "score": 2
+            },
+            {
+              "answer": "Data handling",
+              "score": 2
+            },
+            {
+              "answer": "Viruses and malware",
+              "score": 2
+            }
+          ]
+        }
+      ],
+      "next_section": "organisation-details"
+    },
+    "organisation-details": {
+      "name": "Organisation details",
+      "title": "Your organisation size and priorities",
+      "icon": "organisation",
+      "progress": 75,
+      "questions": [
+        {
+          "description": "This information enables us to compare your results to {{@root.data.currentSite.for_plural}} of a similar size. If you prefer not to submit this information, you result will be compared to the average of all {{@root.data.currentSite.for_plural}} who have completed the checkup",
+          "value": "income_band",
+          "title": "Estimated annual turnover *",
+          "type": "select-one",
+          "options": [
+            {
+              "answer": "Below £100,000",
+              "value": "100000"
+            },
+            {
+              "answer": "£100,000 - £1m",
+              "value": "1000000"
+            },
+            {
+              "answer": "£1m - £10m",
+              "value": "10000000"
+            },
+            {
+              "answer": "Over £10m",
+              "value": "10000001"
+            },
+            {
+              "answer": "Unknown / Prefer not to say",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "title": "Choose your area of highest priority *",
+          "description": "Which of the sections you have just completed is your highest or most immediate priority?",
+          "value": "topic",
+          "type": "select-one",
+          "options": [
+            {
+              "answer": "Leadership & culture",
+              "value": "leadership"
+            },
+            {
+              "answer": "Tools & equipment",
+              "value": "tools"
+            },
+            {
+              "answer": "Content, marketing & data",
+              "value": "data"
+            },
+            {
+              "answer": "Cyber security",
+              "value": "cyber"
+            }
+          ]
+        }
+      ],
+      "next_section": "contact-details"
     }
   },
   "old-org-end": {
