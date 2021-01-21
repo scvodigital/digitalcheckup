@@ -169,22 +169,24 @@
                 {{/unless}}
                 <h1 class="text-secondary">
                   {{#compare @root.data.currentSite.name "default"}}
-                    <span class="text-brand">Digital</span> Checkup
+                    Digital <span class="text-brand">Checkup</span>
                   {{else}}
                     {{#compare @root.data.currentSite.name "cyber"}}
-                      <span style="font-feature-settings: initial;" class="text-brand">Cyber</span> Checkup
+                      <span style="font-feature-settings: initial;">Cyber <span class="text-brand">Checkup</span></span>
                     {{else}}
                       {{#compare @root.data.currentSite.type "skills"}}
-                        Essential <span class="text-brand">Digital</span> Skills
+                        <span class="text-brand">Essential</span> Digital <span class="text-brand">Skills</span>
                       {{else}}
                         {{#compare @root.data.currentSite.name "governance"}}
-                          <span class="text-brand">Good Governance</span> Checkup
+                          Good Governance <span class="text-brand">Checkup</span>
                         {{else}}
                           {{#compare @root.data.currentSite.type "organisation"}}
-                            <span class="text-brand">Digital</span> Checkup
-                            <span class="mdc-typography--caption">
-                              For {{@root.data.currentSite.for_plural}}
-                            </span>
+                            Digital <span class="text-brand">Checkup</span>
+                            {{#unless (compare @root.data.currentSite.name "organisation")}}
+                              <span class="mdc-typography--caption">
+                                For {{@root.data.currentSite.for_plural}}
+                              </span>
+                            {{/unless}}
                           {{/compare}}
                         {{/compare}}
                       {{/compare}}
