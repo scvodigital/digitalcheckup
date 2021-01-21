@@ -86,11 +86,6 @@
     ],
     "for_singular": "organisation",
     "for_plural": "organisations",
-    "partner": {
-      "title": "Centre for Acceleration of Social Technology",
-      "url": "https://wearecast.org.uk",
-      "logo_filename": "cast-white.png"
-    },
     "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://organisation.checkup.scot"
