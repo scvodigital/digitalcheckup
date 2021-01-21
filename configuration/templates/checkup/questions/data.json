@@ -781,7 +781,7 @@
       "questions": [ 
         {
           "title": "This tests select radio buttons with fruit",
-          "value": "Test2",
+          "value": "q1",
           "supplements": true,
           "type": "select-one",
           "metric": "Content & Marketing",
@@ -832,24 +832,21 @@
         },
         {
           "title": "Demo of selects with substances",
-          "value": "Main area of work",
+          "value": "q2",
           "type": "select-dropdown",
           "metric": "Content & Marketing",
           "supplements": true,
           "options": [
             {
               "answer": "Solid",
-              "supplementary" : "solid",
               "score" : 2
             },
             {
               "answer": "Liquid",
-              "supplementary" : "liquid",
               "score" : 3
             },
             {
               "answer": "Homeopathic",
-              "supplementary" : "nonesir",
               "score" : 4
             }
           ],

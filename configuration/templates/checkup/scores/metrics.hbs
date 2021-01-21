@@ -39,6 +39,15 @@
               {{/case}}
             {{/switch}}
           {{/json}},
+          {{#if supplements}}
+            {{#json type="object"}}
+              {{{json key="metric" value=metric}}},
+              {{{json key="section" value=@../key}}},
+              {{{json key="question" value=(concat 'answers-' value '-supplement')}}},
+              {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../key '-' value '-supplement'))}}},
+              {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=(lookup supplementary-options (lookup @root.request.body (concat 'answers-' @../key '-' value))) answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement')))}}
+            {{/json}},
+          {{/if}}
         {{/compare}}
       {{/if}}
     {{/each}}

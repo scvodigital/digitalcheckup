@@ -74,7 +74,7 @@
               <div class="hidden" data-container-of="{{slugify value}}">
                 {{#each supplementary-options}}
                   {{#each this}}
-                  <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "supplement-" "answers-" ../../../../section "-" ../../value) value=value}}</li>
+                  <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "answers-" ../../../../section "-" ../../value "-supplement") value=value}}</li>
                   {{/each}}
                 {{/each}}
               </div>
@@ -112,7 +112,7 @@
               <li class="hidden" data-container-of="{{slugify value}}">
               {{#each supplementary-options}}
                 <select class="hidden" data-supplement={{@key}} data-supplement-of={{slugify ../value}} 
-                name="{{concat 'supplement-' 'answers-' ../../../section '-' ../value}}">
+                name="{{concat 'answers-' ../../../section '-' ../value '-supplement'}}">
                   <option disabled selected value> -- select an option -- </option>
                 {{#each this}}
                   <option value="{{default value answer}}">{{answer}}</option>
