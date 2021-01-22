@@ -1,28 +1,52 @@
-<div class="container-fluid">
-  <div class="container-content">
-    <h1 class="mdc-typography--headline3">About</h1>
-    <p class="mdc-typography--body1">
-      Many charities would like to use digital tools to improve their capability, but don't know where to start. Our Digital Check-up will help you to assess your organisation’s current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}} of a comparable size. The check up will help you to identify your strengths and the gaps your organisation is facing in the following areas:
-    </p>
-    <ul class="mdc-typography--body1">
-      <li>Leadership, culture and skills</li>
-      <li>Tools and equipment</li>
-      <li>Content, marketing and data</li>
-      <li>Cyber resilience and online threats</li>
-      {{#compare @root.data.currentSite.name "housing" ~}}
-      <li>Technology Enabled Care</li>
-      {{/compare ~}}
-    </ul>
-    <p class="mdc-typography--body1">
-      Once you have completed the checkup, you can request 1:1 support to explore the resources most relevant to your needs, either through live chat, by booking a phone call or by email.
-    </p>
-    <p class="mdc-typography--body1">
-      If you would like to speak to us or have any questions, please
-      {{#compare @root.data.currentSite.name "housing" ~}}
-      contact <a href="mailto:gdickson@sfha.co.uk">Gary Dickson</a>, SFHA Digital Lead.
-      {{else}}
-      email us at <a href="mailto:digital@scvo.scot">digital@scvo.scot</a>.
-      {{/compare ~}}
-    </p>
+{{#compare @root.data.currentSite.type "organisation"}}
+  <div class="container-fluid">
+    <div class="container-content">
+      <h1 class="mdc-typography--headline3">About</h1>
+      <p class="mdc-typography--body1">
+        Many charities would like to use digital tools to improve their capability, but don't know where to start. Our Digital Check-up will help you to assess your organisation’s current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}} of a comparable size. The check up will help you to identify your strengths and the gaps your organisation is facing in the following areas:
+      </p>
+      <ul class="mdc-typography--body1">
+        <li>Leadership, culture and skills</li>
+        <li>Tools and equipment</li>
+        <li>Content, marketing and data</li>
+        <li>Cyber resilience and online threats</li>
+        {{#compare @root.data.currentSite.name "housing" ~}}
+        <li>Technology Enabled Care</li>
+        {{/compare ~}}
+      </ul>
+      <p class="mdc-typography--body1">
+        Once you have completed the checkup, you can request 1:1 support to explore the resources most relevant to your needs, either through live chat, by booking a phone call or by email.
+      </p>
+      <p class="mdc-typography--body1">
+        If you would like to speak to us or have any questions, please
+        {{#compare @root.data.currentSite.name "housing" ~}}
+        contact <a href="mailto:gdickson@sfha.co.uk">Gary Dickson</a>, SFHA Digital Lead.
+        {{else}}
+        email us at <a href="mailto:digital@scvo.scot">digital@scvo.scot</a>.
+        {{/compare ~}}
+      </p>
+    </div>
   </div>
-</div>
+{{else}}
+  {{#compare @root.data.currentSite.name "skills"}}
+  <div class="container-fluid">
+    <div class="container-content">
+      <p class="mdc-typography--body1">
+        The internet plays an essential part in our daily lives. We use it to communicate, to work, and to learn.
+      </p>
+      <p class="mdc-typography--body1">
+        Now more than ever, it is important we have the skills needed to navigate the online world, and to feel safe and confident whilst doing it.
+      </p>
+      <p class="mdc-typography--body1">
+        To help you measure your digital foundation, life and workplace skills, SCVO have developed the Essential Digital Skills Check-up.
+      </p>
+      <p class="mdc-typography--body1">
+        Based on the Essential Digital Skills Framework , it contains three simple checklists to help you measure where your strengths are and to identify the areas where you may need more support.
+      </p>
+      <p class="mdc-typography--body1">
+        If you would like to speak to us or have any questions, please email us at <a href="mailto:digital@scvo.scot">digital@scvo.scot</a>.
+      </p>
+    </div>
+  </div>
+  {{/compare}}
+{{/compare}}

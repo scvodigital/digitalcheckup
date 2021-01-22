@@ -1,4 +1,4 @@
-<div class="progress-bar mdc-elevation--z3 trapezoid">
+{{!-- <div class="progress-bar mdc-elevation--z3 trapezoid">
   <div class="progress-label" style="width:{{progress}}%">
     <div class="progress-label-text trapezoid-content{{#compare progress 100}} text-center{{/compare}}">
       {{#compare progress "<" 100 ~}}
@@ -7,5 +7,19 @@
       Checkup complete
       {{/compare ~}}
     </div>
+  </div>
+</div> --}}
+
+<div class="container-content b-padding b-margin-full">
+  <div class="progress-bar" style="background-image:url('{{~>asset_url url='images/progress-full.png'~}}');background-position:left;">
+    <div class="progress-label" style="width:{{progress}}%;">&nbsp;</div>
+    <div class="progress-overlay" style="width:{{subtract 100 progress}}%;">&nbsp;</div>
+  </div>
+  <div class="container-content progress-label-text{{#compare progress 100}} text-center{{/compare}} t-margin">
+    {{#compare progress "<" 100 ~}}
+    {{progress}}% complete
+    {{else}}
+    Checkup complete
+    {{/compare ~}}
   </div>
 </div>

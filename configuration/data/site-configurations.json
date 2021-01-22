@@ -55,32 +55,32 @@
         "title": "Leadership, culture, and skills",
         "class": "leadership",
         "number": 1,
-        "shape": "plectrum",
-        "color": "C0B5DA",
+        "shape": "icon",
+        "color": "purple",
         "icon": "fa-compass"
       },
       {
         "title": "Tools and equipment",
         "class": "tools",
         "number": 2,
-        "shape": "plectrum",
-        "color": "ffd6d6",
+        "shape": "icon",
+        "color": "pink",
         "icon": "fa-briefcase"
       },
       {
         "title": "Content, marketing and data",
         "class": "content",
         "number": 3,
-        "shape": "plectrum",
-        "color": "AFD5A6",
+        "shape": "icon",
+        "color": "green",
         "icon": "fa-bullseye-arrow fa-rotate-180"
       },
       {
         "title": "Cyber resilience and online threats",
         "class": "cyber",
         "number": 4,
-        "shape": "plectrum",
-        "color": "F8AB23",
+        "shape": "icon",
+        "color": "orange",
         "icon": "fa-shield-check"
       }
     ],
@@ -146,32 +146,32 @@
         "title": "test",
         "class": "tools",
         "number": 1,
-        "shape": "plectrum",
-        "color": "ffd6d6",
+        "shape": "icon",
+        "color": "pink",
         "icon": "fa-shield"
       },
       {
         "title": "test",
         "class": "tools",
         "number": 2,
-        "shape": "plectrum",
-        "color": "ffd6d6",
+        "shape": "icon",
+        "color": "pink",
         "icon": "fa-shield"
       },
       {
         "title": "test",
         "class": "tools",
         "number": 3,
-        "shape": "plectrum",
-        "color": "ffd6d6",
+        "shape": "icon",
+        "color": "pink",
         "icon": "fa-shield"
       },
       {
         "title": "test",
         "class": "cyber",
         "number": 4,
-        "shape": "plectrum",
-        "color": "ffd6d6",
+        "shape": "icon",
+        "color": "pink",
         "icon": "fa-shield-check"
       }
     ],
@@ -192,25 +192,25 @@
       {
         "title": "",
         "class": "",
-        "shape": "plectrum",
+        "shape": "icon",
         "icon": ""
       },
       {
         "title": "",
         "class": "",
-        "shape": "plectrum",
+        "shape": "icon",
         "icon": ""
       },
       {
         "title": "",
         "class": "",
-        "shape": "plectrum",
+        "shape": "icon",
         "icon": ""
       },
       {
         "title": "",
         "class": "",
-        "shape": "plectrum",
+        "shape": "icon",
         "icon": ""
       }
     ],
@@ -231,25 +231,25 @@
       {
         "title": "",
         "class": "",
-        "shape": "plectrum",
+        "shape": "icon",
         "icon": ""
       },
       {
         "title": "",
         "class": "",
-        "shape": "plectrum",
+        "shape": "icon",
         "icon": ""
       },
       {
         "title": "",
         "class": "",
-        "shape": "plectrum",
+        "shape": "icon",
         "icon": ""
       },
       {
         "title": "",
         "class": "",
-        "shape": "plectrum",
+        "shape": "icon",
         "icon": ""
       }
     ],
