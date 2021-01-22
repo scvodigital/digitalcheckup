@@ -1,6 +1,7 @@
 {
   "default": {
     "section-1": {
+      "number": 1,
       "name": "Section 1",
       "title": "Leadership, culture, & skills",
       "description": "Digital isn't a list of things to do. It's about how you think, how you behave, what you value, and what drives decisions in your organisation",
@@ -95,6 +96,7 @@
       "next_section": "section-2"
     },
     "section-2": {
+      "number": 2,
       "name": "Section 2",
       "title": "Tools & equipment",
       "description": "Which digital tools are your charity making use of? With a host of online tools and platforms out there, it's never been easier to try new solutions",
@@ -213,6 +215,7 @@
       "next_section": "section-3"
     },
     "section-3": {
+      "number": 3,
       "name": "Section 3",
       "title": "Content & Marketing",
       "description": "Digital tools and approaches make it dramatically easier to reach thousands of people, and more importantly, to hear about their needs and priorities",
@@ -315,6 +318,7 @@
       "next_section": "section-4"
     },
     "section-4": {
+      "number": 4,
       "name": "Section 4",
       "title": "Data management",
       "description": "Using digital tools means charities can access large amounts of real-time data. But you need a strategic approach to make the most of it",
@@ -550,10 +554,11 @@
   },
   "organisation": {
     "section-1": {
+      "number": 1,
       "name": "Section 1",
       "title": "Leadership, culture, & skills",
       "description": "Digital isn't a list of things to do. It's about how you think, how you behave, what you value, and what drives decisions in your organisation",
-      "icon": "leadership",
+      "icon": "fa-compass",
       "progress": 12,
       "questions": [
         {
@@ -676,10 +681,11 @@
       "next_section": "section-2"
     },
     "section-2": {
+      "number": 2,
       "name": "Section 2",
       "title": "Tools & equipment",
       "description": "Which digital tools are your charity making use of? With a host of online tools and platforms out there, it's never been easier to try new solutions",
-      "icon": "tools",
+      "icon": "fa-briefcase",
       "progress": 25,
       "questions": [
         {
@@ -773,10 +779,11 @@
       "next_section": "section-3"
     },
     "section-3": {
+      "number": 3,
       "name": "Section 3",
       "title": "Content & Marketing",
       "description": "Digital tools and approaches make it dramatically easier to reach thousands of people, and more importantly, to hear about their needs and priorities",
-      "icon": "content-marketing",
+      "icon": "fa-bullseye-arrow fa-rotate-180",
       "progress": 37,
       "questions": [
         {
@@ -887,10 +894,11 @@
       "next_section": "section-4"
     },
     "section-4": {
+      "number": 4,
       "name": "Section 4",
       "title": "Data management",
       "description": "Using digital tools means charities can access large amounts of real-time data. But you need a strategic approach to make the most of it",
-      "icon": "data",
+      "icon": "fa-file-search",
       "progress": 50,
       "questions": [
         {
@@ -1096,7 +1104,7 @@
       "name": "Section 5",
       "title": "Cyber resilience & online threats",
       "description": "Putting more information online, and digitising transactions can mean you are more vulnerable to cyber attack. So cyber resilience is more important than ever",
-      "icon": "resilience",
+      "icon": "fa-shield-check",
       "progress": 62,
       "questions": [
         {
@@ -1225,7 +1233,7 @@
     "organisation-details": {
       "name": "Organisation details",
       "title": "Your organisation size and priorities",
-      "icon": "organisation",
+      "icon": "fa-chart-network",
       "progress": 75,
       "questions": [
         {
@@ -1286,6 +1294,7 @@
   },
   "housing": {
     "section-1": {
+      "number": 1,
       "name": "Section 1",
       "title": "Leadership, culture, & skills",
       "description": "Digital isn't a list of things to do. It's about how you think, how you behave, what you value, and what drives decisions in your organisation",
@@ -1432,6 +1441,7 @@
       "next_section": "section-2"
     },
     "section-2": {
+      "number": 2,
       "name": "Section 2",
       "title": "Tools & equipment",
       "description": "Which digital tools are your charity making use of? With a host of online tools and platforms out there, it's never been easier to try new solutions",
@@ -1756,6 +1766,7 @@
       "next_section": "section-3"
     },
     "section-3": {
+      "number": 3,
       "name": "Section 3",
       "title": "Content & Marketing",
       "description": "Digital tools and approaches make it dramatically easier to reach thousands of people, and more importantly, to hear about their needs and priorities",
@@ -1862,6 +1873,7 @@
       "next_section": "section-4"
     },
     "section-4": {
+      "number": 4,
       "name": "Section 4",
       "title": "Data management",
       "description": "Using digital tools means charities can access large amounts of real-time data. But you need a strategic approach to make the most of it",
@@ -2223,6 +2235,7 @@
       "next_section": "foundation-check"
     },
     "section-1": {
+      "number": 1,
       "name": "Section 1",
       "title": "Communicating",
       "description": "",
@@ -2263,6 +2276,7 @@
       "next_section": "section-2"
     },
     "section-2": {
+      "number": 2,
       "name": "Section 2",
       "title": "Transacting",
       "description": "",
@@ -2303,6 +2317,7 @@
       "next_section": "section-3"
     },
     "section-3": {
+      "number": 3,
       "name": "Section 3",
       "title": "Handling Information and Content",
       "description": "",
@@ -2343,6 +2358,7 @@
       "next_section": "section-4"
     },
     "section-4": {
+      "number": 4,
       "name": "Section 4",
       "title": "Problem Solving",
       "description": "",
@@ -2530,6 +2546,7 @@
   },
   "workskills": {
     "section-1": {
+      "number": 1,
       "name": "Section 1",
       "title": "Communicating",
       "description": "",
@@ -2570,6 +2587,7 @@
       "next_section": "section-2"
     },
     "section-2": {
+      "number": 2,
       "name": "Section 2",
       "title": "Transacting",
       "description": "",
@@ -2610,6 +2628,7 @@
       "next_section": "section-3"
     },
     "section-3": {
+      "number": 3,
       "name": "Section 3",
       "title": "Handling Information and Content",
       "description": "",
@@ -2650,6 +2669,7 @@
       "next_section": "section-4"
     },
     "section-4": {
+      "number": 4,
       "name": "Section 4",
       "title": "Problem Solving",
       "description": "",

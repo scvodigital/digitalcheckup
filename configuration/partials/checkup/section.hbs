@@ -2,25 +2,28 @@
 <form action="{{#if (contains @root.request.url.pathname '/life')}}/life{{else}}{{#if (contains @root.request.url.pathname '/work')}}/work{{else}}/checkup{{/if}}{{/if}}/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
-  <div class="checkup-section-header-container">
-    <div class="checkup-section-header b-padding-full">
+  <div class="checkup-section-header-container
+    {{#each @root.data.currentSite.sections}}
+      {{#compare number ../number}}
+        {{#if color}} header-{{color}}{{/if}}
+      {{/compare}}
+    {{/each}}
+    ">
+    <div class="checkup-section-header">
       <div class="container-fluid">
-        <div class="container-content">
-          {{#if progress ~}}
-          {{> checkup_progress progress=progress}}
-          {{/if ~}}
-          <div class="mdc-layout-grid">
+        <div class="container-content v-padding-full">
+          <div class="mdc-layout-grid v-padding-full">
             <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-1-phone" style="display: flex;align-items: center;">
                 {{#ifAll icon title ~}}
                   {{#if (contains icon 'fa-')}}
-                    <span class="far {{icon}} fa-3x fa-fw"></span>
+                    <span class="far {{icon}} fa-4x fa-fw icon"></span>
                   {{else}}
                     <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
                   {{/if}}
                 {{/ifAll ~}}
               </div>
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-11-desktop mdc-layout-grid__cell--span-6-tablet mdc-layout-grid__cell--span-3-phone">
                 {{#if name ~}}
                 <div class="mdc-typography--body2">{{{name}}}</div>
                 {{/if ~}}
@@ -39,6 +42,9 @@
   </div>
   <div class="bg-grey-light b-padding-full">
     <div class="container-fluid">
+      {{#if progress ~}}
+      {{> checkup_progress progress=progress}}
+      {{/if ~}}
       <div class="container-content v-padding-full">
         <div class="mdc-typography--body2">
           * required information
@@ -155,7 +161,6 @@
   </div>
 </form>
 {{/with ~}}
-
 
 <script>
 

@@ -19,7 +19,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_home"
+              "body": ">context.metaData.handlebars.templates.pages_home"
             },
             "contentType": "text/html"
           }
