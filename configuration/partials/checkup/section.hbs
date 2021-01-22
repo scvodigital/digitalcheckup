@@ -1,4 +1,3 @@
-{{@root.data.currentSite.name}}
 {{#with (getProperty (getProperty @root.data.checkup @root.data.currentSite.name) section) ~}}
 <form action="/checkup/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
@@ -117,7 +116,7 @@
               {{#if supplementary-options}}
               <li class="hidden" data-container-of="{{slugify value}}">
               {{#each supplementary-options}}
-                <select class="hidden" data-supplement={{@key}} data-supplement-of={{slugify ../value}} 
+                <select class="hidden" data-supplement={{@key}} data-supplement-of={{slugify ../value}}
                 name="{{concat 'supplement-' 'answers-' ../../../section '-' (slugify ../value)}}">
                   <option disabled selected value> -- select an option -- </option>
                 {{#each this}}
