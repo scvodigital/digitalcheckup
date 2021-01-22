@@ -1,5 +1,6 @@
-{{#with (getProperty (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) section) ~}}
-<form action="{{#if (contains @root.request.url.pathname '/life')}}/life{{else}}{{#if (contains @root.request.url.pathname '/work')}}/work{{else}}/checkup{{/if}}{{/if}}/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
+{{@root.data.currentSite.name}}
+{{#with (getProperty (getProperty @root.data.checkup @root.data.currentSite.name) section) ~}}
+<form action="/checkup/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
   <div class="checkup-section-header-container">
@@ -59,25 +60,24 @@
               {{#switch ../type ~}}
               {{#case "select-one" ~}}
               {{#if answer ~}}
-              <li class="answer">{{> components_radio_button supplementor=../value supplements=../supplements target=answer label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
+              <li class="answer">{{> components_radio_button supplements=../supplements target=supplementary label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
               {{/if ~}}
               {{/case ~}}
               {{#case "select-many" ~}}
               {{#if answer ~}}
-              <li class="answer">{{> components_checkbox supplementor=../value supplements=../supplements target=answer label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+              <li class="answer">{{> components_checkbox supplements=../supplements target=supplementary label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
               {{/if ~}}
               {{/case ~}}
               {{/switch ~}}
               {{/each ~}}
               {{!-- Supplementary options --}}
               {{#if supplementary-options}}
-              <div class="hidden" data-container-of="{{slugify value}}">
+              <div data-container-of="{{slugify value}}">
                 {{#each supplementary-options}}
                   {{#each this}}
-                  <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "answers-" ../../../../section "-" ../../value "-supplement") value=value}}</li>
+                  <li class="answer">{{> components_checkbox supplement=@../this.key supplement-of=(concat 'answers-' ../../../../section '-' (slugify ../../value)) label=answer name=(concat "supplement-" "answers-" ../../../../section "-" ../../value) value=value}}</li>
                   {{/each}}
                 {{/each}}
-              </div>
               {{/if}}
             </ul>
           {{/ifAny ~}}
@@ -90,7 +90,7 @@
                 </td>
                 {{#each ../answer-options}}
                   <td>
-                    {{> components_radio_button label=answer id=(slugify (concat ../answer "-" answer)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=(default value answer) required="true"}}
+                    {{> components_radio_button label=answer-option id=(slugify (concat ../answer "-" answer-option)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=value required="true"}}
                   </td>
                 {{/each}}
               </tr>
@@ -100,10 +100,10 @@
           {{#if (compare type "select-dropdown") ~}}
              <ul class="answer-block">
                <li >
-                <select {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' value}}">
+                <select {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' (slugify value)}}">
                   <option disabled selected value> -- select an option -- </option>
                   {{#each options}}
-                  <option  data-supplement-target="{{answer}}" value="{{default value answer}}">{{answer}}</option>
+                  <option  data-supplement-target="{{supplementary}}" value="{{value}}">{{answer}}</option>
                   {{/each}}
                 </select>
               </li>
@@ -112,10 +112,10 @@
               <li class="hidden" data-container-of="{{slugify value}}">
               {{#each supplementary-options}}
                 <select class="hidden" data-supplement={{@key}} data-supplement-of={{slugify ../value}} 
-                name="{{concat 'answers-' ../../../section '-' ../value '-supplement'}}">
+                name="{{concat 'supplement-' 'answers-' ../../../section '-' (slugify ../value)}}">
                   <option disabled selected value> -- select an option -- </option>
                 {{#each this}}
-                  <option value="{{default value answer}}">{{answer}}</option>
+                  <option value="{{value}}">{{answer}}</option>
                 {{/each}}
                 </select>
               {{/each}}
