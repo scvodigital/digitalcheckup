@@ -2850,14 +2850,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -2865,12 +2868,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -2885,14 +2890,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -2900,17 +2908,19 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
           }
-        },
+        },        
         {
           "title": "I can use accessibility tools on my device to make it easier",
           "description": "Volume settings, making text bigger, brightness settings",
@@ -2920,14 +2930,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -2935,12 +2948,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -2955,14 +2970,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -2970,12 +2988,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -2990,14 +3010,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3005,12 +3028,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3025,14 +3050,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3040,12 +3068,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3060,14 +3090,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3075,17 +3108,19 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
           }
-        }
+        }        
       ],
       "next_section": "foundation-check"
     },
@@ -3215,14 +3250,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3230,12 +3268,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3250,14 +3290,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3265,12 +3308,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3285,14 +3330,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3300,12 +3348,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3320,14 +3370,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3335,12 +3388,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3355,14 +3410,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3370,12 +3428,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3400,14 +3460,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3415,12 +3478,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3435,14 +3500,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3450,12 +3518,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3470,14 +3540,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3485,12 +3558,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3505,14 +3580,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3520,12 +3598,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3540,14 +3620,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3555,17 +3638,19 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
           }
-        }
+        }        
       ],
       "next_section": "section-4"
     },
@@ -3585,14 +3670,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3600,12 +3688,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3620,14 +3710,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3635,12 +3728,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3655,14 +3750,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3670,12 +3768,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3690,14 +3790,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3705,12 +3808,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3725,14 +3830,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3740,12 +3848,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3770,14 +3880,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3785,12 +3898,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3805,14 +3920,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3820,12 +3938,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3840,14 +3960,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3855,12 +3978,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3875,14 +4000,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3890,12 +4018,14 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
@@ -3910,14 +4040,17 @@
           "options": [
             {
               "answer": "I can do this",
+              "value": "I can do this",
               "score": 2
             },
             {
               "answer": "I can partially do this",
+              "value": "I can partially do this",
               "score": 1
             },
             {
               "answer": "I can't do this",
+              "value": "I can't do this",
               "score": 0
             }
           ],
@@ -3925,17 +4058,19 @@
             "I can partially do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ],
             "I can't do this" : [
               {
                 "answer": "I would like to learn more",
+                "value": "I would like to learn more",
                 "score": 1
               }
             ]
           }
-        }
+        }        
       ],
       "next_section": "demographics"
     },
