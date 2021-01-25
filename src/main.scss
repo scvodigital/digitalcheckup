@@ -562,10 +562,11 @@ h4,
     .icon {
       max-width: 50%;
     }
-    .icon-text {
+    .icon-text .mdc-typography--headline5 {
       color: white;
       font-size: 1.1rem;
       margin: $unit $unit*1.5 0 0;
+      text-align: center;
     }
   }
   .leadership.trapezoid {
@@ -655,6 +656,12 @@ h4,
     color: $orange-color !important;
   }
 }
+.header-blue {
+  // border-top: 2px solid $blue-color;
+  .fa-fw {
+    color: $blue-color !important;
+  }
+}
 
 .text-purple {
   color: $purple-color !important;
@@ -667,6 +674,9 @@ h4,
 }
 .text-orange {
   color: $orange-color !important;
+}
+.text-blue {
+  color: $blue-color !important;
 }
 
 a.btn:link,

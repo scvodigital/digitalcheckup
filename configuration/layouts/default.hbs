@@ -164,7 +164,7 @@
               <a href="/" class="site-brand">
                 {{#unless (compare @root.data.currentSite.name "housing")}}
                 {{#unless (compare @root.data.currentSite.name "default")}}
-                  <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
+                  <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
                 {{/unless}}
                 {{/unless}}
                 <h1 class="text-secondary">
@@ -200,7 +200,7 @@
                 <span class="far fa-fw fa-2x fa-bars"></span>
               </button>
             </section>
-            {{#unless (contains @root.request.url.pathname "/checkup")}}
+            {{!-- {{#unless (contains @root.request.url.pathname "/checkup")}}
               {{#compare @root.data.currentSite.type "organisation"}}
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
                   <div class="cta v-padding-full">
@@ -208,7 +208,7 @@
                   </div>
                 </section>
               {{/compare}}
-            {{/unless}}
+            {{/unless}} --}}
           </div>
           <div class="mdc-top-app-bar__row mdc-top-app-bar__lower hide-md hide-sm">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -393,7 +393,6 @@
         readyListeners.push(listener);
       }
     }
-
 
     {{#if @root.context.metaData.terms ~}}
     var terms = {{{safeStringify @root.context.metaData.terms}}};

@@ -226,31 +226,47 @@
     "sf_type": "Essential_Digital_Skills_for_life",
     "title": "Essential Digital Skills",
     "description": "",
-    "sections_heading": "",
+    "sections_heading": "Categories",
     "sections": [
       {
-        "title": "",
-        "class": "",
+        "title": "Communicating",
+        "class": "communicating",
         "shape": "icon",
-        "icon": ""
+        "color": "blue",
+        "icon": "fa-users",
+        "description": "The skills required to communicate, collaborate, and share information i.e. using email or social media to communicate with friends, family or colleagues."
       },
       {
-        "title": "",
-        "class": "",
+        "title": "Transacting",
+        "class": "transacting",
         "shape": "icon",
-        "icon": ""
+        "color": "green",
+        "icon": "fa-credit-card",
+        "description": "The skills required to register and apply for services, buy and sell goods and services, and administer and manage transactions online i.e. using online banking or shopping online."
       },
       {
-        "title": "",
-        "class": "",
+        "title": "Handling information & content",
+        "class": "info-content",
         "shape": "icon",
-        "icon": ""
+        "color": "pink",
+        "icon": "fa-file-alt",
+        "description": "The skills required to find, manage and store digital information and content securely i.e. saving your personal photos and videos online or using a ‘cloud’ service such as Microsoft 365 to create, share and collaborate with colleagues at work."
       },
       {
-        "title": "",
-        "class": "",
+        "title": "Problem solving",
+        "class": "problem-solving",
         "shape": "icon",
-        "icon": ""
+        "color": "purple",
+        "icon": "fa-search",
+        "description": "The skills required to find solutions to problems using digital tools and online services i.e. ‘Googling’ or using YouTube to find an answer or learn how to fix a problem."
+      },
+      {
+        "title": "Being safe, legal, and confident online",
+        "class": "online-safety",
+        "shape": "icon",
+        "color": "orange",
+        "icon": "fa-user-lock",
+        "description": "The skills required to stay safe, legal and confident online i.e. being able to use safe and strong passwords to keep your personal information secure online."
       }
     ],
     "email": "digital@scvo.scot",

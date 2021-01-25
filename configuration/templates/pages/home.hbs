@@ -13,7 +13,7 @@
       <div class="mdc-typography--body2 t-margin-full" style="font-size:2rem;line-height:2rem;">
         Take our simple Digital Check-up to assess your current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}}
       </div>
-      <div class="cta v-padding-full t-margin-full">
+      <div class="cta t-padding-full t-margin-full">
         <a href="/checkup" class="btn btn-outline">Start the checkup</a>
     </div>
   </div>
@@ -55,28 +55,46 @@
         </div>
       </div>
     </div>
-  {{else}}
+    {{else}}
     {{#compare @root.data.currentSite.type "skills"}}
+      <div class="container-home-hero">
+        <div class="container-fluid">
+          <div class="container-home v-padding-full">
+            <h1 class="mdc-typography--headline3 v-margin-full">
+              Heading
+            </h1>
+          </div>
+        </div>
+      </div>
       <div class="container-fluid">
         <div class="container-home v-padding-full">
           <div class="mdc-layout-grid">
             <div class="mdc-layout-grid__inner">
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <h1>Essential Digital Skills for life</h1>
-                <p class="v-margin-full">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta felis ut nunc pharetra varius. Aliquam fermentum purus lectus, eget scelerisque ex laoreet a. Nam pretium imperdiet ex sed viverra. Sed interdum, eros ut aliquam fringilla, ex lacus suscipit massa, ac tristique magna arcu ac dui. Phasellus cursus vulputate iaculis. Aliquam fringilla felis eget nisl congue, in faucibus nunc fermentum. Nam lacinia imperdiet consequat. Praesent a ligula nisl. Pellentesque euismod lectus ut ex scelerisque rhoncus. Fusce ac sem diam. Morbi ut interdum risus, a vulputate dui.
+                <h1>Life & Foundation Skills</h1>
+                <p class="t-margin-full">
+                  We encourage you to start with the Foundation skills checkup as these skills are the building blocks to develop your Essential Digital Skills from.
                 </p>
-                <div class="cta v-padding-full b-margin-full text-center">
-                  <a href="/life" class="mdc-button mdc-button--raised">Life skills checkup</a>
+                <p>
+                  At the end, you will either be promoted to move to the Life skills checkup, or you will be provided with some resources to support you further.
+                </p>
+                <p class="b-margin-full">
+                  The checklists should take no longer than ten minutes to complete. When you are finished you can choose to have your results emailed to you. If you do, please enter your email address in the box provided on the results page.
+                </p>
+                <div class="cta v-padding-full">
+                  <a href="/life" class="btn btn-outline">Life skills checkup</a>
                 </div>
               </div>
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                <h1>Essential Digital Skills for work</h1>
-                <p class="v-margin-full">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et sapien quis massa ultricies porta. Mauris ac auctor risus. Fusce suscipit tempor mauris. Sed imperdiet tortor elit, vel hendrerit diam blandit eget. Nullam iaculis eros mi, eget iaculis ipsum molestie at. Vivamus id mi et sapien tempor mollis vitae et diam. Sed auctor ornare velit.
+                <h1>Work Skills</h1>
+                <p class="t-margin-full">
+                  Work Skills are the digital skills you need to be able to do your job. We appreciate this may not be relevant to all job roles and not everyone is in employment, however if this applies to you and you would like to measure your Essential Digital Skills for the Workplace then you can complete the checkup here.
                 </p>
-                <div class="cta v-padding-full b-margin-full text-center">
-                  <a href="/work" class="mdc-button mdc-button--raised">Work skills checkup</a>
+                <p class="b-margin-full">
+                  The work skills checkup can be completed independently from the Foundation and Life skills checklists, however, if you haven’t completed them before, we recommend doing these as well.
+                </p>
+                <div class="cta v-padding-full">
+                  <a href="/work" class="btn btn-outline">Work skills checkup</a>
                 </div>
               </div>
             </div>
@@ -107,19 +125,26 @@
       <div class="mdc-layout-grid v-padding-full">
         <div class="mdc-layout-grid__inner">
           {{#each @root.data.currentSite.sections}}
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'organisation'}}6{{else}}3{{/compare}}-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'organisation'}}6{{else}}{{#compare @root.data.currentSite.name 'skills'}}12{{else}}3{{/compare}}{{/compare}}-desktop mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'skills'}}8{{else}}4{{/compare}}-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
               {{!-- {{#if number}}
                 <div class="number" style="background-color:#{{color}};">{{number}}</div>
               {{/if}} --}}
               <div class="{{class}} {{shape}}">
                 <div class="{{shape}}-content">
                   {{#if (contains icon 'fa-')}}
-                    <span class="far {{icon}} fa-4x fa-fw icon{{#if color}} text-{{color}}{{/if}}"></span>
+                    <span class="far {{icon}} fa-4x fa-fw icon{{#if color}} text-{{color}}{{/if}}" style="width:8%;min-width:100px;"></span>
                   {{else}}
                     <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
                   {{/if}}
-                  <div class="icon-text mdc-typography--headline5 text-center">
-                    <strong>{{{title}}}</strong>
+                  <div class="icon-text h-padding-full text-left">
+                    <div class="mdc-typography--headline5">
+                      <strong>{{{title}}}</strong>
+                    </div>
+                    {{#if description}}
+                    <p style="margin:0;">
+                      {{{description}}}
+                    </p>
+                    {{/if}}
                   </div>
                 </div>
               </div>
