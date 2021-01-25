@@ -6,7 +6,6 @@
     "life_submit": "/life/submit",
     "work_submit": "/work/submit"
   },
-  "pattern": "/checkup/",
   "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
@@ -108,7 +107,7 @@
       "config": {
         "logic": {
           "if": [
-            "default"
+            "default" 
           ]
         },
         "output": "body",
