@@ -127,8 +127,7 @@
   {{/unless}}
   {{/unless}}
   <digitalcheckup-site>
-    <div class="mdc-typography">
-      {{!-- {{#unless (compare @root.data.currentSite.name "housing")}}style="background-image: url(https://scvo.scot/rouleaux.svg?color=f4fbfc&style=solid);"{{/unless}} --}}
+    <div class="mdc-typography" {{#unless (compare @root.data.currentSite.name "housing")}}style="background-image: url(https://scvo.scot/rouleaux.svg?color=f4fbfc&style=solid);"{{/unless}}>
       {{#if (contains request.url.hostname ".local") ~}}
         {{#if errors.[0]}}
           <div style="z-index:100;position:fixed;top:0;right:0;padding:5px;background-color:#ff0000;color:#ffffff;">
@@ -165,7 +164,7 @@
               <a href="/" class="site-brand">
                 {{#unless (compare @root.data.currentSite.name "housing")}}
                 {{#unless (compare @root.data.currentSite.name "default")}}
-                  <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
+                  <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
                 {{/unless}}
                 {{/unless}}
                 <h1 class="text-secondary">
@@ -176,7 +175,7 @@
                       <span style="font-feature-settings: initial;">Cyber <span class="text-brand">Checkup</span></span>
                     {{else}}
                       {{#compare @root.data.currentSite.type "skills"}}
-                        Essential Digital Skills
+                        <span class="text-brand">Essential</span> Digital <span class="text-brand">Skills</span>
                       {{else}}
                         {{#compare @root.data.currentSite.name "governance"}}
                           Good Governance <span class="text-brand">Checkup</span>
@@ -201,18 +200,15 @@
                 <span class="far fa-fw fa-2x fa-bars"></span>
               </button>
             </section>
-            {{!-- {{#unless (contains @root.request.url.pathname "/checkup")}}
+            {{#unless (contains @root.request.url.pathname "/checkup")}}
               {{#compare @root.data.currentSite.type "organisation"}}
-                {{#unless (compare @root.data.currentSite.name "organisation")}}
-                  <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
-                    <div class="cta v-padding-full">
-                      <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
-                    </div>
-                  </section>
-                {{/unless}}
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
+                  <div class="cta v-padding-full">
+                    <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
+                  </div>
+                </section>
               {{/compare}}
-            {{/unless}} --}}
-
+            {{/unless}}
           </div>
           <div class="mdc-top-app-bar__row mdc-top-app-bar__lower hide-md hide-sm">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -365,7 +361,7 @@
         console.log("supplement is... " + supplement);
         // This thing's
         let suppRef = $(this).attr("data-supplementor");
-        console.log("suppref is" + suppRef);
+        console.log(suppRef);
         // supplement-of- ids
         // Close down all
         supplements = $('*[data-supplement-of="'+ suppRef +'"]');
