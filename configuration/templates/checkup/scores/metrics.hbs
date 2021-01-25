@@ -6,7 +6,7 @@
 {{~/inline~}}
 
 {{#json type="array"}}
-  {{#each (getProperty @root.data.checkup @root.data.currentSite.name)}}
+  {{#each (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) ~}}
     {{#each questions}}
       {{#if metric}}
         {{#compare type 'select-grid'}}
@@ -40,13 +40,15 @@
             {{/switch}}
           {{/json}},
           {{#if supplements}}
-            {{#json type="object"}}
-              {{{json key="metric" value=metric}}},
-              {{{json key="section" value=@../key}}},
-              {{{json key="question" value=(concat 'answers-' value '-supplement')}}},
-              {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../key '-' value '-supplement'))}}},
-              {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=(lookup supplementary-options (lookup @root.request.body (concat 'answers-' @../key '-' value))) answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement')))}}
-            {{/json}},
+            {{#if (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement'))}}
+              {{#json type="object"}}
+                {{{json key="metric" value=metric}}},
+                {{{json key="section" value=@../key}}},
+                {{{json key="question" value=(concat 'answers-' value '-supplement')}}},
+                {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../key '-' value '-supplement'))}}},
+                {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=(lookup supplementary-options (lookup @root.request.body (concat 'answers-' @../key '-' value))) answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement')))}}
+              {{/json}},
+            {{/if}}
           {{/if}}
         {{/compare}}
       {{/if}}
