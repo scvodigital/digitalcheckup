@@ -1557,7 +1557,7 @@
         }
 
       ],
-    "next_section": "contact-details"
+      "next_section": "contact-details"
     }
   },
   "old-org-end": {
@@ -2926,7 +2926,7 @@
               }
             ]
           }
-        },        
+        },
         {
           "title": "I can use accessibility tools on my device to make it easier",
           "description": "Volume settings, making text bigger, brightness settings",
@@ -3126,7 +3126,7 @@
               }
             ]
           }
-        }        
+        }
       ],
       "next_section": "foundation-check"
     },
@@ -3659,7 +3659,7 @@
               }
             ]
           }
-        }        
+        }
       ],
       "next_section": "section-4"
     },
@@ -4080,7 +4080,7 @@
               }
             ]
           }
-        }        
+        }
       ],
       "next_section": "demographics"
     },
