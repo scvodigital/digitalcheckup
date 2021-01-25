@@ -84,12 +84,12 @@
             </ul>
           {{/ifAny ~}}
           {{#if (compare type "select-grid") ~}}
-            <table>
+            <table class="answer-block">
               <tr>
                 <td></td>
                 {{#each answer-options}}
                   <td style="width: 150px; text-align:center">
-                    {{answer}}
+                    <strong>{{answer}}</strong>
                   </td>
                 {{/each}}
               </tr>
