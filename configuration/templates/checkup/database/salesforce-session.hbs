@@ -31,7 +31,7 @@
   {{#json key="questionResponses" type="array"}}
     {{#each (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) ~}}
       {{#each questions}}
-        {{#compare type 'select-grid'}}
+        {{#compare type 'select-grid'}} 
           {{#each options}}
             {{#json type="object"}}
               {{{json key="question" value=(concat (add @../../index 1) "." (add @../index 1) ": " ../title ':' answer)}}},
