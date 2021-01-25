@@ -226,31 +226,35 @@
     "sf_type": "Essential_Digital_Skills_for_life",
     "title": "Essential Digital Skills",
     "description": "",
-    "sections_heading": "",
+    "sections_heading": "Categories",
     "sections": [
       {
-        "title": "",
-        "class": "",
+        "title": "Communicating",
+        "class": "communicating",
         "shape": "icon",
-        "icon": ""
+        "color": "pink",
+        "icon": "fa-users"
       },
       {
-        "title": "",
-        "class": "",
+        "title": "Transacting",
+        "class": "transacting",
         "shape": "icon",
-        "icon": ""
+        "color": "green",
+        "icon": "fa-credit-card"
       },
       {
-        "title": "",
-        "class": "",
+        "title": "Problem solving",
+        "class": "problem-solving",
         "shape": "icon",
-        "icon": ""
+        "color": "purple",
+        "icon": "fa-search"
       },
       {
-        "title": "",
-        "class": "",
+        "title": "Being safe & legal online",
+        "class": "online-safety",
         "shape": "icon",
-        "icon": ""
+        "color": "orange",
+        "icon": "fa-user-lock"
       }
     ],
     "email": "digital@scvo.scot",
