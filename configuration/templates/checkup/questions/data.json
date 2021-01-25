@@ -2874,23 +2874,7 @@
               "value": "I can't do this",
               "score": 0
             }
-          ],
-          "supplementary-options": {
-            "I can partially do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ],
-            "I can't do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ]
-          }
+          ]
         },
         {
           "title": "I can use the controls on a device",
@@ -2914,24 +2898,8 @@
               "value": "I can't do this",
               "score": 0
             }
-          ],
-          "supplementary-options": {
-            "I can partially do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ],
-            "I can't do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ]
-          }
-        },
+          ]
+        },        
         {
           "title": "I can use accessibility tools on my device to make it easier",
           "description": "Volume settings, making text bigger, brightness settings",
@@ -2954,23 +2922,7 @@
               "value": "I can't do this",
               "score": 0
             }
-          ],
-          "supplementary-options": {
-            "I can partially do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ],
-            "I can't do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ]
-          }
+          ]
         },
         {
           "title": "I can interact with the home screen or desktop on my device",
@@ -2994,23 +2946,7 @@
               "value": "I can't do this",
               "score": 0
             }
-          ],
-          "supplementary-options": {
-            "I can partially do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ],
-            "I can't do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ]
-          }
+          ]
         },
         {
           "title": "I can connect my device to a safe and secure internet connection",
@@ -3034,23 +2970,7 @@
               "value": "I can't do this",
               "score": 0
             }
-          ],
-          "supplementary-options": {
-            "I can partially do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ],
-            "I can't do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ]
-          }
+          ]
         },
         {
           "title": "I know that my passwords and personal information must be kept safe as they have a value to others",
@@ -3074,23 +2994,7 @@
               "value": "I can't do this",
               "score": 0
             }
-          ],
-          "supplementary-options": {
-            "I can partially do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ],
-            "I can't do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ]
-          }
+          ]
         },
         {
           "title": "I can update and change my password when prompted to do so",
@@ -3114,24 +3018,8 @@
               "value": "I can't do this",
               "score": 0
             }
-          ],
-          "supplementary-options": {
-            "I can partially do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ],
-            "I can't do this" : [
-              {
-                "answer": "I would like to learn more",
-                "value": "I would like to learn more",
-                "score": 1
-              }
-            ]
-          }
-        }
+          ]
+        }        
       ],
       "next_section": "foundation-check"
     },
@@ -3161,7 +3049,23 @@
               "answer": "I can't do this",
               "score": 0
             }
-          ]
+          ],
+          "supplementary-options": {
+            "I can partially do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ],
+            "I can't do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ]
+          }
         },
         {
           "title": "I can post and reply to comments on social media platforms such as Instagram and Facebook in a respectful and appropriate manner",
@@ -3181,7 +3085,23 @@
               "answer": "I can't do this",
               "score": 0
             }
-          ]
+          ],
+          "supplementary-options": {
+            "I can partially do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ],
+            "I can't do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ]
+          }
         },
         {
           "title": "I can create video content to be shared on social media platforms such as YouTube, Tik Tok and Snapchat",
@@ -3201,7 +3121,23 @@
               "answer": "I can't do this",
               "score": 0
             }
-          ]
+          ],
+          "supplementary-options": {
+            "I can partially do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ],
+            "I can't do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ]
+          }
         },
         {
           "title": "I can use apps such as FaceTime, Zoom and Skype to make video and audio calls",
@@ -3221,7 +3157,23 @@
               "answer": "I can't do this",
               "score": 0
             }
-          ]
+          ],
+          "supplementary-options": {
+            "I can partially do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ],
+            "I can't do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ]
+          }
         },
         {
           "title": "I can set up an email account and use it to communicate, collaborate and share documents with others",
@@ -3241,7 +3193,23 @@
               "answer": "I can't do this",
               "score": 0
             }
-          ]
+          ],
+          "supplementary-options": {
+            "I can partially do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ],
+            "I can't do this" : [
+              {
+                "answer": "I would like to learn more",
+                "value": "I would like to learn more",
+                "score": 1
+              }
+            ]
+          }
         }
       ],
       "next_section": "section-2"

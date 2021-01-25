@@ -61,12 +61,12 @@
               {{#switch ../type ~}}
               {{#case "select-one" ~}}
               {{#if answer ~}}
-              <li class="answer">{{> components_radio_button supplementor=../value supplements=../supplements target=answer label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
+              <li class="answer">{{> local_components_radio_button supplementor=../value supplements=../supplements target=answer label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
               {{/if ~}}
               {{/case ~}}
               {{#case "select-many" ~}}
               {{#if answer ~}}
-              <li class="answer">{{> components_checkbox supplementor=../value supplements=../supplements target=answer label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+              <li class="answer">{{> local_components_checkbox supplementor=../value supplements=../supplements target=answer label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
               {{/if ~}}
               {{/case ~}}
               {{/switch ~}}
@@ -76,7 +76,7 @@
               <div class="hidden" data-container-of="{{slugify value}}">
                 {{#each supplementary-options}}
                   {{#each this}}
-                  <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "answers-" ../../../../section "-" ../../value "-supplement") value=value}}</li>
+                  <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox id=(concat "answers-" ../../../../section "-" ../../value "-supplement-" @index "-" @../index) supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "answers-" ../../../../section "-" ../../value "-supplement") value=value}}</li>
                   {{/each}}
                 {{/each}}
               </div>
@@ -85,6 +85,14 @@
           {{/ifAny ~}}
           {{#if (compare type "select-grid") ~}}
             <table>
+              <tr>
+                <td></td>
+                {{#each answer-options}}
+                  <td style="width: 150px; text-align:center">
+                    {{answer}}
+                  </td>
+                {{/each}}
+              </tr>
               {{#each options}}
               <tr>
                 <td>
@@ -92,7 +100,9 @@
                 </td>
                 {{#each ../answer-options}}
                   <td>
-                    {{> components_radio_button label=answer id=(slugify (concat ../answer "-" answer)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=(default value answer) required="true"}}
+                    <div class="checkbox-center">
+                    {{> components_radio_button label=" " id=(slugify (concat ../answer "-" answer)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=(default value answer) required="true"}}
+                    </div>
                   </td>
                 {{/each}}
               </tr>
