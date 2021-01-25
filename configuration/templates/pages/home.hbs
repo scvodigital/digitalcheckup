@@ -125,19 +125,26 @@
       <div class="mdc-layout-grid v-padding-full">
         <div class="mdc-layout-grid__inner">
           {{#each @root.data.currentSite.sections}}
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{{#ifAny (compare @root.data.currentSite.name 'organisation') (compare @root.data.currentSite.name 'skills')}}6{{else}}3{{/ifAny}}-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'organisation'}}6{{else}}{{#compare @root.data.currentSite.name 'skills'}}12{{else}}3{{/compare}}{{/compare}}-desktop mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'skills'}}8{{else}}4{{/compare}}-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
               {{!-- {{#if number}}
                 <div class="number" style="background-color:#{{color}};">{{number}}</div>
               {{/if}} --}}
               <div class="{{class}} {{shape}}">
                 <div class="{{shape}}-content">
                   {{#if (contains icon 'fa-')}}
-                    <span class="far {{icon}} fa-4x fa-fw icon{{#if color}} text-{{color}}{{/if}}"></span>
+                    <span class="far {{icon}} fa-4x fa-fw icon{{#if color}} text-{{color}}{{/if}}" style="width:8%;min-width:100px;"></span>
                   {{else}}
                     <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
                   {{/if}}
-                  <div class="icon-text mdc-typography--headline5 text-center">
-                    <strong>{{{title}}}</strong>
+                  <div class="icon-text h-padding-full text-left">
+                    <div class="mdc-typography--headline5">
+                      <strong>{{{title}}}</strong>
+                    </div>
+                    {{#if description}}
+                    <p style="margin:0;">
+                      {{{description}}}
+                    </p>
+                    {{/if}}
                   </div>
                 </div>
               </div>
