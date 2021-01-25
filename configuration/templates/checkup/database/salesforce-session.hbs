@@ -29,7 +29,7 @@
   {{/json}},
 
   {{#json key="questionResponses" type="array"}}
-    {{#each  (getProperty @root.data.checkup @root.data.currentSite.name)}}
+    {{#each (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) ~}}
       {{#each questions}}
         {{#compare type 'select-grid'}}
           {{#each options}}
