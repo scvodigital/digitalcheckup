@@ -707,6 +707,13 @@ a.btn.btn-outline:hover,
   text-align: center;
 }
 
+.checkbox-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+}
+
 .trapezoid {
   transform: skew(-10deg,0deg);
   .trapezoid-content {
