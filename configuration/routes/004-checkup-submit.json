@@ -58,6 +58,7 @@
         "parseJson": true
       }
     },
+    "data.generateSaveCheckupSessionTask",
     {
       "name": "scoresIndividual",
       "taskModule": "render",
@@ -89,13 +90,24 @@
       }
     },
     {
+      "name": "save_data",
+      "taskModule": "firebaseRtbSet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "setOrUpdate": "set",
+        "pathTemplate": "/submissions/{{@root.data.rid}}/",
+        "dataTemplate": ">context.metaData.handlebars.templates.checkup_database_firebase"
+      }
+    },
+    {
       "name": "destination",
       "taskModule": "renderLayout",
       "renderer": "handlebars",
       "config": {
         "logic": {
           "if": [
-            "default"
+            "default" 
           ]
         },
         "output": "body",
@@ -104,7 +116,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_questions_dontsubmit"
+              "body": ">context.metaData.handlebars.templates.checkup_questions_submit"
             },
             "contentType": "text/html"
           }

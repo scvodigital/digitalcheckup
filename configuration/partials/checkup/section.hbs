@@ -73,7 +73,7 @@
               {{/each ~}}
               {{!-- Supplementary options --}}
               {{#if supplementary-options}}
-              <div data-container-of="{{slugify value}}">class="hidden"
+              <div data-container-of="{{slugify value}}" class="hidden">
                 {{#each supplementary-options}}
                   {{#each this}}
                   <li class="answer" data-supplement-of={{slugify ../../value}} data-supplement="{{@../this.key}}" >{{> components_checkbox id=(concat "answers-" ../../../../section "-" ../../value "-supplement-" @index "-" @../index) supplement=@../this.key supplement-of=(slugify ../../value) label=answer name=(concat "answers-" ../../../../section "-" ../../value "-supplement") value=value}}</li>
