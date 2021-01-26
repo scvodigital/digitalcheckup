@@ -1,8 +1,8 @@
 <div class="checkup-section b-padding-full" id="checkup-results">
-  <div class="checkup-section-header b-padding-full v-margin-full">
+  <div class="checkup-section-header header-primary">
     <div class="container-fluid">
-      <div class="container-content">
-        {{#ifAll @root.request.params.query.slp @root.request.params.query.rid}}
+      <div class="container-content v-padding-full">
+        {{!-- {{#ifAll @root.request.params.query.slp @root.request.params.query.rid}}
         <div class="v-padding-full b-margin-full">
           <div class="v-margin-full b-padding-full">
             <h3 class="mdc-typography--headline4 v-margin b-padding-full">
@@ -16,10 +16,9 @@
             </div>
           </div>
         </div>
-        {{/ifAll}}
+        {{/ifAll}} --}}
 
-        {{> checkup_progress progress=100}}
-        <h1 class="mdc-typography--headline3 font-default">
+        <h1 class="v-padding-full mdc-typography--headline3 font-default">
           {{#ifAny @root.data.rootResponse.organisation @root.request.params.query.web_organisation ~}}
             Checkup results for {{{default @root.data.rootResponse.organisation @root.request.params.query.web_organisation}}}
           {{else}}
@@ -31,6 +30,8 @@
   </div>
   <div class="container-fluid">
     <div class="container-content">
+      {{> checkup_progress progress=100}}
+
       {{#ifAny @root.data.rootResponse.percentage_total @root.request.params.query.s1 ~}}
       <div class="question-block mdc-elevation--z3">
         <div class="results-block">

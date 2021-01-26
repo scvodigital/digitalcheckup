@@ -1,7 +1,8 @@
 {
   "digitalcheckup_org": "default",
-  "checkup_scot": "default",
-  "checkup_local": "default",
+  "digitalcheckup_local": "default",
+  "checkup_scot": "root",
+  "checkup_local": "root",
   "organisation_checkup_scot": "organisation",
   "checkup-organisation_local": "organisation",
   "housing_digitalcheckup_org": "housing",

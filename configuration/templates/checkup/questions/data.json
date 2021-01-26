@@ -1,5 +1,6 @@
 {
   "default": {
+    "sf_type": "Digital",
     "section-1": {
       "number": 1,
       "name": "Section 1",
@@ -553,6 +554,7 @@
     }
   },
   "organisation": {
+    "sf_type": "Digital_Organisations",
     "section-1": {
       "number": 1,
       "name": "Section 1",
@@ -1965,6 +1967,7 @@
     }
   },
   "housing": {
+    "sf_type": "Digital_Housing_Associations",
     "section-1": {
       "name": "Section 1",
       "title": "Leadership, culture, & skills",
@@ -2846,6 +2849,7 @@
     }
   },
   "lifeskills": {
+    "sf_type": "Essential_Digital_Skills_for_life",
     "foundation": {
       "name": "",
       "title": "Foundation Skills",
@@ -2899,7 +2903,7 @@
               "score": 0
             }
           ]
-        },        
+        },
         {
           "title": "I can use accessibility tools on my device to make it easier",
           "description": "Volume settings, making text bigger, brightness settings",
@@ -3019,7 +3023,7 @@
               "score": 0
             }
           ]
-        }        
+        }
       ],
       "next_section": "foundation-check"
     },
@@ -4164,6 +4168,7 @@
     }
   },
   "workskills": {
+    "sf_type": "Essential_Digital_Skills_for_work",
     "section-1": {
       "number": 1,
       "name": "Section 1",
