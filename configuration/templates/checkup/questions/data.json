@@ -671,58 +671,58 @@
           "metric": "Tools and equipment",
           "answer-options": [
             {
-              "answer" : "Never",
+              "answer": "Never",
               "score" : 0
             },
             {
-              "answer" : "Occasionally",
+              "answer": "Occasionally",
               "score" : 1
             },
             {
-              "answer" : "Sometimes",
+              "answer": "Sometimes",
               "score" : 2
             },
             {
-              "answer" : "Often",
+              "answer": "Often",
               "score" : 3
             }
           ],
           "options": [
             {
-              "answer" : "Cloud productivity tools (eg Office 365, G Suite)"
+              "answer": "Cloud productivity tools (eg Office 365, G Suite)"
             },
             {
-              "answer" : "Team communication tools (eg Slack, Microsoft Teams)"
+              "answer": "Team communication tools (eg Slack, Microsoft Teams)"
             },
             {
-              "answer" : "Video conferencing"
+              "answer": "Video conferencing"
             },
             {
-              "answer" : "Social media channels"
+              "answer": "Social media channels"
             },
             {
-              "answer" : "Online enquiries (eg live chat)"
+              "answer": "Online enquiries (eg live chat)"
             },
             {
-              "answer" : "Online bookings or referrals"
+              "answer": "Online bookings or referrals"
             },
             {
-              "answer" : "Email campaigns (eg Mailchimp)"
+              "answer": "Email campaigns (eg Mailchimp)"
             },
             {
-              "answer" : "Online donations or payments (eg JustGiving, Stripe, PayPal)"
+              "answer": "Online donations or payments (eg JustGiving, Stripe, PayPal)"
             },
             {
-              "answer" : "Mobile-friendly (responsive) website"
+              "answer": "Mobile-friendly (responsive) website"
             },
             {
-              "answer" : "Database (CRM system)"
+              "answer": "Database (CRM system)"
             },
             {
-              "answer" : "Online events/webinars/live streaming"
+              "answer": "Online events/webinars/live streaming"
             },
             {
-              "answer" : "Website usage data (e.g. Google Analytics)"
+              "answer": "Website usage data (e.g. Google Analytics)"
             }
           ]
         },
@@ -1060,50 +1060,50 @@
           "metric": "Cyber resilience",
           "answer-options": [
             {
-              "answer" : "Don't know",
+              "answer": "Don't know",
               "score" : 0
             },
             {
-              "answer" : "Not started",
+              "answer": "Not started",
               "score" : 1
             },
             {
-              "answer" : "Minimal progress",
+              "answer": "Minimal progress",
               "score" : 2
             },
             {
-              "answer" : "Well underway",
+              "answer": "Well underway",
               "score" : 3
             },
             {
-              "answer" : "Fully complete",
+              "answer": "Fully complete",
               "score" : 4
             }
           ],
           "options": [
             {
-              "answer" : "Network firewall"
+              "answer": "Network firewall"
             },
             {
-              "answer" : "Malware"
+              "answer": "Malware"
             },
             {
-              "answer" : "Antivirus"
+              "answer": "Antivirus"
             },
             {
-              "answer" : "Remote wipe"
+              "answer": "Remote wipe"
             },
             {
-              "answer" : "Strong passwords"
+              "answer": "Strong passwords"
             },
             {
-              "answer" : "Backups"
+              "answer": "Backups"
             },
             {
-              "answer" : "Software updates"
+              "answer": "Software updates"
             },
             {
-              "answer" : "Least privilege (ie only granting admin level access where this is needed)"
+              "answer": "Least privilege (ie only granting admin level access where this is needed)"
             }
           ]
         }
