@@ -532,7 +532,7 @@ h4,
 
 // .cta {
 //   .mdc-button {
-//     background-color: $mdc-theme-lightblue;
+//     background-color: $mdc-theme-blue;
 //     height: $unit*3;
 //     text-transform: uppercase;
 //     padding: 0 $unit*1.33;
@@ -579,7 +579,7 @@ h4,
     background-color: $mdc-theme-purple;
   }
   .tools.trapezoid {
-    background-color: $mdc-theme-lightblue;
+    background-color: $mdc-theme-blue;
   }
   .content.trapezoid {
     background-color: $mdc-theme-green;
@@ -807,7 +807,7 @@ a.btn.btn-outline:hover,
 }
 
 .checkup-topic-header {
-  background-color: $mdc-theme-lightblue;
+  background-color: $mdc-theme-blue;
   padding: $unit*2 0;
 }
 
@@ -832,7 +832,7 @@ a.btn.btn-outline:hover,
 .question-block {
   background-color: white;
   margin: $unit 0 $unit*2;
-  // border-left: $unit/2 solid $mdc-theme-lightblue;
+  // border-left: $unit/2 solid $mdc-theme-blue;
   // border-radius: $border-radius;
   .question {
     // border-radius: 0 $border-radius 0 0;
@@ -908,19 +908,19 @@ a.btn.btn-outline:hover,
     .checkup-section-header,
     .question-block .question,
     .cta .mdc-button {
-      background-color: $mdc-theme-lightblue;
+      background-color: $mdc-theme-blue;
       color: white;
     }
     .question-block {
-      border-left-color: $mdc-theme-lightblue;
+      border-left-color: $mdc-theme-blue;
     }
   }
   .checkup-topic-resources-tools .mdc-card__title,
   .checkup-topic-header-tools {
-    background-color: $mdc-theme-lightblue;
+    background-color: $mdc-theme-blue;
   }
   // .checkup-topic-resources-tools a {
-  //   color: $mdc-theme-lightblue;
+  //   color: $mdc-theme-blue;
   // }
   #checkup-section-3 {
     .checkup-section-header,
@@ -1093,7 +1093,7 @@ a.bg-yellow:hover {
     }
     li.key-your::before {
       content: "\25CF";
-      color: $mdc-theme-lightblue;
+      color: $mdc-theme-blue;
     }
     li.key-average::before {
       content: "\25CC";
@@ -1115,7 +1115,7 @@ a.bg-yellow:hover {
     }
     // li.key-shared-4::before {
     //   content: "\25CF";
-    //   color: $mdc-theme-lightblue;
+    //   color: $mdc-theme-blue;
     // }
     // li.key-shared-5::before {
     //   content: "\25CF";
