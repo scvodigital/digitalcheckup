@@ -256,7 +256,7 @@
 
       <div class="mdc-drawer-scrim"></div>
 
-      <main class="main-body {{#if layoutParts.sidebar}} drawer-container-permanent{{else}} drawer-container-temporary{{/if}}">
+      <main class="main-body {{#if layoutParts.sidebar}} drawer-container-permanent{{else}} drawer-container-temporary{{/if}} site-{{@root.data.currentSite.name}}">
         {{!-- mdc-toolbar-fixed-adjust --}}
         {{#if layoutParts.sidebar ~}}
         <aside class="mdc-drawer mdc-drawer--occasional" id="sidebar-temporary" data-menu-button=".filter-search-button">
