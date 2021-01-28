@@ -3,18 +3,26 @@
 {{~/inline~}}
 {{~#*inline "get_average"~}}
   {{~#compare income_band "0"~}}
-    {{round (getProperty dataAverages aggregation) "up"}}
-  {{else}}
-    {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
-      aggregation) ~}}
-      {{round
-        (getProperty
-          (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
-          aggregation
-        ) "up"}}
+    {{#if (getProperty dataAverages aggregation)}}
+      {{round (getProperty dataAverages aggregation) "up"}}
     {{else}}
       0
-    {{/if ~}}
+    {{/if}}
+  {{else}}
+    {{#compare (length dataAverages.grouped_by_income_band.buckets) ">" 0}}
+      {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
+        aggregation) ~}}
+        {{round
+          (getProperty
+            (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
+            aggregation
+          ) "up"}}
+      {{else}}
+        0
+      {{/if ~}}
+    {{else}}
+      0
+    {{/compare ~}}
   {{~/compare~}}
 {{~/inline~}}
 {{#withExtend this
@@ -152,6 +160,7 @@
     "where": "{{#compare rootResponse.area "scotland"}}Scotland{{else}}the UK{{/compare}}"
   }
   {{else}}
+  {{!-- this is legacy from before we used rid= to identify reponses in on the results page, please ignore and don't touch --}}
   {
     "overall": {
       "respondent": {{>to_percentage
