@@ -50,7 +50,7 @@
         {{/compare}}
       {{/each}}
     {{/each}}
-
+    {{#unless (compare @root.data.currentSite.name 'skills')}}
     {{#withExtend this sectionNumber=(add (length (getKeys @root.data.checkup)) 2)}}
       {{#json type="object"}}
         {{{json key="question" value=(concat sectionNumber ".1. If you could tackle one digital project in the next three months, what would that be?")}}},
@@ -65,5 +65,6 @@
         {{{json key="answer" value=(default @root.request.body.answers-covid19 "")}}}
       {{/json}},
     {{/withExtend}}
+    {{/unless}}
   {{/json}}
 {{/json}}

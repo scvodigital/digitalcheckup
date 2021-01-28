@@ -112,7 +112,7 @@
           {{#if (compare type "select-dropdown") ~}}
                          <ul class="answer-block">
                <li >
-                <select {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' value}}">
+                <select class="supplements" {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' value}}">
                   <option disabled selected value> -- select an option -- </option>
                   {{#each options}}
                   <option  data-supplement-target="{{answer}}" value="{{default value answer}}">{{answer}}</option>
