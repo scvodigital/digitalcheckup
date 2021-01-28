@@ -39,27 +39,6 @@
       }
     },
     {
-      "name": "salesforceSession",
-      "taskModule": "render",
-      "renderer": "handlebars",
-      "config": {
-        "template": ">context.metaData.handlebars.templates.checkup_database_salesforce-session",
-        "output": "data",
-        "parseJson": true
-      }
-    },
-    {
-      "name": "generateSaveCheckupSessionTask",
-      "taskModule": "render",
-      "renderer": "handlebars",
-      "config": {
-        "template": ">context.metaData.handlebars.templates.checkup_database_salesforce-task",
-        "output": "data",
-        "parseJson": true
-      }
-    },
-    "data.generateSaveCheckupSessionTask",
-    {
       "name": "scoresIndividual",
       "taskModule": "render",
       "renderer": "handlebars",
@@ -90,14 +69,23 @@
       }
     },
     {
-      "name": "save_data",
-      "taskModule": "firebaseRtbSet",
+      "name": "salesforceSession",
+      "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "appName": "digital-checkup",
-        "setOrUpdate": "set",
-        "pathTemplate": "/submissions/{{@root.data.rid}}/",
-        "dataTemplate": ">context.metaData.handlebars.templates.checkup_database_firebase"
+        "template": ">context.metaData.handlebars.templates.checkup_database_salesforce-session",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "generateSaveCheckupSessionTask",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.checkup_database_salesforce-task",
+        "output": "data",
+        "parseJson": true
       }
     },
     {
@@ -107,7 +95,7 @@
       "config": {
         "logic": {
           "if": [
-            "default" 
+            "default"
           ]
         },
         "output": "body",
@@ -116,7 +104,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_questions_submit"
+              "body": ">context.metaData.handlebars.templates.checkup_questions_dontsubmit"
             },
             "contentType": "text/html"
           }

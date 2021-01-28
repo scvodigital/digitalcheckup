@@ -1,94 +1,19 @@
 <h1>
   This is the don't submit debug page! 
 </h1>
-{{#each (getProperty @root.data.checkup @root.data.currentSite.name)}}
-this
-{{/each}}
 
-{{@root.data.currentSite.name}}
+<h2>SF Metrics</h2>
 
-Here's what metric sees
-<p>
-{{#each (getProperty @root.data.checkup @root.data.currentSite.name)}}
-HELLO!
-{{/each}}
-</p>
-
-Shouuuuld beee...
-<p>
-{{#each (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) ~}}
-    {{#each questions}}
-     I get questions
+    {{#each (groupBy @root.data.metrics "metric")}}
+      {{!-- this assumes that supplements can't ever go higher than the question maximum. If they can, something much more complex will need to be implemented --}}
+      
+      <p>{{json value=this}}</p> YES?
+      {{#unless (includes @key '-supplement')}}
+      {{#json type="object"}}
+        {{{json key="metric" value=(concat @key)}}},
+        {{{json key="percentageScore" value=(maths "ceil((sum(scores) - sum(minScores)) / (sum(maxScores) - sum(minScores)) * 100)" scores=(pluck this "score") maxScores=(pluck this "maxScore") minScores=(pluck this "minScore"))}}}
+      {{/json}},
+      {{/unless}}
+    <br><br>
     {{/each}}
-{{/each}}
-</p>
-?
-
-{{~#*inline "answers_and_scores"~}}
-  {{{json key="maxScore" value=(maths maxExpression scores=(pluck options "score"))}}},
-  {{{json key="minScore" value=(maths minExpression scores=(pluck options "score"))}}},
-  {{{json key="answers" value=(filter options "answer" "valueIn" answers)}}},
-  {{{json key="score" value=(maths "sum(scores)" scores=(pluck (filter options "answer" "valueIn" answers) "score"))}}}
-{{~/inline~}}
-
-{{~#*inline "answers_and_scores_nawt"~}}
-Ahoy!
-  {{{json key="maxScore" value=(maths maxExpression scores=(pluck options "score"))}}},
-  {{{json key="minScore" value=(maths minExpression scores=(pluck options "score"))}}},
-  {{{json key="answers" value=(filter options "answer" "valueIn" answers)}}},
-  {{{json key="score" value=(maths "sum(scores)" scores=(pluck (filter options "answer" "valueIn" answers) "score"))}}}
-{{~/inline~}}
-
-  {{#each (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) ~}}
-    {{#each questions}}
-      {{#if metric}}
-        {{#compare type 'select-grid'}}
-            {{#json type="object"}}
-              {{{json key="metric" value=../metric}}},
-              {{{json key="section" value=@../../key}}},
-              {{{json key="question" value=(concat 'answers-' ../value '-' answer)}}},
-              {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../../key '-' ../value '-' (slugify answer)))}}},
-              {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=../answer-options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../../key '-' ../value '-' (slugify answer))))}}
-            {{/json}},
-        {{else}}
-          {{#json type="object"}}
-            {{{json key="metric" value=metric}}},
-            {{{json key="section" value=@../key}}},
-            {{{json key="question" value=(concat 'answers-' value)}}},
-            {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../key '-' value))}}},
-            {{#switch type  ~}}
-              {{#case "select-one"}}
-                {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}
-              {{/case}}
-              {{#case "select-dropdown"}}
-                {{>answers_and_scores maxExpression="max(scores)" minExpression="min(scores)" options=options answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}
-              {{/case}}
-              {{#case "select-many"}}
-                {{#if options}}
-                  {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=options answers=(split (lookup @root.request.body (concat 'answers-' @../key '-' value)) ";")}}
-                {{/if}}
-              {{/case}}
-            {{/switch}}
-          {{/json}},
-          {{#if supplements}}
-          
-            {{#if (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement'))}}
-              <br><br>Supplement<br>
-              {{#json type="object"}}
-                {{{json key="metric" value=metric}}},
-                {{{json key="section" value=@../key}}},
-                {{{json key="question" value=(concat 'answers-' value '-supplement')}}},
-                {{{json key="path" value=(concat "@root.request.body." (concat 'answers-' @../key '-' value '-supplement'))}}},
-                {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=(lookup supplementary-options (lookup @root.request.body (concat 'answers-' @../key '-' value))) answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement')))}}
-              {{/json}},
-              <p>Options = {{{json value=(lookup supplementary-options (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}}</p>
-              <p>Answer = {{{json value=(split (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement')) ";")}}}</p>
-              <p>A&S</p> {{>answers_and_scores maxExpression="sum(filter(scores, isPositive))" minExpression="sum(filter(scores, isNegative))" options=(lookup supplementary-options (lookup @root.request.body (concat 'answers-' @../key '-' value))) answers=(arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement')))}}
-              <p></p>
-            {{/if}}
-          {{/if}}
-        {{/compare}}
-      {{/if}}
-    {{/each}}
-  {{/each}}
 

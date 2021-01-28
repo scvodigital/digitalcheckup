@@ -8,7 +8,7 @@
   {{else}}
   {{{safeStringify (concat 'answers-' (slugify ../name) '-' value)}}}: "
   {{~#each options ~}}{{~#each (split (getProperty @root.request.body (concat 'answers-' (slugify ../../name) '-' ../value)) ';') ~}}{{~#compare ../answer this~}}{{../score}};{{~/compare~}}{{~/each ~}}{{~/each ~}}
-  {{#if supplements}}{{#each (lookup supplementary-options (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}{{#each (arrayify (lookup @root.request.body (concat 'answers-' (slugify ../../name) '-' ../value '-supplement')))}}{{~#compare ../answer this~}}{{../score}};{{/compare}}{{/each}}{{/each}}{{/if}}",
+  {{#if supplements}}{{#each (lookup supplementary-options (lookup @root.request.body (concat 'answers-' @../key '-' value)))}}{{#each (arrayify (split (lookup @root.request.body (concat 'answers-' (slugify ../../name) '-' ../value '-supplement')) ';'))}}{{~#compare ../answer this~}}{{../score}};{{/compare}}{{/each}}{{/each}}{{/if}}",
   {{/compare}}
   {{/each ~}}
   {{/each ~}}
