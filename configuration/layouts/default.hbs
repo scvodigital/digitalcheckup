@@ -31,7 +31,7 @@
   {{#compare @root.data.currentSite.name "root"}}
   <meta http-equiv="refresh" content="0;URL='https://scvo.scot/support/checkups'" />
   {{else}}
-  {{#compare @root.data.currentSite.name "default"}}
+  {{#compare @root.data.currentSite.name "digital-legacy"}}
   {{#unless (compare @root.route.name "checkup_results")}}
   {{!-- Uncomment when going live --}}
   {{!-- <meta http-equiv="refresh" content="0;URL='https://organisation.checkup.scot{{@root.request.url.pathname}}'" /> --}}
@@ -130,7 +130,7 @@
 </head>
 <body>
   {{#unless (compare @root.data.currentSite.name "housing")}}
-  {{#unless (compare @root.data.currentSite.name "default")}}
+  {{#unless (compare @root.data.currentSite.name "digital-legacy")}}
     <div class="hide-md hide-sm">
       {{> components_scvo_bar}}
     </div>
@@ -173,12 +173,12 @@
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start mdc-top-app-bar__section--logo">
               <a href="/" class="site-brand">
                 {{#unless (compare @root.data.currentSite.name "housing")}}
-                {{#unless (compare @root.data.currentSite.name "default")}}
+                {{#unless (compare @root.data.currentSite.name "digital-legacy")}}
                   <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
                 {{/unless}}
                 {{/unless}}
                 <h1 class="text-secondary">
-                  {{#compare @root.data.currentSite.name "default"}}
+                  {{#compare @root.data.currentSite.name "digital-legacy"}}
                     Digital <span class="text-brand">Checkup</span>
                   {{else}}
                     {{#compare @root.data.currentSite.name "cyber"}}
@@ -192,7 +192,7 @@
                         {{else}}
                           {{#compare @root.data.currentSite.type "organisation"}}
                             Digital <span class="text-brand">Checkup</span>
-                            {{#unless (compare @root.data.currentSite.name "organisation")}}
+                            {{#unless (compare @root.data.currentSite.name "digital")}}
                               <span class="mdc-typography--caption">
                                 For {{@root.data.currentSite.for_plural}}
                               </span>

@@ -7,8 +7,8 @@
     "phone": "0800 169 0022",
     "url": "https://checkup.scot"
   },
-  "default": {
-    "name": "default",
+  "digital-legacy": {
+    "name": "digital-legacy",
     "type": "organisation",
     "title": "Digital Checkup",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
@@ -50,8 +50,8 @@
     "phone": "0800 169 0022",
     "url": "https://digitalcheckup.org"
   },
-  "organisation": {
-    "name": "organisation",
+  "digital": {
+    "name": "digital",
     "type": "organisation",
     "title": "Digital Checkup",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",

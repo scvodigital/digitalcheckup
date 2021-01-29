@@ -1,5 +1,5 @@
 {
-  "default": {
+  "digital-legacy": {
     "sf_type": "Digital",
     "section-1": {
       "number": 1,
@@ -553,7 +553,7 @@
       "next_section": "contact-details"
     }
   },
-  "organisation": {
+  "digital": {
     "sf_type": "Digital_Organisations",
     "section-1": {
       "number": 1,
