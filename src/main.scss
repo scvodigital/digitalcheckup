@@ -627,6 +627,12 @@ h4,
   align-items: center;
   .icon-text {
     margin: 0 $unit;
+    .mdc-typography--headline5 {
+      display: flex;
+      align-items: center;
+      word-break: normal;
+      margin: 0;
+    }
   }
 }
 .icon.fa-fw {
