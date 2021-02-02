@@ -11,7 +11,7 @@
   <div class="container-fluid">
     <div class="container-home v-padding-full v-margin-full">
       <div class="mdc-typography--body2 t-margin-full" style="font-size:2rem;line-height:2rem;">
-        Take our simple Digital Check-up to assess your current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}}
+        Take our simple Digital checkup to assess your current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}}
       </div>
       <div class="cta t-padding-full t-margin-full">
         <a href="/checkup" class="btn btn-outline">Start the checkup</a>
@@ -137,7 +137,7 @@
                     <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
                   {{/if}}
                   <div class="icon-text h-padding-full text-left">
-                    <div class="mdc-typography--headline5">
+                    <div class="mdc-typography--headline5" style="word-break: initial;">
                       <strong>{{{title}}}</strong>
                     </div>
                     {{#if description}}
