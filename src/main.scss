@@ -874,6 +874,9 @@ a.btn.btn-outline:hover,
         user-select: none;
       }
     }
+    tr:nth-child(even) {
+      background: $mdc-theme-lightgrey;
+    }
   }
 }
 
