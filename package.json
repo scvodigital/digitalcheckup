@@ -1,6 +1,6 @@
 {
   "name": "@scvo/digitalcheckup",
-  "version": "0.0.105",
+  "version": "0.0.106",
   "description": "Site configuration and assets for digitalcheckup.org",
   "main": "index.js",
   "scripts": {
