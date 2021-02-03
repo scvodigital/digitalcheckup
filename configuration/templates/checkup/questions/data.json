@@ -1026,7 +1026,7 @@
           ]
         },
         {
-          "title": "Which certification scheme have you been asked to comply with? (tick all that apply)",
+          "title": "Which certification scheme are you required to comply with? (tick all that apply)",
           "value": "q3",
           "type": "select-many",
           "metric": "Cyber resilience",
@@ -1040,11 +1040,11 @@
               "score": 4
             },
             {
-              "answer": "CE Plus",
+              "answer": "Cyber Essentials Plus",
               "score": 3
             },
             {
-              "answer": "CE",
+              "answer": "Cyber Essentials",
               "score": 2
             },
             {

@@ -835,6 +835,12 @@ a.btn.btn-outline:hover,
     max-width: 88%;
   }
 }
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
 .question-block {
   background-color: white;
   margin: $unit 0 $unit*2;

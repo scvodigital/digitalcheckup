@@ -46,7 +46,7 @@
           * required information
         </div>
         {{#each questions ~}}
-        <div class="question-block" {{#if show-when}}data-show-field="{{show-when.field}}" data-show-value="{{show-when.value}}"{{/if}}>
+        <fieldset class="question-block" {{#if show-when}}data-show-field="{{show-when.field}}" data-show-value="{{show-when.value}}"{{/if}}>
           <div class="question">
             {{#if title ~}}
             <h2 class="mdc-typography--headline5 question-title">{{{title}}}</h2>
@@ -145,38 +145,37 @@
               {{/compare}}
             </ul>
           {{/ifAny ~}}
-        </div>
+        </fieldset>
         {{/each ~}}
         <script>
-        function showOptions(question) {
-          $(".option-eds-"+question).removeClass('hidden');
-        }
-        function hideOptions(question) {
-          $(".option-eds-"+question).addClass('hidden').find('.mdc-form-field').removeClass('checked');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-          $('form.checkup-section').on('change', showHideOptional);
-          showHideOptional();
-
-          function showHideOptional() {
-            var optionalQuestionBlocks = $('.question-block[data-show-field]');
-            optionalQuestionBlocks.each(function(i, questionBlock) {
-              var data = $(questionBlock).data();
-
-              var checkValues = $('[name="' + data.showField + '"]:checked')
-                .map(function(i, field) { return $(field).val(); })
-                .toArray();
-
-              if (checkValues.indexOf(data.showValue) > -1) {
-                $(questionBlock).removeClass('hidden');
-              } else {
-                $(questionBlock).addClass('hidden');
-              }
-            });
+          function showOptions(question) {
+            $(".option-eds-"+question).removeClass('hidden');
           }
-        });
+          function hideOptions(question) {
+            $(".option-eds-"+question).addClass('hidden').find('.mdc-form-field').removeClass('checked');
+          }
 
+          document.addEventListener('DOMContentLoaded', function() {
+            $('form.checkup-section').on('change', showHideOptional);
+            showHideOptional();
+
+            function showHideOptional() {
+              var optionalQuestionBlocks = $('.question-block[data-show-field]');
+              optionalQuestionBlocks.each(function(i, questionBlock) {
+                var data = $(questionBlock).data();
+
+                var checkValues = $('[name="' + data.showField + '"]:checked')
+                  .map(function(i, field) { return $(field).val(); })
+                  .toArray();
+
+                if (checkValues.indexOf(data.showValue) > -1) {
+                  $(questionBlock).removeClass('hidden').prop('disabled', false);
+                } else {
+                  $(questionBlock).addClass('hidden').prop('disabled', true);
+                }
+              });
+            }
+          });
         </script>
         <div class="cta b-padding-full">
           <button type="submit" class="mdc-button mdc-button--raised">Next section</button>
