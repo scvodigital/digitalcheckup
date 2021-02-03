@@ -2462,7 +2462,7 @@
       "description": "This health check will help you gain an overview of the cyber security position of your organisation and to highlight the actions being taken on cyber resilience within your organisation.<br />By cyber security, we mean the strategies and technologies that you have in place to ensure your networks, devices, data and finances are protected from damage, attack or unauthorised access. Cyber risks include computer viruses and malware, criminal activity (fraud and extortion), loss of data by accident or a deliberate act.",
       "icon": "fa-question-circle",
       "color": "purple",
-      "progress": 12,
+      "progress": 11,
       "questions": [
         {
           "title": "How do you manage your IT support? *",
@@ -2672,9 +2672,9 @@
       "name": "Section 2",
       "title": "Policy & governance",
       "description": "",
-      "icon": "fa-briefcase",
+      "icon": "fa-gavel",
       "color": "pink",
-      "progress": 25,
+      "progress": 22,
       "questions": [
         {
           "title": "Is there Board engagement on cyber security? *",
@@ -2796,9 +2796,9 @@
       "name": "Section 3",
       "title": "Data & finance",
       "description": "Choose the phrase which best describes your approach to the following topics…",
-      "icon": "fa-bullseye-arrow fa-rotate-180",
+      "icon": "fa-receipt",
       "color": "green",
-      "progress": 37,
+      "progress": 33,
       "questions": [
         {
           "title": "Data storage",
@@ -2891,9 +2891,9 @@
       "name": "Section 4",
       "title": "Preventing and responding to cyber attacks",
       "description": "",
-      "icon": "fa-bullseye-arrow fa-rotate-180",
+      "icon": "fa-shield-alt",
       "color": "green",
-      "progress": 50,
+      "progress": 44,
       "questions": [
         {
           "title": "The National Cyber Security Centre recommend five key areas to focus on to protect against the most common cyber attacks. To what extent have you taken action on each of the following topics…",
@@ -2999,9 +2999,9 @@
       "name": "Section 5",
       "title": "Workforce training",
       "description": "Choose the phrase which best describes your approach to the following topics…",
-      "icon": "fa-shield-check",
+      "icon": "fa-graduation-cap",
       "color": "orange",
-      "progress": 62,
+      "progress": 55,
       "questions": [
         {
           "title": "Do you provide training in cyber security to your paid staff? *",
@@ -3086,9 +3086,9 @@
       "name": "Section 6",
       "title": "Cyber attacks and breaches",
       "description": "Choose the phrase which best describes your approach to the following topics…",
-      "icon": "fa-shield-check",
+      "icon": "fa-axe-battle",
       "color": "orange",
-      "progress": 62,
+      "progress": 66,
       "questions": [
         {
           "title": "Have you experienced any of the following cyber security breaches or attacks over the past 12 months… (please tick all that apply)",
@@ -3209,9 +3209,9 @@
       "name": "Section 7",
       "title": "Signposting",
       "description": "Choose the phrase which best describes your approach to the following topics…",
-      "icon": "fa-shield-check",
+      "icon": "fa-map-signs",
       "color": "orange",
-      "progress": 62,
+      "progress": 77,
       "questions": [
         {
           "title": "There are many trusted sources who can provide advice on improving your cyber resilience, often free of charge and focused with the third sector in mind.  How many of the following are you aware of/have engaged with?",

@@ -147,36 +147,60 @@
     "sections_heading": "TBC",
     "sections": [
       {
-        "title": "test",
-        "class": "tools",
+        "title": "Context",
+        "class": "section-1",
         "number": 1,
         "shape": "icon",
         "color": "pink",
-        "icon": "fa-shield"
+        "icon": "fa-question-circle"
       },
       {
-        "title": "test",
-        "class": "tools",
+        "title": "Policy & governance",
+        "class": "section-2",
         "number": 2,
         "shape": "icon",
         "color": "pink",
-        "icon": "fa-shield"
+        "icon": "fa-gavel"
       },
       {
-        "title": "test",
-        "class": "tools",
+        "title": "Data & finance",
+        "class": "section-3",
         "number": 3,
         "shape": "icon",
         "color": "pink",
-        "icon": "fa-shield"
+        "icon": "fa-receipt"
       },
       {
-        "title": "test",
-        "class": "cyber",
+        "title": "Preventing and responding to cyber attacks",
+        "class": "section-4",
         "number": 4,
         "shape": "icon",
         "color": "pink",
-        "icon": "fa-shield-check"
+        "icon": "fa-shield-alt"
+      },
+      {
+        "title": "Workforce training",
+        "class": "section-5",
+        "number": 4,
+        "shape": "icon",
+        "color": "pink",
+        "icon": "fa-graduation-cap"
+      },
+      {
+        "title": "Cyber attacks and breaches",
+        "class": "section-6",
+        "number": 4,
+        "shape": "icon",
+        "color": "pink",
+        "icon": "fa-axe-battle"
+      },
+      {
+        "title": "Signposting",
+        "class": "section-7",
+        "number": 4,
+        "shape": "icon",
+        "color": "pink",
+        "icon": "fa-map-signs"
       }
     ],
     "for_singular": "organisation",

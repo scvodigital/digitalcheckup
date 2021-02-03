@@ -125,7 +125,7 @@
       <div class="mdc-layout-grid v-padding-full">
         <div class="mdc-layout-grid__inner">
           {{#each @root.data.currentSite.sections}}
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'organisation'}}6{{else}}{{#compare @root.data.currentSite.name 'skills'}}12{{else}}3{{/compare}}{{/compare}}-desktop mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'skills'}}8{{else}}4{{/compare}}-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'organisation'}}6{{else}}{{#ifAny (compare @root.data.currentSite.name 'skills') (compare @root.data.currentSite.name 'cyber')}}12{{else}}3{{/ifAny}}{{/compare}}-desktop mdc-layout-grid__cell--span-{{#ifAny (compare @root.data.currentSite.name 'skills') (compare @root.data.currentSite.name 'cyber')}}8{{else}}4{{/ifAny}}-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
               {{!-- {{#if number}}
                 <div class="number" style="background-color:#{{color}};">{{number}}</div>
               {{/if}} --}}
