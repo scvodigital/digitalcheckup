@@ -880,6 +880,21 @@ a.btn.btn-outline:hover,
   }
 }
 
+.flex-answer-block {
+  display: block;
+  .cell {
+    display: inline-block;
+  }
+  @media screen and (max-width: $mobile-breakpoint) {
+    .cell {
+      display: block;
+      .mdc-form-field {
+        margin-bottom: initial;
+      }
+    }
+  }
+}
+
 .checkup-topic-resources .mdc-card__title {
   .mdc-typography--headline5 {
     margin-bottom: 0;

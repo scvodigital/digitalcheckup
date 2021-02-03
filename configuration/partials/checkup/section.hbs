@@ -84,7 +84,23 @@
             </ul>
           {{/ifAny ~}}
           {{#if (compare type "select-grid") ~}}
-            <table class="answer-block">
+            <div class="answer-block">
+              {{#each options}}
+                <div class="answer">
+                  {{answer}}
+                </div>
+                <div class="flex-answer-block">
+                  {{#each ../answer-options}}
+                    <div class="cell">
+                      {{> components_radio_button label=answer id=(slugify (concat ../answer "-" answer)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=(default value answer) required="true"}}
+                    </div>
+                  {{/each}}
+                </div>
+              {{/each}}
+            </div>
+
+
+            {{!-- <table class="answer-block">
               <tr>
                 <td></td>
                 {{#each answer-options}}
@@ -107,7 +123,7 @@
                 {{/each}}
               </tr>
               {{/each}}
-            </table>
+            </table> --}}
           {{/if}}
           {{#if (compare type "select-dropdown") ~}}
                          <ul class="answer-block">
