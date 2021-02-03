@@ -672,19 +672,19 @@
           "answer-options": [
             {
               "answer": "Never",
-              "score" : 0
+              "score": 0
             },
             {
               "answer": "Occasionally",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Sometimes",
-              "score" : 2
+              "score": 2
             },
             {
               "answer": "Often",
-              "score" : 3
+              "score": 3
             }
           ],
           "options": [
@@ -771,43 +771,43 @@
           "options": [
             {
               "answer": "Analysis of website analytics",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Focus groups / face to face workshops",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Online feedback surveys",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Controlled testing (A/B, split testing)",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Social media usage data (Facebook insights/Twitter stats)",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Social media engagements (comments, posts, direct messages)",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Development of user personas",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "User experience mapping",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Content strategy",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Website usage metrics (eg unique visits, time on page)",
-              "score" : 1
+              "score": 1
             }
           ]
         },
@@ -819,47 +819,47 @@
           "options": [
             {
               "answer": "Web news and updates",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Blogging (opinions, thought leadership)",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Webinars or live video",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Hosted video (YouTube)",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Campaign / promotion emails",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "E-newsletter or regular bulletin",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Information downloads (PDFs)",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Surveys or voting",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Podcasts",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Social Media content",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Mobile apps (iPhone, Android)",
-              "score" : 1
+              "score": 1
             }
           ]
         }
@@ -1065,23 +1065,23 @@
           "answer-options": [
             {
               "answer": "Don't know",
-              "score" : 0
+              "score": 0
             },
             {
               "answer": "Not started",
-              "score" : 1
+              "score": 1
             },
             {
               "answer": "Minimal progress",
-              "score" : 2
+              "score": 2
             },
             {
               "answer": "Well underway",
-              "score" : 3
+              "score": 3
             },
             {
               "answer": "Fully complete",
-              "score" : 4
+              "score": 4
             }
           ],
           "options": [
@@ -1196,7 +1196,7 @@
             }
           ],
           "supplementary-options": {
-            "Culture & recreation" : [
+            "Culture & recreation": [
               {
                 "answer": "Culture & Arts"
               },
@@ -1228,7 +1228,7 @@
                 "answer": "Welfare clubs"
               }
             ],
-            "Education & research" : [
+            "Education & research": [
               {
                 "answer": "Primary & secondary education"
               },
@@ -2453,6 +2453,890 @@
       "next_section": "contact-details"
     }
   },
+  "cyber": {
+    "sf_type": "Cyber",
+    "section-1": {
+      "number": 1,
+      "name": "Section 1",
+      "title": "Context",
+      "description": "This health check will help you gain an overview of the cyber security position of your organisation and to highlight the actions being taken on cyber resilience within your organisation.<br />By cyber security, we mean the strategies and technologies that you have in place to ensure your networks, devices, data and finances are protected from damage, attack or unauthorised access. Cyber risks include computer viruses and malware, criminal activity (fraud and extortion), loss of data by accident or a deliberate act.",
+      "icon": "fa-question-circle",
+      "color": "purple",
+      "progress": 12,
+      "questions": [
+        {
+          "title": "How do you manage your IT support? *",
+          "value": "q1",
+          "type": "select-one",
+          "metric": "Context",
+          "options": [
+            {
+              "answer": "We do what we can within the knowledge of staff and/or volunteers",
+              "score": 0
+            },
+            {
+              "answer": "We have externally contracted IT support",
+              "score": 1
+            },
+            {
+              "answer": "We have our own dedicated IT support staff",
+              "score": 1
+            }
+          ]
+        },
+        {
+          "title": "Do you find your IT provision (technical support, hardware setup, internet access) to be? *",
+          "value": "q2",
+          "type": "select-one",
+          "metric": "Context",
+          "options": [
+            {
+              "answer": "A regular headache which affects our confidence in trying new things",
+              "score": 0
+            },
+            {
+              "answer": "Sufficient for where we are currently, but improving systems would cause issues",
+              "score": 1
+            },
+            {
+              "answer": "Well managed and the occasional hiccup aside, is not a barrier to our development",
+              "score": 2
+            },
+            {
+              "answer": "Excellent, we are confident that our needs will be met in most circumstances",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "title": "Which statement best describes your organisation's approach to cyber security? *",
+          "value": "q3",
+          "type": "select-one",
+          "metric": "Context",
+          "options": [
+            {
+              "answer": "We do not have enough knowledge to discuss cyber threats or security at a senior level",
+              "score": 0
+            },
+            {
+              "answer": "Cyber security has been discussed but it is not seen as a business priority",
+              "score": 1
+            },
+            {
+              "answer": "Discussions have taken place and we have a plan that is still in progress or still to happen",
+              "score": 2
+            },
+            {
+              "answer": "Online threats have been assessed and feature highly alongside other business risks and priorities",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "title": "Since we have moved to a more remote working approach, how confident do you feel that cyber security measures are being adhered to by staff? *",
+          "value": "q4",
+          "type": "select-one",
+          "metric": "Context",
+          "options": [
+            {
+              "answer": "We are not fully aware of the hardware being used by our staff at this time, so can’t be sure that cyber resilience is being considered",
+              "score": 0
+            },
+            {
+              "answer": "We have provided guidance to staff on safe use of personal devices and tips on how to stay cyber resilient",
+              "score": 1
+            },
+            {
+              "answer": "All staff are utilising devices provided by the organisation and accessing centralised IT services.  We can control the updating and maintenance of these devices and systems",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "title": "Does your organisation hold any recognised cyber security certification? *",
+          "value": "q5",
+          "type": "select-one",
+          "metric": "Context",
+          "options": [
+            {
+              "answer": "Yes",
+              "score": 0
+            },
+            {
+              "answer": "No",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "title": "Cyber Essentials *",
+          "value": "q6",
+          "type": "select-one",
+          "show-when": {
+            "field": "answers-section-1-q5",
+            "value": "Yes"
+          },
+          "metric": "Context",
+          "options": [
+            {
+              "answer": "No",
+              "score": 0
+            },
+            {
+              "answer": "We would like to achieve this level",
+              "score": 1
+            },
+            {
+              "answer": "We are actively working to achieve this",
+              "score": 2
+            },
+            {
+              "answer": "We currently hold this certification",
+              "score": 3
+            },
+            {
+              "answer": "Previously held, but no longer current",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "title": "Cyber Essentials Plus *",
+          "value": "q7",
+          "type": "select-one",
+          "show-when": {
+            "field": "answers-section-1-q5",
+            "value": "Yes"
+          },
+          "metric": "Context",
+          "options": [
+            {
+              "answer": "No",
+              "score": 0
+            },
+            {
+              "answer": "We would like to achieve this level",
+              "score": 1
+            },
+            {
+              "answer": "We are actively working to achieve this",
+              "score": 2
+            },
+            {
+              "answer": "We currently hold this certification",
+              "score": 3
+            },
+            {
+              "answer": "Previously held, but no longer current",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "title": "ISO 27001 *",
+          "value": "q8",
+          "type": "select-one",
+          "show-when": {
+            "field": "answers-section-1-q5",
+            "value": "Yes"
+          },
+          "metric": "Context",
+          "options": [
+            {
+              "answer": "No",
+              "score": 0
+            },
+            {
+              "answer": "We would like to achieve this level",
+              "score": 1
+            },
+            {
+              "answer": "We are actively working to achieve this",
+              "score": 2
+            },
+            {
+              "answer": "We currently hold this certification",
+              "score": 3
+            },
+            {
+              "answer": "Previously held, but no longer current",
+              "score": 2
+            }
+          ]
+        }
+      ],
+      "next_section": "section-2"
+    },
+    "section-2": {
+      "number": 2,
+      "name": "Section 2",
+      "title": "Policy & governance",
+      "description": "",
+      "icon": "fa-briefcase",
+      "color": "pink",
+      "progress": 25,
+      "questions": [
+        {
+          "title": "Is there Board engagement on cyber security? *",
+          "value": "q1",
+          "type": "select-one",
+          "metric": "Policy",
+          "options": [
+            {
+              "answer": "Yes",
+              "score": 0
+            },
+            {
+              "answer": "No",
+              "score": 1
+            }
+          ]
+        },
+        {
+          "title": "How high or low a priority is cyber security to your organisation? *",
+          "value": "q2",
+          "type": "select-one",
+          "metric": "Policy",
+          "options": [
+            {
+              "answer": "Very high",
+              "score": 3
+            },
+            {
+              "answer": "Fairly high",
+              "score": 2
+            },
+            {
+              "answer": "Fairly low",
+              "score": 1
+            },
+            {
+              "answer": "Very low",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "title": "How often, if at all, are your organisation's trustees, committee members or senior management given an update on any actions taken around cyber security? Is it… *",
+          "value": "q3",
+          "type": "select-one",
+          "metric": "Policy",
+          "options": [
+            {
+              "answer": "Never",
+              "score": 0
+            },
+            {
+              "answer": "Less than once a year",
+              "score": 1
+            },
+            {
+              "answer": "Annually",
+              "score": 2
+            },
+            {
+              "answer": "Quarterly",
+              "score": 3
+            },
+            {
+              "answer": "Monthly",
+              "score": 4
+            },
+            {
+              "answer": "Weekly or more often",
+              "score": 5
+            }
+          ]
+        },
+        {
+          "title": "In the past 12 months, has your organisation… (Please tick all that apply)",
+          "value": "q4",
+          "type": "select-many",
+          "metric": "Policy",
+          "options": [
+            {
+              "answer": "Sought any information, advice or guidance about cyber security",
+              "score": 1
+            },
+            {
+              "answer": "Reviewed cyber risks as part of an overall risk register",
+              "score": 1
+            },
+            {
+              "answer": "Had an external health check, assessments or audit to identify cyber security risks",
+              "score": 1
+            },
+            {
+              "answer": "Considered undertaking a cyber accreditation, such as Cyber Essentials.",
+              "score": 1
+            }
+          ]
+        },
+        {
+          "title": "Do you have an up-to-date Information Security Policy (especially with new remote working regimes)? *",
+          "value": "q5",
+          "type": "select-one",
+          "metric": "Policy",
+          "options": [
+            {
+              "answer": "Yes",
+              "score": 1
+            },
+            {
+              "answer": "No",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "next_section": "section-3"
+    },
+    "section-3": {
+      "number": 3,
+      "name": "Section 3",
+      "title": "Data & finance",
+      "description": "Choose the phrase which best describes your approach to the following topics…",
+      "icon": "fa-bullseye-arrow fa-rotate-180",
+      "color": "green",
+      "progress": 37,
+      "questions": [
+        {
+          "title": "Data storage",
+          "value": "q1",
+          "type": "select-one",
+          "metric": "Data",
+          "options": [
+            {
+              "answer": "We don’t know if we store and use data appropriately",
+              "score": 0
+            },
+            {
+              "answer": "We hold data in house and are confident that our in-house data storage regime is robust",
+              "score": 2
+            },
+            {
+              "answer": "We hold our data within 3rd party systems and are confident that our 3rd party data supplier’s storage regime is robust",
+              "score": 2
+            },
+            {
+              "answer": "We hold our data within 3rd party systems however, we have not investigated the data storage protocols of our third party suppliers",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "title": "Risk management",
+          "value": "q2",
+          "type": "select-one",
+          "metric": "Data",
+          "options": [
+            {
+              "answer": "We do not know if our data collection and management is a risk to our organisation",
+              "score": 0
+            },
+            {
+              "answer": "We understand our data collection and management is a risk, steps need to be taken",
+              "score": 1
+            },
+            {
+              "answer": "We have assessed the risks and are confident of how we collect and manage data",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "title": "GDPR/Data Protection 2018 Regulations",
+          "value": "q3",
+          "type": "select-one",
+          "metric": "Data",
+          "options": [
+            {
+              "answer": "We did not achieve compliance with the regulations in 2018 and have made no progress since then",
+              "score": 0
+            },
+            {
+              "answer": "We were in a strong position when the regulations came into force but have not really maintained this",
+              "score": 1
+            },
+            {
+              "answer": "We feel confident that the processes we had in place to ensure a good level of compliance remain active and adhered to throughout the organisation",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "title": "Protecting your finances from scams",
+          "value": "q4",
+          "type": "select-one",
+          "metric": "Data",
+          "options": [
+            {
+              "answer": "We have limited understanding of cyber-enabled fraud",
+              "score": 0
+            },
+            {
+              "answer": "We have a good understanding of cyber-enabled fraud and have trained staff on how to spot it taken",
+              "score": 1
+            },
+            {
+              "answer": "We have put in place specific measures to protect against cyber-enabled fraud and are confident in our ability to spot the full range of potential scams",
+              "score": 2
+            }
+          ]
+        }
+      ],
+      "next_section": "section-4"
+    },
+    "section-4": {
+      "name": "Section 4",
+      "title": "Preventing and responding to cyber attacks",
+      "description": "",
+      "icon": "fa-bullseye-arrow fa-rotate-180",
+      "color": "green",
+      "progress": 50,
+      "questions": [
+        {
+          "title": "The National Cyber Security Centre recommend five key areas to focus on to protect against the most common cyber attacks. To what extent have you taken action on each of the following topics…",
+          "value": "q1",
+          "type": "select-grid",
+          "metric": "Preventing attacks",
+          "answer-options": [
+            {
+              "answer": "Don't know",
+              "score": 0
+            },
+            {
+              "answer": "Not started",
+              "score": 1
+            },
+            {
+              "answer": "Minimal progress",
+              "score": 2
+            },
+            {
+              "answer": "Well underway",
+              "score": 3
+            },
+            {
+              "answer": "Fully complete",
+              "score": 4
+            }
+          ],
+          "options": [
+            {
+              "answer": "We take regular backups of our important data"
+            },
+            {
+              "answer": "We have enabled malware protection on all devices"
+            },
+            {
+              "answer": "Our mobile devices can be tracked, locked, and wiped and are regularly updated, including apps"
+            },
+            {
+              "answer": "We have effective password protection on all computers and mobile devices"
+            },
+            {
+              "answer": "We are familiar with the nature of phishing attacks and have passed this knowledge on to our trustees, staff and volunteers"
+            }
+          ]
+        },
+        {
+          "title": "Do you have an Incident Response and Recovery plan? *",
+          "value": "q2",
+          "type": "select-one",
+          "metric": "Preventing attacks",
+          "options": [
+            {
+              "answer": "Yes",
+              "score": 1
+            },
+            {
+              "answer": "No",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "title": "Have you tested any elements of your Incident Response plan? (eg integrity of backups) *",
+          "value": "q3",
+          "type": "select-one",
+          "metric": "Preventing attacks",
+          "options": [
+            {
+              "answer": "No",
+              "score": 0
+            },
+            {
+              "answer": "Partially tested",
+              "score": 1
+            },
+            {
+              "answer": "Thoroughly tested",
+              "score": 2
+            }
+          ]
+        },
+        {
+          "title": "Do you know how to report a cybercrime and ask for assistance? *",
+          "value": "q4",
+          "type": "select-one",
+          "metric": "Preventing attacks",
+          "options": [
+            {
+              "answer": "Yes",
+              "score": 1
+            },
+            {
+              "answer": "No",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "next_section": "section-5"
+    },
+    "section-5": {
+      "name": "Section 5",
+      "title": "Workforce training",
+      "description": "Choose the phrase which best describes your approach to the following topics…",
+      "icon": "fa-shield-check",
+      "color": "orange",
+      "progress": 62,
+      "questions": [
+        {
+          "title": "Do you provide training in cyber security to your paid staff? *",
+          "value": "q1",
+          "type": "select-one",
+          "metric": "Training",
+          "options": [
+            {
+              "answer": "No",
+              "score": 0
+            },
+            {
+              "answer": "We are planning to provide training",
+              "score": 1
+            },
+            {
+              "answer": "Some staff have received training",
+              "score": 2
+            },
+            {
+              "answer": "All staff have received training",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "title": "Do you provide training in cyber security to your volunteers? *",
+          "value": "q2",
+          "type": "select-one",
+          "metric": "Training",
+          "options": [
+            {
+              "answer": "No",
+              "score": 0
+            },
+            {
+              "answer": "We are planning to provide training",
+              "score": 1
+            },
+            {
+              "answer": "Some volunteers have received training",
+              "score": 2
+            },
+            {
+              "answer": "All volunteers have received training",
+              "score": 3
+            }
+          ]
+        },
+        {
+          "title": "What would be your preferred method of accessing training? (tick all that apply)",
+          "value": "q3",
+          "type": "select-many",
+          "metric": "Training",
+          "options": [
+            {
+              "answer": "Online via an e-learning portal with a recorded training package",
+              "score": 0
+            },
+            {
+              "answer": "Virtual via a webinar or presentation",
+              "score": 0
+            },
+            {
+              "answer": "Face to face in a group environment",
+              "score": 0
+            },
+            {
+              "answer": "Via a session at your organisations annual conference",
+              "score": 0
+            },
+            {
+              "answer": "One to one tutoring to provide advice and triage services  ",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "next_section": "section-6"
+    },
+    "section-6": {
+      "name": "Section 6",
+      "title": "Cyber attacks and breaches",
+      "description": "Choose the phrase which best describes your approach to the following topics…",
+      "icon": "fa-shield-check",
+      "color": "orange",
+      "progress": 62,
+      "questions": [
+        {
+          "title": "Have you experienced any of the following cyber security breaches or attacks over the past 12 months… (please tick all that apply)",
+          "value": "q1",
+          "type": "select-many",
+          "metric": "Breaches",
+          "options": [
+            {
+              "answer": "Computers becoming infected with ransomware",
+              "score": 0
+            },
+            {
+              "answer": "Computers becoming infected with other viruses, spyware or malware",
+              "score": 0
+            },
+            {
+              "answer": "Attacks that try to take down your website or online services",
+              "score": 0
+            },
+            {
+              "answer": "Hacking or attempted hacking of online bank accounts",
+              "score": 0
+            },
+            {
+              "answer": "People impersonating your organisation in emails or online",
+              "score": 0
+            },
+            {
+              "answer": "Staff receiving fraudulent emails or being directed to fraudulent websites",
+              "score": 0
+            },
+            {
+              "answer": "Unauthorised use of computers, networks or servers by staff, even if accidental",
+              "score": 0
+            },
+            {
+              "answer": "Unauthorised use or hacking of computers, networks or servers by people outside your organisation",
+              "score": 0
+            },
+            {
+              "answer": "Any other types of cyber security breaches or attacks",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "title": "Other - please describe",
+          "value": "q1-other",
+          "type": "freetext",
+          "show-when": {
+            "field": "answers-section-6-q1",
+            "value": "Any other types of cyber security breaches or attacks"
+          },
+          "placeholder": "Please describe any cyber security breaches or attacks over the past 12 months"
+        },
+        {
+          "title": "Thinking of all the cyber security breaches or attacks experienced in the last 12 months, which, if any, of the following happened as a result? (please tick all that apply)",
+          "value": "q2",
+          "type": "select-many",
+          "metric": "Breaches",
+          "options": [
+            {
+              "answer": "Staff were prevented from carrying out their day-to-day work",
+              "score": 0
+            },
+            {
+              "answer": "Software or systems were corrupted or damaged",
+              "score": 0
+            },
+            {
+              "answer": "Personal data was altered, destroyed or taken",
+              "score": 0
+            },
+            {
+              "answer": "Permanent loss of files (other than personal data)",
+              "score": 0
+            },
+            {
+              "answer": "Temporary loss of access to files or networks",
+              "score": 0
+            },
+            {
+              "answer": "Lost or stolen assets, trade secrets or intellectual property",
+              "score": 0
+            },
+            {
+              "answer": "Money was stolen",
+              "score": 0
+            },
+            {
+              "answer": "Your website or online services were taken down or made slower",
+              "score": 0
+            },
+            {
+              "answer": "Lost access to any third-party services you rely on",
+              "score": 0
+            },
+            {
+              "answer": "Other",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "title": "Other - please describe",
+          "value": "q2-other",
+          "type": "freetext",
+          "show-when": {
+            "field": "answers-section-6-q2",
+            "value": "Other"
+          },
+          "placeholder": "Please describe anything else that happened as a result of cyber security breaches or attacks experienced in the last 12 months"
+        }
+      ],
+      "next_section": "section-7"
+    },
+    "section-7": {
+      "name": "Section 7",
+      "title": "Signposting",
+      "description": "Choose the phrase which best describes your approach to the following topics…",
+      "icon": "fa-shield-check",
+      "color": "orange",
+      "progress": 62,
+      "questions": [
+        {
+          "title": "There are many trusted sources who can provide advice on improving your cyber resilience, often free of charge and focused with the third sector in mind.  How many of the following are you aware of/have engaged with?",
+          "value": "q1",
+          "type": "select-many",
+          "metric": "Signposting",
+          "options": [
+            {
+              "answer": "SCVO Cyber Resilience Co-ordinator (available for training and education sessions)",
+              "score": 0
+            },
+            {
+              "answer": "Scottish Government Cyber Resilience Unit (available for training and education sessions)",
+              "score": 0
+            },
+            {
+              "answer": "Third Sector Cyber Catalyst Network (cyber ambassadors working within the sector to support organisations with cyber security)",
+              "score": 0
+            },
+            {
+              "answer": "Scottish Business Resilience Centre – Incident Response Helpline",
+              "score": 0
+            },
+            {
+              "answer": "National Cyber Security Centre (NCSC – part of GCHQ) (www.ncsc.gov.uk)",
+              "score": 0
+            },
+            {
+              "answer": "Get Safe Online (www.getsafeonline.org)",
+              "score": 0
+            },
+            {
+              "answer": "Trading Standards Scotland (https://www.tsscot.co.uk)",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "title": "Have you made use of the following cyber security resources available? (tick all that apply)",
+          "value": "q2",
+          "type": "select-many",
+          "metric": "Signposting",
+          "options": [
+            {
+              "answer": "SCVO Training sessions",
+              "score": 0
+            },
+            {
+              "answer": "SCVO cyber related updates and communications via social media",
+              "score": 0
+            },
+            {
+              "answer": "Scottish Government Cyber Resilience Unit COVID-19 Weekly bulletin",
+              "score": 0
+            },
+            {
+              "answer": "Scottish Government Cyber Resilience Cyber Toolkit",
+              "score": 0
+            },
+            {
+              "answer": "Scottish Government Cyber Resilience Unit Staff Training Guide",
+              "score": 0
+            },
+            {
+              "answer": "Access to the third sector Cyber Catalyst network members advice",
+              "score": 0
+            },
+            {
+              "answer": "NCSC Small Charity Guide",
+              "score": 0
+            },
+            {
+              "answer": "NCSC 10 steps to Cyber Security",
+              "score": 0
+            },
+            {
+              "answer": "NCSC Board Toolkit",
+              "score": 0
+            },
+            {
+              "answer": "NCSC Top tips for staff e-learning platform",
+              "score": 0
+            },
+            {
+              "answer": "NCSC Response and Recovery Guide",
+              "score": 0
+            },
+            {
+              "answer": "NCSC Exercise in a Box scenario training",
+              "score": 0
+            }
+          ]
+        },
+        {
+          "title": "What would be your preferred method of accessing training? (tick all that apply)",
+          "value": "q3",
+          "type": "select-many",
+          "metric": "Training",
+          "options": [
+            {
+              "answer": "Online via an e-learning portal with a recorded training package",
+              "score": 0
+            },
+            {
+              "answer": "Virtual via a webinar or presentation",
+              "score": 0
+            },
+            {
+              "answer": "Face to face in a group environment",
+              "score": 0
+            },
+            {
+              "answer": "Via a session at your organisations annual conference",
+              "score": 0
+            },
+            {
+              "answer": "One to one tutoring to provide advice and triage services  ",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "next_section": "contact-details"
+    }
+  },
   "lifeskills": {
     "sf_type": "Essential_Digital_Skills_for_life",
     "foundation": {
@@ -2660,14 +3544,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -2696,14 +3580,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -2732,14 +3616,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -2768,14 +3652,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -2804,14 +3688,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -2855,14 +3739,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -2895,14 +3779,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -2935,14 +3819,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -2975,14 +3859,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3015,14 +3899,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3066,14 +3950,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3106,14 +3990,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3146,14 +4030,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3186,14 +4070,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3226,14 +4110,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3277,14 +4161,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3317,14 +4201,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3357,14 +4241,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3397,14 +4281,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3437,14 +4321,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3487,14 +4371,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3527,14 +4411,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3567,14 +4451,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3607,14 +4491,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3647,14 +4531,14 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
                 "score": 1
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "value": "I would like to learn more",
@@ -3803,7 +4687,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3813,7 +4697,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3846,7 +4730,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3856,7 +4740,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3889,7 +4773,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3899,7 +4783,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3932,7 +4816,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3942,7 +4826,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3975,7 +4859,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -3985,7 +4869,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4029,7 +4913,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4039,7 +4923,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4072,7 +4956,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4082,7 +4966,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4115,7 +4999,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4125,7 +5009,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4158,7 +5042,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4168,7 +5052,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4201,7 +5085,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4211,7 +5095,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4255,7 +5139,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4265,7 +5149,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4298,7 +5182,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4308,7 +5192,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4341,7 +5225,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4351,7 +5235,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4384,7 +5268,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4394,7 +5278,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4427,7 +5311,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4437,7 +5321,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4481,7 +5365,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4491,7 +5375,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4524,7 +5408,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4534,7 +5418,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4567,7 +5451,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4577,7 +5461,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4610,7 +5494,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4620,7 +5504,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4653,7 +5537,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4663,7 +5547,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4706,7 +5590,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4716,7 +5600,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4749,7 +5633,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4759,7 +5643,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4792,7 +5676,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4802,7 +5686,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4835,7 +5719,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4845,7 +5729,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4878,7 +5762,7 @@
             }
           ],
           "supplementary-options": {
-            "I can partially do this" : [
+            "I can partially do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1
@@ -4888,7 +5772,7 @@
                 "score": 0
               }
             ],
-            "I can't do this" : [
+            "I can't do this": [
               {
                 "answer": "I would like to learn more",
                 "score": 1

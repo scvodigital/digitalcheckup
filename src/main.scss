@@ -1307,11 +1307,55 @@ footer.mdc-layout__footer {
   }
 }
 
+@media screen and (min-width: $mobile-landscape-breakpoint) {
+  .answer-block-grid {
+    margin-bottom: $unit;
+    .answer-options {
+      margin-left: 410px;
+      font-weight: bold;
+      .answer-cell {
+        width: 100px;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    .answer {
+      float: left;
+      display: inline-flex;
+      min-height: 40px;
+      margin: 0 0 $unit;
+      align-items: center;
+      clear: both;
+      width: 410px;
+    }
+    .flex-answer-block {
+      float: left;
+      .cell {
+        width: 100px;
+        text-align: center;
+        .mdc-form-field {
+          margin: 0;
+          .mdc-radio {
+            display: inline-block;
+            margin: 0 auto;
+          }
+          label {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $mobile-landscape-breakpoint) {
   .mdc-typography--headline2 {
     font-size: 2.5rem;
     line-height: 2.5rem;
     margin-top: $unit/2;
+  }
+  .answer-block-grid .answer-options {
+    display: none;
   }
 }
 @media screen and (max-width: $mobile-breakpoint) {
