@@ -1030,6 +1030,10 @@
           "value": "q3",
           "type": "select-many",
           "metric": "Cyber resilience",
+          "show-when": {
+            "field": "answers-section-5-q2",
+            "value": "Yes"
+          },
           "options": [
             {
               "answer": "ISO27001",

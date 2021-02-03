@@ -46,7 +46,7 @@
           * required information
         </div>
         {{#each questions ~}}
-        <div class="question-block">
+        <div class="question-block" {{#if show-when}}data-show-field="{{show-when.field}}" data-show-value="{{show-when.value}}"{{/if}}>
           <div class="question">
             {{#if title ~}}
             <h2 class="mdc-typography--headline5 question-title">{{{title}}}</h2>
@@ -98,58 +98,31 @@
                 </div>
               {{/each}}
             </div>
-
-
-            {{!-- <table class="answer-block">
-              <tr>
-                <td></td>
-                {{#each answer-options}}
-                  <td style="width: 150px; text-align:center">
-                    <strong>{{answer}}</strong>
-                  </td>
-                {{/each}}
-              </tr>
-              {{#each options}}
-              <tr>
-                <td>
-                  {{answer}}
-                </td>
-                {{#each ../answer-options}}
-                  <td>
-                    <div class="checkbox-center">
-                    {{> components_radio_button label=" " id=(slugify (concat ../answer "-" answer)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=(default value answer) required="true"}}
-                    </div>
-                  </td>
-                {{/each}}
-              </tr>
-              {{/each}}
-            </table> --}}
           {{/if}}
           {{#if (compare type "select-dropdown") ~}}
-                         <ul class="answer-block">
+            <ul class="answer-block">
                <li >
                 <select class="supplements" {{#if supplements}}data-supplementor="{{slugify value}}"{{/if}} id="{{concat 'answers-' ../../section '-' (slugify value)}}" name="{{concat 'answers-' ../../section '-' value}}">
                   <option disabled selected value> -- select an option -- </option>
                   {{#each options}}
-                  <option  data-supplement-target="{{answer}}" value="{{default value answer}}">{{answer}}</option>
+                    <option  data-supplement-target="{{answer}}" value="{{default value answer}}">{{answer}}</option>
                   {{/each}}
                 </select>
               </li>
             {{!-- Supplementary options --}}
               {{#if supplementary-options}}
-              <li class="hidden" data-container-of="{{slugify value}}">
-              {{#each supplementary-options}}
-                <select class="hidden" data-supplement="{{@key}}" data-supplement-of="{{slugify ../value}}"
-                name="{{concat 'answers-' ../../../section '-' ../value '-supplement'}}">
-                  <option disabled selected value> -- select an option -- </option>
-                {{#each this}}
-                  <option value="{{default value answer}}">{{answer}}</option>
-                {{/each}}
-                </select>
-              {{/each}}
-              </li>
+                <li class="hidden" data-container-of="{{slugify value}}">
+                  {{#each supplementary-options}}
+                    <select class="hidden" data-supplement="{{@key}}" data-supplement-of="{{slugify ../value}}" name="{{concat 'answers-' ../../../section '-' ../value '-supplement'}}">
+                      <option disabled selected value> -- select an option -- </option>
+                      {{#each this}}
+                        <option value="{{default value answer}}">{{answer}}</option>
+                      {{/each}}
+                    </select>
+                  {{/each}}
+                </li>
               {{/if}}
-              </ul>
+            </ul>
           {{/if}}
 
           {{#compare type "freetext" ~}}
@@ -181,6 +154,29 @@
         function hideOptions(question) {
           $(".option-eds-"+question).addClass('hidden').find('.mdc-form-field').removeClass('checked');
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          $('form.checkup-section').on('change', showHideOptional);
+          showHideOptional();
+
+          function showHideOptional() {
+            var optionalQuestionBlocks = $('.question-block[data-show-field]');
+            optionalQuestionBlocks.each(function(i, questionBlock) {
+              var data = $(questionBlock).data();
+
+              var checkValues = $('[name="' + data.showField + '"]:checked')
+                .map(function(i, field) { return $(field).val(); })
+                .toArray();
+
+              if (checkValues.indexOf(data.showValue) > -1) {
+                $(questionBlock).removeClass('hidden');
+              } else {
+                $(questionBlock).addClass('hidden');
+              }
+            });
+          }
+        });
+
         </script>
         <div class="cta b-padding-full">
           <button type="submit" class="mdc-button mdc-button--raised">Next section</button>
