@@ -32,7 +32,7 @@
     <div class="container-content">
       {{> checkup_progress progress=100}}
 
-      {{#ifAny @root.data.rootResponse.percentage_total @root.request.params.query.s1 ~}}
+      {{#ifAny @root.data.rootResponse.percentage_total (compare @root.data.rootResponse.percentage_total "===" 0) @root.request.params.query.s1 ~}}
       <div class="question-block mdc-elevation--z3">
         <div class="results-block">
           <div class="mdc-layout-grid t-margin-full">
@@ -174,7 +174,7 @@
             </div>
           </div>
 
-          {{#ifAny @root.data.rootResponse.percentage_total (ifAll @root.request.params.query.s1 @root.request.params.query.s2 @root.request.params.query.s3 @root.request.params.query.s4) ~}}
+          {{#ifAny @root.data.rootResponse.percentage_total (compare @root.data.rootResponse.percentage_total "===" 0) (ifAll @root.request.params.query.s1 @root.request.params.query.s2 @root.request.params.query.s3 @root.request.params.query.s4) ~}}
             <div class="mdc-layout-grid">
               <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
