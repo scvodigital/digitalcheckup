@@ -144,14 +144,14 @@
     "type": "cyber",
     "title": "Cyber Checkup",
     "description": "",
-    "sections_heading": "[Words here]",
+    "sections_heading": "Categories",
     "sections": [
       {
         "title": "Context",
         "class": "section-1",
         "number": 1,
         "shape": "icon",
-        "color": "pink",
+        "color": "purple",
         "icon": "fa-question-circle"
       },
       {
@@ -167,7 +167,7 @@
         "class": "section-3",
         "number": 3,
         "shape": "icon",
-        "color": "pink",
+        "color": "green",
         "icon": "fa-receipt"
       },
       {
@@ -175,7 +175,7 @@
         "class": "section-4",
         "number": 4,
         "shape": "icon",
-        "color": "pink",
+        "color": "blue",
         "icon": "fa-shield-alt"
       },
       {
@@ -183,7 +183,7 @@
         "class": "section-5",
         "number": 4,
         "shape": "icon",
-        "color": "pink",
+        "color": "orange",
         "icon": "fa-graduation-cap"
       },
       {
@@ -199,7 +199,7 @@
         "class": "section-7",
         "number": 4,
         "shape": "icon",
-        "color": "pink",
+        "color": "green",
         "icon": "fa-map-signs"
       }
     ],

@@ -326,6 +326,10 @@ figure,
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
+  .mdc-typography--body2 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }
 
 .mdc-button,
@@ -361,6 +365,9 @@ header {
   .container-fluid .mdc-top-app-bar__section--align-end {
     padding-right: 0 !important;
   }
+  .mdc-top-app-bar__section {
+    align-items: normal;
+  }
   .mdc-top-app-bar__section--logo {
     font-weight: 800;
     a.site-brand {
@@ -376,7 +383,7 @@ header {
       }
       h1 {
         font-size: 2.95rem;
-        line-height: 1.55;
+        line-height: 1.2;
         font-family: "Asap";
         font-weight: 800;
         font-feature-settings: "ss01" on;
@@ -800,6 +807,7 @@ a.btn.btn-outline:hover,
   }
   .mdc-typography--headline3 {
     font-size: 2.6rem;
+    line-height: 2.75rem;
   }
   .mdc-typography--headline5 {
     font-weight: 400;
@@ -1349,6 +1357,12 @@ footer.mdc-layout__footer {
 }
 
 @media screen and (max-width: $mobile-landscape-breakpoint) {
+  .container, .container-fluid {
+    padding: 0 1.2rem;
+  }
+  a.btn:link, a.btn:visited, .btn {
+    font-size: 2.1rem;
+  }
   .mdc-typography--headline2 {
     font-size: 2.5rem;
     line-height: 2.5rem;
@@ -1357,8 +1371,18 @@ footer.mdc-layout__footer {
   .answer-block-grid .answer-options {
     display: none;
   }
+  .container-home .mdc-typography--body2 {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+  }
 }
 @media screen and (max-width: $mobile-breakpoint) {
+  .container, .container-fluid {
+    padding: 0 0.6rem;
+  }
+  a.btn:link, a.btn:visited, .btn {
+    font-size: 1.5rem;
+  }
   .mdc-typography--headline2 {
     font-size: 2rem;
     line-height: 2rem;
@@ -1373,6 +1397,10 @@ footer.mdc-layout__footer {
   }
   .cta {
     text-align: center;
+  }
+  .container-home .mdc-typography--body2 {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
   }
 }
 

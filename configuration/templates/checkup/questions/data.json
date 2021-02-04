@@ -2459,7 +2459,7 @@
       "number": 1,
       "name": "Section 1",
       "title": "Context",
-      "description": "This health check will help you gain an overview of the cyber security position of your organisation and to highlight the actions being taken on cyber resilience within your organisation.<br />By cyber security, we mean the strategies and technologies that you have in place to ensure your networks, devices, data and finances are protected from damage, attack or unauthorised access. Cyber risks include computer viruses and malware, criminal activity (fraud and extortion), loss of data by accident or a deliberate act.",
+      "description": "",
       "icon": "fa-question-circle",
       "color": "purple",
       "progress": 11,
@@ -2892,7 +2892,7 @@
       "title": "Preventing and responding to cyber attacks",
       "description": "",
       "icon": "fa-shield-alt",
-      "color": "green",
+      "color": "blue",
       "progress": 44,
       "questions": [
         {
@@ -3087,7 +3087,7 @@
       "title": "Cyber attacks and breaches",
       "description": "Choose the phrase which best describes your approach to the following topics…",
       "icon": "fa-axe-battle",
-      "color": "orange",
+      "color": "pink",
       "progress": 66,
       "questions": [
         {
@@ -3210,7 +3210,7 @@
       "title": "Signposting",
       "description": "Choose the phrase which best describes your approach to the following topics…",
       "icon": "fa-map-signs",
-      "color": "orange",
+      "color": "green",
       "progress": 77,
       "questions": [
         {
