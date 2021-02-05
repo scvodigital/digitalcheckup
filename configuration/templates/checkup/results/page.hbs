@@ -365,7 +365,7 @@
   </div>
 
   {{#unless @root.request.params.query.slp}}
-  {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
+  {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic @root.data.supplimentaryResponses.resources_relevant ~}}
     {{#with (getProperty @root.data.results.sections (default @root.data.rootResponse.topic @root.request.params.query.topic)) ~}}
     {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
       <div class="checkup-topic-header checkup-topic-header-{{default @root.data.rootResponse.topic @root.request.params.query.topic}}" id="resources">
@@ -411,40 +411,49 @@
       {{/compare ~}}
     {{/with ~}}
 
-    {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
-      <div class="container-fluid v-margin-full v-padding-full">
-        <div class="container-content">
-          <div class="mdc-layout-grid equal-height t-padding-full">
-            <div class="mdc-layout-grid__inner">
-              {{#each @root.data.supplimentaryResponses.resources_focus.hits.hits ~}}
-                {{#with _source ~}}
-                  {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
-                {{/with ~}}
-              {{/each ~}}
+    {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic}}
+      {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
+        <div class="container-fluid v-margin-full v-padding-full">
+          <div class="container-content">
+            <div class="mdc-layout-grid equal-height t-padding-full">
+              <div class="mdc-layout-grid__inner">
+                {{#each @root.data.supplimentaryResponses.resources_focus.hits.hits ~}}
+                  {{#with _source ~}}
+                    {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
+                  {{/with ~}}
+                {{/each ~}}
+              </div>
             </div>
+            {{#compare @root.data.supplimentaryResponses.resources_relevant.hits.total 0 ~}}
+            <div class="mdc-typography--body1 t-margin-full">
+              <a href="/checkup/resources">Resources for other topic areas</a>
+            </div>
+            {{/compare ~}}
           </div>
-          {{#compare @root.data.supplimentaryResponses.resources_relevant.hits.total 0 ~}}
-          <div class="mdc-typography--body1 t-margin-full">
-            <a href="/checkup/resources">Resources for other topic areas</a>
-          </div>
-          {{/compare ~}}
         </div>
-      </div>
-    {{/compare ~}}
+      {{/compare ~}}
+    {{/ifAny}}
 
     {{#compare @root.data.supplimentaryResponses.resources_relevant.hits.total ">" 0 ~}}
     <div class="checkup-topic-header t-margin-full" id="resources">
       <div class="container-fluid">
         <div class="container-content">
-          <div class="mdc-typography--body2">Relevant</div>
-          <div class="mdc-typography--body1">
-            Based on your checkup result, here are more resources that may be of interest
-          </div>
+          {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic}}
+            <div class="mdc-typography--body2">Relevant</div>
+            <div class="mdc-typography--body1">
+              Based on your checkup result, here are more resources that may be of interest
+            </div>
+          {{else}}
+            <div class="mdc-typography--body2">Resources</div>
+            <div class="mdc-typography--body1">
+              Based on your checkup result, here are some resources that may be of interest
+            </div>
+          {{/ifAny}}
         </div>
       </div>
     </div>
     <div class="container-fluid v-margin-full v-padding-full">
-      <div class="container-content">
+      <div class="container-content site-default">
         <div class="mdc-layout-grid equal-height t-padding-full">
           <div class="mdc-layout-grid__inner">
             {{#each @root.data.supplimentaryResponses.resources_relevant.hits.hits ~}}
