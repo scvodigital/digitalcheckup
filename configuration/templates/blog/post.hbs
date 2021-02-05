@@ -1,8 +1,15 @@
+<div class="checkup-section-header header-primary">
+  <div class="container-fluid">
+    <div class="container-content v-padding-full">
+      <h1 class="mdc-typography--headline3 v-padding-full">Blog</h1>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
   <div class="container-content post">
     {{#each @root.data.primaryResponse.hits.hits ~}}
     {{#with _source ~}}
-    <h1 class="mdc-typography--headline3">{{{title}}}</h1>
+    <h2 class="mdc-typography--headline3">{{{title}}}</h2>
     <div class="mdc-typography--body2 b-margin">
       By {{{author_name_full}}} {{#ifAll author_job_title author_organisation_name}}({{author_job_title}}, {{author_organisation_name}}){{/ifAll}} on {{momentFormat (moment publish_on "x") "Do MMM YYYY"}}
     </div>

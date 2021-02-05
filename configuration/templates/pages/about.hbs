@@ -1,7 +1,13 @@
 {{#compare @root.data.currentSite.type "organisation"}}
+  <div class="checkup-section-header header-primary">
+    <div class="container-fluid">
+      <div class="container-content v-padding-full">
+        <h1 class="mdc-typography--headline3 v-padding-full">About</h1>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid">
     <div class="container-content">
-      <h1 class="mdc-typography--headline3">About</h1>
       <p class="mdc-typography--body1">
         Many charities would like to use digital tools to improve their capability, but don't know where to start. Our Digital Check-up will help you to assess your organisation’s current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}} of a comparable size. The check up will help you to identify your strengths and the gaps your organisation is facing in the following areas:
       </p>
@@ -29,24 +35,31 @@
   </div>
 {{else}}
   {{#compare @root.data.currentSite.name "skills"}}
-  <div class="container-fluid">
-    <div class="container-content">
-      <p class="mdc-typography--body1">
-        The internet plays an essential part in our daily lives. We use it to communicate, to work, and to learn.
-      </p>
-      <p class="mdc-typography--body1">
-        Now more than ever, it is important we have the skills needed to navigate the online world, and to feel safe and confident whilst doing it.
-      </p>
-      <p class="mdc-typography--body1">
-        To help you measure your digital foundation, life and workplace skills, SCVO have developed the Essential Digital Skills Check-up.
-      </p>
-      <p class="mdc-typography--body1">
-        Based on the <a href="https://www.gov.uk/government/publications/essential-digital-skills-framework">Essential Digital Skills Framework</a>, it contains three simple checklists to help you measure where your strengths are and to identify the areas where you may need more support.
-      </p>
-      <p class="mdc-typography--body1">
-        If you would like to speak to us or have any questions, please email us at <a href="mailto:digital@scvo.scot">digital@scvo.scot</a>.
-      </p>
+    <div class="checkup-section-header header-primary">
+      <div class="container-fluid">
+        <div class="container-content v-padding-full">
+          <h1 class="mdc-typography--headline3 v-padding-full">About</h1>
+        </div>
+      </div>
     </div>
-  </div>
+    <div class="container-fluid">
+      <div class="container-content">
+        <p class="mdc-typography--body1">
+          The internet plays an essential part in our daily lives. We use it to communicate, to work, and to learn.
+        </p>
+        <p class="mdc-typography--body1">
+          Now more than ever, it is important we have the skills needed to navigate the online world, and to feel safe and confident whilst doing it.
+        </p>
+        <p class="mdc-typography--body1">
+          To help you measure your digital foundation, life and workplace skills, SCVO have developed the Essential Digital Skills Check-up.
+        </p>
+        <p class="mdc-typography--body1">
+          Based on the <a href="https://www.gov.uk/government/publications/essential-digital-skills-framework">Essential Digital Skills Framework</a>, it contains three simple checklists to help you measure where your strengths are and to identify the areas where you may need more support.
+        </p>
+        <p class="mdc-typography--body1">
+          If you would like to speak to us or have any questions, please email us at <a href="mailto:digital@scvo.scot">digital@scvo.scot</a>.
+        </p>
+      </div>
+    </div>
   {{/compare}}
 {{/compare}}
