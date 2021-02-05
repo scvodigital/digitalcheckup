@@ -1,6 +1,7 @@
 {{~#*inline "to_percentage"~}}
   {{round (multiply (divide (subtract score lower) (subtract upper lower)) 100) "up"}}
 {{~/inline~}}
+
 {{~#*inline "get_average"~}}
   {{~#compare income_band "0"~}}
     {{#if (getProperty dataAverages aggregation)}}
@@ -10,13 +11,8 @@
     {{/if}}
   {{else}}
     {{#compare (length dataAverages.grouped_by_income_band.buckets) ">" 0}}
-      {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
-        aggregation) ~}}
-        {{round
-          (getProperty
-            (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band))
-            aggregation
-          ) "up"}}
+      {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band)) aggregation) ~}}
+        {{round (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band)) aggregation) "up"}}
       {{else}}
         0
       {{/if ~}}
@@ -25,7 +21,23 @@
     {{/compare ~}}
   {{~/compare~}}
 {{~/inline~}}
-{{#withExtend this
+
+{{~#*inline "section"~}}
+  {{#json key=key}}
+    {{{json key="respondent" value=(lookup rootResponse percentageKey)}}},
+    {{#each additionalResponses}}
+      {{{json key=(concat "shared_" (add @index 1) "_percentage") value=(default (lookup _source percentageKey) 0)}}},
+    {{/each}}
+    {{{json key="income_band" value=(if (compare @root.data.additionalResponses.hits.total ">" 3) 0 else=rootResponse.income_band)}}},
+    {{#json key="average" type="number"}}
+      {{>get_average aggregation=aggregation income_band=(if (compare @root.data.additionalResponses.hits.total ">" 3) 0 else=rootResponse.income_band)}}
+    {{/json}},
+    {{{json key="title" value=title}}},
+    {{{json key="icon" value=icon}}}
+  {{/json}}
+{{~/inline~}}
+
+{{~#withExtend this
   dataAverages=@root.data.averages.aggregations
   query=@root.request.params.query
   rootResponse=@root.data.rootResponse
@@ -35,27 +47,11 @@
   {
     "overall": {
       "respondent": {{rootResponse.percentage_total}},
-      {{#if additionalResponses.[0]}}"shared_1_name": {{{safeStringify additionalResponses.[0]._source.name}}},{{/if}}
-      {{#if additionalResponses.[0]}}"shared_1_date": {{{safeStringify additionalResponses.[0]._source.date_last_modified}}},{{/if}}
-      {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_total 0}},{{/if}}
-      {{#if additionalResponses.[1]}}"shared_2_name": {{{safeStringify additionalResponses.[1]._source.name}}},{{/if}}
-      {{#if additionalResponses.[1]}}"shared_2_date": {{{safeStringify additionalResponses.[1]._source.date_last_modified}}},{{/if}}
-      {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_total 0}},{{/if}}
-      {{#if additionalResponses.[2]}}"shared_3_name": {{{safeStringify additionalResponses.[2]._source.name}}},{{/if}}
-      {{#if additionalResponses.[2]}}"shared_3_date": {{{safeStringify additionalResponses.[2]._source.date_last_modified}}},{{/if}}
-      {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_total 0}},{{/if}}
-      {{#if additionalResponses.[3]}}"shared_4_name": {{{safeStringify additionalResponses.[3]._source.name}}},{{/if}}
-      {{#if additionalResponses.[3]}}"shared_4_date": {{{safeStringify additionalResponses.[3]._source.date_last_modified}}},{{/if}}
-      {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_total 0}},{{/if}}
-      {{#if additionalResponses.[4]}}"shared_5_name": {{{safeStringify additionalResponses.[4]._source.name}}},{{/if}}
-      {{#if additionalResponses.[4]}}"shared_5_date": {{{safeStringify additionalResponses.[4]._source.date_last_modified}}},{{/if}}
-      {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_total 0}},{{/if}}
-      {{#if additionalResponses.[5]}}"shared_6_name": {{{safeStringify additionalResponses.[5]._source.name}}},{{/if}}
-      {{#if additionalResponses.[5]}}"shared_6_date": {{{safeStringify additionalResponses.[5]._source.date_last_modified}}},{{/if}}
-      {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_total 0}},{{/if}}
-      {{#if additionalResponses.[6]}}"shared_7_name": {{{safeStringify additionalResponses.[6]._source.name}}},{{/if}}
-      {{#if additionalResponses.[6]}}"shared_7_date": {{{safeStringify additionalResponses.[6]._source.date_last_modified}}},{{/if}}
-      {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_total 0}},{{/if}}
+      {{#each additionalResponses}}
+        {{{json key=(concat "shared_" (add @index 1) "_name") value=_source.name}}},
+        {{{json key=(concat "shared_" (add @index 1) "_date") value=_source.date_last_modified}}},
+        {{{json key=(concat "shared_" (add @index 1) "_percentage") value=(default _source.percentage_total 0)}}},
+      {{/each}}
       {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
       "average": {{>get_average aggregation="total_stats.avg" income_band="0"}}
       {{else}}
@@ -63,93 +59,21 @@
       {{/compare ~}}
     },
     "sections": {
-      "leadership": {
-        "respondent": {{rootResponse.percentage_leadership_culture_and_skills}},
-        {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
-        {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
-        {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
-        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
-        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
-        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
-        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_leadership_culture_and_skills 0}},{{/if}}
-        {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
-        "average": {{>get_average aggregation="leadership_culture_and_skills_stats.avg" income_band="0"}},
-        {{else}}
-        "average": {{>get_average aggregation="leadership_culture_and_skills_stats.avg" income_band=rootResponse.income_band}},
+      {{#compare @root.data.currentSite.name "cyber" ~}}
+        {{>section this key="context" percentageKey="percentage_context" aggregation="context_stats.avg" title="Context" icon="context"}},
+        {{>section this key="data" percentageKey="percentage_data" aggregation="context_stats.avg" title="Data" icon="data"}},
+        {{>section this key="policy" percentageKey="percentage_policy" aggregation="context_stats.avg" title="Policy" icon="policy"}},
+        {{>section this key="preventing_attacks" percentageKey="percentage_preventing_attacks" aggregation="context_stats.avg" title="Preventing attacks" icon="preventing_attacks"}},
+        {{>section this key="training" percentageKey="percentage_training" aggregation="context_stats.avg" title="Training" icon="training"}}
+      {{else}}
+        {{>section this key="leadership" percentageKey="percentage_leadership_culture_and_skills" aggregation="leadership_culture_and_skills_stats.avg" title="Leadership, culture and skills" icon="leadership"}},
+        {{>section this key="tools" percentageKey="percentage_tools_and_equipment" aggregation="tools_and_equipment_stats.avg" title="Tools and equipment" icon="tools"}},
+        {{>section this key="data" percentageKey="percentage_content_marketing_and_data" aggregation="content_marketing_and_data_stats.avg" title="Content, marketing and data" icon="leadership"}},
+        {{>section this key="cyber" percentageKey="percentage_cyber_resilience" aggregation="cyber_resilience_stats.avg" title="Cyber resilience" icon="resilience"}}
+        {{#compare @root.data.currentSite.name "housing" ~}},
+          {{>section this key="tec" percentageKey="percentage_tec" aggregation="tec_stats.avg" title="Technology Enabled Care" icon="tools"}}
         {{/compare ~}}
-        "title": "Leadership, culture and skills",
-        "icon": "leadership"
-      },
-      "tools": {
-        "respondent": {{rootResponse.percentage_tools_and_equipment}},
-        {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_tools_and_equipment 0}},{{/if}}
-        {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_tools_and_equipment 0}},{{/if}}
-        {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_tools_and_equipment 0}},{{/if}}
-        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_tools_and_equipment 0}},{{/if}}
-        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_tools_and_equipment 0}},{{/if}}
-        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_tools_and_equipment 0}},{{/if}}
-        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_tools_and_equipment 0}},{{/if}}
-        {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
-        "average": {{>get_average aggregation="tools_and_equipment_stats.avg" income_band="0"}},
-        {{else}}
-        "average": {{>get_average aggregation="tools_and_equipment_stats.avg" income_band=rootResponse.income_band}},
-        {{/compare ~}}
-        "title": "Tools and equipment",
-        "icon": "tools"
-      },
-      "data": {
-        "respondent": {{rootResponse.percentage_content_marketing_and_data}},
-        {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_content_marketing_and_data 0}},{{/if}}
-        {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_content_marketing_and_data 0}},{{/if}}
-        {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_content_marketing_and_data 0}},{{/if}}
-        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_content_marketing_and_data 0}},{{/if}}
-        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_content_marketing_and_data 0}},{{/if}}
-        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_content_marketing_and_data 0}},{{/if}}
-        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_content_marketing_and_data 0}},{{/if}}
-        {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
-        "average": {{>get_average aggregation="content_marketing_and_data_stats.avg" income_band="0"}},
-        {{else}}
-        "average": {{>get_average aggregation="content_marketing_and_data_stats.avg" income_band=rootResponse.income_band}},
-        {{/compare ~}}
-        "title": "Content, marketing and data",
-        "icon": "leadership"
-      },
-      "cyber": {
-        "respondent": {{rootResponse.percentage_cyber_resilience}},
-        {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_cyber_resilience 0}},{{/if}}
-        {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_cyber_resilience 0}},{{/if}}
-        {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_cyber_resilience 0}},{{/if}}
-        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_cyber_resilience 0}},{{/if}}
-        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_cyber_resilience 0}},{{/if}}
-        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_cyber_resilience 0}},{{/if}}
-        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_cyber_resilience 0}},{{/if}}
-        {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
-        "average": {{>get_average aggregation="cyber_resilience_stats.avg" income_band="0"}},
-        {{else}}
-        "average": {{>get_average aggregation="cyber_resilience_stats.avg" income_band=rootResponse.income_band}},
-        {{/compare ~}}
-        "title": "Cyber resilience",
-        "icon": "resilience"
-      }
-      {{#compare @root.data.currentSite.name "housing" ~}},
-      "tec": {
-        "respondent": {{rootResponse.percentage_tec}},
-        {{#if additionalResponses.[0]}}"shared_1_percentage": {{default additionalResponses.[0]._source.percentage_tec 0}},{{/if}}
-        {{#if additionalResponses.[1]}}"shared_2_percentage": {{default additionalResponses.[1]._source.percentage_tec 0 0}},{{/if}}
-        {{#if additionalResponses.[2]}}"shared_3_percentage": {{default additionalResponses.[2]._source.percentage_tec 0}},{{/if}}
-        {{#if additionalResponses.[3]}}"shared_4_percentage": {{default additionalResponses.[3]._source.percentage_tec 0}},{{/if}}
-        {{#if additionalResponses.[4]}}"shared_5_percentage": {{default additionalResponses.[4]._source.percentage_tec 0}},{{/if}}
-        {{#if additionalResponses.[5]}}"shared_6_percentage": {{default additionalResponses.[5]._source.percentage_tec 0}},{{/if}}
-        {{#if additionalResponses.[6]}}"shared_7_percentage": {{default additionalResponses.[6]._source.percentage_tec 0}},{{/if}}
-        {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
-        "average": {{>get_average aggregation="tec_stats.avg" income_band="0"}},
-        {{else}}
-        "average": {{>get_average aggregation="tec_stats.avg" income_band=rootResponse.income_band}},
-        {{/compare ~}}
-        "title": "Technology Enabled Care",
-        "icon": "tools"
-      }
-      {{/compare ~}}
+      {{/compare}}
     },
     "totalRespondents": {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count")}}{{getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count"}}{{else}}0{{/if}},
     {{#each @root.context.metaData.areas ~}}

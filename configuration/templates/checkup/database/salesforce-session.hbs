@@ -23,7 +23,7 @@
     {{#each (groupBy @root.data.metrics "metric")}}
       {{#json type="object"}}
         {{{json key="metric" value=(concat @key)}}},
-        {{{json key="percentageScore" value=(maths "ceil((sum(scores) - sum(minScores)) / (sum(maxScores) - sum(minScores)) * 100)" scores=(pluck this "score") maxScores=(pluck this "maxScore") minScores=(pluck this "minScore"))}}}
+        {{{json key="percentageScore" value=(default (maths "ceil((sum(scores) - sum(minScores)) / (sum(maxScores) - sum(minScores)) * 100)" scores=(pluck this "score") maxScores=(pluck this "maxScore") minScores=(pluck this "minScore")) 0)}}}
       {{/json}},
     {{/each}}
   {{/json}},
@@ -34,13 +34,13 @@
         {{#compare type 'select-grid'}}
           {{#each options}}
             {{#json type="object"}}
-              {{{json key="question" value=(concat (add @../../index 1) "." (add @../index 1) ": " ../title ':' answer)}}},
+              {{{json key="question" value=(truncate (concat (add @../../index 1) "." (add @../index 1) ": " ../title ':' answer) 250)}}},
               {{{json key="answer" value=(concat (default (lookup @root.request.body (concat 'answers-' @../../key '-' ../value '-' (slugify answer))) ""))}}}
             {{/json}},
           {{/each}}
         {{else}}
         {{#json type="object"}}
-          {{{json key="question" value=(concat (add @../index 1) "." (add @index 1) ": " title)}}},
+          {{{json key="question" value=(truncate (concat (add @../index 1) "." (add @index 1) ": " title) 250)}}},
           {{#if (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement'))}}
             {{{json key="answer" value=(concat (default (lookup @root.request.body (concat 'answers-' @../key '-' value)) "") ';' (join (arrayify (lookup @root.request.body (concat 'answers-' @../key '-' value '-supplement'))) ';')) }}}
           {{else}}

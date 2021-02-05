@@ -141,7 +141,7 @@
   },
   "cyber": {
     "name": "cyber",
-    "type": "cyber",
+    "type": "organisation",
     "title": "Cyber Checkup",
     "description": "",
     "sections_heading": "Categories",
