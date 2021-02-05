@@ -414,7 +414,7 @@
     {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic}}
       {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
         <div class="container-fluid v-margin-full v-padding-full">
-          <div class="container-content site-default">
+          <div class="container-content brand-scheme-legacy">
             <div class="mdc-layout-grid equal-height t-padding-full">
               <div class="mdc-layout-grid__inner">
                 {{#each @root.data.supplimentaryResponses.resources_focus.hits.hits ~}}
@@ -453,7 +453,7 @@
       </div>
     </div>
     <div class="container-fluid v-margin-full v-padding-full">
-      <div class="container-content site-default">
+      <div class="container-content brand-scheme-legacy">
         <div class="mdc-layout-grid equal-height t-padding-full">
           <div class="mdc-layout-grid__inner">
             {{#each @root.data.supplimentaryResponses.resources_relevant.hits.hits ~}}
