@@ -90,10 +90,10 @@
                 {{/each}}
               </div>
               {{#each options}}
-                <div class="answer">
+                <div class="answer{{#if (modulo @index 2 1)}}{{else}} alt-row-bg{{/if}}">
                   {{answer}}
                 </div>
-                <div class="flex-answer-block">
+                <div class="flex-answer-block{{#if (modulo @index 2 1)}}{{else}} alt-row-bg{{/if}}">
                   {{#each ../answer-options}}
                     <div class="cell">
                       {{> components_radio_button label=answer id=(slugify (concat ../answer "-" answer)) name=(concat "answers-" ../../../../section "-" ../../value "-" (slugify ../answer)) value=(default value answer) required="true"}}

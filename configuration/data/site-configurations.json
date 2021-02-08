@@ -316,14 +316,6 @@
         "shape": "icon",
         "color": "pink",
         "icon": "fa-axe-battle"
-      },
-      {
-        "title": "Signposting",
-        "class": "section-7",
-        "number": 4,
-        "shape": "icon",
-        "color": "green",
-        "icon": "fa-map-signs"
       }
     ],
     "metrics": [
