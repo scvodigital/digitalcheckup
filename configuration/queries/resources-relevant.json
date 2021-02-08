@@ -8,7 +8,7 @@
     "post_tags_slug"
   ],
   "query": {
-    {{#compare @root.data.currentSite.type "organisation"}}
+    {{#ifAll (compare @root.data.currentSite.type "organisation") (compare @root.data.currentSite.name "!==" "cyber")}}
     "function_score": {
       "query": {
         "bool": {
@@ -148,6 +148,6 @@
     }
     {{else}}
     "match_none": {}
-    {{/compare}}
+    {{/ifAll}}
   }
 }

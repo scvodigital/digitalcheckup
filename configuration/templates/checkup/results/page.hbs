@@ -70,7 +70,9 @@
                     {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
                     across
                     {{@root.data.results.where}}
-                    {{#compare @root.data.currentSite.name "housing"}}of similar size{{else}}in the same income bracket{{/compare}})
+                    {{#compare @root.data.results.incomeBand "!==" "0"}}
+                      {{#compare @root.data.currentSite.name "housing"}}of similar size{{else}}in the same income bracket{{/compare}})
+                    {{/compare}}
                   </span>
                   {{/compare ~}}
                   {{/compare ~}}
@@ -713,274 +715,56 @@ height = Math.min(width+90, window.innerHeight - margin.top - margin.bottom - 20
 //////////////////////////////////////////////////////////////
 
 var data = [
-  [//Your scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.respondent}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.respondent}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.respondent}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.respondent}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.respondent}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.respondent}}/100
-    }
-  ]
-  {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
-  ,[//Average scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.average}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.average}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.average}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.average}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.average}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.average}}/100
-    }
-  ]
+  //Your scores
+  {{#json type="array"}}
+    {{#json}}
+      {{{json key="axis" value="Overall"}}},
+      {{{json key="value" value=(divide (default @root.data.results.overall.respondent 0) 100)}}}
+    {{/json}},
+
+    {{#each @root.data.currentSite.metrics}}
+      {{#json}}
+        {{{json key="axis" value=title}}},
+        {{{json key="value" value=(divide (default (getProperty @root.data.results.sections (concat key ".respondent")) 0) 100)}}}
+      {{/json}},
+    {{/each}}
+  {{/json}},
+  {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare (length @root.data.additionalResponses.hits.hits) ">" 3) ~}}
+    //Average scores
+    {{#json type="array"}}
+      {{#json}}
+        {{{json key="axis" value="Overall"}}},
+        {{{json key="value" value=(divide (default @root.data.results.overall.average 0) 100)}}}
+      {{/json}},
+
+      {{#each @root.data.currentSite.metrics}}
+        {{#json}}
+          {{{json key="axis" value=title}}},
+          {{{json key="value" value=(divide (default (getProperty @root.data.results.sections (concat key ".average")) 0) 100)}}}
+        {{/json}},
+      {{/each}}
+    {{/json}},
   {{else}}
-  {{#if @root.data.results.overall.shared_1_percentage ~}}
-  ,[//Shared 1 scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.shared_1_percentage}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.shared_1_percentage}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.shared_1_percentage}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.shared_1_percentage}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.shared_1_percentage}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.shared_1_percentage}}/100
-    }
-  ]
-  {{/if ~}}
-  {{#if @root.data.results.overall.shared_2_percentage ~}}
-  ,[//Shared 2 scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.shared_2_percentage}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.shared_2_percentage}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.shared_2_percentage}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.shared_2_percentage}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.shared_2_percentage}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.shared_2_percentage}}/100
-    }
-  ]
-  {{/if ~}}
-  {{#if @root.data.results.overall.shared_3_percentage ~}}
-  ,[//Shared 3 scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.shared_3_percentage}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.shared_3_percentage}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.shared_3_percentage}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.shared_3_percentage}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.shared_3_percentage}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.shared_3_percentage}}/100
-    }
-  ]
-  {{/if ~}}
-  {{#if @root.data.results.overall.shared_4_percentage ~}}
-  ,[//Shared 4 scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.shared_4_percentage}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.shared_4_percentage}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.shared_4_percentage}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.shared_4_percentage}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.shared_4_percentage}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.shared_4_percentage}}/100
-    }
-  ]
-  {{/if ~}}
-  {{#if @root.data.results.overall.shared_5_percentage ~}}
-  ,[//Shared 5 scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.shared_5_percentage}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.shared_5_percentage}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.shared_5_percentage}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.shared_5_percentage}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.shared_5_percentage}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.shared_5_percentage}}/100
-    }
-  ]
-  {{/if ~}}
-  {{#if @root.data.results.overall.shared_6_percentage ~}}
-  ,[//Shared 6 scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.shared_6_percentage}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.shared_6_percentage}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.shared_6_percentage}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.shared_6_percentage}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.shared_6_percentage}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.shared_6_percentage}}/100
-    }
-  ]
-  {{/if ~}}
-  {{#if @root.data.results.overall.shared_7_percentage ~}}
-  ,[//Shared 7 scores
-    {
-      axis:"Overall",
-      value:{{@root.data.results.overall.shared_7_percentage}}/100
-    },
-    {
-      axis:"Leadership",
-      value:{{@root.data.results.sections.leadership.shared_7_percentage}}/100
-    },
-    {
-      axis:"Tools",
-      value:{{@root.data.results.sections.tools.shared_7_percentage}}/100
-    },
-    {{#compare @root.data.currentSite.name "housing" ~}}
-    {
-      axis:"TEC",
-      value:{{@root.data.results.sections.tec.shared_7_percentage}}/100
-    },
-    {{/compare ~}}
-    {
-      axis:"Data",
-      value:{{@root.data.results.sections.data.shared_7_percentage}}/100
-    },
-    {
-      axis:"Cyber",
-      value:{{@root.data.results.sections.cyber.shared_7_percentage}}/100
-    }
-  ]
-  {{/if ~}}
+    //Additional responses
+    {{#each @root.data.additionalResponses.hits.hits}}
+      //Additional response {{@index}}
+      /*
+        {{{json value=_source}}}
+      */
+      {{#json type="array"}}
+        {{#json}}
+          {{{json key="axis" value="Overall"}}},
+          {{{json key="value" value=(divide (default (getProperty @root.data.results.overall.additionalResponses (concat @index ".percentage")) 0) 100)}}}
+        {{/json}},
+
+        {{#each @root.data.currentSite.metrics}}
+          {{#json}}
+            {{{json key="axis" value=title}}},
+            {{{json key="value" value=(divide (default (getProperty @root.data.results.sections (concat key ".additionalResponses." @../index ".percentage")) 0) 100)}}}
+          {{/json}},
+        {{/each}}
+      {{/json}},
+    {{/each}}
   {{/ifAny ~}}
 ];
 //////////////////////////////////////////////////////////////

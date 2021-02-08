@@ -3,13 +3,13 @@
 {{~/inline~}}
 
 {{~#*inline "get_average"~}}
-  {{~#compare income_band "0"~}}
-    {{#if (getProperty dataAverages aggregation)}}
+  {{~#compare income_band "0"~}}{{log "income_band === '0', it equals" income_band}}
+    {{#if (getProperty dataAverages aggregation)}}{{log (concat "dataAverages has property '" aggregation "'") (getProperty dataAverages aggregation)}}
       {{round (getProperty dataAverages aggregation) "up"}}
-    {{else}}
+    {{else}}{{log (concat "dataAverages does not have property '" aggregation "'") dataAverages}}
       0
     {{/if}}
-  {{else}}
+  {{else}}{{log "income_band !== '0', it equals" income_band}}
     {{#compare (length dataAverages.grouped_by_income_band.buckets) ">" 0}}
       {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band)) aggregation) ~}}
         {{round (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band)) aggregation) "up"}}
@@ -25,12 +25,21 @@
 {{~#*inline "section"~}}
   {{#json key=key}}
     {{{json key="respondent" value=(lookup rootResponse percentageKey)}}},
-    {{#each additionalResponses}}
-      {{{json key=(concat "shared_" (add @index 1) "_percentage") value=(default (lookup _source percentageKey) 0)}}},
-    {{/each}}
-    {{{json key="income_band" value=(if (compare @root.data.additionalResponses.hits.total ">" 3) 0 else=rootResponse.income_band)}}},
+
+    {{#json key="additionalResponses" type="array"}}
+      {{#each additionalResponses}}
+        {{#json}}
+          {{{json key="name" value=_source.name}}},
+          {{{json key="date" value=_source.date_last_modified}}},
+          {{{json key="percentage" value=(default (lookup _source ../percentageKey) 0)}}}
+        {{/json}},
+      {{/each}}
+    {{/json}},
+
+    {{{json key="income_band" value=incomeBand}}},
+    {{{json key="aggregation_key" value=(concat aggregation ".avg")}}},
     {{#json key="average" type="number"}}
-      {{>get_average aggregation=(concat aggregation ".avg") income_band=(if (compare @root.data.additionalResponses.hits.total ">" 3) "0" else=rootResponse.income_band)}}
+      {{>get_average aggregation=(concat aggregation ".avg") income_band=incomeBand}}
     {{/json}},
     {{{json key="title" value=title}}},
     {{{json key="icon" value=icon}}}
@@ -42,37 +51,51 @@
   query=@root.request.params.query
   rootResponse=@root.data.rootResponse
   additionalResponses=@root.data.additionalResponses.hits.hits
-  currentSite=@root.data.currentSite ~}}
+  currentSite=@root.data.currentSite
+  incomeBand=(if (compare (length @root.data.additionalResponses.hits.hits) ">" 3) "0" else=(default @root.data.rootResponse.income_band "0")) ~}}
   {{#compare @root.data.currentSite.type "organisation"}}
     {{#if query.rid ~}}
-      {
-        "overall": {
-          "respondent": {{rootResponse.percentage_total}},
-          {{#each additionalResponses}}
-            {{{json key=(concat "shared_" (add @index 1) "_name") value=_source.name}}},
-            {{{json key=(concat "shared_" (add @index 1) "_date") value=_source.date_last_modified}}},
-            {{{json key=(concat "shared_" (add @index 1) "_percentage") value=(default _source.percentage_total 0)}}},
-          {{/each}}
-          {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
-          "average": {{>get_average aggregation="total_stats.avg" income_band="0"}}
-          {{else}}
-          "average": {{>get_average aggregation="total_stats.avg" income_band=rootResponse.income_band}}
-          {{/compare ~}}
-        },
-        {{{json key="test" value="Working"}}},
+      {{#json}}
+        {{#json key="overall"}}
+          {{{json key="respondent" value=rootResponse.percentage_total}}},
+
+          {{#json key="additionalResponses" type="array"}}
+            {{#each additionalResponses}}
+              {{#json}}
+                {{{json key="name" value=_source.name}}},
+                {{{json key="date" value=_source.date_last_modified}}},
+                {{{json key="percentage" value=(default _source.percentage_total 0)}}}
+              {{/json}},
+            {{/each}}
+          {{/json}},
+
+          {{#json key="average" type="number"}}
+            {{>get_average aggregation="total_stats.avg" income_band=incomeBand}}
+          {{/json}}
+        {{/json}},
+
         {{#json key="sections"}}
           {{#each currentSite.metrics}}
-            {{>section ../this key=key percentageKey=percentageKey aggregation=aggregation title=title icon=icon}},
+            {{>section ../this key=key percentageKey=percentageKey aggregation=aggregation title=title icon=icon incomeBand=../incomeBand}},
           {{/each}}
         {{/json}},
-        "totalRespondents": {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count")}}{{getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count"}}{{else}}0{{/if}},
+
+        {{{json key="incomeBand" value=incomeBand}}},
+
+        {{#compare incomeBand "0"}}
+          {{{json key="totalRespondents" value=(default dataAverages.total_stats.count 0)}}},
+        {{else}}
+          {{{json key="totalRespondents" value=(default (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" rootResponse.income_band)) "doc_count") 0)}}},
+        {{/compare}}
+
         {{#each @root.context.metaData.areas ~}}
-        {{#compare slug rootResponse.area ~}}
-        "whereEventual": "{{{long}}}",
-        {{/compare ~}}
+          {{#compare slug rootResponse.area ~}}
+            {{{json key="whereEventual" value=long}}},
+          {{/compare ~}}
         {{/each ~}}
-        "where": "{{#compare rootResponse.area "scotland"}}Scotland{{else}}the UK{{/compare}}"
-      }
+
+        {{{json key="where" value=(if (compare rootResponse.area "scotland") "Scotland" else="the UK")}}}
+      {{/json}}
     {{else}}
       {{!-- this is legacy from before we used rid= to identify reponses in on the results page, please ignore and don't touch --}}
       {

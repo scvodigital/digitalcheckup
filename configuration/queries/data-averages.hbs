@@ -7,7 +7,7 @@
 {{~/inline~}}
 
 {{#json}}
-  {{{json key="size" value=100}}},
+  {{{json key="size" value=0}}},
   {{#json key="query"}}
     {{#json key="bool"}}
       {{#compare @root.data.additionalResponses.hits.total ">" 0 ~}}
@@ -27,23 +27,36 @@
             {{/json}}
           {{/json}},
         {{/ifAny ~}}
+
         {{#json}}
           {{#json key="term"}}
             {{{json key="site" value=@root.data.currentSite.name}}}
           {{/json}}
-        {{/json}}
-      {{/json}}
+        {{/json}},
+
+        {{!-- Want to make sure we are only bringing back docks with correct data fields (just in case) --}}
+        {{#each @root.data.currentSite.metrics}}
+          {{#json}}
+            {{#json key="exists"}}
+              {{{json key="field" value=percentageKey}}}
+            {{/json}}
+          {{/json}},
+        {{/each}}
+      {{/json}},
     {{/json}}
   {{/json}},
   {{#json key="aggs"}}
     {{>field_aggregation aggregationName="total_stats" aggregationType="extended_stats" field="percentage_total"}}
+
     {{#each @root.data.currentSite.metrics}}
       {{>field_aggregation aggregationName=aggregation aggregationType="extended_stats" field=percentageKey}}
     {{/each}}
+
     {{#json key="grouped_by_income_band"}}
       {{#json key="terms"}}
         {{{json key="field" value="income_band"}}}
       {{/json}},
+
       {{#json key="aggs"}}
         {{>field_aggregation aggregationName="total_stats" aggregationType="extended_stats" field="percentage_total"}}
         {{#each @root.data.currentSite.metrics}}

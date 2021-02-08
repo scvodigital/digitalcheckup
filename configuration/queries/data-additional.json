@@ -1,5 +1,5 @@
 {
-  "size": 3,
+  "size": 7,
   "from": 0,
   "_source": [
     "*"
@@ -35,4 +35,3 @@
     "date_last_modified": "desc"
   }
 }
-
