@@ -60,36 +60,6 @@
     },
     "data.generateSaveCheckupSessionTask",
     {
-      "name": "scoresIndividual",
-      "taskModule": "render",
-      "renderer": "handlebars",
-      "config": {
-        "template": ">context.metaData.handlebars.templates.checkup_scores_gather",
-        "output": "data",
-        "parseJson": true
-      }
-    },
-    {
-      "name": "scoresCombined",
-      "taskModule": "render",
-      "renderer": "handlebars",
-      "config": {
-        "template": ">context.metaData.handlebars.templates.checkup_scores_calculate",
-        "output": "data",
-        "parseJson": true
-      }
-    },
-    {
-      "name": "response",
-      "taskModule": "render",
-      "renderer": "handlebars",
-      "config": {
-        "template": ">context.metaData.handlebars.templates.checkup_database_firebase",
-        "output": "data",
-        "parseJson": true
-      }
-    },
-    {
       "name": "save_data",
       "taskModule": "firebaseRtbSet",
       "renderer": "handlebars",
@@ -107,7 +77,7 @@
       "config": {
         "logic": {
           "if": [
-            "default" 
+            "default"
           ]
         },
         "output": "body",

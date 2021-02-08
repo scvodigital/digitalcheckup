@@ -39,6 +39,44 @@
         "icon": "resilience"
       }
     ],
+    "metrics": [
+      {
+        "key": "leadership",
+        "title": "Leadership, culture and skills",
+        "icon": "leadership",
+        "aggregation": "leadership_culture_and_skills_stats",
+        "percentageKey": "percentage_leadership_culture_and_skills",
+				"scoreKey": "score_leadership_culture_and_skills",
+        "questionMetric": "Leadership culture and skills"
+      },
+      {
+        "key": "tools",
+        "percentageKey": "percentage_tools_and_equipment",
+				"scoreKey": "score_tools_and_equipment",
+        "aggregation": "tools_and_equipment_stats",
+        "title": "Tools and equipment",
+        "icon": "tools",
+        "questionMetric": "Tools and equipment"
+      },
+      {
+        "key": "data",
+        "percentageKey": "percentage_content_marketing_and_data",
+				"scoreKey": "score_content_marketing_and_data",
+        "aggregation": "content_marketing_and_data_stats",
+        "title": "Content, marketing and data",
+        "icon": "leadership",
+        "questionMetric": "Content marketing and data"
+      },
+      {
+        "key": "cyber",
+        "percentageKey": "percentage_cyber_resilience",
+				"scoreKey": "score_cyber_resilience",
+        "aggregation": "cyber_resilience_stats",
+        "title": "Cyber resilience",
+        "icon": "resilience",
+        "questionMetric": "Cyber resilience"
+      }
+    ],
     "for_singular": "organisation",
     "for_plural": "organisations",
     "partner": {
@@ -90,6 +128,44 @@
         "icon": "fa-shield-check"
       }
     ],
+    "metrics": [
+      {
+        "key": "leadership",
+        "title": "Leadership, culture and skills",
+        "icon": "leadership",
+        "aggregation": "leadership_culture_and_skills_stats",
+        "percentageKey": "percentage_leadership_culture_and_skills",
+				"scoreKey": "score_leadership_culture_and_skills",
+        "questionMetric": "Leadership culture and skills"
+      },
+      {
+        "key": "tools",
+        "percentageKey": "percentage_tools_and_equipment",
+				"scoreKey": "score_tools_and_equipment",
+        "aggregation": "tools_and_equipment_stats",
+        "title": "Tools and equipment",
+        "icon": "tools",
+        "questionMetric": "Tools and equipment"
+      },
+      {
+        "key": "data",
+        "percentageKey": "percentage_content_marketing_and_data",
+				"scoreKey": "score_content_marketing_and_data",
+        "aggregation": "content_marketing_and_data_stats",
+        "title": "Content, marketing and data",
+        "icon": "leadership",
+        "questionMetric": "Content marketing & data"
+      },
+      {
+        "key": "cyber",
+        "percentageKey": "percentage_cyber_resilience",
+				"scoreKey": "score_cyber_resilience",
+        "aggregation": "cyber_resilience_stats",
+        "title": "Cyber resilience",
+        "icon": "resilience",
+        "questionMetric": "Cyber resilience"
+      }
+    ],
     "for_singular": "organisation",
     "for_plural": "organisations",
     "email": "digital@scvo.scot",
@@ -126,6 +202,53 @@
         "class": "cyber",
         "shape": "trapezoid",
         "icon": "resilience"
+      }
+    ],
+    "metrics": [
+      {
+        "key": "leadership",
+        "title": "Leadership, culture and skills",
+        "icon": "leadership",
+        "aggregation": "leadership_culture_and_skills_stats",
+        "percentageKey": "percentage_leadership_culture_and_skills",
+				"scoreKey": "score_leadership_culture_and_skills",
+        "questionMetric": "Leadership culture and skills"
+      },
+      {
+        "key": "tools",
+        "percentageKey": "percentage_tools_and_equipment",
+				"scoreKey": "score_tools_and_equipment",
+        "aggregation": "tools_and_equipment_stats",
+        "title": "Tools and equipment",
+        "icon": "tools",
+        "questionMetric": "Tools and equipment"
+      },
+      {
+        "key": "data",
+        "percentageKey": "percentage_content_marketing_and_data",
+				"scoreKey": "score_content_marketing_and_data",
+        "aggregation": "content_marketing_and_data_stats",
+        "title": "Content, marketing and data",
+        "icon": "leadership",
+        "questionMetric": "Content marketing and data"
+      },
+      {
+        "key": "cyber",
+        "percentageKey": "percentage_cyber_resilience",
+				"scoreKey": "score_cyber_resilience",
+        "aggregation": "cyber_resilience_stats",
+        "title": "Cyber resilience",
+        "icon": "resilience",
+        "questionMetric": "Cyber resilience"
+      },
+      {
+        "key": "tec",
+        "percentageKey": "percentage_tec",
+				"scoreKey": "score_tec",
+        "aggregation": "tec_stats",
+        "title": "Technology Enabled Care",
+        "icon": "tools",
+        "questionMetric": "Technology enabled care"
       }
     ],
     "for_singular": "housing association",
@@ -201,6 +324,53 @@
         "shape": "icon",
         "color": "green",
         "icon": "fa-map-signs"
+      }
+    ],
+    "metrics": [
+      {
+        "key": "context",
+        "percentageKey": "percentage_context",
+				"scoreKey": "score_context",
+        "aggregation": "context_stats",
+        "icon": "context",
+        "title": "Context",
+        "questionMetric": "Context"
+      },
+      {
+        "key": "data",
+        "percentageKey": "percentage_data",
+				"scoreKey": "score_data",
+        "aggregation": "data_stats",
+        "icon": "data",
+        "title": "Data",
+        "questionMetric": "Data"
+      },
+      {
+        "key": "policy",
+        "percentageKey": "percentage_policy",
+				"scoreKey": "score_policy",
+        "aggregation": "policy_stats",
+        "icon": "policy",
+        "title": "Policy",
+        "questionMetric": "Policy"
+      },
+      {
+        "key": "preventing_attacks",
+        "percentageKey": "percentage_preventing_attacks",
+				"scoreKey": "score_preventing_attacks",
+        "aggregation": "preventing_attacks_stats",
+        "icon": "preventing_attacks",
+        "title": "Preventing attacks",
+        "questionMetric": "Preventing attacks"
+      },
+      {
+        "key": "training",
+        "percentageKey": "percentage_training",
+				"scoreKey": "score_training",
+        "aggregation": "training_stats",
+        "icon": "training",
+        "title": "Training",
+        "questionMetric": "Training"
       }
     ],
     "for_singular": "organisation",
