@@ -174,29 +174,33 @@
               <a href="/" class="site-brand">
                 {{#unless (compare @root.data.currentSite.name "housing")}}
                 {{#unless (compare @root.data.currentSite.name "digital-legacy")}}
-                  <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
+                  <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="hide-sm" />
                 {{/unless}}
                 {{/unless}}
                 <h1 class="text-secondary">
                   {{#compare @root.data.currentSite.name "digital-legacy"}}
-                    <span class="text-brand">Digital</span> Checkup
+                    Digital <span class="text-brand">Checkup</span>
                   {{else}}
                     {{#compare @root.data.currentSite.name "cyber"}}
-                      <span style="font-feature-settings: initial;"><span class="text-brand">Cyber</span> Checkup</span>
+                      <span style="font-feature-settings: initial;">Cyber <span class="text-brand">Checkup</span></span>
                     {{else}}
                       {{#compare @root.data.currentSite.name "skills"}}
-                        Essential <span class="text-brand">Digital</span> Skills
+                        Essential Digital Skills
                       {{else}}
                         {{#compare @root.data.currentSite.name "governance"}}
-                          Good <span class="text-brand">Governance</span> Checkup
+                          Good Governance <span class="text-brand">Checkup</span>
                         {{else}}
-                          {{#compare @root.data.currentSite.type "organisation"}}
-                             <span class="text-brand">Digital</span> Checkup
-                            {{#unless (compare @root.data.currentSite.name "digital")}}
-                              <span class="mdc-typography--caption">
-                                For {{@root.data.currentSite.for_plural}}
-                              </span>
-                            {{/unless}}
+                          {{#compare @root.data.currentSite.name "finance"}}
+                            Finance <span class="text-brand">Checkup</span>
+                          {{else}}
+                            {{#compare @root.data.currentSite.type "organisation"}}
+                               Digital <span class="text-brand">Checkup</span>
+                              {{#unless (compare @root.data.currentSite.name "digital")}}
+                                <span class="mdc-typography--caption">
+                                  For {{@root.data.currentSite.for_plural}}
+                                </span>
+                              {{/unless}}
+                            {{/compare}}
                           {{/compare}}
                         {{/compare}}
                       {{/compare}}
@@ -210,15 +214,16 @@
                 <span class="far fa-fw fa-2x fa-bars"></span>
               </button>
             </section>
-            {{!-- {{#unless (contains @root.request.url.pathname "/checkup")}}
-              {{#compare @root.data.currentSite.type "organisation"}}
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
-                  <div class="cta v-padding-full">
-                    <a href="/checkup" class="mdc-button mdc-button--raised">Take the checkup</a>
-                  </div>
-                </section>
-              {{/compare}}
-            {{/unless}} --}}
+            {{#if @root.data.currentSite.icon}}
+              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm">
+                <div class="h-padding-full" style="display:flex;align-items:flex-end;position:relative;">
+                  <span class="fa-stack fa-5x{{#compare @root.route.name 'home'}} fa-stack-home{{/compare}}">
+                    <i class="fal fa-desktop fa-stack-2x" style="color:#5ECADA;"></i>
+                    <i class="{{@root.data.currentSite.icon}} fa-stack-1x" style="color:#FF595A;line-height:1.5;"></i>
+                  </span>
+                </div>
+              </section>
+            {{/if}}
           </div>
           <div class="mdc-top-app-bar__row mdc-top-app-bar__lower hide-md hide-sm">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
