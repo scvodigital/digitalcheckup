@@ -1319,6 +1319,7 @@ footer.mdc-layout__footer {
   .answer-block-grid {
     margin-bottom: $unit;
     .answer-options {
+      margin: 0 0 $unit/2;
       margin-left: 410px;
       font-weight: bold;
       .answer-cell {
@@ -1327,17 +1328,24 @@ footer.mdc-layout__footer {
         text-align: center;
       }
     }
+    .alt-row-bg {
+      background-color: $gray-color-light;
+    }
     .answer {
       float: left;
       display: inline-flex;
       min-height: 40px;
-      margin: 0 0 $unit;
+      // margin: 0 0 $unit;
+      margin: 0;
+      padding: $unit/2 0 $unit/2 $unit/2;
       align-items: center;
       clear: both;
       width: 410px;
     }
     .flex-answer-block {
       float: left;
+      margin: 0;
+      padding: $unit/2 0;
       .cell {
         width: 100px;
         text-align: center;
