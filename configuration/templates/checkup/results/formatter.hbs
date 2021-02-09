@@ -10,13 +10,13 @@
       0
     {{/if}}
   {{else}}{{log "income_band !== '0', it equals" income_band}}
-    {{#compare (length dataAverages.grouped_by_income_band.buckets) ">" 0}}
-      {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band)) aggregation) ~}}
+    {{#compare (length dataAverages.grouped_by_income_band.buckets) ">" 0}}{{log "we got grouped buckets" ""}}
+      {{#if (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band)) aggregation) ~}}{{log "and one that matches the income band" (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band)) aggregation)}}
         {{round (getProperty (firstItem (filter dataAverages.grouped_by_income_band.buckets "key" "===" income_band)) aggregation) "up"}}
-      {{else}}
+      {{else}}{{log "no grouped bucket for income band" dataAverages.grouped_by_income_band.buckets}}
         0
       {{/if ~}}
-    {{else}}
+    {{else}}{{log "we got NO grouped buckets"}}
       0
     {{/compare ~}}
   {{~/compare~}}

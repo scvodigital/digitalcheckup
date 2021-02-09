@@ -33,335 +33,214 @@
       {{> checkup_progress progress=100}}
 
       {{#ifAny @root.data.rootResponse.percentage_total (compare @root.data.rootResponse.percentage_total "===" 0) @root.request.params.query.s1 ~}}
-      <div class="question-block mdc-elevation--z3">
-        <div class="results-block">
-          <div class="mdc-layout-grid t-margin-full">
-            <div class="mdc-layout-grid__inner">
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
-                <div class="mdc-typography--headline6">
-                  {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
-                  Your overall score
-                  {{else}}
-                  {{{@root.data.rootResponse.name}}}
-                  {{/ifAny ~}}
-                </div>
-                <div class="score score-respondent">
-                  {{@root.data.results.overall.respondent}}%
-                </div>
-                <div class="mdc-typography--caption">
-                  {{momentFormat (moment @root.data.rootResponse.date_last_modified "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
-                </div>
-              </div>
-              {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone result result-average">
-                <div class="mdc-typography--headline6">
-                  Average score
-                </div>
-                <div class="score">
-                  {{@root.data.results.overall.average}}%
-                  {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
-                  <span class="mdc-typography--body2">
-                    (compared with your {{@root.data.additionalResponses.hits.total}} colleagues who have also completed the checkup via a sharing link)
-                  </span>
-                  {{else}}
-                  {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
-                  <span class="mdc-typography--body2">
-                    (compared with
-                    {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
-                    across
-                    {{@root.data.results.where}}
-                    {{#compare @root.data.results.incomeBand "!==" "0"}}
-                      {{#compare @root.data.currentSite.name "housing"}}of similar size{{else}}in the same income bracket{{/compare}})
-                    {{/compare}}
-                  </span>
-                  {{/compare ~}}
-                  {{/compare ~}}
-                </div>
-              </div>
-              {{else}}
-              {{#with @root.data.results.overall ~}}
-              {{#if shared_1_percentage ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
-                <div class="mdc-typography--headline6">
-                  {{{shared_1_name}}}
-                </div>
-                <div class="score score-shared-1">
-                  {{shared_1_percentage}}%
-                </div>
-                <div class="mdc-typography--caption">
-                  {{momentFormat (moment shared_1_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
-                </div>
-              </div>
-              {{/if ~}}
-              {{#if shared_2_percentage ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
-                <div class="mdc-typography--headline6">
-                  {{{shared_2_name}}}
-                </div>
-                <div class="score score-shared-2">
-                  {{shared_2_percentage}}%
-                </div>
-                <div class="mdc-typography--caption">
-                  {{momentFormat (moment shared_2_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
-                </div>
-              </div>
-              {{/if ~}}
-              {{#if shared_3_percentage ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
-                <div class="mdc-typography--headline6">
-                  {{{shared_3_name}}}
-                </div>
-                <div class="score score-shared-3">
-                  {{shared_3_percentage}}%
-                </div>
-                <div class="mdc-typography--caption">
-                  {{momentFormat (moment shared_3_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
-                </div>
-              </div>
-              {{/if ~}}
-              {{#if shared_4_percentage ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
-                <div class="mdc-typography--headline6">
-                  {{{shared_4_name}}}
-                </div>
-                <div class="score score-shared-4">
-                  {{shared_4_percentage}}%
-                </div>
-                <div class="mdc-typography--caption">
-                  {{momentFormat (moment shared_4_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
-                </div>
-              </div>
-              {{/if ~}}
-              {{#if shared_5_percentage ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
-                <div class="mdc-typography--headline6">
-                  {{{shared_5_name}}}
-                </div>
-                <div class="score score-shared-5">
-                  {{shared_5_percentage}}%
-                </div>
-                <div class="mdc-typography--caption">
-                  {{momentFormat (moment shared_5_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
-                </div>
-              </div>
-              {{/if ~}}
-              {{#if shared_6_percentage ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
-                <div class="mdc-typography--headline6">
-                  {{{shared_6_name}}}
-                </div>
-                <div class="score score-shared-6">
-                  {{shared_6_percentage}}%
-                </div>
-                <div class="mdc-typography--caption">
-                  {{momentFormat (moment shared_6_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
-                </div>
-              </div>
-              {{/if ~}}
-              {{#if shared_7_percentage ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
-                <div class="mdc-typography--headline6">
-                  {{{shared_7_name}}}
-                </div>
-                <div class="score score-shared-7">
-                  {{shared_7_percentage}}%
-                </div>
-                <div class="mdc-typography--caption">
-                  {{momentFormat (moment shared_7_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
-                </div>
-              </div>
-              {{/if ~}}
-              {{/with ~}}
-              {{/ifAny ~}}
-            </div>
-          </div>
-
-          {{#ifAny @root.data.rootResponse.percentage_total (compare @root.data.rootResponse.percentage_total "===" 0) (ifAll @root.request.params.query.s1 @root.request.params.query.s2 @root.request.params.query.s3 @root.request.params.query.s4) ~}}
-            <div class="mdc-layout-grid">
+        <div class="question-block mdc-elevation--z3">
+          <div class="results-block">
+            <div class="mdc-layout-grid t-margin-full">
               <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                  <div class="radarChart"></div>
-
-                  {{#unless @root.data.results.overall.shared_1_percentage ~}}
-                  {{#compare @root.data.results.overall.respondent ">" @root.data.results.overall.average ~}}
-                    <div class="t-margin-full t-padding-full mdc-typography--headline5">
-                      Congratulations for scoring above the average but please don't let that make you complacent.
-                    </div>
-                  {{/compare ~}}
-                  {{/unless ~}}
-                </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                  <div class="key">
-                    <ul>
-                      {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
-                      <li class="key-your">Your scores</li>
-                      <li class="key-average">Average scores</li>
-                      {{else}}
-                      <li class="key-your">{{{@root.data.rootResponse.name}}}</li>
-                      {{#with @root.data.results.overall ~}}
-                      {{#if shared_1_name ~}}
-                      <li class="key-shared-1">{{{shared_1_name}}}</li>
-                      {{/if ~}}
-                      {{#if shared_2_name ~}}
-                      <li class="key-shared-2">{{{shared_2_name}}}</li>
-                      {{/if ~}}
-                      {{#if shared_3_name ~}}
-                      <li class="key-shared-3">{{{shared_3_name}}}</li>
-                      {{/if ~}}
-                      {{#if shared_4_name ~}}
-                      <li class="key-shared-4">{{{shared_4_name}}}</li>
-                      {{/if ~}}
-                      {{#if shared_5_name ~}}
-                      <li class="key-shared-5">{{{shared_5_name}}}</li>
-                      {{/if ~}}
-                      {{#if shared_6_name ~}}
-                      <li class="key-shared-6">{{{shared_6_name}}}</li>
-                      {{/if ~}}
-                      {{#if shared_7_name ~}}
-                      <li class="key-shared-7">{{{shared_7_name}}}</li>
-                      {{/if ~}}
-                      {{/with ~}}
-                      {{/ifAny ~}}
-                    </ul>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                  <div class="mdc-typography--headline6">
+                    {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+                      Your overall score
+                    {{else}}
+                      {{{@root.data.rootResponse.name}}}
+                    {{/ifAny ~}}
                   </div>
 
-                  {{#each @root.data.results.sections ~}}
-                    <div class="mdc-typography--body1">
-                      {{title}}
-                      <div class="scores mdc-typography--caption">
-                        <span class="score score-respondent">
-                          {{respondent}}%
+                  <div class="score score-respondent">
+                    {{@root.data.results.overall.respondent}}%
+                  </div>
+
+                  <div class="mdc-typography--caption">
+                    {{momentFormat (moment @root.data.rootResponse.date_last_modified "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                  </div>
+                </div>
+
+                {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone result result-average">
+                    <div class="mdc-typography--headline6">
+                      Average score
+                    </div>
+
+                    <div class="score">
+                      {{@root.data.results.overall.average}}%
+                      {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
+                        <span class="mdc-typography--body2">
+                          (compared with your {{@root.data.additionalResponses.hits.total}} colleagues who have also completed the checkup via a sharing link)
                         </span>
-                        {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
-                        <span class="score">
-                          {{average}}%
-                        </span>
-                        {{else}}
-                        {{#if shared_1_percentage ~}}
-                        <span class="score score-shared-1">
-                          {{shared_1_percentage}}%
-                        </span>
-                        {{/if ~}}
-                        {{#if shared_2_percentage ~}}
-                        <span class="score score-shared-2">
-                          {{shared_2_percentage}}%
-                        </span>
-                        {{/if ~}}
-                        {{#if shared_3_percentage ~}}
-                        <span class="score score-shared-3">
-                          {{shared_3_percentage}}%
-                        </span>
-                        {{/if ~}}
-                        {{#if shared_4_percentage ~}}
-                        <span class="score score-shared-4">
-                          {{shared_4_percentage}}%
-                        </span>
-                        {{/if ~}}
-                        {{#if shared_5_percentage ~}}
-                        <span class="score score-shared-5">
-                          {{shared_5_percentage}}%
-                        </span>
-                        {{/if ~}}
-                        {{#if shared_6_percentage ~}}
-                        <span class="score score-shared-6">
-                          {{shared_6_percentage}}%
-                        </span>
-                        {{/if ~}}
-                        {{#if shared_7_percentage ~}}
-                        <span class="score score-shared-7">
-                          {{shared_7_percentage}}%
-                        </span>
-                        {{/if ~}}
-                        {{/ifAny ~}}
+                      {{else}}
+                        {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
+                          <span class="mdc-typography--body2">
+                            (compared with
+                            {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
+                            across
+                            {{@root.data.results.where}}
+                            {{#compare @root.data.results.incomeBand "!==" "0"}}
+                              {{#compare @root.data.currentSite.name "housing"}}of similar size{{else}}in the same income bracket{{/compare}})
+                            {{/compare}}
+                          </span>
+                        {{/compare ~}}
+                      {{/compare ~}}
+                    </div>
+                  </div>
+                {{else}}
+                  {{#each @root.data.results.overalladditionalResponses ~}}
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                      <div class="mdc-typography--headline6">
+                        {{{name}}}
+                      </div>
+
+                      <div class="score score-shared-1">
+                        {{percentage}}%
+                      </div>
+
+                      <div class="mdc-typography--caption">
+                        {{momentFormat (moment date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
                       </div>
                     </div>
-                  {{/each ~}}
-
-                  {{#unless @root.request.params.query.slp}}
-                  {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
-                  {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
-                  <div class="cta t-margin-full v-padding-full">
-                    <a href="javascript: scrollToResources();" class="mdc-button mdc-button--raised">
-                      <span class="fas fa-file-alt fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
-                      Read resources
-                    </a>
-                  </div>
-                  {{/compare ~}}
-                  {{/ifAny ~}}
-
-                  {{#unless @root.data.results.overall.shared_1_percentage ~}}
-                  {{#if @root.request.params.query.rid ~}}
-                  <div class="cta v-padding-full">
-                    <div class="mdc-text-field mdc-text-field--with-trailing-icon">
-                      <input type="text" id="share-url" class="mdc-text-field__input" value="https://{{@root.request.url.host}}/checkup?sid={{@root.request.params.query.rid}}" readonly>
-                      <label for="share-url" class="mdc-floating-label mdc-floating-label--float-above">Share with colleagues</label>
-                      <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button" title="Copy URL"></i>
-                      <div class="mdc-line-ripple"></div>
-                    </div>
-                    <p class="mdc-typography--body1">
-                      Invite your colleagues to complete the checkup and see your results plotted together - a great way of comparing views on your digital maturity.
-                    </p>
-                  </div>
-                  {{/if ~}}
-                  {{/unless ~}}
-                  {{/unless ~}}
-                </div>
+                  {{/each~}}
+                {{/ifAny ~}}
               </div>
             </div>
-          {{/ifAny ~}}
-        </div>
-      </div>
 
-      <div class="v-padding-full">
-        <div class="v-margin-full b-padding-full">
-          {{#unless @root.request.params.query.slp}}
-          {{#ifAll (ifAny (compare @root.data.currentSite.name "digital") (compare @root.data.currentSite.name "digital-legacy")) (compare (default @root.request.params.query.area @root.data.rootResponse.area) "scotland") ~}}
-            <h3 class="mdc-typography--headline4 v-margin b-padding-full">
-              We would love to discuss your results and next steps
-            </h3>
+            {{#ifAny @root.data.rootResponse.percentage_total (compare @root.data.rootResponse.percentage_total "===" 0) (ifAll @root.request.params.query.s1 @root.request.params.query.s2 @root.request.params.query.s3 @root.request.params.query.s4) ~}}
+              <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                    <div class="radarChart"></div>
 
-            <div class="cta">
-              <!-- Calendly link widget begin -->
-              <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-              <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-              <a onclick="Calendly.showPopupWidget('https://calendly.com/john-fitzgerald/check-up');return false;" class="mdc-button mdc-button--raised">
-                <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
-                Book a follow-up call with SCVO
-              </a>
-              <!-- Calendly link widget end -->
-              <div class="mdc-typography--body1 t-margin-full">
-                <a href="https://scvo.scot/support/digital/about">Sign up to our e-bulletin</a> to get details of our events, training and other support for digital change.
+                    {{#unless (any @root.data.results.overall.additionalResponses) ~}}
+                      {{#compare @root.data.results.overall.respondent ">" @root.data.results.overall.average ~}}
+                        <div class="t-margin-full t-padding-full mdc-typography--headline5">
+                          Congratulations for scoring above the average but please don't let that make you complacent.
+                        </div>
+                      {{/compare ~}}
+                    {{/unless ~}}
+                  </div>
+
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                    <div class="key">
+                      <ul>
+                        {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+                          <li class="key-your">Your scores</li>
+                          <li class="key-average">Average scores</li>
+                        {{else}}
+                          <li class="key-your">{{{@root.data.rootResponse.name}}}</li>
+                          {{#each @root.data.results.overall.additionalResponses ~}}
+                            <li class="key-shared-{{add @index 1}}">{{{name}}}</li>
+                          {{/each ~}}
+                        {{/ifAny ~}}
+                      </ul>
+                    </div>
+
+                    {{#each @root.data.results.sections ~}}
+                      <div class="mdc-typography--body1">
+                        {{title}}
+                        <div class="scores mdc-typography--caption">
+                          <span class="score score-respondent">
+                            {{respondent}}%
+                          </span>
+                          {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+                            <span class="score">
+                              {{average}}%
+                            </span>
+                          {{else}}
+                            {{#each additionalResponses}}
+                              <span class="score score-shared-{{add @index 1}}">
+                                {{percentage}}%
+                              </span>
+                            {{/each ~}}
+                          {{/ifAny ~}}
+                        </div>
+                      </div>
+                    {{/each ~}}
+
+                    {{#unless @root.request.params.query.slp}}
+                      {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
+                        {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
+                          <div class="cta t-margin-full v-padding-full">
+                            <a href="javascript: scrollToResources();" class="mdc-button mdc-button--raised">
+                              <span class="fas fa-file-alt fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+                              Read resources
+                            </a>
+                          </div>
+                        {{/compare ~}}
+                      {{/ifAny ~}}
+
+                      {{#unless (any @root.data.results.overall.additionalResponses) ~}}
+                        {{#if @root.request.params.query.rid ~}}
+                          <div class="cta v-padding-full">
+                            <div class="mdc-text-field mdc-text-field--with-trailing-icon">
+                              <input type="text" id="share-url" class="mdc-text-field__input" value="https://{{@root.request.url.host}}/checkup?sid={{@root.request.params.query.rid}}" readonly>
+                              <label for="share-url" class="mdc-floating-label mdc-floating-label--float-above">Share with colleagues</label>
+                              <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button" title="Copy URL"></i>
+                              <div class="mdc-line-ripple"></div>
+                            </div>
+
+                            <p class="mdc-typography--body1">
+                              Invite your colleagues to complete the checkup and see your results plotted together - a great way of comparing views on your digital maturity.
+                            </p>
+                          </div>
+                        {{/if ~}}
+                      {{/unless ~}}
+                    {{/unless ~}}
+                  </div>
+                </div>
               </div>
-              <!-- Intercom livechat -->
-              <script>
-                window.intercomSettings = {
-                  app_id: "t67hvr75"
-                };
-              </script>
-              <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t67hvr75';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+            {{/ifAny ~}}
           </div>
-          {{/ifAll ~}}
-          {{/unless}}
-          {{#compare @root.data.currentSite.name "housing" ~}}
-          <h3 class="mdc-typography--headline4 v-margin b-padding-full">
-            We would love to discuss your results and next steps
-          </h3>
-
-          <div class="cta">
-            <!-- Calendly link widget begin -->
-            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-            <a onclick="Calendly.showPopupWidget('https://calendly.com/gdickson-3/digital-check-up');return false;" class="mdc-button mdc-button--raised">
-              <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
-              Book a follow-up call with SFHA
-            </a>
-            <!-- Calendly link widget end -->
-          </div>
-          {{/compare ~}}
         </div>
-      </div>
+
+        <div class="v-padding-full">
+          <div class="v-margin-full b-padding-full">
+            {{#unless @root.request.params.query.slp}}
+              {{#ifAll (ifAny (compare @root.data.currentSite.name "digital") (compare @root.data.currentSite.name "digital-legacy")) (compare (default @root.request.params.query.area @root.data.rootResponse.area) "scotland") ~}}
+                <h3 class="mdc-typography--headline4 v-margin b-padding-full">
+                  We would love to discuss your results and next steps
+                </h3>
+
+                <div class="cta">
+                  <!-- Calendly link widget begin -->
+                  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+                  <a onclick="Calendly.showPopupWidget('https://calendly.com/john-fitzgerald/check-up');return false;" class="mdc-button mdc-button--raised">
+                    <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+                    Book a follow-up call with SCVO
+                  </a>
+                  <!-- Calendly link widget end -->
+                  <div class="mdc-typography--body1 t-margin-full">
+                    <a href="https://scvo.scot/support/digital/about">Sign up to our e-bulletin</a> to get details of our events, training and other support for digital change.
+                  </div>
+                  <!-- Intercom livechat -->
+                  <script>
+                    window.intercomSettings = {
+                      app_id: "t67hvr75"
+                    };
+                  </script>
+                  <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t67hvr75';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+              </div>
+              {{/ifAll ~}}
+            {{/unless}}
+
+            {{#compare @root.data.currentSite.name "housing" ~}}
+              <h3 class="mdc-typography--headline4 v-margin b-padding-full">
+                We would love to discuss your results and next steps
+              </h3>
+
+              <div class="cta">
+                <!-- Calendly link widget begin -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+                <a onclick="Calendly.showPopupWidget('https://calendly.com/gdickson-3/digital-check-up');return false;" class="mdc-button mdc-button--raised">
+                  <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+                  Book a follow-up call with SFHA
+                </a>
+                <!-- Calendly link widget end -->
+              </div>
+            {{/compare ~}}
+          </div>
+        </div>
       {{else}}
-      Error 500: Something went wrong processing your checkup, please <a href="/checkup">start again</a>.
+        Error 500: Something went wrong processing your checkup, please <a href="/checkup">start again</a>.
       {{/ifAny ~}}
     </div>
   </div>

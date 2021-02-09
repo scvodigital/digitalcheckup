@@ -28,7 +28,7 @@
         },
         "queryTemplates": {
           "index": "{$../data/elasticsearch-index.txt}",
-          "type": "digitalcheckup-response",
+          "type": "digitalcheckup-response,digitalcheckup-response-legacy",
           "template": ">context.metaData.handlebars.queries.data-additional"
         }
       },
