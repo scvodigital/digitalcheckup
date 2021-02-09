@@ -1,0 +1,46 @@
+{{#json}}
+  {{{json key="size" value=7}}},
+  {{{json key="from" value=0}}},
+  {{#json key="_source" type="array"}}"*"{{/json}},
+  {{#json key="query"}}
+    {{#json key="bool"}}
+      {{#json key="filter" type="array"}}
+        {{#if @root.request.params.query.area}}
+          {{#compare @root.request.params.query.area "scotland"}}
+            {{#json}}
+              {{#json key="term"}}
+                {{{json key="area" value=@root.request.params.query.area}}}
+              {{/json}}
+            {{/json}},
+          {{/compare}}
+        {{/if}}
+
+        {{#compare @root.data.currentSite.name 'skills'}}
+          {{#json}}
+            {{#json key="term"}}
+              {{{json key="checkup" value=(if (contains @root.request.url.pathname '/life') 'life' else='work')}}}
+            {{/json}}
+          {{/json}},
+        {{/compare}}
+
+        {{#json}}
+          {{#json key="term"}}
+            {{{json key="site" value=@root.data.currentSite.name}}}
+          {{/json}}
+        {{/json}}
+      {{/json}},
+
+      {{#json key="must" type="array"}}
+        {{#json}}
+          {{#json key="term"}}
+            {{{json key="sid" value=@root.request.params.query.rid}}}
+          {{/json}}
+        {{/json}}
+      {{/json}}
+    {{/json}}
+  {{/json}},
+
+  {{#json key="sort"}}
+    {{{json key="date_last_modified" value="desc"}}}
+  {{/json}}
+{{/json}}

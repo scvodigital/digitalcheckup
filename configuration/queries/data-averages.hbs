@@ -19,6 +19,7 @@
           {{/json}}
         {{/json}},
       {{/compare ~}}
+
       {{#json key="filter" type="array"}}
         {{#ifAny @root.request.params.query.area @root.data.rootResponse.area ~}}
           {{#json}}
@@ -27,6 +28,14 @@
             {{/json}}
           {{/json}},
         {{/ifAny ~}}
+
+        {{#compare @root.data.currentSite.name 'skills'}}
+          {{#json}}
+            {{#json key="term"}}
+              {{{json key="checkup" value=(if (contains @root.request.url.pathname '/life') 'life' else='work')}}}
+            {{/json}}
+          {{/json}},
+        {{/compare}}
 
         {{#json}}
           {{#json key="term"}}

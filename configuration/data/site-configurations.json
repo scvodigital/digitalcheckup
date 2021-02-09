@@ -476,45 +476,45 @@
     "metrics": [
       {
         "key": "communicating",
-        "percentageKey": "percentage_communicating",
-				"scoreKey": "score_communicating",
-        "aggregation": "communicating_stats",
+        "percentageKey": "percentage_skills_communicating",
+				"scoreKey": "score_skills_communicating",
+        "aggregation": "skills_communicating_stats",
         "icon": "communicating",
         "title": "Communicating",
         "questionMetric": "Communicating"
       },
       {
         "key": "transacting",
-        "percentageKey": "percentage_transacting",
-				"scoreKey": "score_transacting",
-        "aggregation": "transacting_stats",
+        "percentageKey": "percentage_skills_transacting",
+				"scoreKey": "score_skills_transacting",
+        "aggregation": "skills_transacting_stats",
         "icon": "transacting",
         "title": "Transacting",
         "questionMetric": "Transacting"
       },
       {
         "key": "handling_information_and_content",
-        "percentageKey": "percentage_handling_information_and_content",
-				"scoreKey": "score_handling_information_and_content",
-        "aggregation": "handling_information_and_content_stats",
+        "percentageKey": "percentage_skills_handling_information_and_content",
+				"scoreKey": "score_skills_handling_information_and_content",
+        "aggregation": "skills_handling_information_and_content_stats",
         "icon": "info",
         "title": "Handling information & content",
         "questionMetric": "Handling Information and Content"
       },
       {
         "key": "problem_solving",
-        "percentageKey": "percentage_problem_solving",
-				"scoreKey": "score_problem_solving",
-        "aggregation": "handling_problem_solving_stats",
+        "percentageKey": "percentage_skills_problem_solving",
+				"scoreKey": "score_skills_problem_solving",
+        "aggregation": "skills_handling_problem_solving_stats",
         "icon": "problem-solving",
         "title": "Problem solving",
         "questionMetric": "Problem Solving"
       },
       {
         "key": "being_safe_legal_and_confident_online",
-        "percentageKey": "percentage_being_safe_legal_and_confident_online",
-				"scoreKey": "score_being_safe_legal_and_confident_online",
-        "aggregation": "being_safe_legal_and_confident_online_stats",
+        "percentageKey": "percentage_skills_being_safe_legal_and_confident_online",
+				"scoreKey": "score_skills_being_safe_legal_and_confident_online",
+        "aggregation": "skills_being_safe_legal_and_confident_online_stats",
         "icon": "safety",
         "title": "Being safe, legal, and confident online",
         "questionMetric": "Being Safe, Legal and Confident Online"

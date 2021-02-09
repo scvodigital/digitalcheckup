@@ -14,6 +14,9 @@
     {{{json key="next_project" value=answers-next_project}}},
     {{{json key="barriers" value=answers-barriers}}},
     {{{json key="support" value=(compare answers-support "Yes please")}}},
+    {{#compare @root.data.currentSite.name 'skills'}}
+      {{{json key="checkup" value=(if (contains @root.request.url.pathname '/life') 'life' else='work')}}},
+    {{/compare}}
     {{#each (filter (keyValue @root.request.body) "key" "testIn" "answers-section-")}}
       {{{json key=(replace key 'answers-' '') value=value}}},
     {{/each}}
