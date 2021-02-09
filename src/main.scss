@@ -1315,6 +1315,18 @@ footer.mdc-layout__footer {
   }
 }
 
+@media screen and (min-width: 1040px) {
+  header .fa-stack-home {
+    font-size: 8em;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .container-home-hero h1 {
+    padding-right: 16rem;
+  }
+}
+
 @media screen and (min-width: $mobile-landscape-breakpoint) {
   .answer-block-grid {
     margin-bottom: $unit;

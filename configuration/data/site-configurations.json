@@ -96,6 +96,7 @@
     "name": "digital",
     "type": "organisation",
     "title": "Digital Checkup",
+    "icon": "fas fa-check-circle",
     "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other organisations",
     "sections_heading": "Identify the strengths and the gaps your organisation is facing with digital technology",
     "sections": [
@@ -279,6 +280,7 @@
     "name": "cyber",
     "type": "organisation",
     "title": "Cyber Checkup",
+    "icon": "fas fa-shield-alt",
     "description": "",
     "sections_heading": "Categories",
     "sections": [
@@ -426,6 +428,7 @@
     "name": "skills",
     "type": "skills",
     "title": "Essential Digital Skills",
+    "icon": "far fa-lightbulb-on",
     "description": "",
     "sections_heading": "Key skills",
     "sections": [
