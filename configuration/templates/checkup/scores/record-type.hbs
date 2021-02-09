@@ -1,1 +1,1 @@
-{{!-- {{@root.data.currentSite.sf_type}} --}}{{getProperty (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) "sf_type"}}
+{{!-- {{@root.data.currentSite.sf_type}} --}}{{getProperty (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (contains @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) "sf_type"}}

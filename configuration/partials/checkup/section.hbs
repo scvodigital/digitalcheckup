@@ -1,5 +1,5 @@
 
-{{#with (getProperty (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (compare @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) section) ~}}
+{{#with (getProperty (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (contains @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) section) ~}}
 <form action="{{#if (contains @root.request.url.pathname '/life')}}/life{{else}}{{#if (contains @root.request.url.pathname '/work')}}/work{{else}}/checkup{{/if}}{{/if}}/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
