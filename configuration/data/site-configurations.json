@@ -473,6 +473,53 @@
         "description": "The skills required to stay safe, legal and confident online i.e. being able to use safe and strong passwords to keep your personal information secure online."
       }
     ],
+    "metrics": [
+      {
+        "key": "communicating",
+        "percentageKey": "percentage_communicating",
+				"scoreKey": "score_communicating",
+        "aggregation": "communicating_stats",
+        "icon": "communicating",
+        "title": "Communicating",
+        "questionMetric": "Communicating"
+      },
+      {
+        "key": "transacting",
+        "percentageKey": "percentage_transacting",
+				"scoreKey": "score_transacting",
+        "aggregation": "transacting_stats",
+        "icon": "transacting",
+        "title": "Transacting",
+        "questionMetric": "Transacting"
+      },
+      {
+        "key": "handling_information_and_content",
+        "percentageKey": "percentage_handling_information_and_content",
+				"scoreKey": "score_handling_information_and_content",
+        "aggregation": "handling_information_and_content_stats",
+        "icon": "info",
+        "title": "Handling information & content",
+        "questionMetric": "Handling Information and Content"
+      },
+      {
+        "key": "problem_solving",
+        "percentageKey": "percentage_problem_solving",
+				"scoreKey": "score_problem_solving",
+        "aggregation": "handling_problem_solving_stats",
+        "icon": "problem-solving",
+        "title": "Problem solving",
+        "questionMetric": "Problem Solving"
+      },
+      {
+        "key": "being_safe_legal_and_confident_online",
+        "percentageKey": "percentage_being_safe_legal_and_confident_online",
+				"scoreKey": "score_being_safe_legal_and_confident_online",
+        "aggregation": "being_safe_legal_and_confident_online_stats",
+        "icon": "safety",
+        "title": "Being safe, legal, and confident online",
+        "questionMetric": "Being Safe, Legal and Confident Online"
+      }
+    ],
     "email": "digital@scvo.scot",
     "phone": "0800 169 0022",
     "url": "https://skills.checkup.scot"
