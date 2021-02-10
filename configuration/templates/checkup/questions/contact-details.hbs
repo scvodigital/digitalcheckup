@@ -68,12 +68,17 @@
             </div>
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
               <div class="mdc-typography--body1">
-                Your email address will only be used to send you information regarding this survey. {{#unless (compare @root.data.currentSite.name "skills")}}If you ask for additional support we will email you in the first instance.{{/unless}} We will not share your information with any third parties unless you ask us to do so.<br />
+                {{#compare @root.data.currentSite.name "skills"}}
+                If you would like your results emailed to you please enter your email address here.
+                {{else}}
+                Your email address will only be used to send you information regarding this survey. If you ask for additional support we will email you in the first instance.
+                {{/compare}}
+                We will not share your information with any third parties unless you ask us to do so.<br />
                 You can read our <a href="/privacy" target="_blank">privacy notice</a> for more information.
               </div>
             </div>
           </div>
-          {{#unless (compare @root.data.currentSite.name "skills")}}
+          {{#unless (contains @root.request.url.pathname '/life')}}
             <div class="mdc-layout-grid__inner">
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 {{#if @root.request.body.answers-sid ~}}
@@ -93,6 +98,8 @@
                 {{/if ~}}
               </div>
             </div>
+            {{/unless}}
+            {{#unless (compare @root.data.currentSite.name "skills")}}
             <div class="mdc-layout-grid__inner t-margin-full">
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 {{#if @root.request.body.answers-sid ~}}
