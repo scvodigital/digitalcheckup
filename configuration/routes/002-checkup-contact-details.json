@@ -1,5 +1,6 @@
 {
   "name": "checkup_contact_details",
+  "acceptedVerbs": "POST",
   "pattern": {
     "organisation_contact": "/checkup/contact-details",
     "life_contact": "/life/contact-details",

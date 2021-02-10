@@ -1,5 +1,6 @@
 {
   "name": "checkup_confirmation",
+  "acceptedVerbs": "POST",
   "pattern": {
     "organisation_confirmation": "/checkup/confirmation",
     "life_confirmation": "/life/confirmation",

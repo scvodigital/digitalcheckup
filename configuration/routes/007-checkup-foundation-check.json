@@ -1,5 +1,6 @@
 {
   "name": "checkup_foundation-check",
+  "acceptedVerbs": "POST",
   "pattern": {
     "organisation_foundation_check": "/checkup/foundation-check",
     "life_results_foundation_check": "/life/foundation-check",
