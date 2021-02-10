@@ -135,7 +135,7 @@
     </div>
   {{/unless}}
   {{/unless}}
-  <digitalcheckup-site>
+  <checkup-site>
     <div class="mdc-typography">
       {{!-- {{#unless (compare @root.data.currentSite.name "housing")}}style="background-image: url(https://scvo.scot/rouleaux.svg?color=f4fbfc&style=solid);"{{/unless}} --}}
       {{#if (contains request.url.hostname ".local") ~}}
@@ -346,14 +346,14 @@
         </div>
       </footer>
     </div>
-  </digitalcheckup-site>
+  </checkup-site>
 
   <script type="text/javascript" src="{{~>asset_url url='main.js'~}}"></script>
 
   <script>
-    var digitalcheckup = null; readyListeners = [];
+    var checkup = null; readyListeners = [];
     $(document).ready(function() {
-      digitalcheckup = new DigitalCheckup.DigitalCheckup({
+      checkup = new Checkup.Checkup({
         apiKey: "AIzaSyCTxxmjOOLDr_ctLpQIxXSTaLyPT6AUmY4",
         authDomain: "digital-checkup.firebaseapp.com",
         databaseURL: "https://digital-checkup.firebaseio.com",
@@ -368,7 +368,7 @@
     });
 
     function registerReadyListener(listener) {
-      if (digitalcheckup) {
+      if (checkup) {
         listener();
       } else {
         readyListeners.push(listener);
