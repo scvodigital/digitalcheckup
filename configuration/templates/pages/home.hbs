@@ -39,7 +39,7 @@
       </div>
     </div>
   {{else}}
-    {{#compare @root.data.currentSite.type "organisation"}}
+    {{#ifAny (compare @root.data.currentSite.name "digital-legacy") (compare @root.data.currentSite.name "housing")}}
       <div class="container-home-hero"{{#compare @root.data.currentSite.name "housing"}} style="background-color:#003066;"{{/compare}}{{#compare @root.data.currentSite.name "digital-legacy"}} style="background-color:#00509C;"{{/compare}}>
         <div class="container-fluid">
           <div class="container-home v-padding-full">
@@ -77,7 +77,7 @@
         </div>
       </div>
       {{else}}
-      {{#compare @root.data.currentSite.type "skills"}}
+      {{#compare @root.data.currentSite.name "skills"}}
         <div class="container-home-hero">
           <div class="container-fluid">
             <div class="container-home v-padding-full">
@@ -134,7 +134,7 @@
           </div>
         </div>
       {{/compare}}
-    {{/compare}}
+    {{/ifAny}}
   {{/compare}}
 {{/compare}}
 {{#if @root.data.currentSite.sections_heading}}
