@@ -14,12 +14,12 @@
     {{{json key="next_project" value=answers-next_project}}},
     {{{json key="barriers" value=answers-barriers}}},
     {{{json key="support" value=(compare answers-support "Yes please")}}},
-    {{#compare @root.data.currentSite.name 'skills'}}
-      {{{json key="checkup" value=(if (contains @root.request.url.pathname '/life') 'life' else='work')}}},
-    {{/compare}}
+    {{{json key="checkup" value=@root.data.currentCheckup}}},
+
     {{#each (filter (keyValue @root.request.body) "key" "testIn" "answers-section-")}}
       {{{json key=(replace key 'answers-' '') value=value}}},
     {{/each}}
+
     {{#withExtend this groupedMetrics=(groupBy @root.data.metrics "metric")}}
       {{#each @root.data.currentSite.metrics}}
         {{{json key=percentageKey value=(default
@@ -31,6 +31,7 @@
         {{{json key=scoreKey value=(default (maths "sum(scores)" scores=(pluck (lookup ../groupedMetrics questionMetric) "score")) 0)}}},
       {{/each}}
     {{/withExtend}}
+
     {{{json key="percentage_total" value=(default
       (maths "ceil((sum(scores) - sum(minScores)) / (sum(maxScores) - sum(minScores)) * 100)"
         scores=(pluck @root.data.metrics "score")

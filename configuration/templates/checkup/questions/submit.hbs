@@ -49,6 +49,6 @@
 </div>
 <script type="text/javascript">
   function goToResults() {
-    window.location.href = '/checkup/results?rid={{#if @root.data.response.sid}}{{@root.data.response.sid}}{{else}}{{@root.data.rid}}{{/if}}{{#if @root.request.body.slp}}&slp=true{{/if}}';
+    window.location.href = '/{{@root.data.currentCheckup}}/results?rid={{#if @root.data.response.sid}}{{@root.data.response.sid}}{{else}}{{@root.data.rid}}{{/if}}{{#if @root.request.body.slp}}&slp=true{{/if}}';
   }
 </script>

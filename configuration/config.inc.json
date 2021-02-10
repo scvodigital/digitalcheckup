@@ -26,8 +26,15 @@
     "assetsBase": "https://storage.googleapis.com/scvo-assets/test/digitalcheckup/",
     "title": "Digital Checkup",
     "domain-map": "{:./data/domain-map.json}",
-    "site-configurations": "{:./data/site-configurations.json}",
-    "menus": "{:./data/menus.json}",
+    "site-configurations": {
+      "root": "{:./data/sites/root.json}",
+      "digital-legacy": "{:./data/sites/digital-legacy.json}",
+      "digital": "{:./data/sites/digital.json}",
+      "housing": "{:./data/sites/housing.json}",
+      "cyber": "{:./data/sites/cyber.json}",
+      "governance": "{:./data/sites/governance.json}",
+      "skills": "{:./data/sites/skills.json}"
+    },
     "areas": "{:./data/areas.json}",
     "elasticsearchUrl": "{$./data/elasticsearch-legacy-url.txt}",
     "handlebars": {

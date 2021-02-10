@@ -1,0 +1,2671 @@
+{
+  "name": "skills",
+  "type": "organisation",
+  "title": "Essential Digital Skills",
+  "icon": "far fa-lightbulb-on",
+  "description": "",
+  "sections_heading": "Key skills",
+  "menu": [
+    {
+      "label": "Home",
+      "path": "/",
+      "route": "^/$"
+    },
+    {
+      "label": "Life skills",
+      "path": "/life",
+      "route": "^/life"
+    },
+    {
+      "label": "Work skills",
+      "path": "/work",
+      "route": "^/work"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Communicating",
+      "class": "communicating",
+      "shape": "icon",
+      "color": "blue",
+      "icon": "fa-users",
+      "description": "The skills required to communicate, collaborate, and share information i.e. using email or social media to communicate with friends, family or colleagues."
+    },
+    {
+      "title": "Transacting",
+      "class": "transacting",
+      "shape": "icon",
+      "color": "green",
+      "icon": "fa-credit-card",
+      "description": "The skills required to register and apply for services, buy and sell goods and services, and administer and manage transactions online i.e. using online banking or shopping online."
+    },
+    {
+      "title": "Handling information & content",
+      "class": "info-content",
+      "shape": "icon",
+      "color": "pink",
+      "icon": "fa-file-alt",
+      "description": "The skills required to find, manage and store digital information and content securely i.e. saving your personal photos and videos online or using a ‘cloud’ service such as Microsoft 365 to create, share and collaborate with colleagues at work."
+    },
+    {
+      "title": "Problem solving",
+      "class": "problem-solving",
+      "shape": "icon",
+      "color": "purple",
+      "icon": "fa-search",
+      "description": "The skills required to find solutions to problems using digital tools and online services i.e. ‘Googling’ or using YouTube to find an answer or learn how to fix a problem."
+    },
+    {
+      "title": "Being safe, legal, and confident online",
+      "class": "online-safety",
+      "shape": "icon",
+      "color": "orange",
+      "icon": "fa-user-lock",
+      "description": "The skills required to stay safe, legal and confident online i.e. being able to use safe and strong passwords to keep your personal information secure online."
+    }
+  ],
+  "metrics": [
+    {
+      "key": "communicating",
+      "percentageKey": "percentage_skills_communicating",
+      "scoreKey": "score_skills_communicating",
+      "aggregation": "skills_communicating_stats",
+      "icon": "communicating",
+      "title": "Communicating",
+      "questionMetric": "Communicating"
+    },
+    {
+      "key": "transacting",
+      "percentageKey": "percentage_skills_transacting",
+      "scoreKey": "score_skills_transacting",
+      "aggregation": "skills_transacting_stats",
+      "icon": "transacting",
+      "title": "Transacting",
+      "questionMetric": "Transacting"
+    },
+    {
+      "key": "handling_information_and_content",
+      "percentageKey": "percentage_skills_handling_information_and_content",
+      "scoreKey": "score_skills_handling_information_and_content",
+      "aggregation": "skills_handling_information_and_content_stats",
+      "icon": "info",
+      "title": "Handling information & content",
+      "questionMetric": "Handling Information and Content"
+    },
+    {
+      "key": "problem_solving",
+      "percentageKey": "percentage_skills_problem_solving",
+      "scoreKey": "score_skills_problem_solving",
+      "aggregation": "skills_handling_problem_solving_stats",
+      "icon": "problem-solving",
+      "title": "Problem solving",
+      "questionMetric": "Problem Solving"
+    },
+    {
+      "key": "being_safe_legal_and_confident_online",
+      "percentageKey": "percentage_skills_being_safe_legal_and_confident_online",
+      "scoreKey": "score_skills_being_safe_legal_and_confident_online",
+      "aggregation": "skills_being_safe_legal_and_confident_online_stats",
+      "icon": "safety",
+      "title": "Being safe, legal, and confident online",
+      "questionMetric": "Being Safe, Legal and Confident Online"
+    }
+  ],
+  "email": "digital@scvo.scot",
+  "phone": "0800 169 0022",
+  "url": "https://skills.checkup.scot",
+  "checkups": {
+    "life": {
+      "sf_type": "Essential_Digital_Skills_for_life",
+      "foundation": {
+        "name": "",
+        "title": "Foundation Skills",
+        "description": "",
+        "icon": "fa-wifi",
+        "progress": 13,
+        "questions": [
+          {
+            "title": "I can turn on a device",
+            "value": "q1",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ]
+          },
+          {
+            "title": "I can use the controls on a device",
+            "description": "Using a touchscreen, keyboard, mouse or trackpad",
+            "value": "q2",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ]
+          },
+          {
+            "title": "I can use accessibility tools on my device to make it easier",
+            "description": "Volume settings, making text bigger, brightness settings",
+            "value": "q3",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ]
+          },
+          {
+            "title": "I can interact with the home screen or desktop on my device",
+            "description": "Launching applications, finding ‘home’ or the desktop",
+            "value": "q4",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ]
+          },
+          {
+            "title": "I can connect my device to a safe and secure internet connection",
+            "description": "Opening internet connection settings and connecting a secure network",
+            "value": "q5",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ]
+          },
+          {
+            "title": "I know that my passwords and personal information must be kept safe as they have a value to others",
+            "description": "Sharing your password is like giving someone the keys to your house",
+            "value": "q6",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ]
+          },
+          {
+            "title": "I can update and change my password when prompted to do so",
+            "description": "Understanding how to create a strong password and making changes to it if you need to",
+            "value": "q7",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ]
+          }
+        ],
+        "next_section": "foundation-check"
+      },
+      "section-1": {
+        "number": 1,
+        "name": "Section 1",
+        "title": "Communicating",
+        "description": "The skills required to communicate, collaborate, and share information i.e. using email or social media to communicate with friends, family or colleagues.",
+        "icon": "fa-comment-alt-lines",
+        "progress": 26,
+        "questions": [
+          {
+            "title": "I can communicate online using messaging apps such as WhatsApp and Messenger and can send photos, videos and media links",
+            "value": "q1",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can post and reply to comments on social media platforms such as Instagram and Facebook in a respectful and appropriate manner",
+            "value": "q2",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can create video content to be shared on social media platforms such as YouTube, Tik Tok and Snapchat",
+            "value": "q3",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use apps such as FaceTime, Zoom and Skype to make video and audio calls",
+            "value": "q4",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can set up an email account and use it to communicate, collaborate and share documents with others",
+            "value": "q5",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "section-2"
+      },
+      "section-2": {
+        "number": 2,
+        "name": "Section 2",
+        "title": "Transacting",
+        "description": "The skills required to register and apply for services, buy and sell goods and services, and administer and manage transactions online i.e. using online banking or shopping online.",
+        "icon": "fa-browser",
+        "progress": 39,
+        "questions": [
+          {
+            "title": "I can use the internet to access online public and health services such as Universal Credit or NHS Near me",
+            "value": "q1",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can access and use online banking websites and apps",
+            "value": "q2",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can set up secure personal accounts enabling me to purchase goods or services safely online ",
+            "value": "q3",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can complete online forms and upload documents and photographs when required to such as when applying for a passport or driving licence",
+            "value": "q4",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use transport apps and travel websites such as Scotrail or Google Maps to make travel arrangements",
+            "value": "q5",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "section-3"
+      },
+      "section-3": {
+        "number": 3,
+        "name": "Section 3",
+        "title": "Handling information &amp; content",
+        "description": "The skills required to find, manage and store digital information and content securely i.e. saving your personal photos and videos online or using a ‘cloud’ service such as Microsoft 365 to create, share and collaborate with colleagues at work.",
+        "icon": "fa-file-search",
+        "progress": 51,
+        "questions": [
+          {
+            "title": "I can search for news and online information using a browser such as Chrome, Internet Explorer or Safari ",
+            "value": "q1",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can clear my browser and online search history",
+            "value": "q2",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use multiple tabs on my internet browser and use bookmarks to save and retrieve information",
+            "value": "q3",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use an online cloud storage account such as iCloud or One Drive and access it from different devices, such as a laptop or a smartphone",
+            "value": "q4",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can access entertainment and music online using apps such as Netflix, BBC iPlayer, Spotify, Audible and Amazon Prime",
+            "value": "q5",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "section-4"
+      },
+      "section-4": {
+        "number": 4,
+        "name": "Section 4",
+        "title": "Problem solving",
+        "description": "The skills required to find solutions to problems using digital tools and online services i.e. ‘Googling’ or using YouTube to find an answer or learn how to fix a problem.",
+        "icon": "fa-question-circle",
+        "progress": 63,
+        "questions": [
+          {
+            "title": "I can use websites, chat bots, online tutorials, FAQs and advice forums to solve problems online",
+            "value": "q1",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can find and use online alternatives to my usual sites and apps if they are unavailable",
+            "value": "q2",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use online language and translation tools when required",
+            "value": "q3",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use the internet to find advice and guidance on important issues such as public health information ",
+            "value": "q4",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use online tools such as Google Maps to find the best route depending on my mode of transport",
+            "value": "q5",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "section-5"
+      },
+      "section-5": {
+        "name": "Section 5",
+        "title": "Being safe, legal, and confident online",
+        "description": "The skills required to stay safe, legal, and confident online i.e. being able to use safe and strong passwords to keep your personal information secure online.",
+        "icon": "fa-shield-check",
+        "progress": 75,
+        "questions": [
+          {
+            "title": "I can create and use strong and secure passwords online and know not to write them down or share them with others",
+            "value": "q1",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can check if online information is true or false and can recognise suspicious weblinks and emails",
+            "value": "q2",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use privacy settings to control what people can see online, including on social media",
+            "value": "q3",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can update my operating system and security software on my device to keep it protected",
+            "value": "q4",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          },
+          {
+            "title": "I understand that my online activity produces a permanent record which could be accessed and used by others now and in the future and understand that I must not share other people’s data online without their consent",
+            "value": "q5",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "value": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "value": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "value": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "value": "I would like to learn more",
+                  "score": 1
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "demographics"
+      },
+      "demographics": {
+        "name": "Demographic",
+        "title": "Your details",
+        "description": "",
+        "icon": "fa-user",
+        "progress": 89,
+        "questions": [
+          {
+            "title": "What age are you?",
+            "value": "q1",
+            "type": "select-one",
+            "metric": "Demographic",
+            "options": [
+              {
+                "answer": "16-24"
+              },
+              {
+                "answer": "25-34"
+              },
+              {
+                "answer": "35-44"
+              },
+              {
+                "answer": "45-54"
+              },
+              {
+                "answer": "55-64"
+              },
+              {
+                "answer": "65+"
+              },
+              {
+                "answer": "Prefer not to say"
+              }
+            ]
+          },
+          {
+            "title": "Which of these describes you best?",
+            "value": "q2",
+            "type": "select-one",
+            "metric": "Demographic",
+            "options": [
+              {
+                "answer": "Employed"
+              },
+              {
+                "answer": "Self-employed"
+              },
+              {
+                "answer": "Unemployed"
+              },
+              {
+                "answer": "Retired"
+              },
+              {
+                "answer": "Student"
+              },
+              {
+                "answer": "Carer"
+              },
+              {
+                "answer": "Other"
+              }
+            ]
+          },
+          {
+            "title": "Do you have internet access at home",
+            "value": "q3",
+            "type": "select-one",
+            "metric": "Demographic",
+            "options": [
+              {
+                "answer": "Yes"
+              },
+              {
+                "answer": "No"
+              }
+            ]
+          },
+          {
+            "title": "Which (if any) devices you use to get online?",
+            "value": "q4",
+            "type": "select-many",
+            "metric": "Demographic",
+            "options": [
+              {
+                "answer": "Desktop computer"
+              },
+              {
+                "answer": "Laptop"
+              },
+              {
+                "answer": "Tablet/iPad"
+              },
+              {
+                "answer": "Smartphone"
+              },
+              {
+                "answer": "I don't have access to any devices"
+              }
+            ]
+          }
+        ],
+        "next_section": "contact-details"
+      }
+    },
+    "work": {
+      "sf_type": "Essential_Digital_Skills_for_work",
+      "section-1": {
+        "number": 1,
+        "name": "Section 1",
+        "title": "Communicating",
+        "description": "",
+        "icon": "fa-comment-alt-lines",
+        "progress": 26,
+        "questions": [
+          {
+            "title": "I can log in remotely to my email and other work-related communication tools ",
+            "value": "q1",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use my organisation’s email address book to send emails to colleagues and use the ‘cc’ and ‘bcc’ options when required",
+            "value": "q2",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use digital communication tools such as Microsoft Teams and Slack to communicate with colleagues",
+            "value": "q3",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use digital collaboration tools such as Sharepoint and Google Docs to collaborate on work with colleagues",
+            "value": "q4",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use video-conferencing tools such as Zoom and Microsoft Teams to meet online and attend training sessions and other work-related online events",
+            "value": "q5",
+            "metric": "Communicating",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "section-2"
+      },
+      "section-2": {
+        "number": 2,
+        "name": "Section 2",
+        "title": "Transacting",
+        "description": "",
+        "icon": "fa-browser",
+        "progress": 39,
+        "questions": [
+          {
+            "title": "I can access salary, contract and job role information online, including password protected payslips",
+            "value": "q1",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can submit requests for annual leave, record absence from work or submit expenses claims online",
+            "value": "q2",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can complete e-learning and online training courses required to do my job",
+            "value": "q3",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can complete and submit online forms in relation to my job role",
+            "value": "q4",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can upload documents, files and images where relevant",
+            "value": "q5",
+            "metric": "Transacting",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "section-3"
+      },
+      "section-3": {
+        "number": 3,
+        "name": "Section 3",
+        "title": "Handling Information and Content",
+        "description": "",
+        "icon": "fa-file-search",
+        "progress": 51,
+        "questions": [
+          {
+            "title": "I can follow my organisation’s IT policy when sharing, storing and handling information",
+            "value": "q1",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can log in and access online systems and databases remotely",
+            "value": "q2",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use my organisation’s cloud-based storage to securely save and retrieve information",
+            "value": "q3",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can synchronise, store and share work-related information on different devices",
+            "value": "q4",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can update privacy settings on my documents to change access permissions",
+            "value": "q5",
+            "metric": "Handling Information and Content",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "section-4"
+      },
+      "section-4": {
+        "number": 4,
+        "name": "Section 4",
+        "title": "Problem Solving",
+        "description": "",
+        "icon": "fa-question-circle",
+        "progress": 63,
+        "questions": [
+          {
+            "title": "I can use the internet to find solutions to work-related problems",
+            "value": "q1",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use applications such as Excel or Google Sheets to collate and analyse information",
+            "value": "q2",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use applications such as PowerPoint and Google Slides to present information",
+            "value": "q3",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use online productivity tools such as Trello to plan out projects and create action plans",
+            "value": "q4",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use online information to find and use media and accessibility settings on my device",
+            "value": "q5",
+            "metric": "Problem Solving",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "section-5"
+      },
+      "section-5": {
+        "name": "Section 5",
+        "title": "Being Safe, Legal and Confident Online",
+        "description": "",
+        "icon": "fa-shield-check",
+        "progress": 75,
+        "questions": [
+          {
+            "title": "I can identify and report suspicious communications such as phishing emails",
+            "value": "q1",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can keep the information I use to access my online accounts secure, using different and secure passwords for websites and accounts ",
+            "value": "q2",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can use privacy settings and follow my organisation’s social media policy",
+            "value": "q3",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can check if online information is true or false",
+            "value": "q4",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          },
+          {
+            "title": "I can follow my organisation policies on backing up data and updating software",
+            "value": "q5",
+            "metric": "Being Safe, Legal and Confident Online",
+            "supplements": true,
+            "type": "select-one",
+            "options": [
+              {
+                "answer": "I can do this",
+                "score": 2
+              },
+              {
+                "answer": "I can partially do this",
+                "score": 1
+              },
+              {
+                "answer": "I can't do this",
+                "score": 0
+              }
+            ],
+            "supplementary-options": {
+              "I can partially do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ],
+              "I can't do this": [
+                {
+                  "answer": "I would like to learn more",
+                  "score": 1
+                },
+                {
+                  "answer": "This is not relevant to my current role",
+                  "score": 0
+                }
+              ]
+            }
+          }
+        ],
+        "next_section": "demographics"
+      },
+      "demographics": {
+        "name": "Demographic",
+        "title": "Your details",
+        "description": "",
+        "icon": "fa-user",
+        "progress": 89,
+        "questions": [
+          {
+            "title": "Which sector do you work in?",
+            "value": "q1",
+            "type": "select-one",
+            "metric": "Demographic",
+            "options": [
+              {
+                "answer": "Public"
+              },
+              {
+                "answer": "Private"
+              },
+              {
+                "answer": "Voluntary"
+              },
+              {
+                "answer": "Prefer not to say"
+              }
+            ]
+          },
+          {
+            "title": "What age are you?",
+            "value": "q2",
+            "type": "select-one",
+            "metric": "Demographic",
+            "options": [
+              {
+                "answer": "16-24"
+              },
+              {
+                "answer": "25-34"
+              },
+              {
+                "answer": "35-44"
+              },
+              {
+                "answer": "45-54"
+              },
+              {
+                "answer": "55-64"
+              },
+              {
+                "answer": "65+"
+              },
+              {
+                "answer": "Prefer not to say"
+              }
+            ]
+          },
+          {
+            "title": "Which (if any) devices do you use for work?",
+            "value": "q3",
+            "type": "select-many",
+            "metric": "Demographic",
+            "options": [
+              {
+                "answer": "Desktop"
+              },
+              {
+                "answer": "Laptop"
+              },
+              {
+                "answer": "Tablet"
+              },
+              {
+                "answer": "Smartphone"
+              }
+            ]
+          },
+          {
+            "title": "Are you currently working remotely?",
+            "value": "q4",
+            "type": "select-one",
+            "metric": "Demographic",
+            "options": [
+              {
+                "answer": "Yes"
+              },
+              {
+                "answer": "No"
+              },
+              {
+                "answer": "Prefer not to say"
+              }
+            ]
+          }
+        ],
+        "next_section": "contact-details"
+      }
+    }
+  }
+}

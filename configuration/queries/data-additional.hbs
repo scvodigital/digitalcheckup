@@ -15,13 +15,11 @@
           {{/compare}}
         {{/if}}
 
-        {{#compare @root.data.currentSite.name 'skills'}}
-          {{#json}}
-            {{#json key="term"}}
-              {{{json key="checkup" value=(if (contains @root.request.url.pathname '/life') 'life' else='work')}}}
-            {{/json}}
-          {{/json}},
-        {{/compare}}
+        {{#json}}
+          {{#json key="term"}}
+            {{{json key="checkup" value=@root.data.currentCheckup}}}
+          {{/json}}
+        {{/json}},
 
         {{#json}}
           {{#json key="term"}}

@@ -1,0 +1,25 @@
+{
+  "name": "root",
+  "title": "Checkup",
+  "description": "",
+  "email": "digital@scvo.scot",
+  "phone": "0800 169 0022",
+  "url": "https://checkup.scot",
+  "menu": [
+    {
+      "label": "Home",
+      "path": "/",
+      "route": "^/$"
+    },
+    {
+      "label": "Checkup",
+      "path": "/checkup",
+      "route": "^/checkup"
+    },
+    {
+      "label": "About",
+      "path": "/about",
+      "route": "^/about"
+    }
+  ]
+}

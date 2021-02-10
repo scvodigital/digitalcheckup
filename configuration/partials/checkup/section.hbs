@@ -1,6 +1,6 @@
 
-{{#with (getProperty (getProperty @root.data.checkup (if (compare @root.data.currentSite.name 'skills') (if (contains @root.request.url.pathname '/life') 'lifeskills' else='workskills') else=@root.data.currentSite.name)) section) ~}}
-<form action="{{#if (contains @root.request.url.pathname '/life')}}/life{{else}}{{#if (contains @root.request.url.pathname '/work')}}/work{{else}}/checkup{{/if}}{{/if}}/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
+{{#with (getProperty @root.data.checkup section) ~}}
+<form action="/{{@root.data.currentCheckup}}/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
   <div class="checkup-section-header-container">
@@ -196,6 +196,56 @@
                   $(questionBlock).addClass('hidden').prop('disabled', true);
                 }
               });
+            }
+
+            $('.supplements').each(function (){
+              var doit = false;
+              if ($(this).is(':checked') || ($(this).is("select") && $(this).val() !== null)){
+                var element = ($(this).is("select")) ? $(this).find('option:selected') : $(this);
+                var supplement = element.data('supplement-target');
+                let suppRef = $(this).attr("data-supplementor");
+                openCloseSupplements(suppRef, supplement);
+              }
+            });
+
+            $("*[data-supplementor]").change(function() {
+              // console.log( "Handler for .change() called." );
+              // Identify the option
+              // console.log($(this).is("input"));
+              var element = ($(this).is("select")) ? $(this).find('option:selected') : $(this);
+              var supplement = element.data('supplement-target');
+              // Identify its supplement
+              // console.log("supplement is... " + supplement);
+              // This thing's
+              let suppRef = $(this).attr("data-supplementor");
+              openCloseSupplements(suppRef, supplement);
+            });
+
+            function openCloseSupplements(suppRef, supplement){
+              // console.log(suppRef);
+              // supplement-of- ids
+              // Close down all
+              supplements = $('*[data-supplement-of="'+ suppRef +'"]');
+              var found = false;
+              supplements.each(function () {
+                var suppElement = $(this);
+                if (suppElement.data('supplement') == supplement){
+                  // console.log('Opening...' + suppElement.data('supplement'));
+                  suppElement.prop("disabled", false);
+                  suppElement.removeClass("hidden");
+                  found = true;
+                }
+                else {
+                  // console.log('Closing...' + suppElement.data('supplement'));
+                  suppElement.prop("disabled", true);
+                  suppElement.addClass("hidden");
+                }
+              });
+              if (found) {
+                $('*[data-container-of="' + suppRef + '"]').removeClass('hidden');
+              } else {
+                $('*[data-container-of="' + suppRef + '"]').addClass('hidden');
+              }
             }
           });
         </script>

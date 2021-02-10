@@ -1,9 +1,14 @@
 {
   "name": "checkup_results_export",
   "debug": true,
-  "pattern": "/checkup/results-export",
+  "pattern": {
+    "organisation_results_export": "/checkup/results-export",
+    "life_results_export": "/life/results-export",
+    "work_results_export": "/work/results-export"
+  },
   "tasks": [
     "context.metaData.commonTasks.currentSite",
+    "context.metaData.commonTasks.currentCheckup",
     "context.metaData.commonTasks.authRequired",
     {
       "name": "allResponses",

@@ -81,7 +81,6 @@
   console.log('Route:', {{{regexReplace (regexReplace (stringify route) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
   console.log('Context:', {{{regexReplace (regexReplace (stringify context) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
   console.log('Data:', {{{regexReplace (regexReplace (stringify data) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-  console.log('Menus:', {{{regexReplace (regexReplace (stringify @root.context.metaData.menus) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
   {{#if errors.[0]}}
     console.error('Task Errors:', {{{regexReplace (regexReplace (stringify errors) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
   {{/if}}
@@ -230,7 +229,7 @@
                 {{#>components_tab_bar
                     extraClasses="mdc-tab-bar__auto-width"
                     id="main-tab-bar"}}
-                  {{#each (getProperty @root.context.metaData.menus @root.data.currentSite.type) ~}}
+                  {{#each @root.data.currentSite.menu ~}}
                     {{>components_tab
                         url=(stripTrailingSlash path)
                         labelClasses=""
@@ -246,7 +245,7 @@
       <aside class="mdc-drawer mdc-drawer--modal" id="mobile-menu" data-mdc-auto-init="MDCDrawer">
         <div class="mdc-drawer__content">
           <nav class="mdc-list">
-            {{#each (getProperty @root.context.metaData.menus @root.data.currentSite.type) ~}}
+            {{#each @root.data.currentSite.menu ~}}
             <a class="mdc-list-item {{#if (regexMatch @root.request.url.pathname route "gi")}} mdc-list-item--activated{{/if}}"
                href="{{stripTrailingSlash path}}" {{#if (regexMatch @root.request.url.pathname route "gi")}}aria-selected="true"{{else}}aria-hidden="true"{{/if}}>
               {{#if icon ~}}
@@ -365,52 +364,7 @@
       readyListeners.forEach(function(listener) {
         listener();
       });
-
-      $('.supplements').each(function (){
-        var doit = false;
-        if ($(this).is(':checked') || ($(this).is("select") && $(this).val() !== null)){
-          var element = ($(this).is("select")) ? $(this).find('option:selected') : $(this);
-          var supplement = element.data('supplement-target');
-          let suppRef = $(this).attr("data-supplementor");
-          openCloseSupplements(suppRef, supplement)
-        }
-      })
-      $("*[data-supplementor]").change(function() {
-        // console.log( "Handler for .change() called." );
-        // Identify the option
-        // console.log($(this).is("input"));
-        var element = ($(this).is("select")) ? $(this).find('option:selected') : $(this);
-        var supplement = element.data('supplement-target');
-        // Identify its supplement
-        // console.log("supplement is... " + supplement);
-        // This thing's
-        let suppRef = $(this).attr("data-supplementor");
-        openCloseSupplements(suppRef, supplement)
-      });
-      function openCloseSupplements(suppRef, supplement){
-        // console.log(suppRef);
-        // supplement-of- ids
-        // Close down all
-        supplements = $('*[data-supplement-of="'+ suppRef +'"]');
-        var found = false;
-        supplements.each(function () {
-          var suppElement = $(this);
-          if (suppElement.data('supplement') == supplement){
-            // console.log('Opening...' + suppElement.data('supplement'));
-            suppElement.prop("disabled", false);
-            suppElement.removeClass("hidden");
-            found = true;
-          }
-          else {
-            // console.log('Closing...' + suppElement.data('supplement'));
-            suppElement.prop("disabled", true);
-            suppElement.addClass("hidden");
-          }
-        });
-        if (found) {$('*[data-container-of="' + suppRef + '"]').removeClass('hidden');}
-        else {$('*[data-container-of="' + suppRef + '"]').addClass('hidden');}
-      }
-    })
+    });
 
     function registerReadyListener(listener) {
       if (digitalcheckup) {

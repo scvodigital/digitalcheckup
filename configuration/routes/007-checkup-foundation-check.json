@@ -1,8 +1,13 @@
 {
   "name": "checkup_foundation-check",
-  "pattern": "/life/foundation-check",
+  "pattern": {
+    "organisation_foundation_check": "/checkup/foundation-check",
+    "life_results_foundation_check": "/life/foundation-check",
+    "work_results_foundation_check": "/work/foundation-check"
+  },
   "tasks": [
     "context.metaData.commonTasks.currentSite",
+    "context.metaData.commonTasks.currentCheckup",
     {
       "name": "reroute",
       "taskModule": "reroute",

@@ -1,4 +1,4 @@
-<form action="/checkup/{{#compare @root.data.currentSite.type 'organisation'}}confirmation{{else}}submit{{/compare}}" method="post" class="checkup-section b-padding-full" id="checkup-details">
+<form action="/{{@root.data.currentCheckup}}/{{#compare @root.data.currentSite.type 'organisation'}}confirmation{{else}}submit{{/compare}}" method="post" class="checkup-section b-padding-full" id="checkup-details">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answers-site" value="{{@root.data.currentSite.name}}" />
   <input type="hidden" name="answer-section" value="contact-details" />

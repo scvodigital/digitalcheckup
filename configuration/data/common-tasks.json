@@ -22,13 +22,23 @@
       "output": "data"
     }
   },
+  "currentCheckup": {
+    "name": "currentCheckup",
+    "taskModule": "render",
+    "renderer": "handlebars",
+    "config": {
+      "output": "data",
+      "template": "{{itemAt (split @root.request.url.pathname '/') 1}}",
+      "parseJson": false
+    }
+  },
   "getCheckupData": {
     "name": "checkup",
     "taskModule": "render",
     "renderer": "handlebars",
     "config": {
       "output": "data",
-      "template": ">context.metaData.handlebars.templates.checkup_questions_data",
+      "template": "{{{json value=(lookup @root.data.currentSite.checkups @root.data.currentCheckup)}}}",
       "parseJson": true
     }
   },

@@ -9,6 +9,7 @@
   "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
+    "context.metaData.commonTasks.currentCheckup",
     "context.metaData.commonTasks.getCheckupData",
     {
       "name": "rid",

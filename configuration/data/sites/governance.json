@@ -1,0 +1,55 @@
+{
+  "name": "governance",
+  "type": "governance",
+  "title": "Good Governance Checkup",
+  "description": "",
+  "sections_heading": "",
+  "menu": [
+    {
+      "label": "Home",
+      "path": "/",
+      "route": "^/$"
+    },
+    {
+      "label": "Checkup",
+      "path": "/checkup",
+      "route": "^/checkup"
+    },
+    {
+      "label": "About",
+      "path": "/about",
+      "route": "^/about"
+    }
+  ],
+  "sections": [
+    {
+      "title": "",
+      "class": "",
+      "shape": "icon",
+      "icon": ""
+    },
+    {
+      "title": "",
+      "class": "",
+      "shape": "icon",
+      "icon": ""
+    },
+    {
+      "title": "",
+      "class": "",
+      "shape": "icon",
+      "icon": ""
+    },
+    {
+      "title": "",
+      "class": "",
+      "shape": "icon",
+      "icon": ""
+    }
+  ],
+  "for_singular": "charity",
+  "for_plural": "charities",
+  "email": "digital@scvo.scot",
+  "phone": "0800 169 0022",
+  "url": "https://governance.checkup.scot"
+}
