@@ -7,7 +7,7 @@ import * as querystring from 'querystring';
 
 import * as cookieInfoScript from '../node_modules/@scvo/common/old/cookie-info-script' ;
 
-export class DigitalCheckup {
+export class Checkup {
   constructor(firebaseConfig) {
     this.firebaseConfig = firebaseConfig;
     this.auth = new Auth(this.firebaseConfig, '/upgrade-token?token={idToken}', 'dc_cookie');
