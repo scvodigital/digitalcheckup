@@ -1,4 +1,4 @@
-<form action="/{{@root.data.currentCheckup}}/{{#unless (compare @root.data.currentSite.name 'skills')}}confirmation{{else}}submit{{/unless}}" method="post" class="checkup-section b-padding-full" id="checkup-details">
+<form action="/{{@root.data.currentCheckup}}/{{#ifAny (compare @root.data.currentSite.name 'skills') (compare @root.data.currentSite.name 'cyber')}}submit{{else}}confirmation{{/ifAny}}" method="post" class="checkup-section b-padding-full" id="checkup-details">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answers-site" value="{{@root.data.currentSite.name}}" />
   <input type="hidden" name="answer-section" value="contact-details" />
@@ -126,7 +126,7 @@
       </div>
 
       <div class="cta b-padding-full">
-        <button type="submit" class="mdc-button mdc-button--raised">{{#unless (compare @root.data.currentSite.name "skills")}}Next section{{else}}Submit{{/unless}}</button>
+        <button type="submit" class="mdc-button mdc-button--raised">{{#ifAny (compare @root.data.currentSite.name 'skills') (compare @root.data.currentSite.name 'cyber')}}Submit{{else}}Next section{{/ifAny}}</button>
       </div>
     </div>
   </div>
