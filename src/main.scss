@@ -267,7 +267,9 @@ body {
   background-color: $mdc-theme-lightgrey;
 }
 .main-body {
+  background-color: $mdc-theme-lightgrey;
   min-height: 40vh;
+  padding-bottom: $unit;
 }
 //   // background-color: $mdc-theme-lightgrey;
 //   padding-bottom: $unit;
@@ -850,17 +852,17 @@ fieldset {
 }
 
 .question-block {
-  background-color: white;
+  background-color: transparent;
   margin: $unit 0 $unit*2;
   // border-left: $unit/2 solid $mdc-theme-blue;
   border-radius: $border-radius;
   .question {
     border-radius: $border-radius $border-radius 0 0;
-    padding: $unit $unit*2;
+    padding: $unit 0;
     margin: 0;
     .question-title,
     .question-description {
-      color: white;
+      color: $secondary-color;
       margin: 0;
       a {
         color: white;
@@ -875,6 +877,7 @@ fieldset {
     padding: $unit $unit*2;
   }
   .answer-block {
+    background-color: white;
     padding: $unit $unit*2 $unit/2 $unit*1.25;
     margin: 0;
     .answer {
@@ -919,7 +922,8 @@ fieldset {
 }
 
 .question-block .question {
-  background-color: $secondary-color;
+  background-color: transparent;
+  color: $secondary-color;
 }
 
 .brand-scheme-legacy {

@@ -136,7 +136,8 @@
   {{/unless}}
   {{/unless}}
   <digitalcheckup-site>
-    <div class="mdc-typography" {{#unless (compare @root.data.currentSite.name "housing")}}style="background-image: url(https://scvo.scot/rouleaux.svg?color=f4fbfc&style=solid);"{{/unless}}>
+    <div class="mdc-typography">
+      {{!-- {{#unless (compare @root.data.currentSite.name "housing")}}style="background-image: url(https://scvo.scot/rouleaux.svg?color=f4fbfc&style=solid);"{{/unless}} --}}
       {{#if (contains request.url.hostname ".local") ~}}
         {{#if errors.[0]}}
           <div style="z-index:100;position:fixed;top:0;right:0;padding:5px;background-color:#ff0000;color:#ffffff;">
