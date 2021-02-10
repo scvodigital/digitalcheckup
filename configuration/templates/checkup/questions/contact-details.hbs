@@ -1,4 +1,4 @@
-<form action="/{{@root.data.currentCheckup}}/{{#compare @root.data.currentSite.type 'organisation'}}confirmation{{else}}submit{{/compare}}" method="post" class="checkup-section b-padding-full" id="checkup-details">
+<form action="/{{@root.data.currentCheckup}}/{{#unless (compare @root.data.currentSite.name 'skills')}}confirmation{{else}}submit{{/unless}}" method="post" class="checkup-section b-padding-full" id="checkup-details">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answers-site" value="{{@root.data.currentSite.name}}" />
   <input type="hidden" name="answer-section" value="contact-details" />
@@ -23,11 +23,11 @@
     <div class="container-content">
       {{> checkup_progress progress=87}}
 
-      {{#compare @root.data.currentSite.type "organisation"}}
+      {{!-- {{#unless (compare @root.data.currentSite.name "skills")}}
       <div class="mdc-typography--body2">
         * required information
       </div>
-      {{/compare}}
+      {{/unless}} --}}
 
       <div class="question-block mdc-elevation--z3">
         <div class="question">
@@ -56,7 +56,7 @@
           </div>
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-              {{#compare @root.data.currentSite.type "organisation"}}
+              {{#unless (compare @root.data.currentSite.name "skills")}}
                 <div class="mdc-text-field mdc-text-field--box mdc-ripple-upgraded" data-mdc-auto-init="MDCTextField">
                   <input type="text" id="job_title" name="answers-job_title" class="mdc-text-field__input mdc-text-field--fullwidth" value="" data-lpignore="true" autocomplete="off"{{#if @root.request.body.answers-sid}} required{{/if}}>
                   <label class="mdc-floating-label" for="answers-job_title">
@@ -64,16 +64,16 @@
                   </label>
                   <div class="mdc-line-ripple"></div>
                 </div>
-              {{/compare}}
+              {{/unless}}
             </div>
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
               <div class="mdc-typography--body1">
-                Your email address will only be used to send you information regarding this survey. {{#compare @root.data.currentSite.type "organisation"}}If you ask for additional support we will email you in the first instance.{{/compare}} We will not share your information with any third parties unless you ask us to do so.<br />
+                Your email address will only be used to send you information regarding this survey. {{#unless (compare @root.data.currentSite.name "skills")}}If you ask for additional support we will email you in the first instance.{{/unless}} We will not share your information with any third parties unless you ask us to do so.<br />
                 You can read our <a href="/privacy" target="_blank">privacy notice</a> for more information.
               </div>
             </div>
           </div>
-          {{#compare @root.data.currentSite.type "organisation"}}
+          {{#unless (compare @root.data.currentSite.name "skills")}}
             <div class="mdc-layout-grid__inner">
               <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 {{#if @root.request.body.answers-sid ~}}
@@ -120,13 +120,13 @@
                   <div class="mdc-line-ripple"></div>
                 </div>
               </div>
-            {{/compare}}
+            {{/unless}}
           </div>
         </div>
       </div>
 
       <div class="cta b-padding-full">
-        <button type="submit" class="mdc-button mdc-button--raised">{{#compare @root.data.currentSite.type "organisation"}}Next section{{else}}Submit{{/compare}}</button>
+        <button type="submit" class="mdc-button mdc-button--raised">{{#unless (compare @root.data.currentSite.name "skills")}}Next section{{else}}Submit{{/unless}}</button>
       </div>
     </div>
   </div>
