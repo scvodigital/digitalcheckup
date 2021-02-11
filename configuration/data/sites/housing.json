@@ -4,6 +4,7 @@
   "title": "Digital Checkup for Housing Associations",
   "description": "Take our simple Digital Check-up to assess your current digital maturity and how this compares to other housing associations",
   "sections_heading": "Identify the strengths and the gaps your housing association is facing with digital technology",
+  "chart_type": "radar",
   "menu": [
     {
       "label": "Home",
