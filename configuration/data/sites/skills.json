@@ -5,7 +5,8 @@
   "icon": "far fa-lightbulb-on",
   "description": "",
   "sections_heading": "Key skills",
-  "chart_type": "radar",
+  "show_comparisons": false,
+  "chart_type": "bar",
   "menu": [
     {
       "label": "Home",

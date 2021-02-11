@@ -4,6 +4,7 @@
   "title": "Good Governance Checkup",
   "description": "",
   "sections_heading": "",
+  "show_comparisons": true,
   "chart_type": "radar",
   "menu": [
     {
