@@ -40,7 +40,7 @@ module.exports = (env) => {
     },
     entry: [
       './src/main.scss',
-      './src/main.js',
+      './src/main.js'
     ],
     output: {
       filename: 'build/main.js',

@@ -1,0 +1,47 @@
+{{#json type="array"}}
+  {{#json type="array"}}
+    {{#json}}
+      {{{json key="axis" value="Overall"}}},
+      {{{json key="value" value=(divide (default @root.data.results.overall.respondent 0) 100)}}}
+    {{/json}},
+
+    {{#each @root.data.currentSite.metrics}}
+      {{#json}}
+        {{{json key="axis" value=title}}},
+        {{{json key="value" value=(divide (default (getProperty @root.data.results.sections (concat key ".respondent")) 0) 100)}}}
+      {{/json}},
+    {{/each}}
+  {{/json}},
+
+  {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare (length @root.data.additionalResponses.hits.hits) ">" 3) ~}}
+    {{#json type="array"}}
+      {{#json}}
+        {{{json key="axis" value="Overall"}}},
+        {{{json key="value" value=(divide (default @root.data.results.overall.average 0) 100)}}}
+      {{/json}},
+
+      {{#each @root.data.currentSite.metrics}}
+        {{#json}}
+          {{{json key="axis" value=title}}},
+          {{{json key="value" value=(divide (default (getProperty @root.data.results.sections (concat key ".average")) 0) 100)}}}
+        {{/json}},
+      {{/each}}
+    {{/json}},
+  {{else}}
+    {{#each @root.data.additionalResponses.hits.hits}}
+      {{#json type="array"}}
+        {{#json}}
+          {{{json key="axis" value="Overall"}}},
+          {{{json key="value" value=(divide (default (getProperty @root.data.results.overall.additionalResponses (concat @index ".percentage")) 0) 100)}}}
+        {{/json}},
+
+        {{#each @root.data.currentSite.metrics}}
+          {{#json}}
+            {{{json key="axis" value=title}}},
+            {{{json key="value" value=(divide (default (getProperty @root.data.results.sections (concat key ".additionalResponses." @../index ".percentage")) 0) 100)}}}
+          {{/json}},
+        {{/each}}
+      {{/json}},
+    {{/each}}
+  {{/ifAny ~}}
+{{/json}}

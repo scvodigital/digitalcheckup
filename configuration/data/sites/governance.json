@@ -5,6 +5,7 @@
   "description": "",
   "sections_heading": "",
   "show_comparisons": true,
+  "show_averages": true,
   "chart_type": "radar",
   "menu": [
     {

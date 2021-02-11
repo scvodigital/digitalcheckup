@@ -5,7 +5,8 @@
   "icon": "far fa-lightbulb-on",
   "description": "",
   "sections_heading": "Key skills",
-  "show_comparisons": false,
+  "show_comparisons": true,
+  "show_averages": false,
   "chart_type": "bar",
   "menu": [
     {

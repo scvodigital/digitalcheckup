@@ -1,0 +1,60 @@
+{{#json type="array"}}
+  {{#json}}
+    {{{json key="metric" value="Overall"}}},
+    {{#json key="values" type="array"}}
+      {{#json}}
+        {{{json key="group" value="You"}}},
+        {{{json key="value" value=(default @root.data.results.overall.respondent 0)}}}
+      {{/json}},
+
+      {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare (length @root.data.additionalResponses.hits.hits) ">" 3) ~}}
+        {{#if @root.data.currentSite.show_averages}}
+          {{#json}}
+            {{{json key="group" value="Average"}}},
+            {{{json key="value" value=(default @root.data.results.overall.average 0)}}}
+          {{/json}}
+        {{/if}}
+      {{else}}
+        {{#if @root.data.currentSite.show_comparisons}}
+          {{#each @root.data.additionalResponses.hits.hits}}
+            {{#json}}
+              {{{json key="group" value=(if (compare _source.name @root.data.rootResponse.name) (concat "You (" (momentFormat (moment _source.date_last_modified "YYYY-MM-DDTHH:mm:ssZ") "MM/DD/YYYY") ")") else=_source.name)}}},
+              {{{json key="value" value=(default _source.percentage_total 0)}}},
+              {{{json key="date" value=_source.date_last_modified}}}
+            {{/json}},
+          {{/each}}
+        {{/if}}
+      {{/ifAny}}
+    {{/json}}
+  {{/json}},
+  {{#each @root.data.currentSite.metrics}}
+    {{#json}}
+      {{{json key="metric" value=title}}},
+      {{#json key="values" type="array"}}
+        {{#json}}
+          {{{json key="group" value="You"}}},
+          {{{json key="value" value=(default (getProperty @root.data.results.sections (concat key ".respondent")) 0)}}}
+        {{/json}},
+
+        {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare (length @root.data.additionalResponses.hits.hits) ">" 3) ~}}
+          {{#if @root.data.currentSite.show_averages}}
+            {{#json}}
+              {{{json key="group" value="Average"}}},
+              {{{json key="value" value=(default (getProperty @root.data.results.sections (concat key ".average")) 0)}}}
+            {{/json}}
+          {{/if}}
+        {{else}}
+          {{#if @root.data.currentSite.show_comparisons}}
+            {{#each @root.data.additionalResponses.hits.hits}}
+              {{#json}}
+                {{{json key="group" value=(if (compare _source.name @root.data.rootResponse.name) (concat "You (" (momentFormat (moment _source.date_last_modified "YYYY-MM-DDTHH:mm:ssZ") "MM/DD/YYYY") ")") else=_source.name)}}},
+                {{{json key="value" value=(default (lookup _source ../percentageKey) 0)}}},
+                {{{json key="date" value=_source.date_last_modified}}}
+              {{/json}},
+            {{/each}}
+          {{/if}}
+        {{/ifAny}}
+      {{/json}}
+    {{/json}},
+  {{/each}}
+{{/json}}
