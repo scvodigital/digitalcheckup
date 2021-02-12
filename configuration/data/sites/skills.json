@@ -130,23 +130,19 @@
           {
             "title": "I can turn on a device",
             "value": "q1",
-            "supplements": true,
             "type": "select-one",
             "options": [
               {
                 "answer": "I can do this",
-                "value": "I can do this",
-                "score": 2
+                "value": "I can do this"
               },
               {
                 "answer": "I can partially do this",
-                "value": "I can partially do this",
-                "score": 1
+                "value": "I can partially do this"
               },
               {
                 "answer": "I can't do this",
-                "value": "I can't do this",
-                "score": 0
+                "value": "I can't do this"
               }
             ]
           },
@@ -154,23 +150,19 @@
             "title": "I can use the controls on a device",
             "description": "Using a touchscreen, keyboard, mouse or trackpad",
             "value": "q2",
-            "supplements": true,
             "type": "select-one",
             "options": [
               {
                 "answer": "I can do this",
-                "value": "I can do this",
-                "score": 2
+                "value": "I can do this"
               },
               {
                 "answer": "I can partially do this",
-                "value": "I can partially do this",
-                "score": 1
+                "value": "I can partially do this"
               },
               {
                 "answer": "I can't do this",
-                "value": "I can't do this",
-                "score": 0
+                "value": "I can't do this"
               }
             ]
           },
@@ -178,23 +170,19 @@
             "title": "I can use accessibility tools on my device to make it easier",
             "description": "Volume settings, making text bigger, brightness settings",
             "value": "q3",
-            "supplements": true,
             "type": "select-one",
             "options": [
               {
                 "answer": "I can do this",
-                "value": "I can do this",
-                "score": 2
+                "value": "I can do this"
               },
               {
                 "answer": "I can partially do this",
-                "value": "I can partially do this",
-                "score": 1
+                "value": "I can partially do this"
               },
               {
                 "answer": "I can't do this",
-                "value": "I can't do this",
-                "score": 0
+                "value": "I can't do this"
               }
             ]
           },
@@ -202,23 +190,19 @@
             "title": "I can interact with the home screen or desktop on my device",
             "description": "Launching applications, finding ‘home’ or the desktop",
             "value": "q4",
-            "supplements": true,
             "type": "select-one",
             "options": [
               {
                 "answer": "I can do this",
-                "value": "I can do this",
-                "score": 2
+                "value": "I can do this"
               },
               {
                 "answer": "I can partially do this",
-                "value": "I can partially do this",
-                "score": 1
+                "value": "I can partially do this"
               },
               {
                 "answer": "I can't do this",
-                "value": "I can't do this",
-                "score": 0
+                "value": "I can't do this"
               }
             ]
           },
@@ -226,23 +210,19 @@
             "title": "I can connect my device to a safe and secure internet connection",
             "description": "Opening internet connection settings and connecting a secure network",
             "value": "q5",
-            "supplements": true,
             "type": "select-one",
             "options": [
               {
                 "answer": "I can do this",
-                "value": "I can do this",
-                "score": 2
+                "value": "I can do this"
               },
               {
                 "answer": "I can partially do this",
-                "value": "I can partially do this",
-                "score": 1
+                "value": "I can partially do this"
               },
               {
                 "answer": "I can't do this",
-                "value": "I can't do this",
-                "score": 0
+                "value": "I can't do this"
               }
             ]
           },
@@ -255,18 +235,15 @@
             "options": [
               {
                 "answer": "I can do this",
-                "value": "I can do this",
-                "score": 2
+                "value": "I can do this"
               },
               {
                 "answer": "I can partially do this",
-                "value": "I can partially do this",
-                "score": 1
+                "value": "I can partially do this"
               },
               {
                 "answer": "I can't do this",
-                "value": "I can't do this",
-                "score": 0
+                "value": "I can't do this"
               }
             ]
           },
@@ -279,18 +256,15 @@
             "options": [
               {
                 "answer": "I can do this",
-                "value": "I can do this",
-                "score": 2
+                "value": "I can do this"
               },
               {
                 "answer": "I can partially do this",
-                "value": "I can partially do this",
-                "score": 1
+                "value": "I can partially do this"
               },
               {
                 "answer": "I can't do this",
-                "value": "I can't do this",
-                "score": 0
+                "value": "I can't do this"
               }
             ]
           }
@@ -329,15 +303,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -366,15 +338,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -403,15 +373,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -440,15 +408,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -477,15 +443,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -528,15 +492,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -568,15 +530,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -608,15 +568,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -648,15 +606,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -688,15 +644,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -739,15 +693,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -779,15 +731,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -819,15 +769,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -859,15 +807,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -899,15 +845,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -950,15 +894,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -990,15 +932,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1030,15 +970,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1070,15 +1008,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1110,15 +1046,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1160,15 +1094,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1200,15 +1132,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1240,15 +1170,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1280,15 +1208,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1320,15 +1246,13 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "value": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 }
               ]
             }
@@ -1347,7 +1271,6 @@
             "title": "What age are you?",
             "value": "q1",
             "type": "select-one",
-            "metric": "Demographic",
             "options": [
               {
                 "answer": "16-24"
@@ -1376,7 +1299,6 @@
             "title": "Which of these describes you best?",
             "value": "q2",
             "type": "select-one",
-            "metric": "Demographic",
             "options": [
               {
                 "answer": "Employed"
@@ -1405,7 +1327,6 @@
             "title": "Do you have internet access at home",
             "value": "q3",
             "type": "select-one",
-            "metric": "Demographic",
             "options": [
               {
                 "answer": "Yes"
@@ -1419,7 +1340,6 @@
             "title": "Which (if any) devices you use to get online?",
             "value": "q4",
             "type": "select-many",
-            "metric": "Demographic",
             "options": [
               {
                 "answer": "Desktop computer"
@@ -1476,21 +1396,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1519,21 +1439,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1562,21 +1482,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1605,21 +1525,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1648,21 +1568,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1702,21 +1622,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1745,21 +1665,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1788,21 +1708,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1831,21 +1751,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1874,21 +1794,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1928,21 +1848,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -1971,21 +1891,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2014,21 +1934,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2057,21 +1977,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2100,21 +2020,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2154,21 +2074,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2197,21 +2117,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2240,21 +2160,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2283,21 +2203,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2326,21 +2246,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2379,21 +2299,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2422,21 +2342,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2465,21 +2385,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2508,21 +2428,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }
@@ -2551,21 +2471,21 @@
               "I can partially do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ],
               "I can't do this": [
                 {
                   "answer": "I would like to learn more",
-                  "score": 1
+                  "value": "I would like to learn more"
                 },
                 {
-                  "answer": "This is not relevant to my current role",
-                  "score": 0
+                  "answer": "Not applicable",
+                  "value": "Not applicable"
                 }
               ]
             }

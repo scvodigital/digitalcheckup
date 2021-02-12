@@ -22,17 +22,28 @@
   {{~/compare~}}
 {{~/inline~}}
 
+{{~#*inline "additional_response"~}}
+  {{#json}}
+    {{#compare name @root.data.rootResponse.name}}
+      {{{json key="name" value=(concat "Your score on " (momentFormat (moment _source.date_last_modified "YYYY-MM-DDTHH:mm:ssZ") "Do MMM YYYY"))}}},
+      {{#if label}}
+        {{{json key="label" value=(concat label " on " (momentFormat (moment _source.date_last_modified "YYYY-MM-DDTHH:mm:ssZ") "Do MMM YYYY"))}}},
+      {{/if}}
+    {{else}}
+      {{{json key="name" value=name}}},
+    {{/compare}}
+    {{{json key="date" value=date}}},
+    {{{json key="percentage" value=(default percentage 0)}}}
+  {{/json}}
+{{~/inline~}}
+
 {{~#*inline "section"~}}
   {{#json key=key}}
     {{{json key="respondent" value=(lookup rootResponse percentageKey)}}},
 
     {{#json key="additionalResponses" type="array"}}
       {{#each additionalResponses}}
-        {{#json}}
-          {{{json key="name" value=_source.name}}},
-          {{{json key="date" value=_source.date_last_modified}}},
-          {{{json key="percentage" value=(default (lookup _source ../percentageKey) 0)}}}
-        {{/json}},
+        {{>additional_response name=_source.name date=_source.date_last_modified percentage=(lookup _source ../percentageKey)}},
       {{/each}}
     {{/json}},
 
@@ -61,11 +72,7 @@
 
           {{#json key="additionalResponses" type="array"}}
             {{#each additionalResponses}}
-              {{#json}}
-                {{{json key="name" value=_source.name}}},
-                {{{json key="date" value=_source.date_last_modified}}},
-                {{{json key="percentage" value=(default _source.percentage_total 0)}}}
-              {{/json}},
+              {{>additional_response name=_source.name label="Your overall score" date=_source.date_last_modified percentage=_source.percentage_total}},
             {{/each}}
           {{/json}},
 

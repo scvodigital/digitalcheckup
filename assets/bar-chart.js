@@ -48,9 +48,10 @@ function barChart(id, data) {
   svg.append("g")
     .attr("class", "x axis")
     .style('opacity','0')
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate(0, " + height + ")")
     .call(xAxis)
     .selectAll(".tick text")
+    .attr("y", "5px")
     .call(wrap, x0.rangeBand())
     .select();
 
@@ -116,7 +117,7 @@ function barChart(id, data) {
       return height - y(0);
     })
     .on("mouseover", function(d) {
-      tooltip.html(`${d.group}: ${d.value}%`).style("visibility", "visible");
+      tooltip.html(`${d.label || d.group}: ${d.value}%`).style("visibility", "visible");
       d3.select(this).style("fill", d3.rgb(color(d.group)).darker(2));
     })
     .on("mousemove", function() {
