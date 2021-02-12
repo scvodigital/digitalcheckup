@@ -1,0 +1,31 @@
+{{#json}}
+  {{{json key="size" value=100}}},
+  {{#json key="_source" type="array"}}
+    "title",
+    "content",
+    "author_attribution",
+    "link",
+    "post_tags_slug"
+  {{/json}},
+  {{#json key="query"}}
+    {{#json key="bool"}}
+      {{#json key="must" type="array"}}
+        {{#with (default @root.data.rootResponse.topic @root.request.params.query.topic)}}
+          {{#each @root.data.currentSite.metrics}}
+            {{#ifAll (compare key ../this) relevantPostTagsSlugs}}
+              {{>es_terms field="post_tags_slug" terms=relevantPostTagsSlugs}},
+            {{/ifAll}}
+          {{/each}}
+        {{/with}}
+        {{#>es_terms field="post_tags_slug"}}
+          {{#each @root.data.currentSite.metrics}}
+            {{#each relevantPostTagsSlugs}}{{{json value=this}}},{{/each}}
+          {{/each}}
+        {{/es_terms}}
+      {{/json}}
+    {{/json}}
+  {{/json}},
+  {{#json key="sort"}}
+    {{{json key="weight" value="desc"}}}
+  {{/json}}
+{{/json}}

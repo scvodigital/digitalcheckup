@@ -1,0 +1,72 @@
+{{#json}}
+  {{{json key="size" value=9}}},
+  {{#json key="_source" type="array"}}
+    "title",
+    "content",
+    "author_attribution",
+    "link",
+    "post_tags_slug"
+  {{/json}},
+  {{#json key="query"}}
+    {{#ifAll (compare @root.data.currentSite.type "organisation") (compare @root.data.currentSite.name "!==" "cyber")}}
+      {{#json key="function_score"}}
+        {{#json key="query"}}
+          {{#json key="bool"}}
+            {{#with (default @root.data.rootResponse.topic @root.request.params.query.topic)}}
+              {{#each @root.data.currentSite.metrics}}
+                {{#ifAll (compare key ../this) relevantPostTagsSlugs}}
+                  {{#json key="must_not" type="array"}}
+                    {{>es_terms field="post_tags_slug" terms=relevantPostTagsSlugs}}
+                  {{/json}},
+                {{/ifAll}}
+              {{/each}}
+            {{/with}}
+
+            {{#json key="must" type="array"}}
+              {{#>es_terms field="post_tags_slug"}}
+                {{#each @root.data.currentSite.metrics}}
+                  {{#each relevantPostTagsSlugs}}{{{json value=this}}},{{/each}}
+                {{/each}}
+              {{/es_terms}}
+            {{/json}}
+          {{/json}}
+        {{/json}},
+
+        {{{json key="boost" value="5"}}},
+
+        {{#json key="functions" type="array"}}
+          {{#json}}
+            {{#json key="field_value_factor"}}
+              {{{json key="field" value="weight"}}},
+              {{{json key="factor" value=10}}},
+              {{{json key="modifier" value="reciprocal"}}},
+              {{{json key="missing" value=1}}}
+            {{/json}}
+          {{/json}},
+
+          {{#each @root.data.currentSite.metrics}}
+            {{#if relevantPostTagsSlugs}}
+              {{#json}}
+                {{#json key="filter"}}
+                  {{#json key="terms"}}
+                    {{{json key="post_tags_slug" value=relevantPostTagsSlugs}}}
+                  {{/json}}
+                {{/json}},
+
+                {{#json key="random_score"}}{{/json}},
+                {{{json key="weight" value=(subtract 100 (getProperty @root.data.results.sections (concat key ".respondent")))}}}
+              {{/json}},
+            {{/if}}
+          {{/each}}
+        {{/json}},
+
+        {{{json key="max_boost" value=100}}},
+        {{{json key="score_mode" value="max"}}},
+        {{{json key="boost_mode" value="multiply"}}},
+        {{{json key="min_score" value=0}}},
+      {{/json}}
+    {{else}}
+      {{#json key="match_none"}}{{/json}}
+    {{/ifAll}}
+  {{/json}}
+{{/json}}

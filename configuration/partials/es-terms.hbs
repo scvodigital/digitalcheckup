@@ -1,0 +1,11 @@
+{{#json}}
+  {{#json key="terms"}}
+    {{#if @partial-block}}
+      {{#json key=field type="array"}}
+        {{> @partial-block}}
+      {{/json}}
+    {{else}}
+      {{{json key=field value=terms}}}
+    {{/if}}
+  {{/json}}
+{{/json}}
