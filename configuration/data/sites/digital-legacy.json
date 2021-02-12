@@ -6,7 +6,7 @@
   "sections_heading": "Identify the strengths and the gaps your organisation is facing with digital technology",
   "show_comparisons": true,
   "show_averages": true,
-  "chart_type": "bar",
+  "chart_type": "radar",
   "menu": [
     {
       "label": "Home",
