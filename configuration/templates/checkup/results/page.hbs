@@ -83,13 +83,13 @@
                     </div>
                   </div>
                 {{else}}
-                  {{#each @root.data.results.overalladditionalResponses ~}}
+                  {{#each @root.data.results.overall.additionalResponses ~}}
                     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
                       <div class="mdc-typography--headline6">
                         {{{name}}}
                       </div>
 
-                      <div class="score score-shared-1">
+                      <div class="score score-shared-{{add @index 1}}">
                         {{percentage}}%
                       </div>
 
