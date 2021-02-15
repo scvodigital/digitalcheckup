@@ -87,11 +87,11 @@ function barChart(id, data) {
     });
 
   const tooltip = d3.select("body")
-    .append("div")
+    .append("p")
     .attr("class","d3-tooltip")
     .style("position", "absolute")
     .style("z-index", "10")
-    .style("visibility", "hidden")
+    .style("display", "none")
     .style("padding", "15px")
     .style("background", "rgba(0,0,0,0.6)")
     .style("border-radius", "5px")
@@ -117,7 +117,7 @@ function barChart(id, data) {
       return height - y(0);
     })
     .on("mouseover", function(d) {
-      tooltip.html(`${d.label || d.group}: ${d.value}%`).style("visibility", "visible");
+      tooltip.html(`${d.label || d.group}: ${d.value}%`).style("display", "block");
       d3.select(this).style("fill", d3.rgb(color(d.group)).darker(2));
     })
     .on("mousemove", function() {
@@ -126,7 +126,7 @@ function barChart(id, data) {
         .style("left", (event.pageX + 10) + 'px')
     })
     .on("mouseout", function(d) {
-      tooltip.html('').style("visibility", "hidden");
+      tooltip.html('').style("display", "none");
       d3.select(this).style("fill", color(d.group));
     });
 

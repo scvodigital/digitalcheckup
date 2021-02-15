@@ -5,10 +5,11 @@
     "content",
     "author_attribution",
     "link",
+    "post_tags",
     "post_tags_slug"
   {{/json}},
   {{#json key="query"}}
-    {{#ifAll (compare @root.data.currentSite.type "organisation") (compare @root.data.currentSite.name "!==" "cyber")}}
+    {{#compare @root.data.currentSite.name "!==" "cyber"}}
       {{#json key="function_score"}}
         {{#json key="query"}}
           {{#json key="bool"}}
@@ -67,6 +68,6 @@
       {{/json}}
     {{else}}
       {{#json key="match_none"}}{{/json}}
-    {{/ifAll}}
+    {{/compare}}
   {{/json}}
 {{/json}}

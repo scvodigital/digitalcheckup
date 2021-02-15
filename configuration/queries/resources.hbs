@@ -5,6 +5,7 @@
     "content",
     "author_attribution",
     "link",
+    "post_tags",
     "post_tags_slug"
   ],
   "query": {
@@ -13,13 +14,23 @@
         {
           "terms": {
             "post_tags_slug": [
+              {{#compare @root.data.currentSite.name "skills"}}
+              "communicating",
+              "transacting",
+              "handling-information-and-content",
+              "problemsolving",
+              "beingsafelegalandconfident"
+              {{else}}
+              {{#compare @root.data.currentSite.name "housing"}}
+              "technology-enabled-care",
+              {{/compare}}
               "content-marketing-data",
               "cyber-resilience",
               "tools-equipment",
               "leadership",
               "culture",
-              "skills",
-              "technology-enabled-care"
+              "skills"
+              {{/compare}}
             ]
           }
         }

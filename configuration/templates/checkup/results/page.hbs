@@ -33,7 +33,7 @@
       {{> checkup_progress progress=100}}
 
       {{#ifAny @root.data.rootResponse.percentage_total (compare @root.data.rootResponse.percentage_total "===" 0) @root.request.params.query.s1 ~}}
-        <div class="question-block mdc-elevation--z3">
+        <div class="question-block bg-white">
           <div class="results-block">
             <div class="mdc-layout-grid t-margin-full">
               <div class="mdc-layout-grid__inner">
@@ -348,7 +348,7 @@
                   <div class="mdc-layout-grid__inner">
                     {{#each @root.data.supplimentaryResponses.resources_focus.hits.hits ~}}
                       {{#with _source ~}}
-                        {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
+                        {{> content_resource_card tag_slugs=post_tags_slug link=link title=title author=author_attribution content=content}}
                       {{/with ~}}
                     {{/each ~}}
                   </div>
@@ -387,7 +387,7 @@
               <div class="mdc-layout-grid__inner">
                 {{#each @root.data.supplimentaryResponses.resources_relevant.hits.hits ~}}
                 {{#with _source ~}}
-                {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
+                {{> content_resource_card tag_slugs=post_tags_slug tags=post_tags link=link title=title author=author_attribution content=content}}
                 {{/with ~}}
                 {{/each ~}}
               </div>

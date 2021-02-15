@@ -938,6 +938,7 @@ fieldset {
       border-left-color: $mdc-theme-purple;
     }
   }
+  .checkup-topic-resources-problemsolving .mdc-card__title,
   .checkup-topic-resources-leadership .mdc-card__title,
   .checkup-topic-header-leadership {
     background-color: $mdc-theme-purple;
@@ -957,6 +958,7 @@ fieldset {
       border-left-color: $mdc-theme-blue;
     }
   }
+  .checkup-topic-resources-communicating .mdc-card__title,
   .checkup-topic-resources-tools .mdc-card__title,
   .checkup-topic-header-tools {
     background-color: $mdc-theme-blue;
@@ -975,6 +977,7 @@ fieldset {
       border-left-color: $mdc-theme-green;
     }
   }
+  .checkup-topic-resources-transacting .mdc-card__title,
   .checkup-topic-resources-data .mdc-card__title,
   .checkup-topic-header-data {
     background-color: $mdc-theme-green;
@@ -1004,9 +1007,13 @@ fieldset {
       border-left-color: $mdc-theme-pink;
     }
   }
+  .checkup-topic-resources-handling-information-and-content .mdc-card__title,
   .checkup-topic-resources-cyber .mdc-card__title,
   .checkup-topic-header-cyber {
     background-color: $mdc-theme-pink;
+  }
+  .checkup-topic-resources-beingsafelegalandconfident .mdc-card__title {
+    background-color: $mdc-theme-orange;
   }
   // .checkup-topic-resources-cyber a {
   //   color: $mdc-theme-pink;
