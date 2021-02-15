@@ -178,18 +178,20 @@
 
                       {{#unless (any @root.data.results.overall.additionalResponses) ~}}
                         {{#if @root.request.params.query.rid ~}}
-                          <div class="cta v-padding-full">
-                            <div class="mdc-text-field mdc-text-field--with-trailing-icon">
-                              <input type="text" id="share-url" class="mdc-text-field__input" value="https://{{@root.request.url.host}}/{{@root.data.currentCheckup}}?sid={{@root.request.params.query.rid}}" readonly>
-                              <label for="share-url" class="mdc-floating-label mdc-floating-label--float-above">Share with colleagues</label>
-                              <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button" title="Copy URL"></i>
-                              <div class="mdc-line-ripple"></div>
-                            </div>
+                          {{#unless (compare @root.data.currentSite.name "skills")}}
+                            <div class="cta v-padding-full">
+                              <div class="mdc-text-field mdc-text-field--with-trailing-icon">
+                                <input type="text" id="share-url" class="mdc-text-field__input" value="https://{{@root.request.url.host}}/{{@root.data.currentCheckup}}?sid={{@root.request.params.query.rid}}" readonly>
+                                <label for="share-url" class="mdc-floating-label mdc-floating-label--float-above">Share with colleagues</label>
+                                <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button" title="Copy URL"></i>
+                                <div class="mdc-line-ripple"></div>
+                              </div>
 
-                            <p class="mdc-typography--body1">
-                              Invite your colleagues to complete the checkup and see your results plotted together - a great way of comparing views on your digital maturity.
-                            </p>
-                          </div>
+                              <p class="mdc-typography--body1">
+                                Invite your colleagues to complete the checkup and see your results plotted together - a great way of comparing views on your digital maturity.
+                              </p>
+                            </div>
+                          {{/unless}}
                         {{/if ~}}
                       {{/unless ~}}
                     {{/unless ~}}
