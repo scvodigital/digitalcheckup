@@ -1,6 +1,6 @@
 {
   "name": "checkup_results_export",
-  "debug": true,
+  "debug": false,
   "pattern": {
     "organisation_results_export": "/checkup/results-export",
     "life_results_export": "/life/results-export",

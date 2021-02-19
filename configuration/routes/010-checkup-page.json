@@ -1,6 +1,6 @@
 {
   "name": "checkup_page",
-  "debug": true,
+  "debug": false,
   "pattern": {
     "organisation_home": "/checkup",
     "organisation_section": "/checkup/:section",

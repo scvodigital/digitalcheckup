@@ -1,6 +1,6 @@
 {
   "name": "post",
-  "debug": true,
+  "debug": false,
   "pattern": "/post/:wpid(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
