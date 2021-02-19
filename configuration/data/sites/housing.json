@@ -929,9 +929,9 @@
               ]
             }
           ],
-          "next_section": "organisation-details"
+          "next_section": "z-organisation-details"
         },
-        "organisation-details": {
+        "z-organisation-details": {
           "name": "Organisation details",
           "title": "Your organisation size and priorities",
           "icon": "organisation",
