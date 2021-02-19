@@ -6,7 +6,7 @@
 {{~/inline~}}
 
 {{#json type="array"}}
-  {{#each @root.data.checkup ~}}
+  {{#each @root.data.checkup.sections ~}}
     {{#each questions}}
       {{#if metric}}
         {{#compare type 'select-grid'}}

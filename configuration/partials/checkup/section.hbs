@@ -1,5 +1,5 @@
 
-{{#with (getProperty @root.data.checkup section) ~}}
+{{#with (getProperty @root.data.checkup.sections section) ~}}
 <form action="/{{@root.data.currentCheckup}}/{{next_section}}" method="post" class="checkup-section" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
