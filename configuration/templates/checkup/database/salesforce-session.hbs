@@ -11,13 +11,13 @@
   {{{json key="wantsSupport" value=(if (compare @root.request.body.answers-support "===" "No thanks") false else=true)}}},
   {{{json key="wantsReminder" value=false}}},
 
-  {{!-- {{#each @root.data.checkup}}
+  {{#each @root.data.checkup}}
     {{#each questions}}
       {{#if checkup_question}}
         {{{json key=checkup_question value=(lookup @root.request.body (concat 'answers-' @../key '-' value))}}},
       {{/if}}
     {{/each}}
-  {{/each}} --}}
+  {{/each}}
 
   {{#json key="metricResponses" type="array"}}
     {{#each (groupBy @root.data.metrics "metric")}}
