@@ -1,6 +1,6 @@
 {
   "name": "checkup_submit",
-  "debug": true,
+  "debug": false,
   "acceptedVerbs": "POST",
   "pattern": {
     "organisation_submit": "/checkup/submit",
@@ -60,6 +60,18 @@
         "parseJson": true
       }
     },
+    "data.generateSaveCheckupSessionTask",
+    {
+      "name": "save_data",
+      "taskModule": "firebaseRtbSet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "setOrUpdate": "set",
+        "pathTemplate": "/submissions/{{@root.data.rid}}/",
+        "dataTemplate": ">context.metaData.handlebars.templates.checkup_database_firebase"
+      }
+    },
     {
       "name": "destination",
       "taskModule": "renderLayout",
@@ -76,7 +88,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.checkup_questions_dontsubmit"
+              "body": ">context.metaData.handlebars.templates.checkup_questions_submit"
             },
             "contentType": "text/html"
           }
