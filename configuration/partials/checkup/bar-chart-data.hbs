@@ -8,12 +8,12 @@
       {{/json}},
 
       {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare (length @root.data.additionalResponses.hits.hits) ">" 3) ~}}
-        {{#if @root.data.currentSite.show_averages}}
+        {{#ifAll @root.data.currentSite.show_averages (compare @root.data.results.overall.average ">" 0)}}
           {{#json}}
             {{{json key="group" value="Average"}}},
             {{{json key="value" value=(default @root.data.results.overall.average 0)}}}
           {{/json}}
-        {{/if}}
+        {{/ifAll}}
       {{else}}
         {{#if @root.data.currentSite.show_comparisons}}
           {{#each @root.data.results.overall.additionalResponses}}
@@ -37,12 +37,12 @@
         {{/json}},
 
         {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare (length @root.data.additionalResponses.hits.hits) ">" 3) ~}}
-          {{#if @root.data.currentSite.show_averages}}
+          {{#ifAll @root.data.currentSite.show_averages (compare @root.data.results.overall.average ">" 0)}}
             {{#json}}
               {{{json key="group" value="Average"}}},
               {{{json key="value" value=(default (getProperty @root.data.results.sections (concat key ".average")) 0)}}}
             {{/json}}
-          {{/if}}
+          {{/ifAll}}
         {{else}}
           {{#if @root.data.currentSite.show_comparisons}}
             {{log (concat "Current metric key: " key) @root.data.results.sections}}
