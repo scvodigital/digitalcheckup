@@ -84,23 +84,30 @@
               <h1 class="mdc-typography--headline3 v-margin-full">
                 Measuring your Essential Digital Skills
               </h1>
+              <h3 class="mdc-typography--headline5">
+                The Essential Digital Skills Checkup contains three checklists to allow you to measure your digital skills:
+              </h3>
             </div>
           </div>
         </div>
-        <div class="container-fluid container-home">
+        <div class="container-fluid">
           <div class="container-home v-padding-full">
             <div class="mdc-layout-grid">
               <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                  <h1>Life & Foundation Skills</h1>
+                  <h1>Foundation Skills</h1>
                   <p class="t-margin-full">
-                    We encourage you to start with the Foundation skills checkup as these skills are the building blocks to develop your Essential Digital Skills from.
-                  </p>
-                  <p>
-                    At the end, you will either be promoted to move to the Life skills checkup, or you will be provided with some resources to support you further.
+                    We encourage you to start with the Foundation skills checkup as these skills are the building blocks to develop your Essential Digital Skills from and will give you the confidence to move from device to device.
                   </p>
                   <p class="b-margin-full">
-                    The checklists should take no longer than ten minutes to complete. When you are finished you can choose to have your results emailed to you. If you do, please enter your email address in the box provided on the results page.
+                    At the end, you will either be prompted to move to the Life skills checkup, or you will be provided with some resources to support you further.
+                  </p>
+                  <div class="cta v-padding-full">
+                    <a href="/foundation" class="btn btn-outline">Foundation skills checkup</a>
+                  </div>
+                  <h1>Life Skills</h1>
+                  <p class="v-margin-full">
+                    The life skills checkup is split into five sections as per the Essential Digital Skills Framework and will cover the Essential Digital Skills you need for everyday life online.
                   </p>
                   <div class="cta v-padding-full">
                     <a href="/life" class="btn btn-outline">Life skills checkup</a>
@@ -111,8 +118,11 @@
                   <p class="t-margin-full">
                     Work Skills are the digital skills you need to be able to do your job. We appreciate this may not be relevant to all job roles and not everyone is in employment, however if this applies to you and you would like to measure your Essential Digital Skills for the Workplace then you can complete the checkup here.
                   </p>
-                  <p class="b-margin-full">
+                  <p>
                     The work skills checkup can be completed independently from the Foundation and Life skills checklists, however, if you haven’t completed them before, we recommend doing these as well.
+                  </p>
+                  <p class="b-margin-full">
+                    The checklists should take no longer than ten minutes to complete. When you are finished you can choose to have your results emailed to you. If you do, please enter your email address in the box provided on the results page.
                   </p>
                   <div class="cta v-padding-full">
                     <a href="/work" class="btn btn-outline">Work skills checkup</a>
@@ -178,7 +188,7 @@
   </div>
 </div>
 {{/if}}
-{{#compare @root.data.currentSite.type "organisation"}}
+{{#unless (compare @root.data.currentSite.name "skills")}}
   <div class="container-fluid b-padding-full b-margin-full">
     <div class="container-home b-padding-full text-center">
       <h2 class="mdc-typography--headline4">
@@ -194,4 +204,4 @@
       <br /> --}}
     </div>
   </div>
-{{/compare}}
+{{/unless}}

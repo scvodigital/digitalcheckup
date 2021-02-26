@@ -4,6 +4,8 @@
   "pattern": {
     "organisation_home": "/checkup",
     "organisation_section": "/checkup/:section",
+    "foundation_home": "/foundation",
+    "foundation_section": "/foundation/:section",
     "life_home": "/life",
     "life_section": "/life/:section",
     "work_home": "/work",

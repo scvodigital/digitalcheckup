@@ -1,11 +1,7 @@
 {
   "name": "checkup_foundation-check",
   "acceptedVerbs": "POST",
-  "pattern": {
-    "organisation_foundation_check": "/checkup/foundation-check",
-    "life_results_foundation_check": "/life/foundation-check",
-    "work_results_foundation_check": "/work/foundation-check"
-  },
+  "pattern": "/foundation/foundation-check",
   "tasks": [
     "context.metaData.commonTasks.currentSite",
     "context.metaData.commonTasks.currentCheckup",
@@ -18,49 +14,49 @@
             "and": [
               {
                 "==": [
-                  { "var": "request.body.answers-foundation-q1" },
+                  { "var": "request.body.answers-section-1-q1" },
                   "I can do this"
                 ]
               },
               {
                 "==": [
-                  { "var": "request.body.answers-foundation-q2" },
+                  { "var": "request.body.answers-section-1-q2" },
                   "I can do this"
                 ]
               },
               {
                 "==": [
-                  { "var": "request.body.answers-foundation-q3" },
+                  { "var": "request.body.answers-section-1-q3" },
                   "I can do this"
                 ]
               },
               {
                 "==": [
-                  { "var": "request.body.answers-foundation-q4" },
+                  { "var": "request.body.answers-section-1-q4" },
                   "I can do this"
                 ]
               },
               {
                 "==": [
-                  { "var": "request.body.answers-foundation-q5" },
+                  { "var": "request.body.answers-section-1-q5" },
                   "I can do this"
                 ]
               },
               {
                 "==": [
-                  { "var": "request.body.answers-foundation-q6" },
+                  { "var": "request.body.answers-section-1-q6" },
                   "I can do this"
                 ]
               },
               {
                 "==": [
-                  { "var": "request.body.answers-foundation-q7" },
+                  { "var": "request.body.answers-section-1-q7" },
                   "I can do this"
                 ]
               }
             ]
           },
-          "checkup_page",
+          "checkup_redirect_to_life_skills",
           "checkup_foundation-terminal"
         ]
       }

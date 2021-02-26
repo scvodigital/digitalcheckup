@@ -25,9 +25,5 @@
       </div>
     </div>
   {{/ifAll ~}}
-  {{#ifAll (compare @root.data.currentCheckup 'life') (compare @root.request.params.path "!==" "life_foundation-check")}}
-    {{> checkup_section section="foundation"}}
-  {{else}}
-    {{> checkup_section section="section-1"}}
-  {{/ifAll}}
+  {{> checkup_section section="section-1"}}
 {{/if ~}}
