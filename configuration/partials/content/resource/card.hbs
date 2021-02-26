@@ -7,16 +7,18 @@
     </div>
     <div class="mdc-card__primary r-padding-full l-padding-full t-padding">
       {{#compare author "!==" title ~}}
-      <div class="mdc-typography--body1 b-margin">
-        <strong>{{{author}}}</strong>
-      </div>
-      {{#if tags}}
-        <div class="mdc-typography--body1 mdc-chip-set">
-          {{#each tag_slugs}}
-            <span class="mdc-chip r-margin b-margin">{{{itemAt ../tags @index}}}</span>
-          {{/each}}
+        <div class="mdc-typography--body1 b-margin">
+          <strong>{{{author}}}</strong>
         </div>
-      {{/if}}
+        {{#unless (compare @root.data.currentSite.name "skills")}}
+          {{#if tags}}
+            <div class="mdc-typography--body1 mdc-chip-set">
+              {{#each tag_slugs}}
+                <span class="mdc-chip r-margin b-margin">{{{itemAt ../tags @index}}}</span>
+              {{/each}}
+            </div>
+          {{/if}}
+        {{/unless}}
       {{/compare ~}}
       <div class="mdc-typography--body1">
         {{{content}}}
