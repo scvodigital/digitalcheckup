@@ -11,10 +11,18 @@
   "query": {
     "bool": {
       "must": [
+        {{#compare @root.data.currentSite.name "skills"}}
+        {
+          "term": {
+            "post_tags_slug": "essential-digital-skills"
+          }
+        },
+        {{/compare}}
         {
           "terms": {
             "post_tags_slug": [
               {{#compare @root.data.currentSite.name "skills"}}
+              "foundation-skills",
               "communicating",
               "transacting",
               "handling-information-and-content",

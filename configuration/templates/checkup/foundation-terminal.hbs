@@ -20,7 +20,7 @@
       <div class="mdc-layout-grid__inner">
         {{#each @root.data.supplimentaryResponses.resources.hits.hits ~}}
         {{#with _source ~}}
-        {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
+        {{> content_resource_card tag_slugs=post_tags_slug link=link title=title author=author_attribution content=content}}
         {{/with ~}}
         {{/each ~}}
       </div>

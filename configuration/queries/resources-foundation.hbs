@@ -1,0 +1,30 @@
+{
+  "size": 100,
+  "_source": [
+    "title",
+    "content",
+    "author_attribution",
+    "link",
+    "post_tags",
+    "post_tags_slug"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "post_tags_slug": "essential-digital-skills"
+          }
+        },
+        {
+          "term": {
+            "post_tags_slug": "foundation-skills"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "weight": "desc"
+  }
+}
