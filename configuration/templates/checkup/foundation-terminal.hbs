@@ -1,12 +1,25 @@
-<div class="checkup-section-header header-primary">
-  <div class="container-fluid">
-    <div class="container-content v-padding-full">
-      <h1 class="mdc-typography--headline3 v-padding-full">Thank you</h1>
+<div class="checkup-section-header-container">
+  <div class="checkup-section-header header-primary">
+    <div class="container-fluid">
+      <div class="container-content v-padding-full">
+        <div class="mdc-layout-grid v-padding-full">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-1-phone" style="display:flex;align-items:center;">
+              <span class="far fa-wifi fa-4x fa-fw"></span>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-11-desktop mdc-layout-grid__cell--span-6-tablet mdc-layout-grid__cell--span-3-phone">
+              <h1 class="mdc-typography--headline3">Foundation Skills</h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="container-fluid">
   <div class="container-content">
+    {{> checkup_progress progress=100}}
+
     <p>
       Thank you for completing the check-up. We hope you found it useful.
     </p>
@@ -16,7 +29,7 @@
 
     <h1 class="mdc-typography--headline3">Resources</h1>
     {{#compare @root.data.supplimentaryResponses.resources.hits.total ">" 0 ~}}
-    <div class="mdc-layout-grid equal-height v-margin-full brand-scheme-legacy">
+    <div class="mdc-layout-grid equal-height v-margin-full brand-scheme-default">
       <div class="mdc-layout-grid__inner">
         {{#each @root.data.supplimentaryResponses.resources.hits.hits ~}}
         {{#with _source ~}}

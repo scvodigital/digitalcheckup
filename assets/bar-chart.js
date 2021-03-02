@@ -3,7 +3,7 @@ function barChart(id, data) {
 
   var margin = { top: 50, right: 75, bottom: 75, left: 50 };
   var width = element.offsetWidth - margin.left - margin.right;
-  var height = Math.min(width + 90, window.innerHeight - margin.top - margin.bottom - 20);
+  var height = Math.min(width + 90, window.innerHeight - margin.top - margin.bottom - 300);
 
   var x0 = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);

@@ -430,8 +430,8 @@ header {
         transition: background-size .333s;
         height: auto;
         min-height: auto;
-        line-height: 1;
-        padding: $unit/2 !important;
+        line-height: 0.9rem;
+        padding: 8.8px 11px !important;
         font-size: 1.1rem;
         .mdc-tab__text-label {
           height: auto;
@@ -457,11 +457,11 @@ header {
       }
     }
   }
-  #main-tab-bar {
-    .mdc-tab:first-child {
-      padding-left: $unit/2 !important;
-    }
-  }
+  // #main-tab-bar {
+  //   .mdc-tab:first-child {
+  //     padding-left: $unit/2 !important;
+  //   }
+  // }
   //   .mdc-tab {
   //     // min-height: $header-height;
   //     // height: $header-height;
@@ -926,6 +926,17 @@ fieldset {
   color: $secondary-color;
 }
 
+.brand-scheme-default {
+  .mdc-card__title,
+  .checkup-topic-header,
+  .checkup-section-header,
+  .question-block .question,
+  .cta .mdc-button {
+    background-color: $secondary-color;
+    color: white;
+  }
+}
+
 .brand-scheme-legacy {
   #checkup-section-1 {
     .checkup-section-header,
@@ -1330,7 +1341,7 @@ footer.mdc-layout__footer {
 
 @media screen and (min-width: 1040px) {
   header .fa-stack-home {
-    font-size: 8em;
+    font-size: 8.1em;
     position: absolute;
     top: 0;
     right: 0;

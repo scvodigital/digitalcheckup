@@ -203,10 +203,10 @@
           </div>
         </div>
 
-        <div class="v-padding-full">
-          <div class="v-margin-full b-padding-full">
-            {{#unless @root.request.params.query.slp}}
-              {{#ifAll (ifAny (compare @root.data.currentSite.name "digital") (compare @root.data.currentSite.name "digital-legacy")) (compare (default @root.request.params.query.area @root.data.rootResponse.area) "scotland") ~}}
+        {{#unless @root.request.params.query.slp}}
+          {{#ifAll (ifAny (compare @root.data.currentSite.name "digital") (compare @root.data.currentSite.name "digital-legacy")) (compare (default @root.request.params.query.area @root.data.rootResponse.area) "scotland") ~}}
+            <div class="v-padding-full">
+              <div class="v-margin-full b-padding-full">
                 <h3 class="mdc-typography--headline4 v-margin b-padding-full">
                   We would love to discuss your results and next steps
                 </h3>
@@ -230,11 +230,15 @@
                     };
                   </script>
                   <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t67hvr75';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+                </div>
               </div>
-              {{/ifAll ~}}
-            {{/unless}}
+            </div>
+          {{/ifAll ~}}
+        {{/unless}}
 
-            {{#compare @root.data.currentSite.name "housing" ~}}
+        {{#compare @root.data.currentSite.name "housing" ~}}
+          <div class="v-padding-full">
+            <div class="v-margin-full b-padding-full">
               <h3 class="mdc-typography--headline4 v-margin b-padding-full">
                 We would love to discuss your results and next steps
               </h3>
@@ -249,9 +253,9 @@
                 </a>
                 <!-- Calendly link widget end -->
               </div>
-            {{/compare ~}}
+            </div>
           </div>
-        </div>
+        {{/compare ~}}
       {{else}}
         Error 500: Something went wrong processing your checkup, please refresh or <a href="/{{@root.data.currentCheckup}}">start again</a>.
       {{/ifAny ~}}
@@ -365,36 +369,38 @@
         {{/ifAny}}
 
         {{#compare @root.data.supplimentaryResponses.resources_relevant.hits.total ">" 0 ~}}
-        <div class="checkup-topic-header t-margin-full" id="resources">
-          <div class="container-fluid">
-            <div class="container-content">
-              {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic}}
-                <div class="mdc-typography--body2">Relevant</div>
-                <div class="mdc-typography--body1">
-                  Based on your checkup result, here are more resources that may be of interest
-                </div>
-              {{else}}
-                <div class="mdc-typography--body2">Resources</div>
-                <div class="mdc-typography--body1">
-                  Based on your checkup result, here are some resources that may be of interest
-                </div>
-              {{/ifAny}}
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid v-margin-full v-padding-full">
-          <div class="container-content brand-scheme-legacy">
-            <div class="mdc-layout-grid equal-height t-padding-full">
-              <div class="mdc-layout-grid__inner">
-                {{#each @root.data.supplimentaryResponses.resources_relevant.hits.hits ~}}
-                {{#with _source ~}}
-                {{> content_resource_card tag_slugs=post_tags_slug tags=post_tags link=link title=title author=author_attribution content=content}}
-                {{/with ~}}
-                {{/each ~}}
+        <div class="brand-scheme-{{#compare @root.data.currentSite.name 'skills'}}default{{else}}legacy{{/compare}}">
+          <div class="checkup-topic-header t-margin-full" id="resources">
+            <div class="container-fluid">
+              <div class="container-content">
+                {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic}}
+                  <div class="mdc-typography--body2">Relevant</div>
+                  <div class="mdc-typography--body1">
+                    Based on your checkup result, here are more resources that may be of interest
+                  </div>
+                {{else}}
+                  <div class="mdc-typography--body2">Resources</div>
+                  <div class="mdc-typography--body1">
+                    Based on your checkup result, here are some resources that may be of interest
+                  </div>
+                {{/ifAny}}
               </div>
             </div>
-            <div class="mdc-typography--body1 t-margin-full">
-              <a href="/checkup/resources">List all resources</a>
+          </div>
+          <div class="container-fluid v-margin-full v-padding-full">
+            <div class="container-content">
+              <div class="mdc-layout-grid equal-height t-padding-full">
+                <div class="mdc-layout-grid__inner">
+                  {{#each @root.data.supplimentaryResponses.resources_relevant.hits.hits ~}}
+                  {{#with _source ~}}
+                  {{> content_resource_card tag_slugs=post_tags_slug tags=post_tags link=link title=title author=author_attribution content=content}}
+                  {{/with ~}}
+                  {{/each ~}}
+                </div>
+              </div>
+              <div class="mdc-typography--body1 t-margin-full">
+                <a href="/checkup/resources">List all resources</a>
+              </div>
             </div>
           </div>
         </div>

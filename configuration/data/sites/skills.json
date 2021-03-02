@@ -15,17 +15,17 @@
       "route": "^/$"
     },
     {
-      "label": "Foundation skills",
+      "label": "Foundation Skills",
       "path": "/foundation",
       "route": "^/foundation"
     },
     {
-      "label": "Life skills",
+      "label": "Life Skills",
       "path": "/life",
       "route": "^/life"
     },
     {
-      "label": "Work skills",
+      "label": "Work Skills",
       "path": "/work",
       "route": "^/work"
     }
