@@ -1,4 +1,4 @@
-{{#compare @root.data.rootResponse.site @root.data.currentSite.name}}
+{{#ifAny (compare @root.data.rootResponse.site @root.data.currentSite.name) (ifAll (compare @root.data.rootResponse.site 'default') (compare @root.data.currentSite.name 'digital-legacy'))}}
 <div class="checkup-section b-padding-full" id="checkup-results">
   <div class="checkup-section-header header-primary">
     <div class="container-fluid">
@@ -490,4 +490,4 @@
 </script>
 {{else}}
 Error 500: Site does not match response.
-{{/compare}}
+{{/ifAny}}
