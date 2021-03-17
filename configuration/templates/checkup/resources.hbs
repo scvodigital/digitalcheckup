@@ -5,7 +5,7 @@
     </div>
   </div>
 </div>
-<div class="container-fluid brand-scheme-legacy">
+<div class="container-fluid brand-scheme-{{#compare @root.data.currentSite.name 'skills'}}default{{else}}legacy{{/compare}}">
   <div class="container-content">
     {{#compare @root.data.supplimentaryResponses.resources.hits.total ">" 0 ~}}
     <div class="mdc-layout-grid equal-height v-margin-full">

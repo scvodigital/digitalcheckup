@@ -935,6 +935,36 @@ fieldset {
     background-color: $secondary-color;
     color: white;
   }
+  .checkup-topic-resources-communicating .mdc-card__title {
+    background-color: $blue-color;
+    a {
+      color: $secondary-color;
+    }
+  }
+  .checkup-topic-resources-transacting .mdc-card__title {
+    background-color: $pink-color;
+    a {
+      color: $secondary-color;
+    }
+  }
+  .checkup-topic-resources-handling-information-and-content .mdc-card__title {
+    background-color: $green-color;
+    a {
+      color: $secondary-color;
+    }
+  }
+  .checkup-topic-resources-problemsolving .mdc-card__title {
+    background-color: $purple-color;
+    a {
+      color: $secondary-color;
+    }
+  }
+  .checkup-topic-resources-beingsafelegalandconfident .mdc-card__title {
+    background-color: $orange-color;
+    a {
+      color: $secondary-color;
+    }
+  }
 }
 
 .brand-scheme-legacy {
