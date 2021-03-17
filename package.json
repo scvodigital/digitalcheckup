@@ -1,6 +1,6 @@
 {
   "name": "@scvo/checkup",
-  "version": "0.0.141",
+  "version": "0.0.142",
   "description": "Site configuration and assets for checkup.scot sites",
   "main": "index.js",
   "scripts": {
