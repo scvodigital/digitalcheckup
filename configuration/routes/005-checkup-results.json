@@ -1,6 +1,6 @@
 {
   "name": "checkup_results",
-  "debug": false,
+  "debug": true,
   "pattern": {
     "organisation_results": "/checkup/results",
     "life_results": "/life/results",

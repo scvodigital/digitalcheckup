@@ -28,6 +28,9 @@
                 {{#each @root.data.currentSite.metrics}}
                   {{#each relevantPostTagsSlugs}}{{{json value=this}}},{{/each}}
                 {{/each}}
+                {{#compare @root.data.currentSite.name "===" "skills"}}
+                  "{{@root.data.currentCheckup}}-skills",
+                {{/compare}}
               {{/es_terms}}
             {{/json}}
           {{/json}}

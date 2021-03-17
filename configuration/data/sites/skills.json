@@ -292,6 +292,7 @@
           "title": "Communicating",
           "description": "The skills required to communicate, collaborate, and share information i.e. using email or social media to communicate with friends, family or colleagues.",
           "icon": "fa-comment-alt-lines",
+          "color": "blue",
           "progress": 26,
           "questions": [
             {
@@ -478,6 +479,7 @@
           "title": "Transacting",
           "description": "The skills required to register and apply for services, buy and sell goods and services, and administer and manage transactions online i.e. using online banking or shopping online.",
           "icon": "fa-browser",
+          "color": "green",
           "progress": 39,
           "questions": [
             {
@@ -679,6 +681,7 @@
           "title": "Handling information &amp; content",
           "description": "The skills required to find, manage and store digital information and content securely i.e. saving your personal photos and videos online or using a ‘cloud’ service such as Microsoft 365 to create, share and collaborate with colleagues at work.",
           "icon": "fa-file-search",
+          "color": "green",
           "progress": 51,
           "questions": [
             {
@@ -880,6 +883,7 @@
           "title": "Problem solving",
           "description": "The skills required to find solutions to problems using digital tools and online services i.e. ‘Googling’ or using YouTube to find an answer or learn how to fix a problem.",
           "icon": "fa-question-circle",
+          "color": "purple",
           "progress": 63,
           "questions": [
             {
@@ -1080,6 +1084,7 @@
           "title": "Being safe, legal, and confident online",
           "description": "The skills required to stay safe, legal, and confident online i.e. being able to use safe and strong passwords to keep your personal information secure online.",
           "icon": "fa-shield-check",
+          "color": "orange",
           "progress": 75,
           "questions": [
             {
@@ -1387,6 +1392,7 @@
           "title": "Communicating",
           "description": "",
           "icon": "fa-comment-alt-lines",
+          "color": "blue",
           "progress": 26,
           "questions": [
             {
@@ -1573,6 +1579,7 @@
           "title": "Transacting",
           "description": "",
           "icon": "fa-browser",
+          "color": "green",
           "progress": 39,
           "questions": [
             {
@@ -1759,6 +1766,7 @@
           "title": "Handling Information and Content",
           "description": "",
           "icon": "fa-file-search",
+          "color": "green",
           "progress": 51,
           "questions": [
             {
@@ -1945,6 +1953,7 @@
           "title": "Problem Solving",
           "description": "",
           "icon": "fa-question-circle",
+          "color": "purple",
           "progress": 63,
           "questions": [
             {
@@ -2130,6 +2139,7 @@
           "title": "Being Safe, Legal and Confident Online",
           "description": "",
           "icon": "fa-shield-check",
+          "color": "orange",
           "progress": 75,
           "questions": [
             {
