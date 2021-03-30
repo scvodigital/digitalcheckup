@@ -33,8 +33,7 @@
   {{else}}
   {{#compare @root.data.currentSite.name "digital-legacy"}}
   {{#unless (compare @root.route.name "checkup_results")}}
-  {{!-- Uncomment when going live --}}
-  {{!-- <meta http-equiv="refresh" content="0;URL='https://digital.checkup.scot{{@root.request.url.pathname}}'" /> --}}
+  <meta http-equiv="refresh" content="0;URL='https://digital.checkup.scot{{@root.request.url.pathname}}'" />
   {{/unless}}
   {{/compare}}
   {{/compare}}
