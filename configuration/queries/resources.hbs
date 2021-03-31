@@ -11,6 +11,13 @@
   "query": {
     "bool": {
       "must": [
+        {{#compare @root.data.currentSite.name "cyber"}}
+        {
+          "term": {
+            "post_tags_slug": "cyber-resilience"
+          }
+        },
+        {{/compare}}
         {{#compare @root.data.currentSite.name "skills"}}
         {
           "term": {

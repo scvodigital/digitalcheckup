@@ -10,7 +10,7 @@
         <div class="mdc-typography--body1 b-margin">
           <strong>{{{author}}}</strong>
         </div>
-        {{#unless (compare @root.data.currentSite.name "skills")}}
+        {{#unless (ifAny (compare @root.data.currentSite.name "skills") (compare @root.data.currentSite.name "cyber"))}}
           {{#if tags}}
             <div class="mdc-typography--body1 mdc-chip-set">
               {{#each tag_slugs}}

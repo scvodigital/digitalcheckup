@@ -83,7 +83,8 @@
       "aggregation": "context_stats",
       "icon": "context",
       "title": "Context",
-      "questionMetric": "Context"
+      "questionMetric": "Context",
+      "relevantPostTagsSlugs": ["cyber-resilience"]
     },
     {
       "key": "data",
@@ -92,7 +93,8 @@
       "aggregation": "data_stats",
       "icon": "data",
       "title": "Data",
-      "questionMetric": "Data"
+      "questionMetric": "Data",
+      "relevantPostTagsSlugs": ["cyber-resilience"]
     },
     {
       "key": "policy",
@@ -101,7 +103,8 @@
       "aggregation": "policy_stats",
       "icon": "policy",
       "title": "Policy",
-      "questionMetric": "Policy"
+      "questionMetric": "Policy",
+      "relevantPostTagsSlugs": ["cyber-resilience"]
     },
     {
       "key": "preventing_attacks",
@@ -110,7 +113,8 @@
       "aggregation": "preventing_attacks_stats",
       "icon": "preventing_attacks",
       "title": "Preventing attacks",
-      "questionMetric": "Preventing attacks"
+      "questionMetric": "Preventing attacks",
+      "relevantPostTagsSlugs": ["cyber-resilience"]
     },
     {
       "key": "training",
@@ -119,7 +123,8 @@
       "aggregation": "training_stats",
       "icon": "training",
       "title": "Training",
-      "questionMetric": "Training"
+      "questionMetric": "Training",
+      "relevantPostTagsSlugs": ["cyber-resilience"]
     }
   ],
   "for_singular": "organisation",
