@@ -31,7 +31,7 @@
     <div class="container-fluid container-home">
       <div class="container-home v-padding-full v-margin-full">
         <div class="mdc-typography--body2 t-margin-full">
-          This health check will help you gain an overview of your organisation’s cyber resilience. It will help you identify the next steps you need to take to make you even more secure.<br /><br />
+          This health check will help you gain an overview of your organisation's cyber resilience. It will help you identify the next steps you need to take to make you even more secure.<br /><br />
           Cyber resilience includes all the strategies and technologies that you have in place to ensure your networks, devices, data and finances are protected from damage, attack or unauthorised access.
         </div>
         <div class="cta t-padding-full t-margin-full">
@@ -39,120 +39,141 @@
       </div>
     </div>
   {{else}}
-    {{#ifAny (compare @root.data.currentSite.name "digital-legacy") (compare @root.data.currentSite.name "housing")}}
-      <div class="container-home-hero"{{#compare @root.data.currentSite.name "housing"}} style="background-color:#003066;"{{/compare}}{{#compare @root.data.currentSite.name "digital-legacy"}} style="background-color:#00509C;"{{/compare}}>
+    {{#compare @root.data.currentSite.name "governance"}}
+      <div class="container-home-hero">
         <div class="container-fluid">
           <div class="container-home v-padding-full">
-            <div class="mdc-layout-grid v-padding-full">
-              <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full">
-                  <h1 class="mdc-typography--headline2">
-                    Benchmark your {{@root.data.currentSite.for_singular}} and plot a route ahead
-                  </h1>
-                  <div class="mdc-typography--headline5 t-margin-full">
-                    Take our simple Digital Check-up to assess your current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}}
-                  </div>
-                  <div class="cta v-padding-full">
-                    <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
-                    {{#unless (ifAny (compare @root.data.currentSite.name "digital-legacy") (compare @root.data.currentSite.name "digital")) ~}}
-                    <p>
-                      <a href="https://{{@root.context.domains.[0]}}">Not a {{@root.data.currentSite.for_singular}}?</a>
-                    </p>
-                    {{/unless ~}}
-                  </div>
-                </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                  {{#compare @root.data.currentSite.name "housing" ~}}
-                  <img src="{{~>asset_url url='images/logos/sfha-large.png'~}}" style="max-width: 100%;" />
-                  {{else}}
-                  <img src="{{~>asset_url url='images/plot-route@2x.png'~}}" style="max-width: 100%;" />
-                  {{/compare ~}}
-                </div>
-              </div>
-            </div>
-            <div class="mdc-typography--body2 text-center b-margin-full">
-              The information you provide will be stored in our database to allow us to analyse responses. Read our full <a href="/privacy">privacy notice</a>.
-            </div>
+            <h1 class="mdc-typography--headline3 v-margin-full">
+              See where you are on your journey to good governance
+            </h1>
           </div>
         </div>
       </div>
-      {{else}}
-      {{#compare @root.data.currentSite.name "skills"}}
-        <div class="container-home-hero">
+      <div class="container-fluid container-home">
+        <div class="container-home v-padding-full v-margin-full">
+          <div class="mdc-typography--body1 t-margin-full">
+            This Good Governance Checkup will help you identify the strengths and gaps in your organisation's governance. The <a href="https://goodgovernance.scot/governance-code/">Scottish Governance Code for the Third Sector</a> is a statement of best practice for trustees to reflect on and improve governance in their organisation. It has <a href="https://goodgovernance.scot/governance-code/the-five-core-principles/">five core principles</a> to help guide trustees to do the right thing in the right way. This Good Governance Checkup looks at the key ways to demonstrate and implement the five core principles. It will enable you to identify areas for improvement and signpost you to further helpful resources.
+          </div>
+          <div class="cta t-padding-full t-margin-full">
+            <a href="/checkup" class="btn btn-outline">Start the checkup</a>
+        </div>
+      </div>
+    {{else}}
+      {{#ifAny (compare @root.data.currentSite.name "digital-legacy") (compare @root.data.currentSite.name "housing")}}
+        <div class="container-home-hero"{{#compare @root.data.currentSite.name "housing"}} style="background-color:#003066;"{{/compare}}{{#compare @root.data.currentSite.name "digital-legacy"}} style="background-color:#00509C;"{{/compare}}>
           <div class="container-fluid">
             <div class="container-home v-padding-full">
-              <h1 class="mdc-typography--headline3 v-margin-full">
-                Measuring your Essential Digital Skills
-              </h1>
-              {{!-- <h3 class="mdc-typography--headline5">
-                The Essential Digital Skills Checkup contains three checklists to allow you to measure your digital skills
-              </h3> --}}
+              <div class="mdc-layout-grid v-padding-full">
+                <div class="mdc-layout-grid__inner">
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone v-margin-full">
+                    <h1 class="mdc-typography--headline2">
+                      Benchmark your {{@root.data.currentSite.for_singular}} and plot a route ahead
+                    </h1>
+                    <div class="mdc-typography--headline5 t-margin-full">
+                      Take our simple Digital Check-up to assess your current digital maturity and how this compares to other {{@root.data.currentSite.for_plural}}
+                    </div>
+                    <div class="cta v-padding-full">
+                      <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
+                      {{#unless (ifAny (compare @root.data.currentSite.name "digital-legacy") (compare @root.data.currentSite.name "digital")) ~}}
+                      <p>
+                        <a href="https://{{@root.context.domains.[0]}}">Not a {{@root.data.currentSite.for_singular}}?</a>
+                      </p>
+                      {{/unless ~}}
+                    </div>
+                  </div>
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                    {{#compare @root.data.currentSite.name "housing" ~}}
+                    <img src="{{~>asset_url url='images/logos/sfha-large.png'~}}" style="max-width: 100%;" />
+                    {{else}}
+                    <img src="{{~>asset_url url='images/plot-route@2x.png'~}}" style="max-width: 100%;" />
+                    {{/compare ~}}
+                  </div>
+                </div>
+              </div>
+              <div class="mdc-typography--body2 text-center b-margin-full">
+                The information you provide will be stored in our database to allow us to analyse responses. Read our full <a href="/privacy">privacy notice</a>.
+              </div>
             </div>
           </div>
         </div>
-        <div class="container-fluid">
-          <div class="container-home t-padding-full">
-            <h3 class="mdc-typography--headline5">
-              There are three checkups to allow you to measure your digital skills
-            </h3>
-            <p class="b-margin-full">
-              They should take no longer than ten minutes to complete. When you are finished you can choose to have your results emailed to you. If you do, please enter your email address in the box provided on the results page.
-            </p>
-            <div class="mdc-layout-grid">
-              <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                  <h1>1.&ensp;Foundation Skills</h1>
-                  <p class="t-margin-full">
-                    We encourage you to start with the Foundation skills checkup as these skills are the building blocks to develop your Essential Digital Skills from and will give you the confidence to move from device to device.
-                  </p>
-                  <p class="b-margin-full">
-                    At the end, you will either be prompted to move to the Life skills checkup, or you will be provided with some resources to support you further.
-                  </p>
-                  <div class="cta v-padding-full">
-                    <a href="/foundation" class="">Take the checkup</a>
+        {{else}}
+        {{#compare @root.data.currentSite.name "skills"}}
+          <div class="container-home-hero">
+            <div class="container-fluid">
+              <div class="container-home v-padding-full">
+                <h1 class="mdc-typography--headline3 v-margin-full">
+                  Measuring your Essential Digital Skills
+                </h1>
+                {{!-- <h3 class="mdc-typography--headline5">
+                  The Essential Digital Skills Checkup contains three checklists to allow you to measure your digital skills
+                </h3> --}}
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="container-home t-padding-full">
+              <h3 class="mdc-typography--headline5">
+                There are three checkups to allow you to measure your digital skills
+              </h3>
+              <p class="b-margin-full">
+                They should take no longer than ten minutes to complete. When you are finished you can choose to have your results emailed to you. If you do, please enter your email address in the box provided on the results page.
+              </p>
+              <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                    <h1>1.&ensp;Foundation Skills</h1>
+                    <p class="t-margin-full">
+                      We encourage you to start with the Foundation skills checkup as these skills are the building blocks to develop your Essential Digital Skills from and will give you the confidence to move from device to device.
+                    </p>
+                    <p class="b-margin-full">
+                      At the end, you will either be prompted to move to the Life skills checkup, or you will be provided with some resources to support you further.
+                    </p>
+                    <div class="cta v-padding-full">
+                      <a href="/foundation" class="">Take the checkup</a>
+                    </div>
                   </div>
-                </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                  <h1>2.&ensp;Life Skills</h1>
-                  <p class="t-margin-full">
-                    The Life Skills checkup will cover the Essential Digital Skills you need for every day life online, for example, being able to use passwords safely or using social media responsibly.
-                  </p>
-                  <p class="b-margin-full">
-                    The checkup is based on the sections of the <a href="https://www.gov.uk/government/publications/essential-digital-skills-framework/essential-digital-skills-framework">Essential Digital Skills Framework</a>: Communicating, Handling Information and Content, Transacting and Problem Solving, which are underpinned by Being Safe and Legal Online.
-                  </p>
-                  <div class="cta v-padding-full">
-                    <a href="/life" class="">Take the checkup</a>
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                    <h1>2.&ensp;Life Skills</h1>
+                    <p class="t-margin-full">
+                      The Life Skills checkup will cover the Essential Digital Skills you need for every day life online, for example, being able to use passwords safely or using social media responsibly.
+                    </p>
+                    <p class="b-margin-full">
+                      The checkup is based on the sections of the <a href="https://www.gov.uk/government/publications/essential-digital-skills-framework/essential-digital-skills-framework">Essential Digital Skills Framework</a>: Communicating, Handling Information and Content, Transacting and Problem Solving, which are underpinned by Being Safe and Legal Online.
+                    </p>
+                    <div class="cta v-padding-full">
+                      <a href="/life" class="">Take the checkup</a>
+                    </div>
                   </div>
-                </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                  <h1>3.&ensp;Work Skills</h1>
-                  <p class="t-margin-full">
-                    Work Skills are the digital skills you need to be able to do your job. We appreciate this may not be relevant to all job roles and not everyone is in employment, however if this applies to you and you would like to measure your Essential Digital Skills for the Workplace then you can complete the checkup here.
-                  </p>
-                  <p class="b-margin-full">
-                    The work skills checkup can be completed independently from the Foundation and Life skills checklists, however, if you haven’t completed them before, we recommend doing these as well.
-                  </p>
-                  <div class="cta v-padding-full">
-                    <a href="/work" class="">Take the checkup</a>
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                    <h1>3.&ensp;Work Skills</h1>
+                    <p class="t-margin-full">
+                      Work Skills are the digital skills you need to be able to do your job. We appreciate this may not be relevant to all job roles and not everyone is in employment, however if this applies to you and you would like to measure your Essential Digital Skills for the Workplace then you can complete the checkup here.
+                    </p>
+                    <p class="b-margin-full">
+                      The work skills checkup can be completed independently from the Foundation and Life skills checklists, however, if you haven't completed them before, we recommend doing these as well.
+                    </p>
+                    <div class="cta v-padding-full">
+                      <a href="/work" class="">Take the checkup</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      {{else}}
-        <div class="container-fluid">
-          <div class="container-home v-padding-full">
-            <p class="v-margin-full">
-              {{@root.data.currentSite.title}} home page
-            </p>
-            {{!-- <div class="cta v-padding-full">
-              <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
-            </div> --}}
+        {{else}}
+          <div class="container-fluid">
+            <div class="container-home v-padding-full">
+              <p class="v-margin-full">
+                {{@root.data.currentSite.title}} home page
+              </p>
+              {{!-- <div class="cta v-padding-full">
+                <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
+              </div> --}}
+            </div>
           </div>
-        </div>
-      {{/compare}}
-    {{/ifAny}}
+        {{/compare}}
+      {{/ifAny}}
+    {{/compare}}
   {{/compare}}
 {{/compare}}
 {{#if @root.data.currentSite.sections_heading}}
@@ -165,7 +186,7 @@
       <div class="mdc-layout-grid v-padding-full">
         <div class="mdc-layout-grid__inner">
           {{#each @root.data.currentSite.sections}}
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'organisation'}}6{{else}}{{#ifAny (compare @root.data.currentSite.name 'skills') (compare @root.data.currentSite.name 'cyber')}}12{{else}}3{{/ifAny}}{{/compare}}-desktop mdc-layout-grid__cell--span-{{#ifAny (compare @root.data.currentSite.name 'skills') (compare @root.data.currentSite.name 'cyber')}}8{{else}}4{{/ifAny}}-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{{#compare @root.data.currentSite.name 'organisation'}}6{{else}}{{#ifAny (compare @root.data.currentSite.name 'skills') (compare @root.data.currentSite.name 'cyber') (compare @root.data.currentSite.name 'governance')}}12{{else}}3{{/ifAny}}{{/compare}}-desktop mdc-layout-grid__cell--span-{{#ifAny (compare @root.data.currentSite.name 'skills') (compare @root.data.currentSite.name 'cyber') (compare @root.data.currentSite.name 'governance')}}8{{else}}4{{/ifAny}}-tablet mdc-layout-grid__cell--span-4-phone v-margin-full text-center">
               {{!-- {{#if number}}
                 <div class="number" style="background-color:#{{color}};">{{number}}</div>
               {{/if}} --}}
@@ -197,19 +218,21 @@
 </div>
 {{/if}}
 {{#unless (compare @root.data.currentSite.name "skills")}}
-  <div class="container-fluid b-padding-full b-margin-full">
-    <div class="container-home b-padding-full text-center">
-      <h2 class="mdc-typography--headline4">
-        Get the support your {{@root.data.currentSite.for_singular}} needs
-      </h2>
-      <div class="mdc-typography--body1">
-        Once you have completed the checkup, you can request 1:1 support to explore the resources most relevant to your needs.<br />
-        If you would like to speak to us or have any questions, please email <a href="mailto:{{@root.data.currentSite.email}}">{{@root.data.currentSite.email}}</a>.
+  {{#unless (compare @root.data.currentSite.name "governance")}}
+    <div class="container-fluid b-padding-full b-margin-full">
+      <div class="container-home b-padding-full text-center">
+        <h2 class="mdc-typography--headline4">
+          Get the support your {{@root.data.currentSite.for_singular}} needs
+        </h2>
+        <div class="mdc-typography--body1">
+          Once you have completed the checkup, you can request 1:1 support to explore the resources most relevant to your needs.<br />
+          If you would like to speak to us or have any questions, please email <a href="mailto:{{@root.data.currentSite.email}}">{{@root.data.currentSite.email}}</a>.
+        </div>
+        {{!-- <div class="cta v-padding-full">
+          <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
+        </div>
+        <br /> --}}
       </div>
-      {{!-- <div class="cta v-padding-full">
-        <a href="/checkup" class="mdc-button mdc-button--raised">Start the checkup</a>
-      </div>
-      <br /> --}}
     </div>
-  </div>
+  {{/unless}}
 {{/unless}}

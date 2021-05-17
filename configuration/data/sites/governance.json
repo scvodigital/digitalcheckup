@@ -1,9 +1,10 @@
 {
   "name": "governance",
   "type": "governance",
+  "icon": "fas fa-tasks",
   "title": "Good Governance Checkup",
   "description": "",
-  "sections_heading": "",
+  "sections_heading": "5 core principles of good governance",
   "show_comparisons": true,
   "show_averages": true,
   "chart_type": "radar",
@@ -26,33 +27,49 @@
   ],
   "sections": [
     {
-      "title": "",
-      "class": "",
+      "title": "Organisational purpose",
+      "class": "organisational-purpose",
       "shape": "icon",
-      "icon": ""
+      "color": "purple",
+      "icon": "fa-tasks",
+      "description": "A well-run board is clear about the purpose and values of the organisation and how it will achieve its aims."
     },
     {
-      "title": "",
-      "class": "",
+      "title": "Leadership",
+      "class": "leadership",
       "shape": "icon",
-      "icon": ""
+      "color": "purple",
+      "icon": "fa-tasks",
+      "description": "A well-run board is clear about its role and responsibilities, and provides strategic direction in line with the organisation’s purpose, vision and values."
     },
     {
-      "title": "",
-      "class": "",
+      "title": "Board behaviour",
+      "class": "board-behaviour",
       "shape": "icon",
-      "icon": ""
+      "color": "purple",
+      "icon": "fa-tasks",
+      "description": "A well-run board, both collectively and individually, embraces and demonstrates mutual respect, integrity, openness and accountability."
     },
     {
-      "title": "",
-      "class": "",
+      "title": "Control",
+      "class": "control",
       "shape": "icon",
-      "icon": ""
+      "color": "purple",
+      "icon": "fa-tasks",
+      "description": "A well-run board will develop and implement appropriate controls to direct and oversee progress and performance of the organisation."
+    },
+    {
+      "title": "Effectiveness",
+      "class": "effectiveness",
+      "shape": "icon",
+      "color": "purple",
+      "icon": "fa-tasks",
+      "description": "A well-run board understands its role, powers and duties and works collectively and proactively, to achieve its organisational purpose."
     }
   ],
-  "for_singular": "charity",
-  "for_plural": "charities",
-  "email": "digital@scvo.scot",
+  "for_singular": "organisation",
+  "for_plural": "organisations",
+  "email": "enquiries@scvo.scot",
   "phone": "0800 169 0022",
   "url": "https://governance.checkup.scot"
 }
