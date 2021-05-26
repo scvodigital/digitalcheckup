@@ -71,5 +71,260 @@
   "for_plural": "organisations",
   "email": "enquiries@scvo.scot",
   "phone": "0800 169 0022",
-  "url": "https://governance.checkup.scot"
+  "url": "https://governance.checkup.scot",
+  "checkups": {
+    "checkup": {
+      "sf_type": "Governance",
+      "sections": {
+        "section-1": {
+          "number": 1,
+          "name": "Section 1",
+          "title": "Organisation information",
+          "description": "To use this SCVO Good Governance Checkup we need to know a little bit about you and your organisation. The information requested helps us tailor the Checkup questions and ensures that the resources we signpost you to will meet your needs on your journey to good governance.",
+          "icon": "fa-info-circle",
+          "color": "primary",
+          "progress": 11,
+          "questions": [
+            {
+              "title": "Your name",
+              "value": "q1",
+              "type": "text"
+            },
+            {
+              "title": "Email address",
+              "value": "q2",
+              "type": "text"
+            },
+            {
+              "title": "Organisation type",
+              "value": "q3",
+              "label": " ",
+              "type": "select-dropdown",
+              "options": [
+                {
+                  "answer": "Charity"
+                },
+                {
+                  "answer": "Non-charity"
+                }
+              ]
+            },
+            {
+              "title": "Legal structure",
+              "value": "q4",
+              "label": " ",
+              "type": "select-dropdown",
+              "options": [
+                {
+                  "answer": "SCIO"
+                },
+                {
+                  "answer": "Company"
+                },
+                {
+                  "answer": "Trust"
+                },
+                {
+                  "answer": "Unincorporated"
+                },
+                {
+                  "answer": "Other"
+                }
+              ]
+            },
+            {
+              "title": "Are you...",
+              "value": "q5",
+              "label": " ",
+              "type": "select-dropdown",
+              "options": [
+                {
+                  "answer": "a trustee"
+                },
+                {
+                  "answer": "staff member"
+                },
+                {
+                  "answer": "volunteer"
+                }
+              ]
+            },
+            {
+              "title": "Do you have staff?",
+              "value": "q6",
+              "label": " ",
+              "type": "select-dropdown",
+              "options": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "title": "Do you have members?",
+              "value": "q7",
+              "label": " ",
+              "type": "select-dropdown",
+              "options": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "title": "Income",
+              "value": "q8",
+              "label": " ",
+              "type": "select-dropdown",
+              "options": [
+                {
+                  "answer": "Small (under 25K)"
+                },
+                {
+                  "answer": "Medium (25k-100k)"
+                },
+                {
+                  "answer": "Medium-Large (£100k-£1m)"
+                },
+                {
+                  "answer": "Large (Over £1m)"
+                }
+              ]
+            },
+            {
+              "title": "Coverage",
+              "value": "q9",
+              "label": " ",
+              "type": "select-dropdown",
+              "options": [
+                {
+                  "answer": "Local"
+                },
+                {
+                  "answer": "National"
+                },
+                {
+                  "answer": "International"
+                }
+              ]
+            },
+            {
+              "title": "Based in",
+              "value": "q10",
+              "label": " ",
+              "type": "select-dropdown",
+              "options": [
+                {
+                  "answer": "Aberdeen"
+                },
+                {
+                  "answer": "Aberdeenshire"
+                },
+                {
+                  "answer": "Angus"
+                },
+                {
+                  "answer": "Argyll & Bute"
+                },
+                {
+                  "answer": "Clackmannanshire"
+                },
+                {
+                  "answer": "Dumfries & Galloway"
+                },
+                {
+                  "answer": "Dundee"
+                },
+                {
+                  "answer": "East Ayrshire"
+                },
+                {
+                  "answer": "East Dunbartonshire"
+                },
+                {
+                  "answer": "East Lothian"
+                },
+                {
+                  "answer": "East Renfrewshire"
+                },
+                {
+                  "answer": "Edinburgh"
+                },
+                {
+                  "answer": "Falkirk"
+                },
+                {
+                  "answer": "Fife"
+                },
+                {
+                  "answer": "Glasgow"
+                },
+                {
+                  "answer": "Highland"
+                },
+                {
+                  "answer": "Inverclyde"
+                },
+                {
+                  "answer": "Midlothian"
+                },
+                {
+                  "answer": "Moray"
+                },
+                {
+                  "answer": "Na h-Eileanan Siar"
+                },
+                {
+                  "answer": "North Ayrshire"
+                },
+                {
+                  "answer": "North Lanarkshire"
+                },
+                {
+                  "answer": "Orkney"
+                },
+                {
+                  "answer": "Perth & Kinross"
+                },
+                {
+                  "answer": "Renfrewshire"
+                },
+                {
+                  "answer": "Scottish Borders"
+                },
+                {
+                  "answer": "Shetland"
+                },
+                {
+                  "answer": "South Ayrshire"
+                },
+                {
+                  "answer": "South Lanarkshire"
+                },
+                {
+                  "answer": "Stirling"
+                },
+                {
+                  "answer": "West Dunbartonshire"
+                },
+                {
+                  "answer": "West Lothian"
+                }
+              ]
+            }
+          ],
+          "next_section": "section-2"
+        },
+        "section-2": {
+
+        }
+      }
+    }
+  }
 }

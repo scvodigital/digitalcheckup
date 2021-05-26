@@ -117,7 +117,7 @@
                         {{/each}}
                       </select>
                       <div class="mdc-floating-label mdc-floating-label--float-above" for="sort">
-                        Category
+                        {{default label "Category"}}
                       </div>
                       <div class="mdc-line-ripple"></div>
                     </div>
@@ -152,6 +152,20 @@
               <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
                 <textarea id="{{slugify title}}" name="answers-{{../../section}}-{{value}}" class="mdc-text-field__input" rows="5" placeholder="{{placeholder}}" maxlength="32767"></textarea>
                 <label for="{{slugify title}}" class="mdc-floating-label"></label>
+              </div>
+            </div>
+          {{/compare ~}}
+          {{#compare type "text" ~}}
+            <div class="mdc-layout-grid">
+              <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                  <div class="answer-block">
+                    <div class="mdc-text-field mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                      <input id="{{slugify title}}" name="answers-{{../../section}}-{{value}}" class="mdc-text-field__input" rows="5" placeholder="{{placeholder}}" maxlength="150" />
+                      <label for="{{slugify title}}" class="mdc-floating-label"></label>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           {{/compare ~}}

@@ -1081,6 +1081,11 @@ fieldset {
   // }
 }
 
+.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input,
+.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input:hover {
+  border-bottom: none;
+}
+
 .sharing-info {
   border: 1px solid $mdc-theme-orange;
   background-color: lighten($mdc-theme-orange, 40%);
